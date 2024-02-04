@@ -1,6 +1,5 @@
 # Byte-compiled / optimized / DLL files
 #dont ignore this file
-!.gitignore
 __pycache__/
 *.py[cod]
 *$py.class
@@ -13,6 +12,7 @@ __pycache__/
 build/
 data/*
 res/*
+!.gitignore
 develop-eggs/
 dist/
 downloads/
