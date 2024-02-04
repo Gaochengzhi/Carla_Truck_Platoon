@@ -12,6 +12,7 @@ __pycache__/
 build/
 data/*
 res/*
+log/*
 !.gitignore
 develop-eggs/
 dist/

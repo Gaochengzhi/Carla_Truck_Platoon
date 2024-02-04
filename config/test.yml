@@ -1,0 +1,15 @@
+
+map_name: Town10HD_Opt
+waypoints_area:
+  min_x: -2000
+  max_x: 3000
+  min_y: -4200 
+  max_y: 5200
+
+
+platoon_list:
+  - Platoon:
+      plt_id: 1
+      start_point: [-114.30, 71.84, 1,0,90,0]
+      plt_size: 4
+      plt_gap: 5
