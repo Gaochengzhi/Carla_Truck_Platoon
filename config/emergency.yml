@@ -1,0 +1,85 @@
+# WorldParameters:
+carla_timeout: 100.0
+map_name: Town05
+actor_active_distance: 100
+hybrid_physics_radius: 30
+tile_stream_distance: 100
+fps: 24
+fixed_delta_seconds: 0.01
+# TrafficParameters:
+num_vehicles: 0
+spwan_points_distance: 20
+area_limit:
+  min_x: -500
+  max_x: 5000
+  min_y: -500
+  max_y: 4000
+# DebugParameters:
+camera_height: 60
+debug_sp: False
+record: True
+emergency: True
+
+
+agents:
+  - name: "agent1"
+    port: 9561
+    type: "vehicle.ford.crown"
+    start_point: 101
+    end_point: 61
+    main_port: 6000
+    max_speed: 2
+    traffic_agent_port: 9981
+  - name: "agent2"
+    port: 9562
+    type: "vehicle.ford.crown"
+    start_point: 100
+    end_point: 61
+    main_port: 6000
+    max_speed: 2
+    traffic_agent_port: 9981
+  - name: "agent3"
+    port: 9563
+    type: "vehicle.ford.crown"
+    start_point: 202
+    end_point: 61
+    main_port: 6000
+    max_speed: 2
+    traffic_agent_port: 9981
+  - name: "agent4"
+    port: 9564
+    type: "vehicle.ford.crown"
+    start_point: 201
+    end_point: 61
+    main_port: 6000
+    max_speed: 2
+    traffic_agent_port: 9981
+  - name: "emergency"
+    port: 9565
+    type: "charger_police"
+    start_point: 21
+    end_point: 61
+    max_speed: 15
+    main_port: 6000
+    traffic_agent_port: 9981
+  # - name: "agent6"
+  #   port: 9566
+  #   type: "vehicle.ford.crown"
+  #   start_point: 294
+  #   end_point: 12
+  #   main_port: 6000
+  #   traffic_agent_port: 9981
+  # - name: "agent7"
+  #   port: 9567
+  #   type: "vehicle.ford.crown"
+  #   start_point: 153
+  #   end_point: 41
+  #   main_port: 6000
+  #   traffic_agent_port: 9981
+  # - name: "agent8"
+  #   port: 9568
+  #   type: "vehicle.ford.crown"
+  #   start_point: 154
+  #   end_point: 42
+  #   main_port: 6000
+  #   traffic_agent_port: 9981

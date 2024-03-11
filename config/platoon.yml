@@ -1,0 +1,22 @@
+# WorldParameters:
+carla_timeout: 100.0
+map_name: Town05
+actor_active_distance: 100
+hybrid_physics_radius: 30
+tile_stream_distance: 100
+is_custum_map: True
+map_path: "/home/ujs//mycode/Carla_Truck_Platoon/assets/highways.xodr"
+fps: 24
+fixed_delta_seconds: 0.001
+# TrafficParameters:
+num_vehicles: 0
+spwan_points_distance: 20
+# DebugParameters:
+camera_height: 60
+record: True
+
+## commuicate port
+base_port: 9561
+
+
+

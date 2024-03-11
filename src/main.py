@@ -1,37 +1,57 @@
-from config.config_manager import config as cfg
-from config.input_manager import config_args
-from world.world_manager import WorldManager
+from tools.world_manager import WorldManager
+from tools.config_manager import config as cfg
+from tools.input_manager import recieve_args
+from agent.traffic_agent import TrafficFlowManager
+from data.commuicate_manager import CommuniAgent
+from data.recorder_manager import DataRecorder
 from platoon.platoon_manager import Platoon
-import logging
+from util import destroy_all_actors, time_const, log_time_cost
 import time
-from util import destroy_all_actors
+import logging
+from tools.loader import load_agents, load_platoon_agents, load_conventional_agents
+
 
 def main():
-    args = config_args()
+    args = recieve_args()
     config = cfg.merge(args)
+    world_manager = WorldManager(config)
+    world = world_manager.get_world()
+    TM = world_manager.get_traffic_manager()
+    destroy_all_actors(world)
+    main_com = MainCommuicator(config)
+    main_com.send_obj("start")
+    # load_platoon_agents(config)
+    # load_conventional_agents(world, TM, config)
+    plt = Platoon(config)
 
-    carla_world = WorldManager(config)
-    world, client, filtered_waypoints, traffic_manager = get_world_instence(carla_world)
-    plt = Platoon(world, client,filtered_waypoints,config)
+    TrafficFlowManager().start()
+    # DataRecorder(config).start()
+
+    # @log_time_cost
+    @time_const(fps=config["fps"])
+    def run_step(world):
+        world.tick()
     try:
         while True:
-            world.tick()
-            time.sleep(0.01)
-    except KeyboardInterrupt:
+            run_step(world)
+    except Exception as e:
+        logging.error(f"main error:{e}")
+    finally:
+        main_com.send_obj("end")
+        settings = world.get_settings()
+        settings.synchronous_mode = False
+        world.apply_settings(settings)
+        TM.set_synchronous_mode(False)
         destroy_all_actors(world)
+        time.sleep(1)
+        main_com.close()
+        logging.info("Simulation ended\n")
 
-    pass
 
-
-
-def get_world_instence(scenario_loader):
-    map = scenario_loader.get_map()
-    world = scenario_loader.get_world()
-    client = scenario_loader.get_client()
-    filtered_waypoints = scenario_loader.get_filtered_waypoints()
-    traffic_manager = scenario_loader.get_trafficmanager()
-    world.tick()
-    return world, client, filtered_waypoints, traffic_manager
+def MainCommuicator(config):
+    world_control_center = CommuniAgent("World")
+    world_control_center.init_publisher(config["main_port"])
+    return world_control_center
 
 
 if __name__ == "__main__":

@@ -3,24 +3,31 @@ carla_port: 2000
 main_port: 6000
 ego_port: 6001
 pygame_port: 6002
-traffic_agent_port: 9555
-ego_vehicle_port: 9557
-data_port: 9558
+traffic_agent_port: 9981
+data_port: 9658
+tm_port: 8000
+
 # PygameParameters:
-screen_width: 1600
-screen_main_width: 1000
-screen_height: 720
-screen_main_height: 720
+screen_width: 1920
+screen_height: 1080
+screen_main_width: 1080
+screen_main_height: 1080
 screen_fps: 25.0
+map_precision: 15
 
 # WorldParameters:
-carla_timeout: 36.0
-map_name: Town03
+carla_timeout: 26.0
+is_custum_map: False
+map_name: Town13
+map_path: /home/ujs/mycode/Carla_Truck_Platoon/assets/highways.osm
 actor_active_distance: 500
 hybrid_physics_radius: 50
 tile_stream_distance: 200
 synchronous_mode: True
-frame_rate: 10
+no_rendering_mode: False
+fps: 10
+fixed_delta_seconds: 0.05
+
 
 # WeatherParameters:
 cloudiness: 0.0
@@ -29,7 +36,7 @@ sun_altitude_angle: 30.0
 sun_azimuth_angle: 0
 
 # EmergencyVehicleParameters:
-ego_vehicle_type: firetruck 
+ego_vehicle_type: tesla
 local_planner_resolution: 0.5
 trajectory_length: 50
 global_route_resolution: 5
@@ -41,9 +48,9 @@ bg_vehicle_type:
   - vehicle.citroen.c3
   - vehicle.ford.crown
   - vehicle.jeep.wrangler_rubicon
-num_vehicles: 300
-spwan_points_distance: 25
-waypoints_area:
+num_vehicles: 3
+spwan_points_distance: 50
+area_limit:
   min_x: 2000
   max_x: 3000
   min_y: 4200 

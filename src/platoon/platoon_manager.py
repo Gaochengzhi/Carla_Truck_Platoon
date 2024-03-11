@@ -1,45 +1,28 @@
-import carla
-import logging
-import random
-import time
-
-
+from agent.truck_vehicle_agent import TruckVehicleAgent
 class Platoon():
-    def __init__(self,world,client,filtered_waypoints,config):
-        self.world = world
-        self.client = client
-        for platoon in config["platoon_list"]:
-            plt_id = platoon["Platoon"]["plt_id"] 
-            start_point = platoon["Platoon"]["start_point"]
-            plt_size = platoon["Platoon"]["plt_size"]
-            location = carla.Location(x=start_point[0], y=start_point[1], z=start_point[2])
+    def __init__(self, config):
+        self.config = config
+        self.init_platoon_agents(config)
+        # self.
 
-# Create a Rotation object for the orientation
-            rotation = carla.Rotation(pitch=start_point[3], yaw=start_point[4], roll=start_point[5])
-
-            # Create the Transform object using the Location and Rotation
-            spawn_point = carla.Transform(location, rotation)
-            for i in range(plt_size):
-                self.create_vehicle(world,client,filtered_waypoints,plt_id,start_point,config,spawn_point)
-                forwardVector = spawn_point.get_forward_vector() * 15
-                spawn_point.location -= forwardVector
-                time.sleep(2.0)
-    def create_vehicle(self,world,client,filtered_waypoints,plt_id,start_point,config,spawn_point):
-        blueprintTruck = world.get_blueprint_library().filter("daf")[0]
-        blueprintTrailer = world.get_blueprint_library().filter("trailer")[0]
-        blueprintTrailer.set_attribute('role_name', 'hero-trailer')
-        self.world.try_spawn_actor(blueprintTruck,spawn_point)
-        forwardVector = spawn_point.get_forward_vector() * 3.3
-        spawn_point.location -= forwardVector
-        self.world.tick()
-        self.world.tick()
-        time.sleep(2.0)
-        self.world.spawn_actor(blueprintTrailer, spawn_point )
-        self.world.tick()
-
-
-
-
-
-
-
+    def init_platoon_agents(self, config):
+        config["spwan_list"] = [71, 59, 47]
+        config["target_list"] = [1000, 1001, 1002]
+        plt_member_config = {}
+        for i, spawn_target in enumerate(zip(config["spwan_list"], config["target_list"])):
+            plt_member_config["name"] = f"p_{i}"
+            plt_member_config["topology"] = {
+                "LV": 0 if i != 0 else -1,
+                "FV": i-1 if i-1 >= 0 else -1,
+                "RV": i+1 if i+1 < len(config["spwan_list"]) else -1
+            }
+            plt_member_config["fps"] = config["fps"]
+            plt_member_config["port"] = int(9985+i)
+            plt_member_config["base_port"] = 9985
+            plt_member_config["start_point"] = spawn_target[0]
+            plt_member_config["end_point"] = spawn_target[1]
+            plt_member_config["traffic_agent_port"] = config["traffic_agent_port"]
+            plt_member_config["main_port"] = config["main_port"]
+            plt_member_config["ignore_traffic_light"] = False
+            TruckVehicleAgent(plt_member_config).start()
+    
