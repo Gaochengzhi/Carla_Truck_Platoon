@@ -13,7 +13,7 @@ class IDM():
         self.sqrtab = np.sqrt(max_acc*normal_decel)
 
     def calc_acc(self, front_v, distance_s, ego_v):
-        self.s0 = max(ego_v, 3)
+        self.s0 = max(ego_v*0.5, 3)
         if distance_s < 4:
             return -self.max_brake_decel
         delta_v = ego_v-front_v

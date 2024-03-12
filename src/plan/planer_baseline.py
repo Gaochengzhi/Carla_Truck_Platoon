@@ -56,7 +56,7 @@ class FrenetPlanner():
             self.target_offset -= direction
             self.update_trajectories(self.target_offset)
 
-    @time_const(fps=24)
+    @time_const(fps=30)
     # @log_time_cost(name="ego_planner")
     def run_step(self, obs, plt_info, state):
         try:
@@ -66,8 +66,11 @@ class FrenetPlanner():
                 self.obstacle_update(obs)
             else:
                 # self.
+                self.obstacle_update(obs)
                 pass
             self.check_waypoints()
+            if len(self.trajectories) < 1:
+                return
             self.check_trajectories()
             if state == "cacc":
                 # leading_v = plt_info["leading_v"]
@@ -91,9 +94,9 @@ class FrenetPlanner():
                 return
             # DEBUG
             draw_waypoints(self.world, self.waypoint_buffer,
-                           z=2, life_time=0.3, size=0.1)
-            draw_list(self.world, self.trajectories, size=0.1,
-                      color=carla.Color(0, 250, 123), life_time=0.25)
+                           z=2, life_time=0.05, size=0.05)
+            draw_list(self.world, self.trajectories, size=0.05,
+                      color=carla.Color(0, 250, 123), life_time=0.05)
 
             if self.use_car_following:
                 leading_vehicle = self.sensor_manager.radar_res["front"]
@@ -167,9 +170,12 @@ class FrenetPlanner():
             self.waypoint_buffer.pop(0)
             self.global_waypoints.pop(0)
             if len(self.global_waypoints) < 1:
-                self.vehicle.destroy()
+                # self.vehicle.destroy()
                 logging.info("finish the route!")
-                exit()
+                # exit()
+                while True:
+                    self.vehicle.apply_control(carla.VehicleControl(throttle=0.0, brake=1))
+
             self.update_waypoint_buffer()
             self.left_side, self.right_side = self.perception.get_road_edge(
                 self.waypoint_buffer[0])
@@ -260,7 +266,7 @@ class FrenetPlanner():
             offset_vectors = normals * offset
             offset_vectors = np.vstack([[offset_vectors[0]], offset_vectors])
             interpolated_waypoints += offset_vectors
-            number_to_drop = min(len(interpolated_waypoints), 3)
+            number_to_drop = min(len(interpolated_waypoints)-1, int(self.speed))
             interpolated_waypoints = interpolated_waypoints[number_to_drop:]
         self.trajectories = interpolated_waypoints.tolist()
 
@@ -285,8 +291,8 @@ class FrenetPlanner():
         return collision_info if collision_info else False
 
     def update_waypoint_buffer(self):
-        num_push = min(int(self.speed/5)+3,
-                       len(self.global_waypoints), 15)
+        num_push = min(int(self.speed/2)+3,
+                       len(self.global_waypoints), 30)
         self.waypoint_buffer = self.global_waypoints[:num_push]
         if num_push < 3:
             return

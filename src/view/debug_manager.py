@@ -9,7 +9,7 @@ class DebugManager:
         self.debug = world.debug
 
 
-def update_view(world, x, y, z, rotation=carla.Rotation(-90, 0, 0)):
+def update_view(world, x, y, z, rotation=carla.Rotation(-90, 90, 0)):
     spectator = world.get_spectator()
     spectator.set_transform(
         carla.Transform(

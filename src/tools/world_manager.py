@@ -54,7 +54,7 @@ class WorldManager:
             logging.info('load opendrive map.')
             vertex_distance = 8.0  # in meters
             max_road_length = 9500.0  # in meters
-            wall_height = 0.5      # in meters
+            wall_height = 0.0      # in meters
             extra_width = 1.6      # in meters
             world = self.client.generate_opendrive_world(
                 xodr_data, carla.OpendriveGenerationParameters(

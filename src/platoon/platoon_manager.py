@@ -6,7 +6,7 @@ class Platoon():
         # self.
 
     def init_platoon_agents(self, config):
-        config["spwan_list"] = [71, 59, 47]
+        config["spwan_list"] = [71, 61, 51]
         config["target_list"] = [1000, 1001, 1002]
         plt_member_config = {}
         for i, spawn_target in enumerate(zip(config["spwan_list"], config["target_list"])):

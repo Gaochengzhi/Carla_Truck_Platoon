@@ -23,7 +23,7 @@ class TruckVehicleAgent(BaseAgent):
             self, self.config["name"], self.config["port"])
 
     def run(self):
-        print(self.config["topology"])
+        # print(self.config["topology"])
         @time_const(fps=self.config["fps"])
         def run_step(world, control):
             obs = self.communi_agent.rec_obj("router")
@@ -33,7 +33,6 @@ class TruckVehicleAgent(BaseAgent):
                 "state": 1,
             })
             plt_info = self.get_plt_info()
-            print(plt_info)
             self.local_planner.run_step(obs, plt_info,self.state)
 
         client, world = connect_to_server(1000, 2000)
@@ -57,7 +56,7 @@ class TruckVehicleAgent(BaseAgent):
         try:
             while True:
                 if self.vehicle.attributes["role_name"] == "p_0":
-                    set_bird_view(world, self.vehicle.get_location(), 200)
+                    set_bird_view(world, self.vehicle.get_location(), 100)
                 run_step(world, control)
         except Exception as e:
             logging.error(f"ego vehicle agent error:{e}")
