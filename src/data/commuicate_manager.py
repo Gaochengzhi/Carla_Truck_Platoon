@@ -1,6 +1,8 @@
 import zmq
 import logging
 from uuid import uuid1
+from util import log_time_cost
+
 
 
 class CommuniAgent:
@@ -15,6 +17,7 @@ class CommuniAgent:
 
     def init_publisher(self, pub_port):
         self.pub_socket = self.context.socket(zmq.PUB)
+        # self.pub_socket.setsockopt(zmq.SNDBUF,10)
         self.pub_socket.bind(f"tcp://*:{pub_port}")
 
     def init_subscriber(self, name: str, sub_port, pub_ip="localhost"):
@@ -27,7 +30,8 @@ class CommuniAgent:
         sub_socket = self.context.socket(zmq.SUB)
         sub_socket.connect(f"tcp://{pub_ip}:{sub_port}")
         sub_socket.setsockopt_string(zmq.SUBSCRIBE, "")
-        sub_socket.setsockopt(zmq.RCVTIMEO,     3)
+        sub_socket.setsockopt(zmq.RCVTIMEO,100)
+        # sub_socket.setsockopt(zmq.RCVBUF,100)
         self.sub_sockets[name] = sub_socket
 
     def send_obj(self, data):
@@ -36,11 +40,13 @@ class CommuniAgent:
     def send_int(self, data):
         self.pub_socket.send(data)
 
+    
+    # @log_time_cost(name="send_obj")
     def rec_obj(self, sub_name: str):
         try:
             if sub_name in self.sub_sockets:
-                # msg = self.sub_sockets[sub_name].recv_pyobj(flags=zmq.NOBLOCK)
-                msg = self.sub_sockets[sub_name].recv_pyobj()
+                msg = self.sub_sockets[sub_name].recv_pyobj(flags=zmq.NOBLOCK)
+                # msg = self.sub_sockets[sub_name].recv_pyobj()
                 return msg
             else:
                 raise ValueError(

@@ -51,7 +51,7 @@ class TruckVehicleAgent(BaseAgent):
         try:
             while True:
                 if self.vehicle.attributes["role_name"] == "p_0":
-                    set_bird_view(world, self.vehicle.get_location(), 150)
+                    set_bird_view(world, self.vehicle.get_location(), 170)
                 run_step(world, control)
         except Exception as e:
             logging.error(f"ego vehicle agent error:{e}")

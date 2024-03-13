@@ -42,7 +42,7 @@ class FrenetPlanner():
         self.cacc_model = IDM(
         ) if self.config["topology"]["LV"] == -1 else BDL_Controller()
         self.use_car_following = False
-        self.max_speed = self.config.get("max_speed", 30)
+        self.max_speed = self.config.get("max_speed", 10)
         self.target_speed = self.max_speed*0.8
         self.detect_range = 2.6
         self.front_xy = []
@@ -73,6 +73,7 @@ class FrenetPlanner():
             if len(self.trajectories) < 1:
                 return
             self.check_trajectories()
+            self.plt_info = self.get_plt_info()
             if state == "cacc":
                 front_dis = 30
                 back_dis = 30
@@ -85,6 +86,10 @@ class FrenetPlanner():
                 ego_xy = [self.location.x, self.location.y]
                 if self.front_xy:
                     front_dis = compute_distance2D(ego_xy, self.front_xy)
+                elif self.sensor_manager.radar_res["front"]:
+                    front_dis = self.sensor_manager.radar_res["front"][0]
+                else:
+                    front_dis =None
                 if back_xy:
                     back_dis = compute_distance2D(ego_xy, back_xy)
                 else:
@@ -381,9 +386,10 @@ class FrenetPlanner():
             "acc": self.acc,
             "xy": [self.location.x, self.location.y],
             "yaw": self.transform.rotation.yaw,
-            "state": self.state
+            "state": self.state,
+            "step": self.step
         })
-        self.plt_info = self.get_plt_info()
+        
         # else:
         #     if obs_info["except_v"]:
         #         self.max_speed = obs_info["except_v"]
