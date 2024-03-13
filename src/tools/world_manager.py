@@ -1,10 +1,10 @@
 import carla
-import time
 import sys
 import logging
 import os
 import random
-from util import load_points_from_csv, spawn_vehicle, get_ego_vehicle
+
+
 class WorldManager:
     def __init__(self, config):
         self.config = config
@@ -91,7 +91,6 @@ class WorldManager:
         settings.tile_stream_distance = self.config["tile_stream_distance"]
         settings.fixed_delta_seconds = self.config["fixed_delta_seconds"]
         self.world.apply_settings(settings)
-
 
     def _gen_filtered_points(self):
         map_name = self.map.name.split("/")[-1]

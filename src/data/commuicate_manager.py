@@ -27,6 +27,7 @@ class CommuniAgent:
         sub_socket = self.context.socket(zmq.SUB)
         sub_socket.connect(f"tcp://{pub_ip}:{sub_port}")
         sub_socket.setsockopt_string(zmq.SUBSCRIBE, "")
+        sub_socket.setsockopt(zmq.RCVTIMEO,     3)
         self.sub_sockets[name] = sub_socket
 
     def send_obj(self, data):
@@ -38,7 +39,8 @@ class CommuniAgent:
     def rec_obj(self, sub_name: str):
         try:
             if sub_name in self.sub_sockets:
-                msg = self.sub_sockets[sub_name].recv_pyobj(flags=zmq.NOBLOCK)
+                # msg = self.sub_sockets[sub_name].recv_pyobj(flags=zmq.NOBLOCK)
+                msg = self.sub_sockets[sub_name].recv_pyobj()
                 return msg
             else:
                 raise ValueError(

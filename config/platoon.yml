@@ -17,6 +17,8 @@ record: True
 
 ## commuicate port
 base_port: 9561
-
+spawn_list: [813,803,793, 783, 773]
+# spawn_list: [793, 783, 773]
+target_list: [480, 480,480,480,480]
 
 

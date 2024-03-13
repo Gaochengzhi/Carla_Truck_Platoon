@@ -23,26 +23,21 @@ class TruckVehicleAgent(BaseAgent):
             self, self.config["name"], self.config["port"])
 
     def run(self):
-        # print(self.config["topology"])
         @time_const(fps=self.config["fps"])
         def run_step(world, control):
             obs = self.communi_agent.rec_obj("router")
-            self.communi_agent.send_obj({
-                "speed": 1,
-                "acc": 1,
-                "state": 1,
-            })
-            plt_info = self.get_plt_info()
-            self.local_planner.run_step(obs, plt_info,self.state)
+            self.local_planner.run_step(obs, self.state)
 
         client, world = connect_to_server(1000, 2000)
         map = world.get_map()
         self.start_agent()
         self.set_communi_agent()
         self.start_point, self.end_point = self.get_navi_pos(map)
-        self.vehicle, self.trailer = self.create_vehicle(world, self.start_point)
+        self.vehicle, self.trailer = self.create_vehicle(
+            world, self.start_point)
         self.state = "acc" if self.config["topology"]["LV"] == -1 else "cacc"
         self.vehicle_info = self.init_vehicle_info()
+        print(f"vehicle_info:{self.vehicle_info}")
         self.sensor_manager = SensorManager(
             world, self.vehicle, self.vehicle_info, self.config)
         self.controller = VehiclePIDController(self.vehicle)
@@ -51,12 +46,12 @@ class TruckVehicleAgent(BaseAgent):
         self.global_router_waypoints = [x[0] for x in self.global_route_planner.trace_route(
             self.start_point.location, self.end_point.location)]
         self.local_planner = FrenetPlanner(
-            world, map, self.global_router_waypoints, self.vehicle, self.config, self.controller, self.sensor_manager)
+            world, map, self.global_router_waypoints, self.vehicle, self.config, self.controller, self.sensor_manager, self.communi_agent)
         control = carla.VehicleControl()
         try:
             while True:
                 if self.vehicle.attributes["role_name"] == "p_0":
-                    set_bird_view(world, self.vehicle.get_location(), 100)
+                    set_bird_view(world, self.vehicle.get_location(), 150)
                 run_step(world, control)
         except Exception as e:
             logging.error(f"ego vehicle agent error:{e}")
@@ -67,13 +62,6 @@ class TruckVehicleAgent(BaseAgent):
             world.apply_settings(settings)
             self.close_agent()
             exit()
-    def get_plt_info(self):
-        # vehicle_types = self.config["topology"].keys() if self.config["topology"].values != -1
-        vehicle_types = [key for key, value in self.config["topology"].items() if value != -1]
-        vehicle_info = {}
-        for vehicle_type in vehicle_types:
-            vehicle_info[vehicle_type] = self.communi_agent.rec_obj(vehicle_type)
-        return vehicle_info
 
     def get_navi_pos(self, map):
         self.waypoints = map.generate_waypoints(5.0)
@@ -86,7 +74,7 @@ class TruckVehicleAgent(BaseAgent):
     def set_communi_agent(self):
         self.communi_agent.init_subscriber("router",
                                            self.config["traffic_agent_port"])
-        
+
         topology = self.config["topology"]
         for key, index in topology.items():
             if index == -1:
@@ -94,18 +82,18 @@ class TruckVehicleAgent(BaseAgent):
             sub_port = self.config["base_port"] + index
             self.communi_agent.init_subscriber(key, sub_port)
 
-
-
     def create_vehicle(self, world, start_point, ego_vehicle_type="daf"):
         try:
-            blueprintTruck = world.get_blueprint_library().filter(ego_vehicle_type)[0]
+            blueprintTruck = world.get_blueprint_library().filter(ego_vehicle_type)[
+                0]
             blueprintTruck.set_attribute('role_name', self.name)
-            blueprintTrailer = world.get_blueprint_library().filter("trailer")[0]
+            blueprintTrailer = world.get_blueprint_library().filter("trailer")[
+                0]
             blueprintTrailer.set_attribute('role_name', self.name+'trailer')
-            trailer = world.spawn_actor(blueprintTrailer,start_point)
-            forwardVector =start_point.get_forward_vector() * 5.0
+            trailer = world.spawn_actor(blueprintTrailer, start_point)
+            forwardVector = start_point.get_forward_vector() * 5.0
             start_point.location += forwardVector
-            vehicle = world.spawn_actor(blueprintTruck,start_point)
+            vehicle = world.spawn_actor(blueprintTruck, start_point)
             return vehicle, trailer
         except Exception as e:
             logging.error(f"create ego vehicle error:{e}")
@@ -122,7 +110,5 @@ class TruckVehicleAgent(BaseAgent):
         t_mass = self.trailer.get_physics_control().mass
         return {"width": v_widht, "length": v_length, "height": v_high, "mass": v_mass, "trailer_wdith": t_widht, "trailer_length": t_length, "trailer_height": t_high, "trailer_mass": t_mass}
 
-
     def get_vehicle(self):
         return self.vehicle
-

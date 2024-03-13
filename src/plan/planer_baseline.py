@@ -9,18 +9,19 @@ from util import compute_distance, log_time_cost, compute_3D21d, compute_distanc
 from cythoncode.cutil import is_within_distance_obs, compute_magnitude_angle
 from view.debug_manager import draw_waypoints, draw_list
 from scipy.interpolate import splprep, splev
-from plan.carFollowingModel import IDM, ACC, CACC
+from plan.carFollowingModel import IDM, BDL_Controller
 from perception.perception_basline import FakePerception
 import logging
 from pyinstrument import Profiler
 
 
 class FrenetPlanner():
-    def __init__(self, world, map, router_waypoints, vehicle, config, controller, sensor_manager):
+    def __init__(self, world, map, router_waypoints, vehicle, config, controller, sensor_manager, commuic_agent):
         self.global_waypoints = router_waypoints
         self.world = world
         self.map = map
         self.config = config
+        self.state = "acc" if self.config["topology"]["LV"] == -1 else "cacc"
         self.vehicle = vehicle
         self.id = vehicle.attributes["role_name"]
         self.obs_list = []
@@ -29,17 +30,22 @@ class FrenetPlanner():
         self.target_offset = 0
         self.current_offset = 0
         self.speed = 0
+        self.acc = 0
+        self.plt_info = {}
         self.transform = None
         self.location = None
         self.controller = controller
         self.sensor_manager = sensor_manager
+        self.communi_agent = commuic_agent
         self.perception = FakePerception(vehicle, config)
         self.car_following_model = IDM()
-        self.cacc_model = ACC() if self.config["topology"]["LV"] == -1 else CACC()
+        self.cacc_model = IDM(
+        ) if self.config["topology"]["LV"] == -1 else BDL_Controller()
         self.use_car_following = False
         self.max_speed = self.config.get("max_speed", 30)
-        self.target_speed = self.max_speed
+        self.target_speed = self.max_speed*0.8
         self.detect_range = 2.6
+        self.front_xy = []
         self.step = 0
         self.change_back_step = 0
         self.wait_step = 4
@@ -58,38 +64,49 @@ class FrenetPlanner():
 
     @time_const(fps=30)
     # @log_time_cost(name="ego_planner")
-    def run_step(self, obs, plt_info, state):
+    def run_step(self, obs,  state):
         try:
             # self.profiler.start()
             self.ego_state_update()
-            if state == "acc":
-                self.obstacle_update(obs)
-            else:
-                # self.
-                self.obstacle_update(obs)
-                pass
+            self.obstacle_update(obs)
             self.check_waypoints()
             if len(self.trajectories) < 1:
                 return
             self.check_trajectories()
             if state == "cacc":
-                # leading_v = plt_info["leading_v"]
-                pass
-            if self.step % self.wait_step == 0:
-                if self.check_collision():
-                    self.adjust_trajectories()
-                    self.wait_step += 1
+                front_dis = 30
+                back_dis = 30
+                plt_info_lv = self.plt_info.get("LV")
+                plt_info_fv = self.plt_info.get("FV")
+                plt_info_rv = self.plt_info.get("RV")
+                leading_v = plt_info_lv.get("speed") if plt_info_lv else None
+                self.front_xy = plt_info_fv.get("xy") if plt_info_fv else None
+                back_xy = plt_info_rv.get("xy") if plt_info_rv else None
+                ego_xy = [self.location.x, self.location.y]
+                if self.front_xy:
+                    front_dis = compute_distance2D(ego_xy, self.front_xy)
+                if back_xy:
+                    back_dis = compute_distance2D(ego_xy, back_xy)
                 else:
-                    self.use_car_following = False
-                    self.wait_step = 4
-                    self.target_speed = min(
-                        self.max_speed, self.speed*1.5)
-                    if self.change_back_step > 180:
-                        if self.target_offset > 0.3 and self.check_radar(-30):
-                            self.adjust_offset(-0.5)
-                        elif self.target_offset < -0.3 and self.check_radar(30):
-                            self.adjust_offset(0.5)
-
+                    back_dis = 30
+                if front_dis and leading_v:
+                    # print(front_dis, self.vehicle.attributes["role_name"])
+                    self.target_speed = self.cacc_model.calc_speed(
+                        front_dis, back_dis, self.speed, leading_v)
+                else:
+                    print("lost", self.step,
+                          self.vehicle.attributes["role_name"])
+                    pass
+                if self.front_xy:
+                    target_waypoint = carla.Transform(
+                        carla.Location(x=self.front_xy[0], y=self.front_xy[1]))
+                    control = self.controller.run_step(
+                        self.target_speed, target_waypoint)
+                    self.vehicle.apply_control(control)
+                self.step += 1
+                return
+            else:
+                self.check_collison_and_change_lanes()
             if len(self.trajectories) < 1:
                 return
             # DEBUG
@@ -107,10 +124,9 @@ class FrenetPlanner():
                     a = self.car_following_model.calc_acc(
                         front_v, distance_s, self.speed)
                     self.target_speed = max(0, self.speed + a)
-                    
                 elif leading_obs:
                     distance_s = leading_obs.distance
-                    front_v = leading_obs.velocity 
+                    front_v = leading_obs.velocity
                     a = self.car_following_model.calc_acc(
                         front_v, distance_s, self.speed)
                     self.target_speed = max(0, self.speed + a)
@@ -129,12 +145,12 @@ class FrenetPlanner():
                 self.target_speed = min(
                     self.max_speed, self.target_speed*1.5)
             # CONTROLLER
+            if self.step >= 1000:
+                self.target_speed = 15
             target_waypoint = carla.Transform(
                 carla.Location(x=self.trajectories[0][0], y=self.trajectories[0][1]))
             control = self.controller.run_step(
                 self.target_speed, target_waypoint)
-            # control = self.controller.run_step(
-            #     self.target_speed, self.trajectories)
 
             self.vehicle.apply_control(control)
             self.step += 1
@@ -147,6 +163,22 @@ class FrenetPlanner():
             logging.error(e.__traceback__.tb_frame.f_globals["__file__"])
             logging.error(e.__traceback__.tb_lineno)
             pass
+
+    def check_collison_and_change_lanes(self):
+        if self.step % self.wait_step == 0:
+            if self.check_collision():
+                self.adjust_trajectories()
+                self.wait_step += 1
+            else:
+                self.use_car_following = False
+                self.wait_step = 4
+                self.target_speed = min(
+                    self.max_speed, self.speed*1.5)
+                if self.change_back_step > 180:
+                    if self.target_offset > 0.3 and self.check_radar(-30):
+                        self.adjust_offset(-0.5)
+                    elif self.target_offset < -0.3 and self.check_radar(30):
+                        self.adjust_offset(0.5)
 
     def check_radar(self, offset=0):
         """
@@ -174,7 +206,8 @@ class FrenetPlanner():
                 logging.info("finish the route!")
                 # exit()
                 while True:
-                    self.vehicle.apply_control(carla.VehicleControl(throttle=0.0, brake=1))
+                    self.vehicle.apply_control(
+                        carla.VehicleControl(throttle=0.0, brake=1))
 
             self.update_waypoint_buffer()
             self.left_side, self.right_side = self.perception.get_road_edge(
@@ -266,7 +299,8 @@ class FrenetPlanner():
             offset_vectors = normals * offset
             offset_vectors = np.vstack([[offset_vectors[0]], offset_vectors])
             interpolated_waypoints += offset_vectors
-            number_to_drop = min(len(interpolated_waypoints)-1, int(self.speed))
+            number_to_drop = min(
+                len(interpolated_waypoints)-1, int(self.speed))
             interpolated_waypoints = interpolated_waypoints[number_to_drop:]
         self.trajectories = interpolated_waypoints.tolist()
 
@@ -291,7 +325,7 @@ class FrenetPlanner():
         return collision_info if collision_info else False
 
     def update_waypoint_buffer(self):
-        num_push = min(int(self.speed/2)+3,
+        num_push = min(int(self.speed/1.5)+3,
                        len(self.global_waypoints), 30)
         self.waypoint_buffer = self.global_waypoints[:num_push]
         if num_push < 3:
@@ -341,14 +375,23 @@ class FrenetPlanner():
                         [obs_info["location"].x, obs_info["location"].y, obs_info["velocity"], obs_info["yaw"]])
                     obs_list.append(
                         [obs_info["flocation"].x, obs_info["flocation"].y, obs_info["fvelocity"], obs_info["yaw"]])
-            # else:
-            #     if obs_info["except_v"]:
-            #         self.max_speed = obs_info["except_v"]
-            #     else:
-            #         self.max_speed = self.config.get("max_speed", 30)
-            #     if obs_info["except_offset"]:
-            #         self.target_offset = - self.left_side - \
-            #             0 if self.left_side < self.right_side else self.right_side + 1
+
+        self.communi_agent.send_obj({
+            "speed": self.speed,
+            "acc": self.acc,
+            "xy": [self.location.x, self.location.y],
+            "yaw": self.transform.rotation.yaw,
+            "state": self.state
+        })
+        self.plt_info = self.get_plt_info()
+        # else:
+        #     if obs_info["except_v"]:
+        #         self.max_speed = obs_info["except_v"]
+        #     else:
+        #         self.max_speed = self.config.get("max_speed", 30)
+        #     if obs_info["except_offset"]:
+        #         self.target_offset = - self.left_side - \
+        #             0 if self.left_side < self.right_side else self.right_side + 1
 
         self.obs_list = obs_list
 
@@ -357,7 +400,7 @@ class FrenetPlanner():
         return brake**0.4
 
     def ego_state_update(self):
-        self.location, self.transform, self.speed, _ = self.perception.get_ego_vehicle_info()
+        self.location, self.transform, self.speed, self.acc = self.perception.get_ego_vehicle_info()
 
     def get_relative_waypoint_angle(self):
         if self.waypoint_buffer:
@@ -399,3 +442,14 @@ class FrenetPlanner():
             self.use_car_following = True
         else:
             pass
+
+    def get_plt_info(self):
+        # vehicle_types = self.config["topology"].keys() if self.config["topology"].values != -1
+        # example vehicle_info = {"LV": {"speed": 10, "acc": 1, "x": 1, "y": 1, "yaw": 1, "state": 1}}
+        vehicle_types = [
+            key for key, value in self.config["topology"].items() if value != -1]
+        vehicle_info = {}
+        for vehicle_type in vehicle_types:
+            vehicle_info[vehicle_type] = self.communi_agent.rec_obj(
+                vehicle_type)
+        return vehicle_info

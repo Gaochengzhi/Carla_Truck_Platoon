@@ -13,7 +13,7 @@ class IDM():
         self.sqrtab = np.sqrt(max_acc*normal_decel)
 
     def calc_acc(self, front_v, distance_s, ego_v):
-        self.s0 = max(ego_v*0.5, 3)
+        self.s0 = max(ego_v*1.5, 3)
         if distance_s < 4:
             return -self.max_brake_decel
         delta_v = ego_v-front_v
@@ -25,27 +25,80 @@ class IDM():
         acc = max(acc, -self.max_brake_decel)
         return acc
 
-class ACC:
-    def __init__(self, s_0=2, t_gap=1.5, k_1=0.4, k_2=0.1):
+
+class PLF_Controller:
+    def __init__(self, c_p, c_v, c_a, k_v, k_a, s_0=0.5):
+        """
+        Initialize the PLF controller.
+
+        :param c_p: spacing error gain between the ego vehicle and the preceding vehicle
+        :param c_v: velocity error gain between the ego vehicle and the preceding vehicle
+        :param c_a: acceleration error gain between the ego vehicle and the preceding vehicle
+        :param k_v: velocity error gain between the ego vehicle and the leading vehicle
+        :param k_a: acceleration error gain between the ego vehicle and the leading vehicle
+        :param s_0: desired time headway
+        """
+        self.c_p = c_p
+        self.c_v = c_v
+        self.c_a = c_a
+        self.k_v = k_v
+        self.k_a = k_a
         self.s_0 = s_0
-        self.t_gap = t_gap
-        self.k_1 = k_1
-        self.k_2 = k_2
 
-    def calc_spacing(self, v):
-        return self.s_0 + v * self.t_gap
+    def calc_speed(self, front_x, front_v, front_a, leader_v, leader_a, ego_x, ego_v, ego_a):
+        """
+        Calculate the control input for the PLF controller.
 
-    def calc_acc(self, v_leader, v_follower, s):
-        s_des = self.calc_spacing(v_follower)
-        acc = self.k_1 * (v_leader - v_follower) + self.k_2 * (s - s_des)
-        return acc
+        :param front_x: position of the preceding vehicle
+        :param front_v: velocity of the preceding vehicle
+        :param front_a: acceleration of the preceding vehicle
+        :param leader_v: velocity of the leading vehicle
+        :param leader_a: acceleration of the leading vehicle
+        :param ego_x: position of the ego vehicle
+        :param ego_v: velocity of the ego vehicle
+        :param ego_a: acceleration of the ego vehicle
+        :return: control input u
+        """
+        spacing_error = front_x - ego_x - self.L
+        velocity_error_front = front_v - ego_v
+        acceleration_error_front = front_a - ego_a
+        velocity_error_leader = leader_v - ego_v
+        acceleration_error_leader = leader_a - ego_a
 
-class CACC(ACC):
-    def __init__(self, s_0=2, t_gap=0.5, k_1=0.4, k_2=0.1, k_3=0.2):
-        super().__init__(s_0, t_gap, k_1, k_2)
-        self.k_3 = k_3
+        u = self.c_p * spacing_error + self.c_v * velocity_error_front + self.c_a * acceleration_error_front \
+            + self.k_v * velocity_error_leader + self.k_a * acceleration_error_leader
+        return u
 
-    def calc_acc(self, v_leader, v_follower, s, a_leader):
-        s_des = self.calc_spacing(v_follower)
-        acc = self.k_1 * (v_leader - v_follower) + self.k_2 * (s - s_des) + self.k_3 * a_leader
-        return acc
+
+class BDL_Controller:
+    def __init__(self, k_s=4.5, k_v=6, L=10.54, h=0.5, d_0=1):
+        """
+        Initialize the BDL controller.
+        :param k_s: spacing error gain
+        :param k_v: velocity error gain between the ego vehicle and the leading vehicle
+        :param L: length of the ego vehicle
+        :param h: time headway
+        :param v_0: velocity of the leading vehicle
+        :param D: desired spacing at standstill
+        """
+        self.k_s = k_s
+        self.k_v = k_v
+        self.L = L
+        self.h = h
+        self.d_0 = d_0
+
+    def calc_speed(self, front_dis, back_dis, ego_v, leader_v):
+        """
+        Calculate the control input for the BDL controller.
+        :param front_x: position of the preceding vehicle
+        :param back_x: position of the following vehicle
+        :param ego_x: position of the ego vehicle
+        :param ego_v: velocity of the ego vehicle
+        :return: control input u
+        """
+        spacing_error_front = front_dis - self.L - self.h * leader_v - self.d_0
+        spacing_error_back = back_dis - self.L - self.h * leader_v - self.d_0
+        velocity_error_leader = leader_v - ego_v
+        u = self.k_s * spacing_error_front - self.k_s * \
+            spacing_error_back + self.k_v * velocity_error_leader
+        return u
