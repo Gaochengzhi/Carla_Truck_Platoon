@@ -15,7 +15,7 @@ import logging
 from pyinstrument import Profiler
 
 
-class FrenetPlanner():
+class BasePlanner():
     def __init__(self, world, map, router_waypoints, vehicle, config, controller, sensor_manager, commuic_agent):
         self.global_waypoints = router_waypoints
         self.world = world
@@ -42,7 +42,7 @@ class FrenetPlanner():
         self.cacc_model = IDM(
         ) if self.config["topology"]["LV"] == -1 else BDL_Controller()
         self.use_car_following = False
-        self.max_speed = self.config.get("max_speed", 10)
+        self.max_speed = self.config.get("max_speed", 30)
         self.target_speed = self.max_speed*0.8
         self.detect_range = 2.6
         self.front_xy = []
@@ -53,6 +53,7 @@ class FrenetPlanner():
         self.check_update_waypoints()
         self.left_side, self.right_side = self.perception.get_road_edge(
             self.waypoint_buffer[0])
+        # print(self.communi_agent.sub_sockets)
         # self.profiler = Profiler(interval=0.001)
 
     def adjust_offset(self, direction):
@@ -68,13 +69,14 @@ class FrenetPlanner():
         try:
             # self.profiler.start()
             self.ego_state_update()
+            self.send_self_info()
             self.obstacle_update(obs)
             self.check_waypoints()
             if len(self.trajectories) < 1:
                 return
             self.check_trajectories()
             self.plt_info = self.get_plt_info()
-            if state == "cacc":
+            if state == "CACC":
                 front_dis = 30
                 back_dis = 30
                 plt_info_lv = self.plt_info.get("LV")
@@ -89,7 +91,7 @@ class FrenetPlanner():
                 elif self.sensor_manager.radar_res["front"]:
                     front_dis = self.sensor_manager.radar_res["front"][0]
                 else:
-                    front_dis =None
+                    front_dis = None
                 if back_xy:
                     back_dis = compute_distance2D(ego_xy, back_xy)
                 else:
@@ -99,8 +101,8 @@ class FrenetPlanner():
                     self.target_speed = self.cacc_model.calc_speed(
                         front_dis, back_dis, self.speed, leading_v)
                 else:
-                    print("lost", self.step,
-                          self.vehicle.attributes["role_name"])
+                    # print("lost", self.step,
+                    #       self.vehicle.attributes["role_name"])
                     pass
                 if self.front_xy:
                     target_waypoint = carla.Transform(
@@ -150,8 +152,8 @@ class FrenetPlanner():
                 self.target_speed = min(
                     self.max_speed, self.target_speed*1.5)
             # CONTROLLER
-            if self.step >= 1000:
-                self.target_speed = 15
+            if self.step >= 500:
+                self.target_speed = 5
             target_waypoint = carla.Transform(
                 carla.Location(x=self.trajectories[0][0], y=self.trajectories[0][1]))
             control = self.controller.run_step(
@@ -381,15 +383,6 @@ class FrenetPlanner():
                     obs_list.append(
                         [obs_info["flocation"].x, obs_info["flocation"].y, obs_info["fvelocity"], obs_info["yaw"]])
 
-        self.communi_agent.send_obj({
-            "speed": self.speed,
-            "acc": self.acc,
-            "xy": [self.location.x, self.location.y],
-            "yaw": self.transform.rotation.yaw,
-            "state": self.state,
-            "step": self.step
-        })
-        
         # else:
         #     if obs_info["except_v"]:
         #         self.max_speed = obs_info["except_v"]
@@ -400,6 +393,16 @@ class FrenetPlanner():
         #             0 if self.left_side < self.right_side else self.right_side + 1
 
         self.obs_list = obs_list
+
+    def send_self_info(self):
+        self.communi_agent.send_obj({
+            "speed": self.speed,
+            "acc": self.acc,
+            "xy": [self.location.x, self.location.y],
+            "yaw": self.transform.rotation.yaw,
+            "state": self.state,
+            "step": self.step,
+        })
 
     def compute_brake(self, distance):
         brake = math.exp(-distance/10)
@@ -453,7 +456,7 @@ class FrenetPlanner():
         # vehicle_types = self.config["topology"].keys() if self.config["topology"].values != -1
         # example vehicle_info = {"LV": {"speed": 10, "acc": 1, "x": 1, "y": 1, "yaw": 1, "state": 1}}
         vehicle_types = [
-            key for key, value in self.config["topology"].items() if value != -1]
+            key for key, value in self.config["topology"].items() if value != -1 and key not in ["index", "len"]]
         vehicle_info = {}
         for vehicle_type in vehicle_types:
             vehicle_info[vehicle_type] = self.communi_agent.rec_obj(

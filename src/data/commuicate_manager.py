@@ -4,7 +4,6 @@ from uuid import uuid1
 from util import log_time_cost
 
 
-
 class CommuniAgent:
     def __init__(self, name: str):
         self.context = zmq.Context()
@@ -21,17 +20,10 @@ class CommuniAgent:
         self.pub_socket.bind(f"tcp://*:{pub_port}")
 
     def init_subscriber(self, name: str, sub_port, pub_ip="localhost"):
-        for existing_name, existing_socket in self.sub_sockets.items():
-            if existing_socket.getsockopt(zmq.LAST_ENDPOINT) == f"tcp://{pub_ip}:{sub_port}":
-                # Subscriber with the same port already exists, assign the new name
-                self.sub_sockets[name] = existing_socket
-                return
-
         sub_socket = self.context.socket(zmq.SUB)
         sub_socket.connect(f"tcp://{pub_ip}:{sub_port}")
         sub_socket.setsockopt_string(zmq.SUBSCRIBE, "")
-        sub_socket.setsockopt(zmq.RCVTIMEO,100)
-        # sub_socket.setsockopt(zmq.RCVBUF,100)
+        sub_socket.setsockopt(zmq.RCVTIMEO, 30)
         self.sub_sockets[name] = sub_socket
 
     def send_obj(self, data):
@@ -40,7 +32,6 @@ class CommuniAgent:
     def send_int(self, data):
         self.pub_socket.send(data)
 
-    
     # @log_time_cost(name="send_obj")
     def rec_obj(self, sub_name: str):
         try:
@@ -52,6 +43,7 @@ class CommuniAgent:
                 raise ValueError(
                     f"No subscriber with name '{sub_name}' initialized.")
         except zmq.Again:
+            # print(f"Subscriber {sub_name} timeout")
             return None
 
     def rec_obj_block(self, sub_name: str):

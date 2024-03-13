@@ -8,7 +8,7 @@ from perception.sensor_manager import SensorManager
 from cythoncode.router_baseline import GlobalRoutePlanner
 # from navigation.controller_baseline import VehiclePIDController
 from cythoncode.controller_baseline import VehiclePIDController
-from plan.planer_baseline import FrenetPlanner
+from plan.planer_baseline import BasePlanner
 import carla
 import logging
 import time
@@ -45,7 +45,7 @@ class BaselineVehicleAgent(BaseAgent):
             world.get_map(), sampling_resolution=3)
         self.global_router_waypoints = [x[0] for x in self.global_route_planner.trace_route(
             self.start_point.location, self.end_point.location)]
-        self.local_planner = FrenetPlanner(
+        self.local_planner = BasePlanner(
             world, map, self.global_router_waypoints, self.vehicle, self.config, self.controller, self.sensor_manager)
         control = carla.VehicleControl()
         # debug
