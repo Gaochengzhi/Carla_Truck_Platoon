@@ -35,32 +35,4 @@ precipitation: 0.0
 sun_altitude_angle: 30.0
 sun_azimuth_angle: 0
 
-# EmergencyVehicleParameters:
-ego_vehicle_type: tesla
-local_planner_resolution: 0.5
-trajectory_length: 50
-global_route_resolution: 5
 
-# TrafficParameters:
-bg_vehicle_type:
-  - vehicle.audi.a2
-  - vehicle.audi.tt
-  - vehicle.citroen.c3
-  - vehicle.ford.crown
-  - vehicle.jeep.wrangler_rubicon
-num_vehicles: 3
-spwan_points_distance: 50
-area_limit:
-  min_x: 2000
-  max_x: 3000
-  min_y: 4200 
-  max_y: 5200
-
-# DebugParameters:
-camera_height: 60
-draw_global_waypoint: False
-draw_trajectory: False
-draw_spawn_points: False
-
-# DataParameters:
-data_folder_path: data
