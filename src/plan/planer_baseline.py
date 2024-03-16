@@ -59,7 +59,6 @@ class Planner():
         self.check_update_waypoints()
         self.left_side, self.right_side = self.perception.get_road_edge(
             self.waypoint_buffer[0])
-        # print(self.communi_agent.sub_sockets)
         # self.profiler = Profiler(interval=0.001)
 
     def adjust_offset(self, direction):
@@ -75,7 +74,6 @@ class Planner():
         try:
             # self.profiler.start()
             self.ego_state_update()
-            self.send_self_info()
             self.obstacle_update(obs)
             self.check_waypoints()
             if len(self.trajectories) < 1:
@@ -438,16 +436,6 @@ class Planner():
 
         self.obs_list = obs_list
 
-    def send_self_info(self):
-        self.communi_agent.send_obj({
-            "speed": self.speed,
-            "acc": self.acc,
-            "xy": [self.location.x, self.location.y],
-            "yaw": self.transform.rotation.yaw,
-            "state": self.state,
-            "step": self.step,
-        })
-
     def compute_brake(self, distance):
         brake = math.exp(-distance/10)
         return brake**0.4
@@ -500,7 +488,7 @@ class Planner():
         # vehicle_types = self.config["topology"].keys() if self.config["topology"].values != -1
         # example vehicle_info = {"LV": {"speed": 10, "acc": 1, "x": 1, "y": 1, "yaw": 1, "state": 1}}
         vehicle_types = [
-            key for key, value in self.config["topology"].items() if value != -1 and key not in ["index", "len"]]
+            key for key, value in self.config["topology"].items() if value != -1]
         vehicle_info = {}
         for vehicle_type in vehicle_types:
             vehicle_info[vehicle_type] = self.communi_agent.rec_obj(
