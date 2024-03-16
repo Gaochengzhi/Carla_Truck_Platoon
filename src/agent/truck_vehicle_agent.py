@@ -8,11 +8,7 @@ from perception.sensor_manager import SensorManager
 from cythoncode.router_baseline import GlobalRoutePlanner
 # from navigation.controller_baseline import VehiclePIDController
 from cythoncode.controller_baseline import VehiclePIDController
-<<<<<<< HEAD
 from plan.planer_baseline import Planner
-=======
-from plan.planer_baseline import BasePlanner
->>>>>>> origin/main
 import carla
 import logging
 import time
@@ -39,24 +35,13 @@ class TruckVehicleAgent(BaseAgent):
         self.vehicle, self.trailer = self.create_truck_vehicle(
             world, self.start_point)
         self.vehicle_info = self.get_vehicle_info()
-<<<<<<< HEAD
-=======
-        self.state = "ACC" if self.config["topology"]["LV"] == -1 else "CACC"
->>>>>>> origin/main
         self.sensor_manager = SensorManager(
             world, self.vehicle,self.trailer, self.vehicle_info, self.config)
         self.controller = VehiclePIDController(self.vehicle)
         self.global_route_planner = GlobalRoutePlanner(
             world.get_map(), sampling_resolution=3)
-<<<<<<< HEAD
         self.local_planner = Planner(
             world, map,self.start_point,self.end_point, self.vehicle,self.trailer, self.vehicle_info,self.config, self.global_route_planner, self.controller, self.sensor_manager, self.communi_agent)
-=======
-        self.global_router_waypoints = [x[0] for x in self.global_route_planner.trace_route(
-            self.start_point.location, self.end_point.location)]
-        self.local_planner = BasePlanner(
-            world, map, self.global_router_waypoints, self.vehicle, self.config, self.controller, self.sensor_manager, self.communi_agent)
->>>>>>> origin/main
         try:
             while True:
                 if self.vehicle.attributes["role_name"] == "p_0":
@@ -110,7 +95,6 @@ class TruckVehicleAgent(BaseAgent):
             raise
 
     def get_vehicle_info(self):
-<<<<<<< HEAD
         v_length = self.vehicle.bounding_box.extent.x
         v_widht = self.vehicle.bounding_box.extent.y
         v_high = self.vehicle.bounding_box.extent.z
@@ -123,16 +107,3 @@ class TruckVehicleAgent(BaseAgent):
 
     def get_vehicle(self):
         return self.vehicle
-=======
-        vehicle_info = {
-            "width": self.vehicle.bounding_box.extent.y,
-            "length": self.vehicle.bounding_box.extent.x,
-            "height": self.vehicle.bounding_box.extent.z,
-            "mass": self.vehicle.get_physics_control().mass,
-            "trailer_width": self.trailer.bounding_box.extent.y,
-            "trailer_length": self.trailer.bounding_box.extent.x,
-            "trailer_height": self.trailer.bounding_box.extent.z,
-            "trailer_mass": self.trailer.get_physics_control().mass
-        }
-        return vehicle_info
->>>>>>> origin/main
