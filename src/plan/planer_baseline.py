@@ -15,6 +15,7 @@ import logging
 from pyinstrument import Profiler
 
 
+<<<<<<< HEAD
 class Planner():
     def __init__(self, world, map,start_point,end_point, vehicle,trailer,vehicle_info, config, global_route_planner,controller, sensor_manager, commuic_agent):
 
@@ -23,6 +24,11 @@ class Planner():
         self.global_route_planner = global_route_planner
         self.global_waypoints = [x[0] for x in self.global_route_planner.trace_route(
         self.start_point.location, self.end_point.location)]
+=======
+class BasePlanner():
+    def __init__(self, world, map, router_waypoints, vehicle, config, controller, sensor_manager, commuic_agent):
+        self.global_waypoints = router_waypoints
+>>>>>>> origin/main
         self.world = world
         self.map = map
         self.vehicle_info = vehicle_info
@@ -59,6 +65,7 @@ class Planner():
         self.check_update_waypoints()
         self.left_side, self.right_side = self.perception.get_road_edge(
             self.waypoint_buffer[0])
+        # print(self.communi_agent.sub_sockets)
         # self.profiler = Profiler(interval=0.001)
 
     def adjust_offset(self, direction):
@@ -74,12 +81,14 @@ class Planner():
         try:
             # self.profiler.start()
             self.ego_state_update()
+            self.send_self_info()
             self.obstacle_update(obs)
             self.check_waypoints()
             if len(self.trajectories) < 1:
                 return
             self.check_trajectories()
             self.plt_info = self.get_plt_info()
+<<<<<<< HEAD
             plt_info_lv = self.plt_info.get("LV")
             plt_info_fv = self.plt_info.get("FV")
             plt_info_rv = self.plt_info.get("RV")
@@ -124,6 +133,35 @@ class Planner():
                 #         front_dis,front_v, self.speed, front_a)
                 #     print(self.target_speed, self.vehicle.attributes["role_name"])
                 else:
+=======
+            if state == "CACC":
+                front_dis = 30
+                back_dis = 30
+                plt_info_lv = self.plt_info.get("LV")
+                plt_info_fv = self.plt_info.get("FV")
+                plt_info_rv = self.plt_info.get("RV")
+                leading_v = plt_info_lv.get("speed") if plt_info_lv else None
+                self.front_xy = plt_info_fv.get("xy") if plt_info_fv else None
+                back_xy = plt_info_rv.get("xy") if plt_info_rv else None
+                ego_xy = [self.location.x, self.location.y]
+                if self.front_xy:
+                    front_dis = compute_distance2D(ego_xy, self.front_xy)
+                elif self.sensor_manager.radar_res["front"]:
+                    front_dis = self.sensor_manager.radar_res["front"][0]
+                else:
+                    front_dis = None
+                if back_xy:
+                    back_dis = compute_distance2D(ego_xy, back_xy)
+                else:
+                    back_dis = 30
+                if front_dis and leading_v:
+                    # print(front_dis, self.vehicle.attributes["role_name"])
+                    self.target_speed = self.cacc_model.calc_speed(
+                        front_dis, back_dis, self.speed, leading_v)
+                else:
+                    # print("lost", self.step,
+                    #       self.vehicle.attributes["role_name"])
+>>>>>>> origin/main
                     pass
                 if self.front_xy:
                     target_waypoint = carla.Transform(
@@ -177,6 +215,11 @@ class Planner():
                 self.target_speed = min(
                     self.max_speed, self.target_speed*1.5)
             # CONTROLLER
+<<<<<<< HEAD
+=======
+            if self.step >= 500:
+                self.target_speed = 5
+>>>>>>> origin/main
             target_waypoint = carla.Transform(
                 carla.Location(x=self.trajectories[0][0], y=self.trajectories[0][1]))
             
@@ -415,6 +458,7 @@ class Planner():
                     obs_list.append(
                         [obs_info["flocation"].x, obs_info["flocation"].y, obs_info["fvelocity"], obs_info["yaw"]])
 
+<<<<<<< HEAD
         self.communi_agent.send_obj({
             "id": self.id,
             "speed": self.speed,
@@ -425,6 +469,8 @@ class Planner():
             "step": self.step
         })
         
+=======
+>>>>>>> origin/main
         # else:
         #     if obs_info["except_v"]:
         #         self.max_speed = obs_info["except_v"]
@@ -435,6 +481,16 @@ class Planner():
         #             0 if self.left_side < self.right_side else self.right_side + 1
 
         self.obs_list = obs_list
+
+    def send_self_info(self):
+        self.communi_agent.send_obj({
+            "speed": self.speed,
+            "acc": self.acc,
+            "xy": [self.location.x, self.location.y],
+            "yaw": self.transform.rotation.yaw,
+            "state": self.state,
+            "step": self.step,
+        })
 
     def compute_brake(self, distance):
         brake = math.exp(-distance/10)
@@ -488,7 +544,7 @@ class Planner():
         # vehicle_types = self.config["topology"].keys() if self.config["topology"].values != -1
         # example vehicle_info = {"LV": {"speed": 10, "acc": 1, "x": 1, "y": 1, "yaw": 1, "state": 1}}
         vehicle_types = [
-            key for key, value in self.config["topology"].items() if value != -1]
+            key for key, value in self.config["topology"].items() if value != -1 and key not in ["index", "len"]]
         vehicle_info = {}
         for vehicle_type in vehicle_types:
             vehicle_info[vehicle_type] = self.communi_agent.rec_obj(

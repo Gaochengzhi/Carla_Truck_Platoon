@@ -12,9 +12,12 @@ class Platoon():
         for i, spawn_target in enumerate(zip(config["spawn_list"], config["target_list"])):
             plt_member_config["name"] = f"p_{i}"
             plt_member_config["topology"] = {
+                "index": i,
+                "len": len(config["spawn_list"]),
                 "LV": 0 if i != 0 else -1,
                 "FV": i-1 if i-1 >= 0 else -1,
                 "RV": i+1 if i+1 < len(config["spawn_list"]) else -1
+
             }
             plt_member_config["fps"] = config["fps"]
             plt_member_config["base_port"] = 9985
