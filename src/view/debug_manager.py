@@ -22,7 +22,7 @@ def update_view(world, x, y, z, rotation=carla.Rotation(-90, 90, 0)):
 def set_bird_view(world, location, high):
     update_view(
         world,
-        location.x,
+        location.x-100,
         location.y,
         location.z + high
     )

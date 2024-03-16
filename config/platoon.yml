@@ -19,6 +19,6 @@ record: True
 base_port: 9561
 # spawn_list: [813,803,793, 783, 773]
 spawn_list: [71, 61, 51,41,31]
-target_list: [480, 480,480,480,480]
+target_list: [1080, 1080,1080,1080,1080]
 
 

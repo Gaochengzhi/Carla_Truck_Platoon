@@ -105,10 +105,9 @@ class DataRecorder(BaseAgent):
         self.fp = open(folder_path+"/data.csv", "w")
         writer = csv.writer(self.fp)
         return writer
-        # write csv file header
 
     def close(self) -> None:
         self.fp.fflush()
         self.fp.close()
-        time.sleep(2)
+        time.sleep(1)
         return super().close()

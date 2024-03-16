@@ -9,19 +9,25 @@ from util import compute_distance, log_time_cost, compute_3D21d, compute_distanc
 from cythoncode.cutil import is_within_distance_obs, compute_magnitude_angle
 from view.debug_manager import draw_waypoints, draw_list
 from scipy.interpolate import splprep, splev
-from plan.carFollowingModel import IDM, BDL_Controller
+from plan.carFollowingModel import IDM, PLF_Controller, Path_ACC, BDL_Controller, Path_CACC
 from perception.perception_basline import FakePerception
 import logging
 from pyinstrument import Profiler
 
 
-class FrenetPlanner():
-    def __init__(self, world, map, router_waypoints, vehicle, config, controller, sensor_manager, commuic_agent):
-        self.global_waypoints = router_waypoints
+class Planner():
+    def __init__(self, world, map,start_point,end_point, vehicle,trailer,vehicle_info, config, global_route_planner,controller, sensor_manager, commuic_agent):
+
+        self.start_point = start_point
+        self.end_point = end_point
+        self.global_route_planner = global_route_planner
+        self.global_waypoints = [x[0] for x in self.global_route_planner.trace_route(
+        self.start_point.location, self.end_point.location)]
         self.world = world
         self.map = map
+        self.vehicle_info = vehicle_info
         self.config = config
-        self.state = "acc" if self.config["topology"]["LV"] == -1 else "cacc"
+        self.state = "ACC" if self.config["topology"]["LV"] == -1 else "CACC"
         self.vehicle = vehicle
         self.id = vehicle.attributes["role_name"]
         self.obs_list = []
@@ -39,10 +45,10 @@ class FrenetPlanner():
         self.communi_agent = commuic_agent
         self.perception = FakePerception(vehicle, config)
         self.car_following_model = IDM()
-        self.cacc_model = IDM(
-        ) if self.config["topology"]["LV"] == -1 else BDL_Controller()
+        self.cacc_model = Path_ACC(
+        ) if self.config["topology"]["LV"] == -1 else PLF_Controller()
         self.use_car_following = False
-        self.max_speed = self.config.get("max_speed", 10)
+        self.max_speed = self.config.get("max_speed", 30)
         self.target_speed = self.max_speed*0.8
         self.detect_range = 2.6
         self.front_xy = []
@@ -64,7 +70,7 @@ class FrenetPlanner():
 
     @time_const(fps=30)
     # @log_time_cost(name="ego_planner")
-    def run_step(self, obs,  state):
+    def run_step(self, obs):
         try:
             # self.profiler.start()
             self.ego_state_update()
@@ -74,33 +80,50 @@ class FrenetPlanner():
                 return
             self.check_trajectories()
             self.plt_info = self.get_plt_info()
-            if state == "cacc":
-                front_dis = 30
-                back_dis = 30
-                plt_info_lv = self.plt_info.get("LV")
-                plt_info_fv = self.plt_info.get("FV")
-                plt_info_rv = self.plt_info.get("RV")
-                leading_v = plt_info_lv.get("speed") if plt_info_lv else None
-                self.front_xy = plt_info_fv.get("xy") if plt_info_fv else None
-                back_xy = plt_info_rv.get("xy") if plt_info_rv else None
-                ego_xy = [self.location.x, self.location.y]
-                if self.front_xy:
-                    front_dis = compute_distance2D(ego_xy, self.front_xy)
-                elif self.sensor_manager.radar_res["front"]:
-                    front_dis = self.sensor_manager.radar_res["front"][0]
+            plt_info_lv = self.plt_info.get("LV")
+            plt_info_fv = self.plt_info.get("FV")
+            plt_info_rv = self.plt_info.get("RV")
+            leading_v = plt_info_lv.get("speed") if plt_info_lv else None
+            leading_a = plt_info_lv.get("acc") if plt_info_lv else None
+            front_v = plt_info_fv.get("speed") if plt_info_fv else None
+            front_a = plt_info_fv.get("acc") if plt_info_fv else None
+            self.front_xy = plt_info_fv.get("xy") if plt_info_fv else None
+            back_xy = plt_info_rv.get("xy") if plt_info_rv else None
+            ego_xy = [self.location.x, self.location.y]
+            front_dis = 0
+            back_dis = 0
+            if self.front_xy:
+                front_dis = compute_distance2D(ego_xy, self.front_xy)-self.vehicle_info["length"] - self.vehicle_info["trailer_length"]*2
+            if self.sensor_manager.radar_res["front"]:
+                front_dis = self.sensor_manager.radar_res["front"][0]
+            else:
+                pass
+
+            # if back_xy:
+            #     back_dis = compute_distance2D(ego_xy, back_xy) - self.vehicle_info["trailer_length"] - self.vehicle_info["length"]
+            #     print(back_dis,"dis", self.vehicle.attributes["role_name"]) 
+
+            if self.sensor_manager.radar_res["rear"]:
+                back_dis = self.sensor_manager.radar_res["rear"][0]
+                print(back_dis, "radar", self.vehicle.attributes["role_name"])
+
+            # else:
+            #     # back_dis = 1
+            #     pass
+
+            if self.state == "CACC":
+                if front_dis and leading_v and front_v and front_a and leading_a:
+                    self.target_speed = self.cacc_model.calc_speed(front_dis, front_v, front_a, leading_v, leading_a, self.speed, self.acc)
+                    # print("front_dis",front_dis, self.vehicle.attributes["role_name"])
+
+                # if front_dis and back_dis and leading_v:
+                #     self.target_speed = self.cacc_model.calc_speed(
+                #        front_dis, back_dis, self.speed,leading_v)
+                # if front_dis and front_v and front_a:
+                #     self.target_speed = self.speed +  self.cacc_model.calc_speed(
+                #         front_dis,front_v, self.speed, front_a)
+                #     print(self.target_speed, self.vehicle.attributes["role_name"])
                 else:
-                    front_dis =None
-                if back_xy:
-                    back_dis = compute_distance2D(ego_xy, back_xy)
-                else:
-                    back_dis = 30
-                if front_dis and leading_v:
-                    # print(front_dis, self.vehicle.attributes["role_name"])
-                    self.target_speed = self.cacc_model.calc_speed(
-                        front_dis, back_dis, self.speed, leading_v)
-                else:
-                    print("lost", self.step,
-                          self.vehicle.attributes["role_name"])
                     pass
                 if self.front_xy:
                     target_waypoint = carla.Transform(
@@ -112,6 +135,7 @@ class FrenetPlanner():
                 return
             else:
                 self.check_collison_and_change_lanes()
+                # print(self.vehicle.attributes["role_name"], self.target_speed)
             if len(self.trajectories) < 1:
                 return
             # DEBUG
@@ -121,6 +145,7 @@ class FrenetPlanner():
                       color=carla.Color(0, 250, 123), life_time=0.05)
 
             if self.use_car_following:
+                print("use_car_following")
                 leading_vehicle = self.sensor_manager.radar_res["front"]
                 leading_obs = self.sensor_manager.obstacle
                 if leading_vehicle:
@@ -139,6 +164,8 @@ class FrenetPlanner():
                     # self.target_speed = 0
                     pass
 
+
+
             self.check_traffic_light()
             self.update_current_offset()
             angle = self.get_relative_waypoint_angle()
@@ -150,10 +177,17 @@ class FrenetPlanner():
                 self.target_speed = min(
                     self.max_speed, self.target_speed*1.5)
             # CONTROLLER
-            if self.step >= 1000:
-                self.target_speed = 15
             target_waypoint = carla.Transform(
                 carla.Location(x=self.trajectories[0][0], y=self.trajectories[0][1]))
+            
+            if self.state == "ACC":
+                a = self.cacc_model.calc_acc(
+                    25, self.speed, back_dis)
+                self.target_speed = a
+                # print(back_dis)
+            # print(self.target_speed, self.vehicle.attributes["role_name"])
+            # if self.step >= 800:
+            #     self.target_speed = 15
             control = self.controller.run_step(
                 self.target_speed, target_waypoint)
 
@@ -178,7 +212,7 @@ class FrenetPlanner():
                 self.use_car_following = False
                 self.wait_step = 4
                 self.target_speed = min(
-                    self.max_speed, self.speed*1.5)
+                    self.max_speed, self.speed*1.1)
                 if self.change_back_step > 180:
                     if self.target_offset > 0.3 and self.check_radar(-30):
                         self.adjust_offset(-0.5)
@@ -286,7 +320,7 @@ class FrenetPlanner():
         lenxy = len(xy_list)
         xy_list = np.array(xy_list)
         if lenxy > 6:
-            tck, u = splprep(xy_list.T, s=8, k=5)
+            tck, u = splprep(xy_list.T, s=min(lenxy, int(self.speed*2)), k=5)
         elif lenxy > 1:
             tck, u = splprep(xy_list.T, s=8, k=lenxy-1)
         else:
@@ -382,6 +416,7 @@ class FrenetPlanner():
                         [obs_info["flocation"].x, obs_info["flocation"].y, obs_info["fvelocity"], obs_info["yaw"]])
 
         self.communi_agent.send_obj({
+            "id": self.id,
             "speed": self.speed,
             "acc": self.acc,
             "xy": [self.location.x, self.location.y],
@@ -458,4 +493,6 @@ class FrenetPlanner():
         for vehicle_type in vehicle_types:
             vehicle_info[vehicle_type] = self.communi_agent.rec_obj(
                 vehicle_type)
+        
+        # print(vehicle_info)
         return vehicle_info

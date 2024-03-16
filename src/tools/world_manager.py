@@ -36,42 +36,44 @@ class WorldManager:
         client.set_timeout(self.config["carla_timeout"])
         return client
 
-    def _compare_map(self, map_name, world):
+    def need_change_map(self, map_name, world):
         return str(world.get_map().name)[-2:] != map_name[-2:]
 
     def create_world(self):
-        map_name = self.config["map_name"]
-        if self.config["is_custum_map"]:
-            data = None
-            with open(self.config["map_path"], encoding='utf-8') as od_file:
-                try:
-                    data = od_file.read()
-                except OSError:
-                    print('file could not be readed.')
-                    sys.exit()
-            logging.info('Converting OSM data to opendrive')
-            xodr_data = data
-            logging.info('load opendrive map.')
-            vertex_distance = 8.0  # in meters
-            max_road_length = 9500.0  # in meters
-            wall_height = 0.0      # in meters
-            extra_width = 1.6      # in meters
-            world = self.client.generate_opendrive_world(
-                xodr_data, carla.OpendriveGenerationParameters(
-                    vertex_distance=vertex_distance,
-                    max_road_length=max_road_length,
-                    wall_height=wall_height,
-                    additional_width=extra_width,
-                    smooth_junctions=True,
-                    enable_mesh_visibility=True))
-            return world
-
+        map_name = self.config["map_name"] if not self.config.get(
+            "is_custum_map") else self.config["map_path"]
         current_world = self.client.get_world()
         if (
-            self._compare_map(map_name, current_world)
+            self.need_change_map(map_name, current_world)
         ):
-            return self.client.load_world(map_name)
+            if self.config["is_custum_map"]:
+                data = None
+                with open(self.config["map_path"], encoding='utf-8') as od_file:
+                    try:
+                        data = od_file.read()
+                    except OSError:
+                        print('file could not be readed.')
+                        sys.exit()
+                logging.info('Converting OSM data to opendrive')
+                xodr_data = data
+                logging.info('load opendrive map.')
+                vertex_distance = 2.0  # in meters
+                max_road_length = 9500.0  # in meters
+                wall_height = 1.0      # in meters
+                extra_width = 1.6      # in meters
+                world = self.client.generate_opendrive_world(
+                    xodr_data, carla.OpendriveGenerationParameters(
+                        vertex_distance=vertex_distance,
+                        max_road_length=max_road_length,
+                        wall_height=wall_height,
+                        additional_width=extra_width,
+                        smooth_junctions=True,
+                        enable_mesh_visibility=True))
+                return world
+            else:
+                return self.client.load_world(map_name)
         else:
+            print("here")
             return current_world
 
     def set_weather(self):
