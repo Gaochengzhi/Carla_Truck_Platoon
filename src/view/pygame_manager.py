@@ -4,8 +4,8 @@ import time
 import numpy as np
 import collections
 import carla
-from agent.baseAgent import BaseAgent
-from util import waypoints_center, get_ego_vehicle, connect_to_server, thread_process_vehicles,time_const, log_time_cost
+from agent.base_agent import BaseAgent
+from util import waypoints_center, get_ego_vehicle, connect_to_server, batch_process_vehicles,time_const, log_time_cost
 from view.color import WHITE, RED, GREEN, BLUE, BLACK, YELLOW, PURPLE
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 _view_offset_x, _view_offset_y = 0, 0 
@@ -132,7 +132,7 @@ class PyGameAgent(BaseAgent):
 
     def run(self):
         client, world = connect_to_server(self.config)
-        self.start_agent()
+        self.init_base_agent()
         self.init_game_view(world, self.urban_waypoints, self.config)
         while True:
             self.run_step(world)

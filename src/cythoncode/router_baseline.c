@@ -1527,7 +1527,6 @@ extern int __pyx_module_is_main_cythoncode__router_baseline;
 int __pyx_module_is_main_cythoncode__router_baseline = 0;
 
 /* Implementation of 'cythoncode.router_baseline' */
-static PyObject *__pyx_builtin_object;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_KeyError;
 static PyObject *__pyx_builtin_min;
@@ -1553,17 +1552,21 @@ static const char __pyx_k_y1[] = "y1";
 static const char __pyx_k_y2[] = "y2";
 static const char __pyx_k_z1[] = "z1";
 static const char __pyx_k_z2[] = "z2";
+static const char __pyx_k_Map[] = "Map";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_dot[] = "dot";
 static const char __pyx_k_end[] = "end";
 static const char __pyx_k_inf[] = "inf";
+static const char __pyx_k_int[] = "int";
 static const char __pyx_k_loc[] = "loc";
 static const char __pyx_k_max[] = "max";
 static const char __pyx_k_min[] = "min";
 static const char __pyx_k_wp1[] = "wp1";
 static const char __pyx_k_wp2[] = "wp2";
+static const char __pyx_k_Dict[] = "Dict";
 static const char __pyx_k_LEFT[] = "LEFT";
 static const char __pyx_k_Left[] = "Left";
+static const char __pyx_k_List[] = "List";
 static const char __pyx_k_VOID[] = "VOID";
 static const char __pyx_k_acos[] = "acos";
 static const char __pyx_k_clip[] = "clip";
@@ -1585,11 +1588,14 @@ static const char __pyx_k_util[] = "util";
 static const char __pyx_k_wmap[] = "wmap";
 static const char __pyx_k_RIGHT[] = "RIGHT";
 static const char __pyx_k_Right[] = "Right";
+static const char __pyx_k_Tuple[] = "Tuple";
+static const char __pyx_k_Union[] = "Union";
 static const char __pyx_k_array[] = "array";
 static const char __pyx_k_carla[] = "carla";
 static const char __pyx_k_cross[] = "cross";
 static const char __pyx_k_edges[] = "edges";
 static const char __pyx_k_entry[] = "entry";
+static const char __pyx_k_float[] = "float";
 static const char __pyx_k_graph[] = "_graph";
 static const char __pyx_k_index[] = "index";
 static const char __pyx_k_node1[] = "node1";
@@ -1600,7 +1606,6 @@ static const char __pyx_k_range[] = "range";
 static const char __pyx_k_round[] = "round";
 static const char __pyx_k_route[] = "route";
 static const char __pyx_k_start[] = "start";
-static const char __pyx_k_trace[] = "trace";
 static const char __pyx_k_append[] = "append";
 static const char __pyx_k_end_wp[] = "end_wp";
 static const char __pyx_k_endloc[] = "endloc";
@@ -1610,12 +1615,12 @@ static const char __pyx_k_length[] = "length";
 static const char __pyx_k_linalg[] = "linalg";
 static const char __pyx_k_module[] = "__module__";
 static const char __pyx_k_n2_xyz[] = "n2_xyz";
-static const char __pyx_k_name_2[] = "name";
 static const char __pyx_k_new_id[] = "new_id";
-static const char __pyx_k_object[] = "object";
 static const char __pyx_k_origin[] = "origin";
+static const char __pyx_k_return[] = "return";
 static const char __pyx_k_source[] = "source";
 static const char __pyx_k_target[] = "target";
+static const char __pyx_k_typing[] = "typing";
 static const char __pyx_k_vector[] = "vector";
 static const char __pyx_k_vertex[] = "vertex";
 static const char __pyx_k_weight[] = "weight";
@@ -1634,7 +1639,9 @@ static const char __pyx_k_road_id[] = "road_id";
 static const char __pyx_k_segment[] = "segment";
 static const char __pyx_k_KeyError[] = "KeyError";
 static const char __pyx_k_LaneType[] = "LaneType";
+static const char __pyx_k_Location[] = "Location";
 static const char __pyx_k_STRAIGHT[] = "STRAIGHT";
+static const char __pyx_k_Waypoint[] = "Waypoint";
 static const char __pyx_k_add_edge[] = "add_edge";
 static const char __pyx_k_add_node[] = "add_node";
 static const char __pyx_k_decision[] = "decision";
@@ -1642,7 +1649,6 @@ static const char __pyx_k_distance[] = "distance";
 static const char __pyx_k_entry_wp[] = "entry_wp";
 static const char __pyx_k_entryxyz[] = "entryxyz";
 static const char __pyx_k_exit_xyz[] = "exit_xyz";
-static const char __pyx_k_init_map[] = "init_map";
 static const char __pyx_k_localize[] = "_localize";
 static const char __pyx_k_location[] = "location";
 static const char __pyx_k_neighbor[] = "neighbor";
@@ -1742,9 +1748,6 @@ static const char __pyx_k_cythoncode_router_baseline_pyx[] = "cythoncode/router_
 static const char __pyx_k_GlobalRoutePlanner__build_graph[] = "GlobalRoutePlanner._build_graph";
 static const char __pyx_k_GlobalRoutePlanner__lane_change[] = "GlobalRoutePlanner._lane_change_link";
 static const char __pyx_k_GlobalRoutePlanner__path_search[] = "GlobalRoutePlanner._path_search";
-static const char __pyx_k_RoadOption_represents_the_possi[] = "\n      RoadOption represents the possible topological configurations when moving from a seg      ment of lane to other.\n\n      ";
-static const char __pyx_k_This_class_provides_a_very_high[] = "\n    This class provides a very high level route plan.\n    ";
-static const char __pyx_k_This_module_provides_GlobalRout[] = "\nThis module provides GlobalRoutePlanner implementation.\n";
 static const char __pyx_k_successive_last_intersection_ed[] = "_successive_last_intersection_edge";
 static const char __pyx_k_GlobalRoutePlanner__build_topolo[] = "GlobalRoutePlanner._build_topology";
 static const char __pyx_k_GlobalRoutePlanner__distance_heu[] = "GlobalRoutePlanner._distance_heuristic";
@@ -1755,6 +1758,7 @@ static const char __pyx_k_GlobalRoutePlanner__turn_decisio[] = "GlobalRoutePlann
 static PyObject *__pyx_n_s_CHANGELANELEFT;
 static PyObject *__pyx_n_s_CHANGELANERIGHT;
 static PyObject *__pyx_n_s_DiGraph;
+static PyObject *__pyx_n_s_Dict;
 static PyObject *__pyx_n_s_Driving;
 static PyObject *__pyx_n_s_GlobalRoutePlanner;
 static PyObject *__pyx_n_s_GlobalRoutePlanner___init;
@@ -1776,13 +1780,17 @@ static PyObject *__pyx_n_s_LEFT;
 static PyObject *__pyx_n_s_LaneChange;
 static PyObject *__pyx_n_s_LaneType;
 static PyObject *__pyx_n_s_Left;
+static PyObject *__pyx_n_s_List;
+static PyObject *__pyx_n_s_Location;
+static PyObject *__pyx_n_s_Map;
 static PyObject *__pyx_n_s_RIGHT;
 static PyObject *__pyx_n_s_Right;
 static PyObject *__pyx_n_s_RoadOption;
-static PyObject *__pyx_kp_s_RoadOption_represents_the_possi;
 static PyObject *__pyx_n_s_STRAIGHT;
-static PyObject *__pyx_kp_s_This_class_provides_a_very_high;
+static PyObject *__pyx_n_s_Tuple;
+static PyObject *__pyx_n_s_Union;
 static PyObject *__pyx_n_s_VOID;
+static PyObject *__pyx_n_s_Waypoint;
 static PyObject *__pyx_n_s_acos;
 static PyObject *__pyx_n_s_add_edge;
 static PyObject *__pyx_n_s_add_node;
@@ -1840,6 +1848,7 @@ static PyObject *__pyx_n_s_exit_xyz;
 static PyObject *__pyx_n_s_exitxyz;
 static PyObject *__pyx_n_s_find_closest_in_list;
 static PyObject *__pyx_n_s_find_loose_ends;
+static PyObject *__pyx_n_u_float;
 static PyObject *__pyx_n_s_get_forward_vector;
 static PyObject *__pyx_n_s_get_left_lane;
 static PyObject *__pyx_n_s_get_right_lane;
@@ -1854,7 +1863,7 @@ static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_index;
 static PyObject *__pyx_n_s_inf;
 static PyObject *__pyx_n_s_init;
-static PyObject *__pyx_n_s_init_map;
+static PyObject *__pyx_n_u_int;
 static PyObject *__pyx_n_s_intersection;
 static PyObject *__pyx_n_s_intersection_end_node;
 static PyObject *__pyx_n_s_is_junction;
@@ -1885,7 +1894,6 @@ static PyObject *__pyx_n_s_n1;
 static PyObject *__pyx_n_s_n2;
 static PyObject *__pyx_n_s_n2_xyz;
 static PyObject *__pyx_n_s_name;
-static PyObject *__pyx_n_s_name_2;
 static PyObject *__pyx_n_s_neighbor;
 static PyObject *__pyx_n_s_net_vector;
 static PyObject *__pyx_n_s_networkx;
@@ -1908,7 +1916,6 @@ static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_n_s_nv;
 static PyObject *__pyx_n_s_nx;
-static PyObject *__pyx_n_s_object;
 static PyObject *__pyx_n_s_origin;
 static PyObject *__pyx_n_s_path;
 static PyObject *__pyx_n_s_path_search;
@@ -1918,6 +1925,7 @@ static PyObject *__pyx_n_s_previous_node;
 static PyObject *__pyx_n_s_qualname;
 static PyObject *__pyx_n_s_radians;
 static PyObject *__pyx_n_s_range;
+static PyObject *__pyx_n_s_return;
 static PyObject *__pyx_n_s_right_found;
 static PyObject *__pyx_n_s_right_lane_marking;
 static PyObject *__pyx_n_s_road_id;
@@ -1945,11 +1953,11 @@ static PyObject *__pyx_n_s_target;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_threshold;
 static PyObject *__pyx_n_s_topology;
-static PyObject *__pyx_n_s_trace;
 static PyObject *__pyx_n_s_trace_route;
 static PyObject *__pyx_n_s_transform;
 static PyObject *__pyx_n_s_turn_decision;
 static PyObject *__pyx_n_s_type;
+static PyObject *__pyx_n_s_typing;
 static PyObject *__pyx_n_s_util;
 static PyObject *__pyx_n_s_vector;
 static PyObject *__pyx_n_s_vertex;
@@ -1970,7 +1978,7 @@ static PyObject *__pyx_n_s_y2;
 static PyObject *__pyx_n_s_z;
 static PyObject *__pyx_n_s_z1;
 static PyObject *__pyx_n_s_z2;
-static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_wmap, PyObject *__pyx_v_sampling_resolution); /* proto */
+static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_wmap, double __pyx_v_sampling_resolution); /* proto */
 static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2trace_route(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_origin, PyObject *__pyx_v_destination); /* proto */
 static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_build_topology(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_build_graph(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
@@ -1995,39 +2003,38 @@ static PyObject *__pyx_int_6;
 static PyObject *__pyx_int_35;
 static PyObject *__pyx_int_neg_1;
 static PyObject *__pyx_tuple_;
-static PyObject *__pyx_tuple__2;
-static PyObject *__pyx_tuple__4;
-static PyObject *__pyx_tuple__6;
-static PyObject *__pyx_tuple__8;
-static PyObject *__pyx_tuple__10;
-static PyObject *__pyx_tuple__12;
-static PyObject *__pyx_tuple__14;
-static PyObject *__pyx_tuple__16;
-static PyObject *__pyx_tuple__18;
-static PyObject *__pyx_tuple__20;
-static PyObject *__pyx_tuple__22;
+static PyObject *__pyx_tuple__3;
+static PyObject *__pyx_tuple__5;
+static PyObject *__pyx_tuple__7;
+static PyObject *__pyx_tuple__9;
+static PyObject *__pyx_tuple__11;
+static PyObject *__pyx_tuple__13;
+static PyObject *__pyx_tuple__15;
+static PyObject *__pyx_tuple__17;
+static PyObject *__pyx_tuple__19;
+static PyObject *__pyx_tuple__21;
+static PyObject *__pyx_tuple__23;
 static PyObject *__pyx_tuple__24;
-static PyObject *__pyx_tuple__25;
-static PyObject *__pyx_codeobj__3;
-static PyObject *__pyx_codeobj__5;
-static PyObject *__pyx_codeobj__7;
-static PyObject *__pyx_codeobj__9;
-static PyObject *__pyx_codeobj__11;
-static PyObject *__pyx_codeobj__13;
-static PyObject *__pyx_codeobj__15;
-static PyObject *__pyx_codeobj__17;
-static PyObject *__pyx_codeobj__19;
-static PyObject *__pyx_codeobj__21;
-static PyObject *__pyx_codeobj__23;
-static PyObject *__pyx_codeobj__26;
+static PyObject *__pyx_codeobj__2;
+static PyObject *__pyx_codeobj__4;
+static PyObject *__pyx_codeobj__6;
+static PyObject *__pyx_codeobj__8;
+static PyObject *__pyx_codeobj__10;
+static PyObject *__pyx_codeobj__12;
+static PyObject *__pyx_codeobj__14;
+static PyObject *__pyx_codeobj__16;
+static PyObject *__pyx_codeobj__18;
+static PyObject *__pyx_codeobj__20;
+static PyObject *__pyx_codeobj__22;
+static PyObject *__pyx_codeobj__25;
 /* Late includes */
 
-/* "cythoncode/router_baseline.pyx":37
- * 
- *     @log_time_cost(name="init_map")
- *     def __init__(self, wmap, sampling_resolution):             # <<<<<<<<<<<<<<
- *         self._sampling_resolution = sampling_resolution
- *         self._wmap = wmap
+/* "cythoncode/router_baseline.pyx":22
+ * class GlobalRoutePlanner:
+ *     @log_time_cost
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):             # <<<<<<<<<<<<<<
+ *         self._sampling_resolution: float = sampling_resolution
+ *         self._wmap: carla.Map = wmap
  */
 
 /* Python wrapper */
@@ -2036,7 +2043,7 @@ static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanne
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_wmap = 0;
-  PyObject *__pyx_v_sampling_resolution = 0;
+  double __pyx_v_sampling_resolution;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -2068,17 +2075,17 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_1_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_wmap)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 37, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 22, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_sampling_resolution)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 37, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 22, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 37, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 22, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -2089,11 +2096,11 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_1_
     }
     __pyx_v_self = values[0];
     __pyx_v_wmap = values[1];
-    __pyx_v_sampling_resolution = values[2];
+    __pyx_v_sampling_resolution = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_sampling_resolution == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 37, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 22, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2106,7 +2113,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_1_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_wmap, PyObject *__pyx_v_sampling_resolution) {
+static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_wmap, double __pyx_v_sampling_resolution) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2117,92 +2124,98 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "cythoncode/router_baseline.pyx":38
- *     @log_time_cost(name="init_map")
- *     def __init__(self, wmap, sampling_resolution):
- *         self._sampling_resolution = sampling_resolution             # <<<<<<<<<<<<<<
- *         self._wmap = wmap
- *         self._topology = None
+  /* "cythoncode/router_baseline.pyx":23
+ *     @log_time_cost
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):
+ *         self._sampling_resolution: float = sampling_resolution             # <<<<<<<<<<<<<<
+ *         self._wmap: carla.Map = wmap
+ *         self._topology: List[Dict[str, Union[carla.Waypoint, Tuple[float, float, float], List[carla.Waypoint]]]] = []
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2, __pyx_v_sampling_resolution) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":39
- *     def __init__(self, wmap, sampling_resolution):
- *         self._sampling_resolution = sampling_resolution
- *         self._wmap = wmap             # <<<<<<<<<<<<<<
- *         self._topology = None
- *         self._graph = None
- */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2, __pyx_v_wmap) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":40
- *         self._sampling_resolution = sampling_resolution
- *         self._wmap = wmap
- *         self._topology = None             # <<<<<<<<<<<<<<
- *         self._graph = None
- *         self._id_map = None
- */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_topology, Py_None) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":41
- *         self._wmap = wmap
- *         self._topology = None
- *         self._graph = None             # <<<<<<<<<<<<<<
- *         self._id_map = None
- *         self._road_id_to_edge = None
- */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_graph, Py_None) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":42
- *         self._topology = None
- *         self._graph = None
- *         self._id_map = None             # <<<<<<<<<<<<<<
- *         self._road_id_to_edge = None
- * 
- */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_id_map, Py_None) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":43
- *         self._graph = None
- *         self._id_map = None
- *         self._road_id_to_edge = None             # <<<<<<<<<<<<<<
- * 
- *         self._intersection_end_node = -1
- */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge, Py_None) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":45
- *         self._road_id_to_edge = None
- * 
- *         self._intersection_end_node = -1             # <<<<<<<<<<<<<<
- *         self._previous_decision = RoadOption.VOID
- * 
- */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node, __pyx_int_neg_1) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":46
- * 
- *         self._intersection_end_node = -1
- *         self._previous_decision = RoadOption.VOID             # <<<<<<<<<<<<<<
- * 
- *         # Build the graph
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_sampling_resolution); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_VOID); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2, __pyx_t_1) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cythoncode/router_baseline.pyx":24
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):
+ *         self._sampling_resolution: float = sampling_resolution
+ *         self._wmap: carla.Map = wmap             # <<<<<<<<<<<<<<
+ *         self._topology: List[Dict[str, Union[carla.Waypoint, Tuple[float, float, float], List[carla.Waypoint]]]] = []
+ *         self._graph: nx.DiGraph = None
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2, __pyx_v_wmap) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":25
+ *         self._sampling_resolution: float = sampling_resolution
+ *         self._wmap: carla.Map = wmap
+ *         self._topology: List[Dict[str, Union[carla.Waypoint, Tuple[float, float, float], List[carla.Waypoint]]]] = []             # <<<<<<<<<<<<<<
+ *         self._graph: nx.DiGraph = None
+ *         self._id_map: Dict[Tuple[float, float, float], int] = None
+ */
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_topology, __pyx_t_1) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cythoncode/router_baseline.pyx":26
+ *         self._wmap: carla.Map = wmap
+ *         self._topology: List[Dict[str, Union[carla.Waypoint, Tuple[float, float, float], List[carla.Waypoint]]]] = []
+ *         self._graph: nx.DiGraph = None             # <<<<<<<<<<<<<<
+ *         self._id_map: Dict[Tuple[float, float, float], int] = None
+ *         self._road_id_to_edge: Dict[int, Dict[int, Dict[int, Tuple[int, int]]]] = None
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_graph, Py_None) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":27
+ *         self._topology: List[Dict[str, Union[carla.Waypoint, Tuple[float, float, float], List[carla.Waypoint]]]] = []
+ *         self._graph: nx.DiGraph = None
+ *         self._id_map: Dict[Tuple[float, float, float], int] = None             # <<<<<<<<<<<<<<
+ *         self._road_id_to_edge: Dict[int, Dict[int, Dict[int, Tuple[int, int]]]] = None
+ * 
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_id_map, Py_None) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":28
+ *         self._graph: nx.DiGraph = None
+ *         self._id_map: Dict[Tuple[float, float, float], int] = None
+ *         self._road_id_to_edge: Dict[int, Dict[int, Dict[int, Tuple[int, int]]]] = None             # <<<<<<<<<<<<<<
+ * 
+ *         self._intersection_end_node: int = -1
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge, Py_None) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":30
+ *         self._road_id_to_edge: Dict[int, Dict[int, Dict[int, Tuple[int, int]]]] = None
+ * 
+ *         self._intersection_end_node: int = -1             # <<<<<<<<<<<<<<
+ *         self._previous_decision: RoadOption = RoadOption.VOID
+ * 
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node, __pyx_int_neg_1) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":31
+ * 
+ *         self._intersection_end_node: int = -1
+ *         self._previous_decision: RoadOption = RoadOption.VOID             # <<<<<<<<<<<<<<
+ * 
+ *         self._build_topology()
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_VOID); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision, __pyx_t_2) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":49
+  /* "cythoncode/router_baseline.pyx":33
+ *         self._previous_decision: RoadOption = RoadOption.VOID
  * 
- *         # Build the graph
  *         self._build_topology()             # <<<<<<<<<<<<<<
  *         self._build_graph()
  *         self._find_loose_ends()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_build_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_build_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2216,19 +2229,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":50
- *         # Build the graph
+  /* "cythoncode/router_baseline.pyx":34
+ * 
  *         self._build_topology()
  *         self._build_graph()             # <<<<<<<<<<<<<<
  *         self._find_loose_ends()
  *         self._lane_change_link()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_build_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_build_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2242,19 +2255,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":51
+  /* "cythoncode/router_baseline.pyx":35
  *         self._build_topology()
  *         self._build_graph()
  *         self._find_loose_ends()             # <<<<<<<<<<<<<<
  *         self._lane_change_link()
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_loose_ends); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_loose_ends); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2268,19 +2281,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":52
+  /* "cythoncode/router_baseline.pyx":36
  *         self._build_graph()
  *         self._find_loose_ends()
  *         self._lane_change_link()             # <<<<<<<<<<<<<<
  * 
- *     @log_time_cost(name="trace")
+ *     @log_time_cost
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lane_change_link); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lane_change_link); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2294,17 +2307,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":37
- * 
- *     @log_time_cost(name="init_map")
- *     def __init__(self, wmap, sampling_resolution):             # <<<<<<<<<<<<<<
- *         self._sampling_resolution = sampling_resolution
- *         self._wmap = wmap
+  /* "cythoncode/router_baseline.pyx":22
+ * class GlobalRoutePlanner:
+ *     @log_time_cost
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):             # <<<<<<<<<<<<<<
+ *         self._sampling_resolution: float = sampling_resolution
+ *         self._wmap: carla.Map = wmap
  */
 
   /* function exit code */
@@ -2322,18 +2335,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner___
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":55
+/* "cythoncode/router_baseline.pyx":39
  * 
- *     @log_time_cost(name="trace")
- *     def trace_route(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns list of (carla.Waypoint, RoadOption)
+ *     @log_time_cost
+ *     def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:             # <<<<<<<<<<<<<<
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         route: List[int] = self._path_search(origin, destination)
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_2trace_route[] = "\n        This method returns list of (carla.Waypoint, RoadOption)\n        from origin to destination\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route = {"trace_route", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_2trace_route};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route = {"trace_route", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_origin = 0;
@@ -2369,17 +2381,17 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_3t
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_origin)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("trace_route", 1, 3, 3, 1); __PYX_ERR(0, 55, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("trace_route", 1, 3, 3, 1); __PYX_ERR(0, 39, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_destination)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("trace_route", 1, 3, 3, 2); __PYX_ERR(0, 55, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("trace_route", 1, 3, 3, 2); __PYX_ERR(0, 39, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "trace_route") < 0)) __PYX_ERR(0, 55, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "trace_route") < 0)) __PYX_ERR(0, 39, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -2394,7 +2406,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_3t
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("trace_route", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 55, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("trace_route", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 39, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner.trace_route", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2424,7 +2436,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   PyObject *__pyx_v_waypoint = NULL;
   PyObject *__pyx_v_destination_index = NULL;
   PyObject *__pyx_v_cleaned_route_trace = NULL;
-  PyObject *__pyx_v_seen = NULL;
+  PyObject *__pyx_v_seen = 0;
   PyObject *__pyx_v_loc = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2449,26 +2461,26 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("trace_route", 0);
 
-  /* "cythoncode/router_baseline.pyx":60
- *         from origin to destination
- *         """
- *         route_trace = []             # <<<<<<<<<<<<<<
- *         route = self._path_search(origin, destination)
- *         current_waypoint = self._wmap.get_waypoint(origin)
+  /* "cythoncode/router_baseline.pyx":40
+ *     @log_time_cost
+ *     def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []             # <<<<<<<<<<<<<<
+ *         route: List[int] = self._path_search(origin, destination)
+ *         current_waypoint: carla.Waypoint = self._wmap.get_waypoint(origin)
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_route_trace = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":61
- *         """
- *         route_trace = []
- *         route = self._path_search(origin, destination)             # <<<<<<<<<<<<<<
- *         current_waypoint = self._wmap.get_waypoint(origin)
- *         destination_waypoint = self._wmap.get_waypoint(destination)
+  /* "cythoncode/router_baseline.pyx":41
+ *     def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         route: List[int] = self._path_search(origin, destination)             # <<<<<<<<<<<<<<
+ *         current_waypoint: carla.Waypoint = self._wmap.get_waypoint(origin)
+ *         destination_waypoint: carla.Waypoint = self._wmap.get_waypoint(destination)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_path_search); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_path_search); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -2485,7 +2497,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_origin, __pyx_v_destination};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -2493,13 +2505,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_origin, __pyx_v_destination};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_3) {
       __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -2510,7 +2522,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     __Pyx_INCREF(__pyx_v_destination);
     __Pyx_GIVEREF(__pyx_v_destination);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_destination);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -2518,16 +2530,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   __pyx_v_route = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":62
- *         route_trace = []
- *         route = self._path_search(origin, destination)
- *         current_waypoint = self._wmap.get_waypoint(origin)             # <<<<<<<<<<<<<<
- *         destination_waypoint = self._wmap.get_waypoint(destination)
+  /* "cythoncode/router_baseline.pyx":42
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         route: List[int] = self._path_search(origin, destination)
+ *         current_waypoint: carla.Waypoint = self._wmap.get_waypoint(origin)             # <<<<<<<<<<<<<<
+ *         destination_waypoint: carla.Waypoint = self._wmap.get_waypoint(destination)
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_waypoint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_waypoint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -2542,22 +2554,22 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_2, __pyx_v_origin) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_origin);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_current_waypoint = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":63
- *         route = self._path_search(origin, destination)
- *         current_waypoint = self._wmap.get_waypoint(origin)
- *         destination_waypoint = self._wmap.get_waypoint(destination)             # <<<<<<<<<<<<<<
+  /* "cythoncode/router_baseline.pyx":43
+ *         route: List[int] = self._path_search(origin, destination)
+ *         current_waypoint: carla.Waypoint = self._wmap.get_waypoint(origin)
+ *         destination_waypoint: carla.Waypoint = self._wmap.get_waypoint(destination)             # <<<<<<<<<<<<<<
  * 
  *         for i in range(len(route) - 1):
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_get_waypoint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_get_waypoint); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -2572,32 +2584,32 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_5, __pyx_v_destination) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_destination);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_destination_waypoint = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":65
- *         destination_waypoint = self._wmap.get_waypoint(destination)
+  /* "cythoncode/router_baseline.pyx":45
+ *         destination_waypoint: carla.Waypoint = self._wmap.get_waypoint(destination)
  * 
  *         for i in range(len(route) - 1):             # <<<<<<<<<<<<<<
- *             road_option = self._turn_decision(i, route)
+ *             road_option: RoadOption = self._turn_decision(i, route)
  *             edge = self._graph.edges[route[i], route[i+1]]
  */
-  __pyx_t_6 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 65, __pyx_L1_error)
-  __pyx_t_1 = PyInt_FromSsize_t((__pyx_t_6 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_6 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t((__pyx_t_6 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_1 = __pyx_t_2; __Pyx_INCREF(__pyx_t_1); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_7 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 45, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -2605,17 +2617,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 45, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 45, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -2625,7 +2637,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 65, __pyx_L1_error)
+          else __PYX_ERR(0, 45, __pyx_L1_error)
         }
         break;
       }
@@ -2634,14 +2646,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "cythoncode/router_baseline.pyx":66
+    /* "cythoncode/router_baseline.pyx":46
  * 
  *         for i in range(len(route) - 1):
- *             road_option = self._turn_decision(i, route)             # <<<<<<<<<<<<<<
+ *             road_option: RoadOption = self._turn_decision(i, route)             # <<<<<<<<<<<<<<
  *             edge = self._graph.edges[route[i], route[i+1]]
- *             path = []
+ *             path: List[carla.Waypoint] = []
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_turn_decision); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_turn_decision); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 46, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_3 = NULL;
     __pyx_t_4 = 0;
@@ -2658,7 +2670,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_i, __pyx_v_route};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -2666,13 +2678,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_i, __pyx_v_route};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 66, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 46, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -2683,7 +2695,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_INCREF(__pyx_v_route);
       __Pyx_GIVEREF(__pyx_v_route);
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_4, __pyx_v_route);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
@@ -2691,26 +2703,26 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     __Pyx_XDECREF_SET(__pyx_v_road_option, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "cythoncode/router_baseline.pyx":67
+    /* "cythoncode/router_baseline.pyx":47
  *         for i in range(len(route) - 1):
- *             road_option = self._turn_decision(i, route)
+ *             road_option: RoadOption = self._turn_decision(i, route)
  *             edge = self._graph.edges[route[i], route[i+1]]             # <<<<<<<<<<<<<<
- *             path = []
+ *             path: List[carla.Waypoint] = []
  * 
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_edges); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_edges); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_PyInt_AddObjC(__pyx_v_i, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyInt_AddObjC(__pyx_v_i, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_GIVEREF(__pyx_t_2);
     PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_2);
@@ -2718,73 +2730,73 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_3);
     __pyx_t_2 = 0;
     __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_XDECREF_SET(__pyx_v_edge, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "cythoncode/router_baseline.pyx":68
- *             road_option = self._turn_decision(i, route)
+    /* "cythoncode/router_baseline.pyx":48
+ *             road_option: RoadOption = self._turn_decision(i, route)
  *             edge = self._graph.edges[route[i], route[i+1]]
- *             path = []             # <<<<<<<<<<<<<<
+ *             path: List[carla.Waypoint] = []             # <<<<<<<<<<<<<<
  * 
  *             if edge['type'] != RoadOption.LANEFOLLOW and edge['type'] != RoadOption.VOID:
  */
-    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_XDECREF_SET(__pyx_v_path, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "cythoncode/router_baseline.pyx":70
- *             path = []
+    /* "cythoncode/router_baseline.pyx":50
+ *             path: List[carla.Waypoint] = []
  * 
  *             if edge['type'] != RoadOption.LANEFOLLOW and edge['type'] != RoadOption.VOID:             # <<<<<<<<<<<<<<
  *                 route_trace.append((current_waypoint, road_option))
- *                 exit_wp = edge['exit_waypoint']
+ *                 exit_wp: carla.Waypoint = edge['exit_waypoint']
  */
-    __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyObject_RichCompare(__pyx_t_3, __pyx_t_5, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_8 = PyObject_RichCompare(__pyx_t_3, __pyx_t_5, Py_NE); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     if (__pyx_t_10) {
     } else {
       __pyx_t_9 = __pyx_t_10;
       goto __pyx_L6_bool_binop_done;
     }
-    __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_VOID); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_VOID); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyObject_RichCompare(__pyx_t_8, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_5 = PyObject_RichCompare(__pyx_t_8, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_9 = __pyx_t_10;
     __pyx_L6_bool_binop_done:;
     if (__pyx_t_9) {
 
-      /* "cythoncode/router_baseline.pyx":71
+      /* "cythoncode/router_baseline.pyx":51
  * 
  *             if edge['type'] != RoadOption.LANEFOLLOW and edge['type'] != RoadOption.VOID:
  *                 route_trace.append((current_waypoint, road_option))             # <<<<<<<<<<<<<<
- *                 exit_wp = edge['exit_waypoint']
+ *                 exit_wp: carla.Waypoint = edge['exit_waypoint']
  *                 n1, n2 = self._road_id_to_edge[exit_wp.road_id][exit_wp.section_id][exit_wp.lane_id]
  */
-      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 71, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_INCREF(__pyx_v_current_waypoint);
       __Pyx_GIVEREF(__pyx_v_current_waypoint);
@@ -2792,45 +2804,45 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_INCREF(__pyx_v_road_option);
       __Pyx_GIVEREF(__pyx_v_road_option);
       PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_road_option);
-      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_route_trace, __pyx_t_5); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 71, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_route_trace, __pyx_t_5); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 51, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "cythoncode/router_baseline.pyx":72
+      /* "cythoncode/router_baseline.pyx":52
  *             if edge['type'] != RoadOption.LANEFOLLOW and edge['type'] != RoadOption.VOID:
  *                 route_trace.append((current_waypoint, road_option))
- *                 exit_wp = edge['exit_waypoint']             # <<<<<<<<<<<<<<
+ *                 exit_wp: carla.Waypoint = edge['exit_waypoint']             # <<<<<<<<<<<<<<
  *                 n1, n2 = self._road_id_to_edge[exit_wp.road_id][exit_wp.section_id][exit_wp.lane_id]
  *                 next_edge = self._graph.edges[n1, n2]
  */
-      __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_exit_waypoint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 72, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_exit_waypoint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 52, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_XDECREF_SET(__pyx_v_exit_wp, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "cythoncode/router_baseline.pyx":73
+      /* "cythoncode/router_baseline.pyx":53
  *                 route_trace.append((current_waypoint, road_option))
- *                 exit_wp = edge['exit_waypoint']
+ *                 exit_wp: carla.Waypoint = edge['exit_waypoint']
  *                 n1, n2 = self._road_id_to_edge[exit_wp.road_id][exit_wp.section_id][exit_wp.lane_id]             # <<<<<<<<<<<<<<
  *                 next_edge = self._graph.edges[n1, n2]
  *                 if next_edge['path']:
  */
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_road_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_road_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_section_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_section_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2840,7 +2852,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         if (unlikely(size != 2)) {
           if (size > 2) __Pyx_RaiseTooManyValuesError(2);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 73, __pyx_L1_error)
+          __PYX_ERR(0, 53, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
@@ -2853,15 +2865,15 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_INCREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_5);
         #else
-        __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_2 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_2 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_t_12 = Py_TYPE(__pyx_t_2)->tp_iternext;
@@ -2869,7 +2881,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_GOTREF(__pyx_t_3);
         index = 1; __pyx_t_5 = __pyx_t_12(__pyx_t_2); if (unlikely(!__pyx_t_5)) goto __pyx_L8_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_5);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_2), 2) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_2), 2) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
         __pyx_t_12 = NULL;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         goto __pyx_L9_unpacking_done;
@@ -2877,7 +2889,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_t_12 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 73, __pyx_L1_error)
+        __PYX_ERR(0, 53, __pyx_L1_error)
         __pyx_L9_unpacking_done:;
       }
       __Pyx_XDECREF_SET(__pyx_v_n1, __pyx_t_3);
@@ -2885,19 +2897,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_XDECREF_SET(__pyx_v_n2, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "cythoncode/router_baseline.pyx":74
- *                 exit_wp = edge['exit_waypoint']
+      /* "cythoncode/router_baseline.pyx":54
+ *                 exit_wp: carla.Waypoint = edge['exit_waypoint']
  *                 n1, n2 = self._road_id_to_edge[exit_wp.road_id][exit_wp.section_id][exit_wp.lane_id]
  *                 next_edge = self._graph.edges[n1, n2]             # <<<<<<<<<<<<<<
  *                 if next_edge['path']:
  *                     closest_index = self._find_closest_in_list(
  */
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 54, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_edges); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_edges); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 54, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 54, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_v_n1);
       __Pyx_GIVEREF(__pyx_v_n1);
@@ -2905,44 +2917,44 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_INCREF(__pyx_v_n2);
       __Pyx_GIVEREF(__pyx_v_n2);
       PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_v_n2);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_XDECREF_SET(__pyx_v_next_edge, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "cythoncode/router_baseline.pyx":75
+      /* "cythoncode/router_baseline.pyx":55
  *                 n1, n2 = self._road_id_to_edge[exit_wp.road_id][exit_wp.section_id][exit_wp.lane_id]
  *                 next_edge = self._graph.edges[n1, n2]
  *                 if next_edge['path']:             # <<<<<<<<<<<<<<
  *                     closest_index = self._find_closest_in_list(
  *                         current_waypoint, next_edge['path'])
  */
-      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 75, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 55, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_9) {
 
-        /* "cythoncode/router_baseline.pyx":76
+        /* "cythoncode/router_baseline.pyx":56
  *                 next_edge = self._graph.edges[n1, n2]
  *                 if next_edge['path']:
  *                     closest_index = self._find_closest_in_list(             # <<<<<<<<<<<<<<
  *                         current_waypoint, next_edge['path'])
  *                     closest_index = min(
  */
-        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_closest_in_list); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 76, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_closest_in_list); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 56, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
 
-        /* "cythoncode/router_baseline.pyx":77
+        /* "cythoncode/router_baseline.pyx":57
  *                 if next_edge['path']:
  *                     closest_index = self._find_closest_in_list(
  *                         current_waypoint, next_edge['path'])             # <<<<<<<<<<<<<<
  *                     closest_index = min(
  *                         len(next_edge['path'])-1, closest_index+5)
  */
-        __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 77, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 57, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __pyx_t_2 = NULL;
         __pyx_t_4 = 0;
@@ -2959,7 +2971,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_8)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_current_waypoint, __pyx_t_5};
-          __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -2968,14 +2980,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_current_waypoint, __pyx_t_5};
-          __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         } else
         #endif
         {
-          __pyx_t_13 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 76, __pyx_L1_error)
+          __pyx_t_13 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 56, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
           if (__pyx_t_2) {
             __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -2986,7 +2998,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
           __Pyx_GIVEREF(__pyx_t_5);
           PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_4, __pyx_t_5);
           __pyx_t_5 = 0;
-          __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         }
@@ -2994,31 +3006,31 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_XDECREF_SET(__pyx_v_closest_index, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":79
+        /* "cythoncode/router_baseline.pyx":59
  *                         current_waypoint, next_edge['path'])
  *                     closest_index = min(
  *                         len(next_edge['path'])-1, closest_index+5)             # <<<<<<<<<<<<<<
  *                     current_waypoint = next_edge['path'][closest_index]
  *                 else:
  */
-        __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_closest_index, __pyx_int_5, 5, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_closest_index, __pyx_int_5, 5, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 79, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 59, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_14 = PyObject_Length(__pyx_t_8); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 79, __pyx_L1_error)
+        __pyx_t_14 = PyObject_Length(__pyx_t_8); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 59, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_t_15 = (__pyx_t_14 - 1);
-        __pyx_t_13 = PyInt_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 79, __pyx_L1_error)
+        __pyx_t_13 = PyInt_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 59, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_t_13, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 79, __pyx_L1_error)
+        __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_t_13, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 59, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 79, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 59, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         if (__pyx_t_9) {
           __Pyx_INCREF(__pyx_t_3);
           __pyx_t_8 = __pyx_t_3;
         } else {
-          __pyx_t_5 = PyInt_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 79, __pyx_L1_error)
+          __pyx_t_5 = PyInt_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 59, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           __pyx_t_8 = __pyx_t_5;
           __pyx_t_5 = 0;
@@ -3030,22 +3042,22 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_DECREF_SET(__pyx_v_closest_index, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":80
+        /* "cythoncode/router_baseline.pyx":60
  *                     closest_index = min(
  *                         len(next_edge['path'])-1, closest_index+5)
  *                     current_waypoint = next_edge['path'][closest_index]             # <<<<<<<<<<<<<<
  *                 else:
  *                     current_waypoint = next_edge['exit_waypoint']
  */
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_closest_index); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_v_closest_index); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 60, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF_SET(__pyx_v_current_waypoint, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "cythoncode/router_baseline.pyx":75
+        /* "cythoncode/router_baseline.pyx":55
  *                 n1, n2 = self._road_id_to_edge[exit_wp.road_id][exit_wp.section_id][exit_wp.lane_id]
  *                 next_edge = self._graph.edges[n1, n2]
  *                 if next_edge['path']:             # <<<<<<<<<<<<<<
@@ -3055,7 +3067,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         goto __pyx_L10;
       }
 
-      /* "cythoncode/router_baseline.pyx":82
+      /* "cythoncode/router_baseline.pyx":62
  *                     current_waypoint = next_edge['path'][closest_index]
  *                 else:
  *                     current_waypoint = next_edge['exit_waypoint']             # <<<<<<<<<<<<<<
@@ -3063,21 +3075,21 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
  * 
  */
       /*else*/ {
-        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_exit_waypoint); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 82, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_exit_waypoint); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 62, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF_SET(__pyx_v_current_waypoint, __pyx_t_8);
         __pyx_t_8 = 0;
       }
       __pyx_L10:;
 
-      /* "cythoncode/router_baseline.pyx":83
+      /* "cythoncode/router_baseline.pyx":63
  *                 else:
  *                     current_waypoint = next_edge['exit_waypoint']
  *                 route_trace.append((current_waypoint, road_option))             # <<<<<<<<<<<<<<
  * 
  *             else:
  */
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 83, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 63, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_v_current_waypoint);
       __Pyx_GIVEREF(__pyx_v_current_waypoint);
@@ -3085,20 +3097,20 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_INCREF(__pyx_v_road_option);
       __Pyx_GIVEREF(__pyx_v_road_option);
       PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_v_road_option);
-      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_route_trace, __pyx_t_8); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 83, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_route_trace, __pyx_t_8); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 63, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "cythoncode/router_baseline.pyx":70
- *             path = []
+      /* "cythoncode/router_baseline.pyx":50
+ *             path: List[carla.Waypoint] = []
  * 
  *             if edge['type'] != RoadOption.LANEFOLLOW and edge['type'] != RoadOption.VOID:             # <<<<<<<<<<<<<<
  *                 route_trace.append((current_waypoint, road_option))
- *                 exit_wp = edge['exit_waypoint']
+ *                 exit_wp: carla.Waypoint = edge['exit_waypoint']
  */
       goto __pyx_L5;
     }
 
-    /* "cythoncode/router_baseline.pyx":86
+    /* "cythoncode/router_baseline.pyx":66
  * 
  *             else:
  *                 path = path + [edge['entry_waypoint']] + \             # <<<<<<<<<<<<<<
@@ -3107,86 +3119,86 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
  */
     /*else*/ {
 
-      /* "cythoncode/router_baseline.pyx":87
+      /* "cythoncode/router_baseline.pyx":67
  *             else:
  *                 path = path + [edge['entry_waypoint']] + \
  *                     edge['path'] + [edge['exit_waypoint']]             # <<<<<<<<<<<<<<
  *                 closest_index = self._find_closest_in_list(
  *                     current_waypoint, path)
  */
-      __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_entry_waypoint); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_entry_waypoint); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 66, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
 
-      /* "cythoncode/router_baseline.pyx":86
+      /* "cythoncode/router_baseline.pyx":66
  * 
  *             else:
  *                 path = path + [edge['entry_waypoint']] + \             # <<<<<<<<<<<<<<
  *                     edge['path'] + [edge['exit_waypoint']]
  *                 closest_index = self._find_closest_in_list(
  */
-      __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GIVEREF(__pyx_t_8);
       PyList_SET_ITEM(__pyx_t_3, 0, __pyx_t_8);
       __pyx_t_8 = 0;
-      __pyx_t_8 = PyNumber_Add(__pyx_v_path, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_8 = PyNumber_Add(__pyx_v_path, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 66, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "cythoncode/router_baseline.pyx":87
+      /* "cythoncode/router_baseline.pyx":67
  *             else:
  *                 path = path + [edge['entry_waypoint']] + \
  *                     edge['path'] + [edge['exit_waypoint']]             # <<<<<<<<<<<<<<
  *                 closest_index = self._find_closest_in_list(
  *                     current_waypoint, path)
  */
-      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
 
-      /* "cythoncode/router_baseline.pyx":86
+      /* "cythoncode/router_baseline.pyx":66
  * 
  *             else:
  *                 path = path + [edge['entry_waypoint']] + \             # <<<<<<<<<<<<<<
  *                     edge['path'] + [edge['exit_waypoint']]
  *                 closest_index = self._find_closest_in_list(
  */
-      __pyx_t_5 = PyNumber_Add(__pyx_t_8, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_5 = PyNumber_Add(__pyx_t_8, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "cythoncode/router_baseline.pyx":87
+      /* "cythoncode/router_baseline.pyx":67
  *             else:
  *                 path = path + [edge['entry_waypoint']] + \
  *                     edge['path'] + [edge['exit_waypoint']]             # <<<<<<<<<<<<<<
  *                 closest_index = self._find_closest_in_list(
  *                     current_waypoint, path)
  */
-      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_exit_waypoint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_edge, __pyx_n_s_exit_waypoint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 87, __pyx_L1_error)
+      __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 67, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_3);
       PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_3 = PyNumber_Add(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Add(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF_SET(__pyx_v_path, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "cythoncode/router_baseline.pyx":88
+      /* "cythoncode/router_baseline.pyx":68
  *                 path = path + [edge['entry_waypoint']] + \
  *                     edge['path'] + [edge['exit_waypoint']]
  *                 closest_index = self._find_closest_in_list(             # <<<<<<<<<<<<<<
  *                     current_waypoint, path)
  *                 for waypoint in path[closest_index:]:
  */
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_closest_in_list); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 88, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_closest_in_list); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
 
-      /* "cythoncode/router_baseline.pyx":89
+      /* "cythoncode/router_baseline.pyx":69
  *                     edge['path'] + [edge['exit_waypoint']]
  *                 closest_index = self._find_closest_in_list(
  *                     current_waypoint, path)             # <<<<<<<<<<<<<<
@@ -3208,7 +3220,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_8)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_current_waypoint, __pyx_v_path};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -3216,13 +3228,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_current_waypoint, __pyx_v_path};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_13 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __pyx_t_13 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         if (__pyx_t_5) {
           __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3233,7 +3245,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_INCREF(__pyx_v_path);
         __Pyx_GIVEREF(__pyx_v_path);
         PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_4, __pyx_v_path);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       }
@@ -3241,22 +3253,22 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_XDECREF_SET(__pyx_v_closest_index, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "cythoncode/router_baseline.pyx":90
+      /* "cythoncode/router_baseline.pyx":70
  *                 closest_index = self._find_closest_in_list(
  *                     current_waypoint, path)
  *                 for waypoint in path[closest_index:]:             # <<<<<<<<<<<<<<
  *                     current_waypoint = waypoint
  *                     route_trace.append((current_waypoint, road_option))
  */
-      __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_path, 0, 0, &__pyx_v_closest_index, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_path, 0, 0, &__pyx_v_closest_index, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
         __pyx_t_8 = __pyx_t_3; __Pyx_INCREF(__pyx_t_8); __pyx_t_15 = 0;
         __pyx_t_16 = NULL;
       } else {
-        __pyx_t_15 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 90, __pyx_L1_error)
+        __pyx_t_15 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 70, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_16 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 90, __pyx_L1_error)
+        __pyx_t_16 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 70, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       for (;;) {
@@ -3264,17 +3276,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
           if (likely(PyList_CheckExact(__pyx_t_8))) {
             if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_8)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_3 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_15); __Pyx_INCREF(__pyx_t_3); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 90, __pyx_L1_error)
+            __pyx_t_3 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_15); __Pyx_INCREF(__pyx_t_3); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
             #else
-            __pyx_t_3 = PySequence_ITEM(__pyx_t_8, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_8, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             #endif
           } else {
             if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_15); __Pyx_INCREF(__pyx_t_3); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 90, __pyx_L1_error)
+            __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_15); __Pyx_INCREF(__pyx_t_3); __pyx_t_15++; if (unlikely(0 < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
             #else
-            __pyx_t_3 = PySequence_ITEM(__pyx_t_8, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_8, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             #endif
           }
@@ -3284,7 +3296,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 90, __pyx_L1_error)
+              else __PYX_ERR(0, 70, __pyx_L1_error)
             }
             break;
           }
@@ -3293,7 +3305,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_XDECREF_SET(__pyx_v_waypoint, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":91
+        /* "cythoncode/router_baseline.pyx":71
  *                     current_waypoint, path)
  *                 for waypoint in path[closest_index:]:
  *                     current_waypoint = waypoint             # <<<<<<<<<<<<<<
@@ -3303,14 +3315,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_INCREF(__pyx_v_waypoint);
         __Pyx_DECREF_SET(__pyx_v_current_waypoint, __pyx_v_waypoint);
 
-        /* "cythoncode/router_baseline.pyx":92
+        /* "cythoncode/router_baseline.pyx":72
  *                 for waypoint in path[closest_index:]:
  *                     current_waypoint = waypoint
  *                     route_trace.append((current_waypoint, road_option))             # <<<<<<<<<<<<<<
  *                     if len(route)-i <= 2 and waypoint.transform.location.distance(destination) < 2*self._sampling_resolution:
  *                         break
  */
-        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_v_current_waypoint);
         __Pyx_GIVEREF(__pyx_v_current_waypoint);
@@ -3318,37 +3330,37 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         __Pyx_INCREF(__pyx_v_road_option);
         __Pyx_GIVEREF(__pyx_v_road_option);
         PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_road_option);
-        __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_route_trace, __pyx_t_3); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 92, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_route_trace, __pyx_t_3); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 72, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":93
+        /* "cythoncode/router_baseline.pyx":73
  *                     current_waypoint = waypoint
  *                     route_trace.append((current_waypoint, road_option))
  *                     if len(route)-i <= 2 and waypoint.transform.location.distance(destination) < 2*self._sampling_resolution:             # <<<<<<<<<<<<<<
  *                         break
  *                     elif len(route)-i <= 2 and current_waypoint.road_id == destination_waypoint.road_id and current_waypoint.section_id == destination_waypoint.section_id and current_waypoint.lane_id == destination_waypoint.lane_id:
  */
-        __pyx_t_14 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 93, __pyx_L1_error)
-        __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_14 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_13 = PyNumber_Subtract(__pyx_t_3, __pyx_v_i); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_13 = PyNumber_Subtract(__pyx_t_3, __pyx_v_i); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = PyObject_RichCompare(__pyx_t_13, __pyx_int_2, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_3 = PyObject_RichCompare(__pyx_t_13, __pyx_int_2, Py_LE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_10) {
         } else {
           __pyx_t_9 = __pyx_t_10;
           goto __pyx_L14_bool_binop_done;
         }
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_location); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_location); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_distance); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_distance); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_t_5 = NULL;
@@ -3363,24 +3375,24 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
         }
         __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_5, __pyx_v_destination) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_v_destination);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_5 = PyNumber_Multiply(__pyx_int_2, __pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_5 = PyNumber_Multiply(__pyx_int_2, __pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_13 = PyObject_RichCompare(__pyx_t_3, __pyx_t_5, Py_LT); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_13 = PyObject_RichCompare(__pyx_t_3, __pyx_t_5, Py_LT); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __pyx_t_9 = __pyx_t_10;
         __pyx_L14_bool_binop_done:;
         if (__pyx_t_9) {
 
-          /* "cythoncode/router_baseline.pyx":94
+          /* "cythoncode/router_baseline.pyx":74
  *                     route_trace.append((current_waypoint, road_option))
  *                     if len(route)-i <= 2 and waypoint.transform.location.distance(destination) < 2*self._sampling_resolution:
  *                         break             # <<<<<<<<<<<<<<
@@ -3389,7 +3401,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
  */
           goto __pyx_L12_break;
 
-          /* "cythoncode/router_baseline.pyx":93
+          /* "cythoncode/router_baseline.pyx":73
  *                     current_waypoint = waypoint
  *                     route_trace.append((current_waypoint, road_option))
  *                     if len(route)-i <= 2 and waypoint.transform.location.distance(destination) < 2*self._sampling_resolution:             # <<<<<<<<<<<<<<
@@ -3398,80 +3410,80 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":95
+        /* "cythoncode/router_baseline.pyx":75
  *                     if len(route)-i <= 2 and waypoint.transform.location.distance(destination) < 2*self._sampling_resolution:
  *                         break
  *                     elif len(route)-i <= 2 and current_waypoint.road_id == destination_waypoint.road_id and current_waypoint.section_id == destination_waypoint.section_id and current_waypoint.lane_id == destination_waypoint.lane_id:             # <<<<<<<<<<<<<<
  *                         destination_index = self._find_closest_in_list(
  *                             destination_waypoint, path)
  */
-        __pyx_t_14 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 95, __pyx_L1_error)
-        __pyx_t_13 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_14 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 75, __pyx_L1_error)
+        __pyx_t_13 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_5 = PyNumber_Subtract(__pyx_t_13, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_5 = PyNumber_Subtract(__pyx_t_13, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_13 = PyObject_RichCompare(__pyx_t_5, __pyx_int_2, Py_LE); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_13 = PyObject_RichCompare(__pyx_t_5, __pyx_int_2, Py_LE); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         if (__pyx_t_10) {
         } else {
           __pyx_t_9 = __pyx_t_10;
           goto __pyx_L16_bool_binop_done;
         }
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_destination_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_destination_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_3 = PyObject_RichCompare(__pyx_t_13, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_3 = PyObject_RichCompare(__pyx_t_13, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_10) {
         } else {
           __pyx_t_9 = __pyx_t_10;
           goto __pyx_L16_bool_binop_done;
         }
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_section_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_section_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_destination_waypoint, __pyx_n_s_section_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_destination_waypoint, __pyx_n_s_section_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_13 = PyObject_RichCompare(__pyx_t_3, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_13 = PyObject_RichCompare(__pyx_t_3, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         if (__pyx_t_10) {
         } else {
           __pyx_t_9 = __pyx_t_10;
           goto __pyx_L16_bool_binop_done;
         }
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_destination_waypoint, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_destination_waypoint, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_3 = PyObject_RichCompare(__pyx_t_13, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_3 = PyObject_RichCompare(__pyx_t_13, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 95, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 75, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_t_9 = __pyx_t_10;
         __pyx_L16_bool_binop_done:;
         if (__pyx_t_9) {
 
-          /* "cythoncode/router_baseline.pyx":96
+          /* "cythoncode/router_baseline.pyx":76
  *                         break
  *                     elif len(route)-i <= 2 and current_waypoint.road_id == destination_waypoint.road_id and current_waypoint.section_id == destination_waypoint.section_id and current_waypoint.lane_id == destination_waypoint.lane_id:
  *                         destination_index = self._find_closest_in_list(             # <<<<<<<<<<<<<<
  *                             destination_waypoint, path)
  *                         if closest_index > destination_index:
  */
-          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_closest_in_list); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 96, __pyx_L1_error)
+          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_find_closest_in_list); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 76, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
 
-          /* "cythoncode/router_baseline.pyx":97
+          /* "cythoncode/router_baseline.pyx":77
  *                     elif len(route)-i <= 2 and current_waypoint.road_id == destination_waypoint.road_id and current_waypoint.section_id == destination_waypoint.section_id and current_waypoint.lane_id == destination_waypoint.lane_id:
  *                         destination_index = self._find_closest_in_list(
  *                             destination_waypoint, path)             # <<<<<<<<<<<<<<
@@ -3493,7 +3505,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
           #if CYTHON_FAST_PYCALL
           if (PyFunction_Check(__pyx_t_5)) {
             PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_destination_waypoint, __pyx_v_path};
-            __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
             __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
             __Pyx_GOTREF(__pyx_t_3);
           } else
@@ -3501,13 +3513,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
           #if CYTHON_FAST_PYCCALL
           if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
             PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_destination_waypoint, __pyx_v_path};
-            __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
             __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
             __Pyx_GOTREF(__pyx_t_3);
           } else
           #endif
           {
-            __pyx_t_2 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
+            __pyx_t_2 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             if (__pyx_t_13) {
               __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_13); __pyx_t_13 = NULL;
@@ -3518,7 +3530,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
             __Pyx_INCREF(__pyx_v_path);
             __Pyx_GIVEREF(__pyx_v_path);
             PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_4, __pyx_v_path);
-            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           }
@@ -3526,37 +3538,37 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
           __Pyx_XDECREF_SET(__pyx_v_destination_index, __pyx_t_3);
           __pyx_t_3 = 0;
 
-          /* "cythoncode/router_baseline.pyx":98
+          /* "cythoncode/router_baseline.pyx":78
  *                         destination_index = self._find_closest_in_list(
  *                             destination_waypoint, path)
  *                         if closest_index > destination_index:             # <<<<<<<<<<<<<<
  *                             break
- *         cleaned_route_trace = []
+ *         cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
  */
-          __pyx_t_3 = PyObject_RichCompare(__pyx_v_closest_index, __pyx_v_destination_index, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
-          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 98, __pyx_L1_error)
+          __pyx_t_3 = PyObject_RichCompare(__pyx_v_closest_index, __pyx_v_destination_index, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L1_error)
+          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 78, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           if (__pyx_t_9) {
 
-            /* "cythoncode/router_baseline.pyx":99
+            /* "cythoncode/router_baseline.pyx":79
  *                             destination_waypoint, path)
  *                         if closest_index > destination_index:
  *                             break             # <<<<<<<<<<<<<<
- *         cleaned_route_trace = []
- *         seen = set()
+ *         cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         seen: set = set()
  */
             goto __pyx_L12_break;
 
-            /* "cythoncode/router_baseline.pyx":98
+            /* "cythoncode/router_baseline.pyx":78
  *                         destination_index = self._find_closest_in_list(
  *                             destination_waypoint, path)
  *                         if closest_index > destination_index:             # <<<<<<<<<<<<<<
  *                             break
- *         cleaned_route_trace = []
+ *         cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
  */
           }
 
-          /* "cythoncode/router_baseline.pyx":95
+          /* "cythoncode/router_baseline.pyx":75
  *                     if len(route)-i <= 2 and waypoint.transform.location.distance(destination) < 2*self._sampling_resolution:
  *                         break
  *                     elif len(route)-i <= 2 and current_waypoint.road_id == destination_waypoint.road_id and current_waypoint.section_id == destination_waypoint.section_id and current_waypoint.lane_id == destination_waypoint.lane_id:             # <<<<<<<<<<<<<<
@@ -3565,7 +3577,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":90
+        /* "cythoncode/router_baseline.pyx":70
  *                 closest_index = self._find_closest_in_list(
  *                     current_waypoint, path)
  *                 for waypoint in path[closest_index:]:             # <<<<<<<<<<<<<<
@@ -3578,43 +3590,43 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     }
     __pyx_L5:;
 
-    /* "cythoncode/router_baseline.pyx":65
- *         destination_waypoint = self._wmap.get_waypoint(destination)
+    /* "cythoncode/router_baseline.pyx":45
+ *         destination_waypoint: carla.Waypoint = self._wmap.get_waypoint(destination)
  * 
  *         for i in range(len(route) - 1):             # <<<<<<<<<<<<<<
- *             road_option = self._turn_decision(i, route)
+ *             road_option: RoadOption = self._turn_decision(i, route)
  *             edge = self._graph.edges[route[i], route[i+1]]
  */
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":100
+  /* "cythoncode/router_baseline.pyx":80
  *                         if closest_index > destination_index:
  *                             break
- *         cleaned_route_trace = []             # <<<<<<<<<<<<<<
- *         seen = set()
+ *         cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []             # <<<<<<<<<<<<<<
+ *         seen: set = set()
  *         for waypoint, road_option in route_trace:
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_cleaned_route_trace = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":101
+  /* "cythoncode/router_baseline.pyx":81
  *                             break
- *         cleaned_route_trace = []
- *         seen = set()             # <<<<<<<<<<<<<<
+ *         cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         seen: set = set()             # <<<<<<<<<<<<<<
  *         for waypoint, road_option in route_trace:
  *             loc = (waypoint.transform.location.x,
  */
-  __pyx_t_1 = PySet_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_1 = PySet_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_seen = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":102
- *         cleaned_route_trace = []
- *         seen = set()
+  /* "cythoncode/router_baseline.pyx":82
+ *         cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         seen: set = set()
  *         for waypoint, road_option in route_trace:             # <<<<<<<<<<<<<<
  *             loc = (waypoint.transform.location.x,
  *                    waypoint.transform.location.y)
@@ -3623,9 +3635,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   for (;;) {
     if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    __pyx_t_8 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_8); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 102, __pyx_L1_error)
+    __pyx_t_8 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_8); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 82, __pyx_L1_error)
     #else
-    __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 102, __pyx_L1_error)
+    __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     #endif
     if ((likely(PyTuple_CheckExact(__pyx_t_8))) || (PyList_CheckExact(__pyx_t_8))) {
@@ -3634,7 +3646,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 102, __pyx_L1_error)
+        __PYX_ERR(0, 82, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -3647,15 +3659,15 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_5);
       #else
-      __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
+      __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 82, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 102, __pyx_L1_error)
+      __pyx_t_5 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 82, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       #endif
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_2 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+      __pyx_t_2 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_12 = Py_TYPE(__pyx_t_2)->tp_iternext;
@@ -3663,7 +3675,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_GOTREF(__pyx_t_3);
       index = 1; __pyx_t_5 = __pyx_t_12(__pyx_t_2); if (unlikely(!__pyx_t_5)) goto __pyx_L23_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_5);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_2), 2) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_2), 2) < 0) __PYX_ERR(0, 82, __pyx_L1_error)
       __pyx_t_12 = NULL;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       goto __pyx_L24_unpacking_done;
@@ -3671,7 +3683,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_12 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 102, __pyx_L1_error)
+      __PYX_ERR(0, 82, __pyx_L1_error)
       __pyx_L24_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_waypoint, __pyx_t_3);
@@ -3679,46 +3691,46 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     __Pyx_XDECREF_SET(__pyx_v_road_option, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "cythoncode/router_baseline.pyx":103
- *         seen = set()
+    /* "cythoncode/router_baseline.pyx":83
+ *         seen: set = set()
  *         for waypoint, road_option in route_trace:
  *             loc = (waypoint.transform.location.x,             # <<<<<<<<<<<<<<
  *                    waypoint.transform.location.y)
  *             if loc not in seen:
  */
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 83, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_location); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_location); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 83, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_x); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_x); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 83, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "cythoncode/router_baseline.pyx":104
+    /* "cythoncode/router_baseline.pyx":84
  *         for waypoint, road_option in route_trace:
  *             loc = (waypoint.transform.location.x,
  *                    waypoint.transform.location.y)             # <<<<<<<<<<<<<<
  *             if loc not in seen:
  *                 cleaned_route_trace.append((waypoint, road_option))
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 84, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_location); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_location); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 84, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 84, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "cythoncode/router_baseline.pyx":103
- *         seen = set()
+    /* "cythoncode/router_baseline.pyx":83
+ *         seen: set = set()
  *         for waypoint, road_option in route_trace:
  *             loc = (waypoint.transform.location.x,             # <<<<<<<<<<<<<<
  *                    waypoint.transform.location.y)
  *             if loc not in seen:
  */
-    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 83, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_8);
     PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_8);
@@ -3729,25 +3741,25 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
     __Pyx_XDECREF_SET(__pyx_v_loc, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "cythoncode/router_baseline.pyx":105
+    /* "cythoncode/router_baseline.pyx":85
  *             loc = (waypoint.transform.location.x,
  *                    waypoint.transform.location.y)
  *             if loc not in seen:             # <<<<<<<<<<<<<<
  *                 cleaned_route_trace.append((waypoint, road_option))
  *                 seen.add(loc)
  */
-    __pyx_t_9 = (__Pyx_PySet_ContainsTF(__pyx_v_loc, __pyx_v_seen, Py_NE)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __pyx_t_9 = (__Pyx_PySet_ContainsTF(__pyx_v_loc, __pyx_v_seen, Py_NE)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 85, __pyx_L1_error)
     __pyx_t_10 = (__pyx_t_9 != 0);
     if (__pyx_t_10) {
 
-      /* "cythoncode/router_baseline.pyx":106
+      /* "cythoncode/router_baseline.pyx":86
  *                    waypoint.transform.location.y)
  *             if loc not in seen:
  *                 cleaned_route_trace.append((waypoint, road_option))             # <<<<<<<<<<<<<<
  *                 seen.add(loc)
  * 
  */
-      __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_v_waypoint);
       __Pyx_GIVEREF(__pyx_v_waypoint);
@@ -3755,19 +3767,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
       __Pyx_INCREF(__pyx_v_road_option);
       __Pyx_GIVEREF(__pyx_v_road_option);
       PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_road_option);
-      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_cleaned_route_trace, __pyx_t_3); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 106, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_cleaned_route_trace, __pyx_t_3); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 86, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "cythoncode/router_baseline.pyx":107
+      /* "cythoncode/router_baseline.pyx":87
  *             if loc not in seen:
  *                 cleaned_route_trace.append((waypoint, road_option))
  *                 seen.add(loc)             # <<<<<<<<<<<<<<
  * 
  *         return cleaned_route_trace
  */
-      __pyx_t_11 = PySet_Add(__pyx_v_seen, __pyx_v_loc); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 107, __pyx_L1_error)
+      __pyx_t_11 = PySet_Add(__pyx_v_seen, __pyx_v_loc); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 87, __pyx_L1_error)
 
-      /* "cythoncode/router_baseline.pyx":105
+      /* "cythoncode/router_baseline.pyx":85
  *             loc = (waypoint.transform.location.x,
  *                    waypoint.transform.location.y)
  *             if loc not in seen:             # <<<<<<<<<<<<<<
@@ -3776,9 +3788,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
  */
     }
 
-    /* "cythoncode/router_baseline.pyx":102
- *         cleaned_route_trace = []
- *         seen = set()
+    /* "cythoncode/router_baseline.pyx":82
+ *         cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         seen: set = set()
  *         for waypoint, road_option in route_trace:             # <<<<<<<<<<<<<<
  *             loc = (waypoint.transform.location.x,
  *                    waypoint.transform.location.y)
@@ -3786,24 +3798,24 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":109
+  /* "cythoncode/router_baseline.pyx":89
  *                 seen.add(loc)
  * 
  *         return cleaned_route_trace             # <<<<<<<<<<<<<<
  * 
- *         # return route_trace
+ *     def _build_topology(self):
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_cleaned_route_trace);
   __pyx_r = __pyx_v_cleaned_route_trace;
   goto __pyx_L0;
 
-  /* "cythoncode/router_baseline.pyx":55
+  /* "cythoncode/router_baseline.pyx":39
  * 
- *     @log_time_cost(name="trace")
- *     def trace_route(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns list of (carla.Waypoint, RoadOption)
+ *     @log_time_cost
+ *     def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:             # <<<<<<<<<<<<<<
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         route: List[int] = self._path_search(origin, destination)
  */
 
   /* function exit code */
@@ -3840,18 +3852,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_2t
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":113
- *         # return route_trace
+/* "cythoncode/router_baseline.pyx":91
+ *         return cleaned_route_trace
  * 
  *     def _build_topology(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function retrieves topology from the server as a list of
+ *         self._topology = []
+ *         for segment in self._wmap.get_topology():
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_build_topology[] = "\n        This function retrieves topology from the server as a list of\n        road segments as pairs of waypoint objects, and processes the\n        topology into a list of dictionary objects with the following attributes\n\n        - entry (carla.Waypoint): waypoint of entry point of road segment\n        - entryxyz (tuple): (x,y,z) of entry point of road segment\n        - exit (carla.Waypoint): waypoint of exit point of road segment\n        - exitxyz (tuple): (x,y,z) of exit point of road segment\n        - path (list of carla.Waypoint):  list of waypoints between entry to exit, separated by the resolution\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology = {"_build_topology", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology, METH_O, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_build_topology};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology = {"_build_topology", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology, METH_O, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3904,28 +3915,28 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_build_topology", 0);
 
-  /* "cythoncode/router_baseline.pyx":125
- *         - path (list of carla.Waypoint):  list of waypoints between entry to exit, separated by the resolution
- *         """
+  /* "cythoncode/router_baseline.pyx":92
+ * 
+ *     def _build_topology(self):
  *         self._topology = []             # <<<<<<<<<<<<<<
- *         # Retrieving waypoints to construct a detailed topology
  *         for segment in self._wmap.get_topology():
+ *             wp1, wp2 = segment[0], segment[1]
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_topology, __pyx_t_1) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_topology, __pyx_t_1) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":127
+  /* "cythoncode/router_baseline.pyx":93
+ *     def _build_topology(self):
  *         self._topology = []
- *         # Retrieving waypoints to construct a detailed topology
  *         for segment in self._wmap.get_topology():             # <<<<<<<<<<<<<<
  *             wp1, wp2 = segment[0], segment[1]
  *             l1, l2 = wp1.transform.location, wp2.transform.location
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_topology); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_topology); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3940,16 +3951,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 127, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
+    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 93, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -3957,17 +3968,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 127, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 93, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 127, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 93, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -3977,7 +3988,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 127, __pyx_L1_error)
+          else __PYX_ERR(0, 93, __pyx_L1_error)
         }
         break;
       }
@@ -3986,37 +3997,37 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     __Pyx_XDECREF_SET(__pyx_v_segment, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":128
- *         # Retrieving waypoints to construct a detailed topology
+    /* "cythoncode/router_baseline.pyx":94
+ *         self._topology = []
  *         for segment in self._wmap.get_topology():
  *             wp1, wp2 = segment[0], segment[1]             # <<<<<<<<<<<<<<
  *             l1, l2 = wp1.transform.location, wp2.transform.location
- *             # Rounding off to avoid floating point imprecision
+ *             x1, y1, z1, x2, y2, z2 = np.round(
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_segment, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_segment, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_segment, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_segment, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_XDECREF_SET(__pyx_v_wp1, __pyx_t_1);
     __pyx_t_1 = 0;
     __Pyx_XDECREF_SET(__pyx_v_wp2, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "cythoncode/router_baseline.pyx":129
+    /* "cythoncode/router_baseline.pyx":95
  *         for segment in self._wmap.get_topology():
  *             wp1, wp2 = segment[0], segment[1]
  *             l1, l2 = wp1.transform.location, wp2.transform.location             # <<<<<<<<<<<<<<
- *             # Rounding off to avoid floating point imprecision
  *             x1, y1, z1, x2, y2, z2 = np.round(
+ *                 [l1.x, l1.y, l1.z, l2.x, l2.y, l2.z], 0)
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_transform); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_transform); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp2, __pyx_n_s_transform); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp2, __pyx_n_s_transform); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_location); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_location); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 95, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF_SET(__pyx_v_l1, __pyx_t_1);
@@ -4024,39 +4035,39 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     __Pyx_XDECREF_SET(__pyx_v_l2, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "cythoncode/router_baseline.pyx":131
+    /* "cythoncode/router_baseline.pyx":96
+ *             wp1, wp2 = segment[0], segment[1]
  *             l1, l2 = wp1.transform.location, wp2.transform.location
- *             # Rounding off to avoid floating point imprecision
  *             x1, y1, z1, x2, y2, z2 = np.round(             # <<<<<<<<<<<<<<
  *                 [l1.x, l1.y, l1.z, l2.x, l2.y, l2.z], 0)
  *             wp1.transform.location, wp2.transform.location = l1, l2
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_round); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_round); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":132
- *             # Rounding off to avoid floating point imprecision
+    /* "cythoncode/router_baseline.pyx":97
+ *             l1, l2 = wp1.transform.location, wp2.transform.location
  *             x1, y1, z1, x2, y2, z2 = np.round(
  *                 [l1.x, l1.y, l1.z, l2.x, l2.y, l2.z], 0)             # <<<<<<<<<<<<<<
  *             wp1.transform.location, wp2.transform.location = l1, l2
  *             seg_dict = dict()
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_l1, __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_l1, __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_l1, __pyx_n_s_y); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_l1, __pyx_n_s_y); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_l1, __pyx_n_s_z); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_l1, __pyx_n_s_z); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_l2, __pyx_n_s_x); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_l2, __pyx_n_s_x); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_l2, __pyx_n_s_y); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_l2, __pyx_n_s_y); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_l2, __pyx_n_s_z); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_l2, __pyx_n_s_z); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
-    __pyx_t_12 = PyList_New(6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_12 = PyList_New(6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_GIVEREF(__pyx_t_1);
     PyList_SET_ITEM(__pyx_t_12, 0, __pyx_t_1);
@@ -4091,7 +4102,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_t_12, __pyx_int_0};
-      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -4100,14 +4111,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_t_12, __pyx_int_0};
-      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     } else
     #endif
     {
-      __pyx_t_10 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_10 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       if (__pyx_t_11) {
         __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -4118,7 +4129,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
       __Pyx_GIVEREF(__pyx_int_0);
       PyTuple_SET_ITEM(__pyx_t_10, 1+__pyx_t_13, __pyx_int_0);
       __pyx_t_12 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_10, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_10, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     }
@@ -4129,7 +4140,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
       if (unlikely(size != 6)) {
         if (size > 6) __Pyx_RaiseTooManyValuesError(6);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 131, __pyx_L1_error)
+        __PYX_ERR(0, 96, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -4158,7 +4169,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
         Py_ssize_t i;
         PyObject** temps[6] = {&__pyx_t_2,&__pyx_t_10,&__pyx_t_12,&__pyx_t_11,&__pyx_t_9,&__pyx_t_8};
         for (i=0; i < 6; i++) {
-          PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(0, 131, __pyx_L1_error)
+          PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(0, 96, __pyx_L1_error)
           __Pyx_GOTREF(item);
           *(temps[i]) = item;
         }
@@ -4168,7 +4179,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     } else {
       Py_ssize_t index = -1;
       PyObject** temps[6] = {&__pyx_t_2,&__pyx_t_10,&__pyx_t_12,&__pyx_t_11,&__pyx_t_9,&__pyx_t_8};
-      __pyx_t_7 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_7 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_14 = Py_TYPE(__pyx_t_7)->tp_iternext;
@@ -4177,7 +4188,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
         __Pyx_GOTREF(item);
         *(temps[index]) = item;
       }
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_14(__pyx_t_7), 6) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_14(__pyx_t_7), 6) < 0) __PYX_ERR(0, 96, __pyx_L1_error)
       __pyx_t_14 = NULL;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       goto __pyx_L6_unpacking_done;
@@ -4185,13 +4196,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_14 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 131, __pyx_L1_error)
+      __PYX_ERR(0, 96, __pyx_L1_error)
       __pyx_L6_unpacking_done:;
     }
 
-    /* "cythoncode/router_baseline.pyx":131
+    /* "cythoncode/router_baseline.pyx":96
+ *             wp1, wp2 = segment[0], segment[1]
  *             l1, l2 = wp1.transform.location, wp2.transform.location
- *             # Rounding off to avoid floating point imprecision
  *             x1, y1, z1, x2, y2, z2 = np.round(             # <<<<<<<<<<<<<<
  *                 [l1.x, l1.y, l1.z, l2.x, l2.y, l2.z], 0)
  *             wp1.transform.location, wp2.transform.location = l1, l2
@@ -4209,7 +4220,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     __Pyx_XDECREF_SET(__pyx_v_z2, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "cythoncode/router_baseline.pyx":133
+    /* "cythoncode/router_baseline.pyx":98
  *             x1, y1, z1, x2, y2, z2 = np.round(
  *                 [l1.x, l1.y, l1.z, l2.x, l2.y, l2.z], 0)
  *             wp1.transform.location, wp2.transform.location = l1, l2             # <<<<<<<<<<<<<<
@@ -4220,30 +4231,30 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     __Pyx_INCREF(__pyx_t_6);
     __pyx_t_8 = __pyx_v_l2;
     __Pyx_INCREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 98, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (__Pyx_PyObject_SetAttrStr(__pyx_t_9, __pyx_n_s_location, __pyx_t_6) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_t_9, __pyx_n_s_location, __pyx_t_6) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp2, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp2, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 98, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (__Pyx_PyObject_SetAttrStr(__pyx_t_9, __pyx_n_s_location, __pyx_t_8) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_t_9, __pyx_n_s_location, __pyx_t_8) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "cythoncode/router_baseline.pyx":134
+    /* "cythoncode/router_baseline.pyx":99
  *                 [l1.x, l1.y, l1.z, l2.x, l2.y, l2.z], 0)
  *             wp1.transform.location, wp2.transform.location = l1, l2
  *             seg_dict = dict()             # <<<<<<<<<<<<<<
  *             seg_dict['entry'], seg_dict['exit'] = wp1, wp2
  *             seg_dict['entryxyz'], seg_dict['exitxyz'] = (
  */
-    __pyx_t_9 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 99, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_XDECREF_SET(__pyx_v_seg_dict, ((PyObject*)__pyx_t_9));
     __pyx_t_9 = 0;
 
-    /* "cythoncode/router_baseline.pyx":135
+    /* "cythoncode/router_baseline.pyx":100
  *             wp1.transform.location, wp2.transform.location = l1, l2
  *             seg_dict = dict()
  *             seg_dict['entry'], seg_dict['exit'] = wp1, wp2             # <<<<<<<<<<<<<<
@@ -4254,19 +4265,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     __Pyx_INCREF(__pyx_t_9);
     __pyx_t_8 = __pyx_v_wp2;
     __Pyx_INCREF(__pyx_t_8);
-    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_entry, __pyx_t_9) < 0)) __PYX_ERR(0, 135, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_entry, __pyx_t_9) < 0)) __PYX_ERR(0, 100, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_exit, __pyx_t_8) < 0)) __PYX_ERR(0, 135, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_exit, __pyx_t_8) < 0)) __PYX_ERR(0, 100, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "cythoncode/router_baseline.pyx":137
+    /* "cythoncode/router_baseline.pyx":102
  *             seg_dict['entry'], seg_dict['exit'] = wp1, wp2
  *             seg_dict['entryxyz'], seg_dict['exitxyz'] = (
  *                 x1, y1, z1), (x2, y2, z2)             # <<<<<<<<<<<<<<
  *             seg_dict['path'] = []
  *             endloc = wp2.transform.location
  */
-    __pyx_t_8 = PyTuple_New(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 137, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_INCREF(__pyx_v_x1);
     __Pyx_GIVEREF(__pyx_v_x1);
@@ -4277,7 +4288,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     __Pyx_INCREF(__pyx_v_z1);
     __Pyx_GIVEREF(__pyx_v_z1);
     PyTuple_SET_ITEM(__pyx_t_8, 2, __pyx_v_z1);
-    __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 137, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_INCREF(__pyx_v_x2);
     __Pyx_GIVEREF(__pyx_v_x2);
@@ -4289,58 +4300,58 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     __Pyx_GIVEREF(__pyx_v_z2);
     PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_v_z2);
 
-    /* "cythoncode/router_baseline.pyx":136
+    /* "cythoncode/router_baseline.pyx":101
  *             seg_dict = dict()
  *             seg_dict['entry'], seg_dict['exit'] = wp1, wp2
  *             seg_dict['entryxyz'], seg_dict['exitxyz'] = (             # <<<<<<<<<<<<<<
  *                 x1, y1, z1), (x2, y2, z2)
  *             seg_dict['path'] = []
  */
-    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_entryxyz, __pyx_t_8) < 0)) __PYX_ERR(0, 136, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_entryxyz, __pyx_t_8) < 0)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_exitxyz, __pyx_t_9) < 0)) __PYX_ERR(0, 136, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_exitxyz, __pyx_t_9) < 0)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "cythoncode/router_baseline.pyx":138
+    /* "cythoncode/router_baseline.pyx":103
  *             seg_dict['entryxyz'], seg_dict['exitxyz'] = (
  *                 x1, y1, z1), (x2, y2, z2)
  *             seg_dict['path'] = []             # <<<<<<<<<<<<<<
  *             endloc = wp2.transform.location
  *             if wp1.transform.location.distance(endloc) > self._sampling_resolution:
  */
-    __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 138, __pyx_L1_error)
+    __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_path, __pyx_t_9) < 0)) __PYX_ERR(0, 138, __pyx_L1_error)
+    if (unlikely(PyDict_SetItem(__pyx_v_seg_dict, __pyx_n_s_path, __pyx_t_9) < 0)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "cythoncode/router_baseline.pyx":139
+    /* "cythoncode/router_baseline.pyx":104
  *                 x1, y1, z1), (x2, y2, z2)
  *             seg_dict['path'] = []
  *             endloc = wp2.transform.location             # <<<<<<<<<<<<<<
  *             if wp1.transform.location.distance(endloc) > self._sampling_resolution:
  *                 w = wp1.next(self._sampling_resolution)[0]
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp2, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp2, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_location); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 139, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_location); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_XDECREF_SET(__pyx_v_endloc, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "cythoncode/router_baseline.pyx":140
+    /* "cythoncode/router_baseline.pyx":105
  *             seg_dict['path'] = []
  *             endloc = wp2.transform.location
  *             if wp1.transform.location.distance(endloc) > self._sampling_resolution:             # <<<<<<<<<<<<<<
  *                 w = wp1.next(self._sampling_resolution)[0]
  *                 while w.transform.location.distance(endloc) > self._sampling_resolution:
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_transform); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_location); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_location); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_distance); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_distance); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -4355,28 +4366,28 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
     }
     __pyx_t_8 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_6, __pyx_v_endloc) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_v_endloc);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 140, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_6 = PyObject_RichCompare(__pyx_t_8, __pyx_t_9, Py_GT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_6 = PyObject_RichCompare(__pyx_t_8, __pyx_t_9, Py_GT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_15) {
 
-      /* "cythoncode/router_baseline.pyx":141
+      /* "cythoncode/router_baseline.pyx":106
  *             endloc = wp2.transform.location
  *             if wp1.transform.location.distance(endloc) > self._sampling_resolution:
  *                 w = wp1.next(self._sampling_resolution)[0]             # <<<<<<<<<<<<<<
  *                 while w.transform.location.distance(endloc) > self._sampling_resolution:
  *                     seg_dict['path'].append(w)
  */
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_next); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 141, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_next); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 141, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_11 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
@@ -4391,16 +4402,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
       __pyx_t_6 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_11, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_8);
       __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 141, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = __Pyx_GetItemInt(__pyx_t_6, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 141, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_GetItemInt(__pyx_t_6, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_XDECREF_SET(__pyx_v_w, __pyx_t_9);
       __pyx_t_9 = 0;
 
-      /* "cythoncode/router_baseline.pyx":142
+      /* "cythoncode/router_baseline.pyx":107
  *             if wp1.transform.location.distance(endloc) > self._sampling_resolution:
  *                 w = wp1.next(self._sampling_resolution)[0]
  *                 while w.transform.location.distance(endloc) > self._sampling_resolution:             # <<<<<<<<<<<<<<
@@ -4408,12 +4419,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
  *                     next_ws = w.next(self._sampling_resolution)
  */
       while (1) {
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_w, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 142, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_w, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_location); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_location); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_distance); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 142, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_distance); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_t_8 = NULL;
@@ -4428,40 +4439,40 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
         }
         __pyx_t_9 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_8, __pyx_v_endloc) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_endloc);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 142, __pyx_L1_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 142, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_8 = PyObject_RichCompare(__pyx_t_9, __pyx_t_6, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
+        __pyx_t_8 = PyObject_RichCompare(__pyx_t_9, __pyx_t_6, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 142, __pyx_L1_error)
+        __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         if (!__pyx_t_15) break;
 
-        /* "cythoncode/router_baseline.pyx":143
+        /* "cythoncode/router_baseline.pyx":108
  *                 w = wp1.next(self._sampling_resolution)[0]
  *                 while w.transform.location.distance(endloc) > self._sampling_resolution:
  *                     seg_dict['path'].append(w)             # <<<<<<<<<<<<<<
  *                     next_ws = w.next(self._sampling_resolution)
  *                     if len(next_ws) == 0:
  */
-        __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_seg_dict, __pyx_n_s_path); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_seg_dict, __pyx_n_s_path); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 108, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_16 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_v_w); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_v_w); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 108, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "cythoncode/router_baseline.pyx":144
+        /* "cythoncode/router_baseline.pyx":109
  *                 while w.transform.location.distance(endloc) > self._sampling_resolution:
  *                     seg_dict['path'].append(w)
  *                     next_ws = w.next(self._sampling_resolution)             # <<<<<<<<<<<<<<
  *                     if len(next_ws) == 0:
  *                         break
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_w, __pyx_n_s_next); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 144, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_w, __pyx_n_s_next); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 144, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __pyx_t_11 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
@@ -4476,24 +4487,24 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
         __pyx_t_8 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_11, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_9);
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 144, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_XDECREF_SET(__pyx_v_next_ws, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "cythoncode/router_baseline.pyx":145
+        /* "cythoncode/router_baseline.pyx":110
  *                     seg_dict['path'].append(w)
  *                     next_ws = w.next(self._sampling_resolution)
  *                     if len(next_ws) == 0:             # <<<<<<<<<<<<<<
  *                         break
  *                     w = next_ws[0]
  */
-        __pyx_t_17 = PyObject_Length(__pyx_v_next_ws); if (unlikely(__pyx_t_17 == ((Py_ssize_t)-1))) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_17 = PyObject_Length(__pyx_v_next_ws); if (unlikely(__pyx_t_17 == ((Py_ssize_t)-1))) __PYX_ERR(0, 110, __pyx_L1_error)
         __pyx_t_15 = ((__pyx_t_17 == 0) != 0);
         if (__pyx_t_15) {
 
-          /* "cythoncode/router_baseline.pyx":146
+          /* "cythoncode/router_baseline.pyx":111
  *                     next_ws = w.next(self._sampling_resolution)
  *                     if len(next_ws) == 0:
  *                         break             # <<<<<<<<<<<<<<
@@ -4502,7 +4513,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
  */
           goto __pyx_L9_break;
 
-          /* "cythoncode/router_baseline.pyx":145
+          /* "cythoncode/router_baseline.pyx":110
  *                     seg_dict['path'].append(w)
  *                     next_ws = w.next(self._sampling_resolution)
  *                     if len(next_ws) == 0:             # <<<<<<<<<<<<<<
@@ -4511,21 +4522,21 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":147
+        /* "cythoncode/router_baseline.pyx":112
  *                     if len(next_ws) == 0:
  *                         break
  *                     w = next_ws[0]             # <<<<<<<<<<<<<<
  *             else:
  *                 next_wps = wp1.next(self._sampling_resolution)
  */
-        __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_next_ws, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_next_ws, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 112, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF_SET(__pyx_v_w, __pyx_t_8);
         __pyx_t_8 = 0;
       }
       __pyx_L9_break:;
 
-      /* "cythoncode/router_baseline.pyx":140
+      /* "cythoncode/router_baseline.pyx":105
  *             seg_dict['path'] = []
  *             endloc = wp2.transform.location
  *             if wp1.transform.location.distance(endloc) > self._sampling_resolution:             # <<<<<<<<<<<<<<
@@ -4535,7 +4546,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
       goto __pyx_L7;
     }
 
-    /* "cythoncode/router_baseline.pyx":149
+    /* "cythoncode/router_baseline.pyx":114
  *                     w = next_ws[0]
  *             else:
  *                 next_wps = wp1.next(self._sampling_resolution)             # <<<<<<<<<<<<<<
@@ -4543,9 +4554,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
  *                     continue
  */
     /*else*/ {
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_next); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 149, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_wp1, __pyx_n_s_next); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 149, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_11 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
@@ -4560,24 +4571,24 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
       __pyx_t_8 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_11, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_9);
       __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 149, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_XDECREF_SET(__pyx_v_next_wps, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "cythoncode/router_baseline.pyx":150
+      /* "cythoncode/router_baseline.pyx":115
  *             else:
  *                 next_wps = wp1.next(self._sampling_resolution)
  *                 if len(next_wps) == 0:             # <<<<<<<<<<<<<<
  *                     continue
  *                 seg_dict['path'].append(next_wps[0])
  */
-      __pyx_t_17 = PyObject_Length(__pyx_v_next_wps); if (unlikely(__pyx_t_17 == ((Py_ssize_t)-1))) __PYX_ERR(0, 150, __pyx_L1_error)
+      __pyx_t_17 = PyObject_Length(__pyx_v_next_wps); if (unlikely(__pyx_t_17 == ((Py_ssize_t)-1))) __PYX_ERR(0, 115, __pyx_L1_error)
       __pyx_t_15 = ((__pyx_t_17 == 0) != 0);
       if (__pyx_t_15) {
 
-        /* "cythoncode/router_baseline.pyx":151
+        /* "cythoncode/router_baseline.pyx":116
  *                 next_wps = wp1.next(self._sampling_resolution)
  *                 if len(next_wps) == 0:
  *                     continue             # <<<<<<<<<<<<<<
@@ -4586,7 +4597,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
  */
         goto __pyx_L3_continue;
 
-        /* "cythoncode/router_baseline.pyx":150
+        /* "cythoncode/router_baseline.pyx":115
  *             else:
  *                 next_wps = wp1.next(self._sampling_resolution)
  *                 if len(next_wps) == 0:             # <<<<<<<<<<<<<<
@@ -4595,38 +4606,38 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
  */
       }
 
-      /* "cythoncode/router_baseline.pyx":152
+      /* "cythoncode/router_baseline.pyx":117
  *                 if len(next_wps) == 0:
  *                     continue
  *                 seg_dict['path'].append(next_wps[0])             # <<<<<<<<<<<<<<
  *             self._topology.append(seg_dict)
  * 
  */
-      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_seg_dict, __pyx_n_s_path); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 152, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_seg_dict, __pyx_n_s_path); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_next_wps, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 152, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_next_wps, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_16 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_t_6); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 152, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyObject_Append(__pyx_t_8, __pyx_t_6); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __pyx_L7:;
 
-    /* "cythoncode/router_baseline.pyx":153
+    /* "cythoncode/router_baseline.pyx":118
  *                     continue
  *                 seg_dict['path'].append(next_wps[0])
  *             self._topology.append(seg_dict)             # <<<<<<<<<<<<<<
  * 
  *     def _build_graph(self):
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 153, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_16 = __Pyx_PyObject_Append(__pyx_t_6, __pyx_v_seg_dict); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 153, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyObject_Append(__pyx_t_6, __pyx_v_seg_dict); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "cythoncode/router_baseline.pyx":127
+    /* "cythoncode/router_baseline.pyx":93
+ *     def _build_topology(self):
  *         self._topology = []
- *         # Retrieving waypoints to construct a detailed topology
  *         for segment in self._wmap.get_topology():             # <<<<<<<<<<<<<<
  *             wp1, wp2 = segment[0], segment[1]
  *             l1, l2 = wp1.transform.location, wp2.transform.location
@@ -4635,12 +4646,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "cythoncode/router_baseline.pyx":113
- *         # return route_trace
+  /* "cythoncode/router_baseline.pyx":91
+ *         return cleaned_route_trace
  * 
  *     def _build_topology(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function retrieves topology from the server as a list of
+ *         self._topology = []
+ *         for segment in self._wmap.get_topology():
  */
 
   /* function exit code */
@@ -4681,18 +4692,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_4_
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":155
+/* "cythoncode/router_baseline.pyx":120
  *             self._topology.append(seg_dict)
  * 
  *     def _build_graph(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function builds a networkx graph representation of topology, creating several class attributes:
+ *         self._graph = nx.DiGraph()
+ *         self._id_map = dict()
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_build_graph[] = "\n        This function builds a networkx graph representation of topology, creating several class attributes:\n        - graph (networkx.DiGraph): networkx graph representing the world map, with:\n            Node properties:\n                vertex: (x,y,z) position in world map\n            Edge properties:\n                entry_vector: unit vector along tangent at entry point\n                exit_vector: unit vector along tangent at exit point\n                net_vector: unit vector of the chord from entry to exit\n                intersection: boolean indicating if the edge belongs to an  intersection\n        - id_map (dictionary): mapping from (x,y,z) to node id\n        - road_id_to_edge (dictionary): map from road id to edge in the graph\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph = {"_build_graph", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph, METH_O, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_build_graph};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph = {"_build_graph", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph, METH_O, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -4745,16 +4755,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_build_graph", 0);
 
-  /* "cythoncode/router_baseline.pyx":170
- *         """
+  /* "cythoncode/router_baseline.pyx":121
  * 
+ *     def _build_graph(self):
  *         self._graph = nx.DiGraph()             # <<<<<<<<<<<<<<
- *         self._id_map = dict()  # Map with structure {(x,y,z): id, ... }
- *         # Map with structure {road_id: {lane_id: edge, ... }, ... }
+ *         self._id_map = dict()
+ *         self._road_id_to_edge = dict()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_nx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_nx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_DiGraph); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_DiGraph); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4769,52 +4779,52 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_graph, __pyx_t_1) < 0) __PYX_ERR(0, 170, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_graph, __pyx_t_1) < 0) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":171
- * 
+  /* "cythoncode/router_baseline.pyx":122
+ *     def _build_graph(self):
  *         self._graph = nx.DiGraph()
- *         self._id_map = dict()  # Map with structure {(x,y,z): id, ... }             # <<<<<<<<<<<<<<
- *         # Map with structure {road_id: {lane_id: edge, ... }, ... }
+ *         self._id_map = dict()             # <<<<<<<<<<<<<<
  *         self._road_id_to_edge = dict()
+ * 
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_id_map, __pyx_t_1) < 0) __PYX_ERR(0, 171, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_id_map, __pyx_t_1) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":173
- *         self._id_map = dict()  # Map with structure {(x,y,z): id, ... }
- *         # Map with structure {road_id: {lane_id: edge, ... }, ... }
+  /* "cythoncode/router_baseline.pyx":123
+ *         self._graph = nx.DiGraph()
+ *         self._id_map = dict()
  *         self._road_id_to_edge = dict()             # <<<<<<<<<<<<<<
  * 
  *         for segment in self._topology:
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge, __pyx_t_1) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge, __pyx_t_1) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":175
+  /* "cythoncode/router_baseline.pyx":125
  *         self._road_id_to_edge = dict()
  * 
  *         for segment in self._topology:             # <<<<<<<<<<<<<<
  *             entry_xyz, exit_xyz = segment['entryxyz'], segment['exitxyz']
  *             path = segment['path']
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 125, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -4822,17 +4832,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 125, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 125, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -4842,7 +4852,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 175, __pyx_L1_error)
+          else __PYX_ERR(0, 125, __pyx_L1_error)
         }
         break;
       }
@@ -4851,74 +4861,74 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     __Pyx_XDECREF_SET(__pyx_v_segment, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":176
+    /* "cythoncode/router_baseline.pyx":126
  * 
  *         for segment in self._topology:
  *             entry_xyz, exit_xyz = segment['entryxyz'], segment['exitxyz']             # <<<<<<<<<<<<<<
  *             path = segment['path']
  *             entry_wp, exit_wp = segment['entry'], segment['exit']
  */
-    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entryxyz); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entryxyz); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exitxyz); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 176, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exitxyz); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_XDECREF_SET(__pyx_v_entry_xyz, __pyx_t_1);
     __pyx_t_1 = 0;
     __Pyx_XDECREF_SET(__pyx_v_exit_xyz, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "cythoncode/router_baseline.pyx":177
+    /* "cythoncode/router_baseline.pyx":127
  *         for segment in self._topology:
  *             entry_xyz, exit_xyz = segment['entryxyz'], segment['exitxyz']
  *             path = segment['path']             # <<<<<<<<<<<<<<
  *             entry_wp, exit_wp = segment['entry'], segment['exit']
  *             intersection = entry_wp.is_junction
  */
-    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 177, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_XDECREF_SET(__pyx_v_path, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "cythoncode/router_baseline.pyx":178
+    /* "cythoncode/router_baseline.pyx":128
  *             entry_xyz, exit_xyz = segment['entryxyz'], segment['exitxyz']
  *             path = segment['path']
  *             entry_wp, exit_wp = segment['entry'], segment['exit']             # <<<<<<<<<<<<<<
  *             intersection = entry_wp.is_junction
  *             road_id, section_id, lane_id = entry_wp.road_id, entry_wp.section_id, entry_wp.lane_id
  */
-    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entry); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entry); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_entry_wp, __pyx_t_2);
     __pyx_t_2 = 0;
     __Pyx_XDECREF_SET(__pyx_v_exit_wp, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":179
+    /* "cythoncode/router_baseline.pyx":129
  *             path = segment['path']
  *             entry_wp, exit_wp = segment['entry'], segment['exit']
  *             intersection = entry_wp.is_junction             # <<<<<<<<<<<<<<
  *             road_id, section_id, lane_id = entry_wp.road_id, entry_wp.section_id, entry_wp.lane_id
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_is_junction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_is_junction); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_intersection, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":180
+    /* "cythoncode/router_baseline.pyx":130
  *             entry_wp, exit_wp = segment['entry'], segment['exit']
  *             intersection = entry_wp.is_junction
  *             road_id, section_id, lane_id = entry_wp.road_id, entry_wp.section_id, entry_wp.lane_id             # <<<<<<<<<<<<<<
  * 
  *             for vertex in entry_xyz, exit_xyz:
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_section_id); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_section_id); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_XDECREF_SET(__pyx_v_road_id, __pyx_t_1);
     __pyx_t_1 = 0;
@@ -4927,14 +4937,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     __Pyx_XDECREF_SET(__pyx_v_lane_id, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "cythoncode/router_baseline.pyx":182
+    /* "cythoncode/router_baseline.pyx":132
  *             road_id, section_id, lane_id = entry_wp.road_id, entry_wp.section_id, entry_wp.lane_id
  * 
  *             for vertex in entry_xyz, exit_xyz:             # <<<<<<<<<<<<<<
- *                 # Adding unique nodes and populating id_map
  *                 if vertex not in self._id_map:
+ *                     new_id = len(self._id_map)
  */
-    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_entry_xyz);
     __Pyx_GIVEREF(__pyx_v_entry_xyz);
@@ -4947,164 +4957,164 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     for (;;) {
       if (__pyx_t_7 >= 2) break;
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-      __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 132, __pyx_L1_error)
       #else
-      __pyx_t_6 = PySequence_ITEM(__pyx_t_2, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 182, __pyx_L1_error)
+      __pyx_t_6 = PySequence_ITEM(__pyx_t_2, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       #endif
       __Pyx_XDECREF_SET(__pyx_v_vertex, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "cythoncode/router_baseline.pyx":184
+      /* "cythoncode/router_baseline.pyx":133
+ * 
  *             for vertex in entry_xyz, exit_xyz:
- *                 # Adding unique nodes and populating id_map
  *                 if vertex not in self._id_map:             # <<<<<<<<<<<<<<
  *                     new_id = len(self._id_map)
  *                     self._id_map[vertex] = new_id
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 133, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_vertex, __pyx_t_6, Py_NE)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 184, __pyx_L1_error)
+      __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_vertex, __pyx_t_6, Py_NE)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_9 = (__pyx_t_8 != 0);
       if (__pyx_t_9) {
 
-        /* "cythoncode/router_baseline.pyx":185
- *                 # Adding unique nodes and populating id_map
+        /* "cythoncode/router_baseline.pyx":134
+ *             for vertex in entry_xyz, exit_xyz:
  *                 if vertex not in self._id_map:
  *                     new_id = len(self._id_map)             # <<<<<<<<<<<<<<
  *                     self._id_map[vertex] = new_id
  *                     self._graph.add_node(new_id, vertex=vertex)
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 185, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 134, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_10 = PyObject_Length(__pyx_t_6); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(0, 185, __pyx_L1_error)
+        __pyx_t_10 = PyObject_Length(__pyx_t_6); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(0, 134, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __pyx_v_new_id = __pyx_t_10;
 
-        /* "cythoncode/router_baseline.pyx":186
+        /* "cythoncode/router_baseline.pyx":135
  *                 if vertex not in self._id_map:
  *                     new_id = len(self._id_map)
  *                     self._id_map[vertex] = new_id             # <<<<<<<<<<<<<<
  *                     self._graph.add_node(new_id, vertex=vertex)
  *             n1 = self._id_map[entry_xyz]
  */
-        __pyx_t_6 = PyInt_FromSsize_t(__pyx_v_new_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 186, __pyx_L1_error)
+        __pyx_t_6 = PyInt_FromSsize_t(__pyx_v_new_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_vertex, __pyx_t_6) < 0)) __PYX_ERR(0, 186, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_vertex, __pyx_t_6) < 0)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "cythoncode/router_baseline.pyx":187
+        /* "cythoncode/router_baseline.pyx":136
  *                     new_id = len(self._id_map)
  *                     self._id_map[vertex] = new_id
  *                     self._graph.add_node(new_id, vertex=vertex)             # <<<<<<<<<<<<<<
  *             n1 = self._id_map[entry_xyz]
  *             n2 = self._id_map[exit_xyz]
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 187, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_add_node); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_add_node); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = PyInt_FromSsize_t(__pyx_v_new_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 187, __pyx_L1_error)
+        __pyx_t_6 = PyInt_FromSsize_t(__pyx_v_new_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_11 = PyTuple_New(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 187, __pyx_L1_error)
+        __pyx_t_11 = PyTuple_New(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 136, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_GIVEREF(__pyx_t_6);
         PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_6);
         __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 187, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_vertex, __pyx_v_vertex) < 0) __PYX_ERR(0, 187, __pyx_L1_error)
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_11, __pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 187, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_vertex, __pyx_v_vertex) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_11, __pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 136, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-        /* "cythoncode/router_baseline.pyx":184
+        /* "cythoncode/router_baseline.pyx":133
+ * 
  *             for vertex in entry_xyz, exit_xyz:
- *                 # Adding unique nodes and populating id_map
  *                 if vertex not in self._id_map:             # <<<<<<<<<<<<<<
  *                     new_id = len(self._id_map)
  *                     self._id_map[vertex] = new_id
  */
       }
 
-      /* "cythoncode/router_baseline.pyx":182
+      /* "cythoncode/router_baseline.pyx":132
  *             road_id, section_id, lane_id = entry_wp.road_id, entry_wp.section_id, entry_wp.lane_id
  * 
  *             for vertex in entry_xyz, exit_xyz:             # <<<<<<<<<<<<<<
- *                 # Adding unique nodes and populating id_map
  *                 if vertex not in self._id_map:
+ *                     new_id = len(self._id_map)
  */
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "cythoncode/router_baseline.pyx":188
+    /* "cythoncode/router_baseline.pyx":137
  *                     self._id_map[vertex] = new_id
  *                     self._graph.add_node(new_id, vertex=vertex)
  *             n1 = self._id_map[entry_xyz]             # <<<<<<<<<<<<<<
  *             n2 = self._id_map[exit_xyz]
  *             if road_id not in self._road_id_to_edge:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_entry_xyz); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_entry_xyz); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 137, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF_SET(__pyx_v_n1, __pyx_t_12);
     __pyx_t_12 = 0;
 
-    /* "cythoncode/router_baseline.pyx":189
+    /* "cythoncode/router_baseline.pyx":138
  *                     self._graph.add_node(new_id, vertex=vertex)
  *             n1 = self._id_map[entry_xyz]
  *             n2 = self._id_map[exit_xyz]             # <<<<<<<<<<<<<<
  *             if road_id not in self._road_id_to_edge:
  *                 self._road_id_to_edge[road_id] = dict()
  */
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_12, __pyx_v_exit_xyz); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_12, __pyx_v_exit_xyz); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_XDECREF_SET(__pyx_v_n2, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "cythoncode/router_baseline.pyx":190
+    /* "cythoncode/router_baseline.pyx":139
  *             n1 = self._id_map[entry_xyz]
  *             n2 = self._id_map[exit_xyz]
  *             if road_id not in self._road_id_to_edge:             # <<<<<<<<<<<<<<
  *                 self._road_id_to_edge[road_id] = dict()
  *             if section_id not in self._road_id_to_edge[road_id]:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_v_road_id, __pyx_t_2, Py_NE)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_v_road_id, __pyx_t_2, Py_NE)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 139, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_8 = (__pyx_t_9 != 0);
     if (__pyx_t_8) {
 
-      /* "cythoncode/router_baseline.pyx":191
+      /* "cythoncode/router_baseline.pyx":140
  *             n2 = self._id_map[exit_xyz]
  *             if road_id not in self._road_id_to_edge:
  *                 self._road_id_to_edge[road_id] = dict()             # <<<<<<<<<<<<<<
  *             if section_id not in self._road_id_to_edge[road_id]:
  *                 self._road_id_to_edge[road_id][section_id] = dict()
  */
-      __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 191, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 191, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      if (unlikely(PyObject_SetItem(__pyx_t_12, __pyx_v_road_id, __pyx_t_2) < 0)) __PYX_ERR(0, 191, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_12, __pyx_v_road_id, __pyx_t_2) < 0)) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "cythoncode/router_baseline.pyx":190
+      /* "cythoncode/router_baseline.pyx":139
  *             n1 = self._id_map[entry_xyz]
  *             n2 = self._id_map[exit_xyz]
  *             if road_id not in self._road_id_to_edge:             # <<<<<<<<<<<<<<
@@ -5113,42 +5123,42 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
  */
     }
 
-    /* "cythoncode/router_baseline.pyx":192
+    /* "cythoncode/router_baseline.pyx":141
  *             if road_id not in self._road_id_to_edge:
  *                 self._road_id_to_edge[road_id] = dict()
  *             if section_id not in self._road_id_to_edge[road_id]:             # <<<<<<<<<<<<<<
  *                 self._road_id_to_edge[road_id][section_id] = dict()
  *             self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_road_id); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 192, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_road_id); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 141, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_section_id, __pyx_t_12, Py_NE)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 192, __pyx_L1_error)
+    __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_section_id, __pyx_t_12, Py_NE)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 141, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __pyx_t_9 = (__pyx_t_8 != 0);
     if (__pyx_t_9) {
 
-      /* "cythoncode/router_baseline.pyx":193
+      /* "cythoncode/router_baseline.pyx":142
  *                 self._road_id_to_edge[road_id] = dict()
  *             if section_id not in self._road_id_to_edge[road_id]:
  *                 self._road_id_to_edge[road_id][section_id] = dict()             # <<<<<<<<<<<<<<
  *             self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)
  * 
  */
-      __pyx_t_12 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_section_id, __pyx_t_12) < 0)) __PYX_ERR(0, 193, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_section_id, __pyx_t_12) < 0)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "cythoncode/router_baseline.pyx":192
+      /* "cythoncode/router_baseline.pyx":141
  *             if road_id not in self._road_id_to_edge:
  *                 self._road_id_to_edge[road_id] = dict()
  *             if section_id not in self._road_id_to_edge[road_id]:             # <<<<<<<<<<<<<<
@@ -5157,14 +5167,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
  */
     }
 
-    /* "cythoncode/router_baseline.pyx":194
+    /* "cythoncode/router_baseline.pyx":143
  *             if section_id not in self._road_id_to_edge[road_id]:
  *                 self._road_id_to_edge[road_id][section_id] = dict()
  *             self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)             # <<<<<<<<<<<<<<
  * 
  *             entry_carla_vector = entry_wp.transform.rotation.get_forward_vector()
  */
-    __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 194, __pyx_L1_error)
+    __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_INCREF(__pyx_v_n1);
     __Pyx_GIVEREF(__pyx_v_n1);
@@ -5172,31 +5182,31 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     __Pyx_INCREF(__pyx_v_n2);
     __Pyx_GIVEREF(__pyx_v_n2);
     PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_v_n2);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 194, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_road_id); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 194, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_road_id); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_section_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 194, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_section_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_lane_id, __pyx_t_12) < 0)) __PYX_ERR(0, 194, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_lane_id, __pyx_t_12) < 0)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-    /* "cythoncode/router_baseline.pyx":196
+    /* "cythoncode/router_baseline.pyx":145
  *             self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)
  * 
  *             entry_carla_vector = entry_wp.transform.rotation.get_forward_vector()             # <<<<<<<<<<<<<<
  *             exit_carla_vector = exit_wp.transform.rotation.get_forward_vector()
  * 
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 196, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_rotation); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_rotation); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_forward_vector); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 196, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_forward_vector); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -5211,25 +5221,25 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     }
     __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 196, __pyx_L1_error)
+    if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF_SET(__pyx_v_entry_carla_vector, __pyx_t_12);
     __pyx_t_12 = 0;
 
-    /* "cythoncode/router_baseline.pyx":197
+    /* "cythoncode/router_baseline.pyx":146
  * 
  *             entry_carla_vector = entry_wp.transform.rotation.get_forward_vector()
  *             exit_carla_vector = exit_wp.transform.rotation.get_forward_vector()             # <<<<<<<<<<<<<<
  * 
- *             # Adding edge with attributes
+ *             self._graph.add_edge(
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 197, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_rotation); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 197, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_rotation); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_forward_vector); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 197, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_forward_vector); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -5244,33 +5254,33 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     }
     __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 197, __pyx_L1_error)
+    if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF_SET(__pyx_v_exit_carla_vector, __pyx_t_12);
     __pyx_t_12 = 0;
 
-    /* "cythoncode/router_baseline.pyx":200
+    /* "cythoncode/router_baseline.pyx":148
+ *             exit_carla_vector = exit_wp.transform.rotation.get_forward_vector()
  * 
- *             # Adding edge with attributes
  *             self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                 n1, n2,
  *                 length=len(path) + 1, path=path,
  */
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-    /* "cythoncode/router_baseline.pyx":201
- *             # Adding edge with attributes
+    /* "cythoncode/router_baseline.pyx":149
+ * 
  *             self._graph.add_edge(
  *                 n1, n2,             # <<<<<<<<<<<<<<
  *                 length=len(path) + 1, path=path,
  *                 entry_waypoint=entry_wp, exit_waypoint=exit_wp,
  */
-    __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_INCREF(__pyx_v_n1);
     __Pyx_GIVEREF(__pyx_v_n1);
@@ -5279,59 +5289,59 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     __Pyx_GIVEREF(__pyx_v_n2);
     PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_v_n2);
 
-    /* "cythoncode/router_baseline.pyx":202
+    /* "cythoncode/router_baseline.pyx":150
  *             self._graph.add_edge(
  *                 n1, n2,
  *                 length=len(path) + 1, path=path,             # <<<<<<<<<<<<<<
  *                 entry_waypoint=entry_wp, exit_waypoint=exit_wp,
  *                 entry_vector=np.array(
  */
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 202, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyDict_NewPresized(9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = PyObject_Length(__pyx_v_path); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 202, __pyx_L1_error)
-    __pyx_t_11 = PyInt_FromSsize_t((__pyx_t_7 + 1)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 202, __pyx_L1_error)
+    __pyx_t_7 = PyObject_Length(__pyx_v_path); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 150, __pyx_L1_error)
+    __pyx_t_11 = PyInt_FromSsize_t((__pyx_t_7 + 1)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_length, __pyx_t_11) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_length, __pyx_t_11) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_path, __pyx_v_path) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_path, __pyx_v_path) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
 
-    /* "cythoncode/router_baseline.pyx":203
+    /* "cythoncode/router_baseline.pyx":151
  *                 n1, n2,
  *                 length=len(path) + 1, path=path,
  *                 entry_waypoint=entry_wp, exit_waypoint=exit_wp,             # <<<<<<<<<<<<<<
  *                 entry_vector=np.array(
  *                     [entry_carla_vector.x, entry_carla_vector.y, entry_carla_vector.z]),
  */
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_entry_waypoint, __pyx_v_entry_wp) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exit_waypoint, __pyx_v_exit_wp) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_entry_waypoint, __pyx_v_entry_wp) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exit_waypoint, __pyx_v_exit_wp) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
 
-    /* "cythoncode/router_baseline.pyx":204
+    /* "cythoncode/router_baseline.pyx":152
  *                 length=len(path) + 1, path=path,
  *                 entry_waypoint=entry_wp, exit_waypoint=exit_wp,
  *                 entry_vector=np.array(             # <<<<<<<<<<<<<<
  *                     [entry_carla_vector.x, entry_carla_vector.y, entry_carla_vector.z]),
  *                 exit_vector=np.array(
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_array); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 204, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_array); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":205
+    /* "cythoncode/router_baseline.pyx":153
  *                 entry_waypoint=entry_wp, exit_waypoint=exit_wp,
  *                 entry_vector=np.array(
  *                     [entry_carla_vector.x, entry_carla_vector.y, entry_carla_vector.z]),             # <<<<<<<<<<<<<<
  *                 exit_vector=np.array(
  *                     [exit_carla_vector.x, exit_carla_vector.y, exit_carla_vector.z]),
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_carla_vector, __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_carla_vector, __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_carla_vector, __pyx_n_s_y); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 205, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_carla_vector, __pyx_n_s_y); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
-    __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_carla_vector, __pyx_n_s_z); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 205, __pyx_L1_error)
+    __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_carla_vector, __pyx_n_s_z); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_15);
-    __pyx_t_16 = PyList_New(3); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 205, __pyx_L1_error)
+    __pyx_t_16 = PyList_New(3); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
     __Pyx_GIVEREF(__pyx_t_1);
     PyList_SET_ITEM(__pyx_t_16, 0, __pyx_t_1);
@@ -5355,39 +5365,39 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     __pyx_t_11 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_15, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_t_16);
     __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-    if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 204, __pyx_L1_error)
+    if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_entry_vector, __pyx_t_11) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_entry_vector, __pyx_t_11) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-    /* "cythoncode/router_baseline.pyx":206
+    /* "cythoncode/router_baseline.pyx":154
  *                 entry_vector=np.array(
  *                     [entry_carla_vector.x, entry_carla_vector.y, entry_carla_vector.z]),
  *                 exit_vector=np.array(             # <<<<<<<<<<<<<<
  *                     [exit_carla_vector.x, exit_carla_vector.y, exit_carla_vector.z]),
  *                 net_vector=vector(entry_wp.transform.location,
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 206, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 154, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
-    __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_array); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 206, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_array); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 154, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-    /* "cythoncode/router_baseline.pyx":207
+    /* "cythoncode/router_baseline.pyx":155
  *                     [entry_carla_vector.x, entry_carla_vector.y, entry_carla_vector.z]),
  *                 exit_vector=np.array(
  *                     [exit_carla_vector.x, exit_carla_vector.y, exit_carla_vector.z]),             # <<<<<<<<<<<<<<
  *                 net_vector=vector(entry_wp.transform.location,
  *                                   exit_wp.transform.location),
  */
-    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_carla_vector, __pyx_n_s_x); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 207, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_carla_vector, __pyx_n_s_x); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
-    __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_carla_vector, __pyx_n_s_y); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 207, __pyx_L1_error)
+    __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_carla_vector, __pyx_n_s_y); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_15);
-    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_carla_vector, __pyx_n_s_z); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 207, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_carla_vector, __pyx_n_s_z); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
-    __pyx_t_1 = PyList_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_13);
     PyList_SET_ITEM(__pyx_t_1, 0, __pyx_t_13);
@@ -5411,37 +5421,37 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     __pyx_t_11 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_16, __pyx_t_14, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_1);
     __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 206, __pyx_L1_error)
+    if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 154, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exit_vector, __pyx_t_11) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exit_vector, __pyx_t_11) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-    /* "cythoncode/router_baseline.pyx":208
+    /* "cythoncode/router_baseline.pyx":156
  *                 exit_vector=np.array(
  *                     [exit_carla_vector.x, exit_carla_vector.y, exit_carla_vector.z]),
  *                 net_vector=vector(entry_wp.transform.location,             # <<<<<<<<<<<<<<
  *                                   exit_wp.transform.location),
  *                 intersection=intersection, type=RoadOption.LANEFOLLOW)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_vector); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 208, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_vector); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_entry_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_location); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 208, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_location); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":209
+    /* "cythoncode/router_baseline.pyx":157
  *                     [exit_carla_vector.x, exit_carla_vector.y, exit_carla_vector.z]),
  *                 net_vector=vector(entry_wp.transform.location,
  *                                   exit_wp.transform.location),             # <<<<<<<<<<<<<<
  *                 intersection=intersection, type=RoadOption.LANEFOLLOW)
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_exit_wp, __pyx_n_s_transform); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_location); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 209, __pyx_L1_error)
+    __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_location); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_15);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -5459,7 +5469,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_16)) {
       PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_t_14, __pyx_t_15};
-      __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_17, 2+__pyx_t_17); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 208, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_17, 2+__pyx_t_17); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 156, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -5469,7 +5479,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_16)) {
       PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_t_14, __pyx_t_15};
-      __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_17, 2+__pyx_t_17); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 208, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_17, 2+__pyx_t_17); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 156, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -5477,7 +5487,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
     } else
     #endif
     {
-      __pyx_t_13 = PyTuple_New(2+__pyx_t_17); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 208, __pyx_L1_error)
+      __pyx_t_13 = PyTuple_New(2+__pyx_t_17); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 156, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       if (__pyx_t_1) {
         __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_1); __pyx_t_1 = NULL;
@@ -5488,45 +5498,45 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
       PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_17, __pyx_t_15);
       __pyx_t_14 = 0;
       __pyx_t_15 = 0;
-      __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_13, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 208, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_13, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 156, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
     }
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_net_vector, __pyx_t_11) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_net_vector, __pyx_t_11) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-    /* "cythoncode/router_baseline.pyx":210
+    /* "cythoncode/router_baseline.pyx":158
  *                 net_vector=vector(entry_wp.transform.location,
  *                                   exit_wp.transform.location),
  *                 intersection=intersection, type=RoadOption.LANEFOLLOW)             # <<<<<<<<<<<<<<
  * 
  *     def _find_loose_ends(self):
  */
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_intersection, __pyx_v_intersection) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
-    __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 210, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_intersection, __pyx_v_intersection) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
-    __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 210, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_type, __pyx_t_16) < 0) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_type, __pyx_t_16) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-    /* "cythoncode/router_baseline.pyx":200
+    /* "cythoncode/router_baseline.pyx":148
+ *             exit_carla_vector = exit_wp.transform.rotation.get_forward_vector()
  * 
- *             # Adding edge with attributes
  *             self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                 n1, n2,
  *                 length=len(path) + 1, path=path,
  */
-    __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_12, __pyx_t_2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_12, __pyx_t_2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-    /* "cythoncode/router_baseline.pyx":175
+    /* "cythoncode/router_baseline.pyx":125
  *         self._road_id_to_edge = dict()
  * 
  *         for segment in self._topology:             # <<<<<<<<<<<<<<
@@ -5536,12 +5546,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "cythoncode/router_baseline.pyx":155
+  /* "cythoncode/router_baseline.pyx":120
  *             self._topology.append(seg_dict)
  * 
  *     def _build_graph(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function builds a networkx graph representation of topology, creating several class attributes:
+ *         self._graph = nx.DiGraph()
+ *         self._id_map = dict()
  */
 
   /* function exit code */
@@ -5581,18 +5591,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_6_
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":212
+/* "cythoncode/router_baseline.pyx":160
  *                 intersection=intersection, type=RoadOption.LANEFOLLOW)
  * 
  *     def _find_loose_ends(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method finds road segments that have an unconnected end, and
+ *         count_loose_ends = 0
+ *         hop_resolution = self._sampling_resolution
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_find_loose_ends[] = "\n        This method finds road segments that have an unconnected end, and\n        adds them to the internal graph representation\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends = {"_find_loose_ends", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends, METH_O, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_find_loose_ends};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends = {"_find_loose_ends", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends, METH_O, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -5638,9 +5647,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_find_loose_ends", 0);
 
-  /* "cythoncode/router_baseline.pyx":217
- *         adds them to the internal graph representation
- *         """
+  /* "cythoncode/router_baseline.pyx":161
+ * 
+ *     def _find_loose_ends(self):
  *         count_loose_ends = 0             # <<<<<<<<<<<<<<
  *         hop_resolution = self._sampling_resolution
  *         for segment in self._topology:
@@ -5648,34 +5657,34 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_count_loose_ends = __pyx_int_0;
 
-  /* "cythoncode/router_baseline.pyx":218
- *         """
+  /* "cythoncode/router_baseline.pyx":162
+ *     def _find_loose_ends(self):
  *         count_loose_ends = 0
  *         hop_resolution = self._sampling_resolution             # <<<<<<<<<<<<<<
  *         for segment in self._topology:
  *             end_wp = segment['exit']
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sampling_resolution_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_hop_resolution = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":219
+  /* "cythoncode/router_baseline.pyx":163
  *         count_loose_ends = 0
  *         hop_resolution = self._sampling_resolution
  *         for segment in self._topology:             # <<<<<<<<<<<<<<
  *             end_wp = segment['exit']
  *             exit_xyz = segment['exitxyz']
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 163, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -5683,17 +5692,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 219, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 163, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_3 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 219, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 163, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -5703,7 +5712,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 219, __pyx_L1_error)
+          else __PYX_ERR(0, 163, __pyx_L1_error)
         }
         break;
       }
@@ -5712,42 +5721,42 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
     __Pyx_XDECREF_SET(__pyx_v_segment, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":220
+    /* "cythoncode/router_baseline.pyx":164
  *         hop_resolution = self._sampling_resolution
  *         for segment in self._topology:
  *             end_wp = segment['exit']             # <<<<<<<<<<<<<<
  *             exit_xyz = segment['exitxyz']
  *             road_id, section_id, lane_id = end_wp.road_id, end_wp.section_id, end_wp.lane_id
  */
-    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_end_wp, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":221
+    /* "cythoncode/router_baseline.pyx":165
  *         for segment in self._topology:
  *             end_wp = segment['exit']
  *             exit_xyz = segment['exitxyz']             # <<<<<<<<<<<<<<
  *             road_id, section_id, lane_id = end_wp.road_id, end_wp.section_id, end_wp.lane_id
  *             if road_id in self._road_id_to_edge \
  */
-    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exitxyz); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_exitxyz); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_exit_xyz, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":222
+    /* "cythoncode/router_baseline.pyx":166
  *             end_wp = segment['exit']
  *             exit_xyz = segment['exitxyz']
  *             road_id, section_id, lane_id = end_wp.road_id, end_wp.section_id, end_wp.lane_id             # <<<<<<<<<<<<<<
  *             if road_id in self._road_id_to_edge \
  *                     and section_id in self._road_id_to_edge[road_id] \
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_section_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_section_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 166, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_XDECREF_SET(__pyx_v_road_id, __pyx_t_1);
     __pyx_t_1 = 0;
@@ -5756,16 +5765,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
     __Pyx_XDECREF_SET(__pyx_v_lane_id, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "cythoncode/router_baseline.pyx":223
+    /* "cythoncode/router_baseline.pyx":167
  *             exit_xyz = segment['exitxyz']
  *             road_id, section_id, lane_id = end_wp.road_id, end_wp.section_id, end_wp.lane_id
  *             if road_id in self._road_id_to_edge \             # <<<<<<<<<<<<<<
  *                     and section_id in self._road_id_to_edge[road_id] \
  *                     and lane_id in self._road_id_to_edge[road_id][section_id]:
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 167, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_road_id, __pyx_t_6, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 223, __pyx_L1_error)
+    __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_road_id, __pyx_t_6, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 167, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_9 = (__pyx_t_8 != 0);
     if (__pyx_t_9) {
@@ -5774,19 +5783,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
       goto __pyx_L6_bool_binop_done;
     }
 
-    /* "cythoncode/router_baseline.pyx":224
+    /* "cythoncode/router_baseline.pyx":168
  *             road_id, section_id, lane_id = end_wp.road_id, end_wp.section_id, end_wp.lane_id
  *             if road_id in self._road_id_to_edge \
  *                     and section_id in self._road_id_to_edge[road_id] \             # <<<<<<<<<<<<<<
  *                     and lane_id in self._road_id_to_edge[road_id][section_id]:
  *                 pass
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_road_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_road_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_v_section_id, __pyx_t_5, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 224, __pyx_L1_error)
+    __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_v_section_id, __pyx_t_5, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_8 = (__pyx_t_9 != 0);
     if (__pyx_t_8) {
@@ -5795,28 +5804,28 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
       goto __pyx_L6_bool_binop_done;
     }
 
-    /* "cythoncode/router_baseline.pyx":225
+    /* "cythoncode/router_baseline.pyx":169
  *             if road_id in self._road_id_to_edge \
  *                     and section_id in self._road_id_to_edge[road_id] \
  *                     and lane_id in self._road_id_to_edge[road_id][section_id]:             # <<<<<<<<<<<<<<
  *                 pass
  *             else:
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 225, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 225, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_section_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 225, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_section_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_lane_id, __pyx_t_5, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 225, __pyx_L1_error)
+    __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_v_lane_id, __pyx_t_5, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_9 = (__pyx_t_8 != 0);
     __pyx_t_7 = __pyx_t_9;
     __pyx_L6_bool_binop_done:;
 
-    /* "cythoncode/router_baseline.pyx":223
+    /* "cythoncode/router_baseline.pyx":167
  *             exit_xyz = segment['exitxyz']
  *             road_id, section_id, lane_id = end_wp.road_id, end_wp.section_id, end_wp.lane_id
  *             if road_id in self._road_id_to_edge \             # <<<<<<<<<<<<<<
@@ -5827,7 +5836,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
       goto __pyx_L5;
     }
 
-    /* "cythoncode/router_baseline.pyx":228
+    /* "cythoncode/router_baseline.pyx":172
  *                 pass
  *             else:
  *                 count_loose_ends += 1             # <<<<<<<<<<<<<<
@@ -5835,41 +5844,41 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
  *                     self._road_id_to_edge[road_id] = dict()
  */
     /*else*/ {
-      __pyx_t_5 = __Pyx_PyInt_AddObjC(__pyx_v_count_loose_ends, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 228, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyInt_AddObjC(__pyx_v_count_loose_ends, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 172, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF_SET(__pyx_v_count_loose_ends, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "cythoncode/router_baseline.pyx":229
+      /* "cythoncode/router_baseline.pyx":173
  *             else:
  *                 count_loose_ends += 1
  *                 if road_id not in self._road_id_to_edge:             # <<<<<<<<<<<<<<
  *                     self._road_id_to_edge[road_id] = dict()
  *                 if section_id not in self._road_id_to_edge[road_id]:
  */
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_7 = (__Pyx_PySequence_ContainsTF(__pyx_v_road_id, __pyx_t_5, Py_NE)); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 229, __pyx_L1_error)
+      __pyx_t_7 = (__Pyx_PySequence_ContainsTF(__pyx_v_road_id, __pyx_t_5, Py_NE)); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 173, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_9 = (__pyx_t_7 != 0);
       if (__pyx_t_9) {
 
-        /* "cythoncode/router_baseline.pyx":230
+        /* "cythoncode/router_baseline.pyx":174
  *                 count_loose_ends += 1
  *                 if road_id not in self._road_id_to_edge:
  *                     self._road_id_to_edge[road_id] = dict()             # <<<<<<<<<<<<<<
  *                 if section_id not in self._road_id_to_edge[road_id]:
  *                     self._road_id_to_edge[road_id][section_id] = dict()
  */
-        __pyx_t_5 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 230, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_road_id, __pyx_t_5) < 0)) __PYX_ERR(0, 230, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_road_id, __pyx_t_5) < 0)) __PYX_ERR(0, 174, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "cythoncode/router_baseline.pyx":229
+        /* "cythoncode/router_baseline.pyx":173
  *             else:
  *                 count_loose_ends += 1
  *                 if road_id not in self._road_id_to_edge:             # <<<<<<<<<<<<<<
@@ -5878,42 +5887,42 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
  */
       }
 
-      /* "cythoncode/router_baseline.pyx":231
+      /* "cythoncode/router_baseline.pyx":175
  *                 if road_id not in self._road_id_to_edge:
  *                     self._road_id_to_edge[road_id] = dict()
  *                 if section_id not in self._road_id_to_edge[road_id]:             # <<<<<<<<<<<<<<
  *                     self._road_id_to_edge[road_id][section_id] = dict()
  *                 n1 = self._id_map[exit_xyz]
  */
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_v_section_id, __pyx_t_6, Py_NE)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_v_section_id, __pyx_t_6, Py_NE)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_7 = (__pyx_t_9 != 0);
       if (__pyx_t_7) {
 
-        /* "cythoncode/router_baseline.pyx":232
+        /* "cythoncode/router_baseline.pyx":176
  *                     self._road_id_to_edge[road_id] = dict()
  *                 if section_id not in self._road_id_to_edge[road_id]:
  *                     self._road_id_to_edge[road_id][section_id] = dict()             # <<<<<<<<<<<<<<
  *                 n1 = self._id_map[exit_xyz]
  *                 n2 = -1*count_loose_ends
  */
-        __pyx_t_6 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 232, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 176, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 232, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 176, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_section_id, __pyx_t_6) < 0)) __PYX_ERR(0, 232, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_section_id, __pyx_t_6) < 0)) __PYX_ERR(0, 176, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "cythoncode/router_baseline.pyx":231
+        /* "cythoncode/router_baseline.pyx":175
  *                 if road_id not in self._road_id_to_edge:
  *                     self._road_id_to_edge[road_id] = dict()
  *                 if section_id not in self._road_id_to_edge[road_id]:             # <<<<<<<<<<<<<<
@@ -5922,41 +5931,41 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
  */
       }
 
-      /* "cythoncode/router_baseline.pyx":233
+      /* "cythoncode/router_baseline.pyx":177
  *                 if section_id not in self._road_id_to_edge[road_id]:
  *                     self._road_id_to_edge[road_id][section_id] = dict()
  *                 n1 = self._id_map[exit_xyz]             # <<<<<<<<<<<<<<
  *                 n2 = -1*count_loose_ends
  *                 self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 233, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 177, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_exit_xyz); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_exit_xyz); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_XDECREF_SET(__pyx_v_n1, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":234
+      /* "cythoncode/router_baseline.pyx":178
  *                     self._road_id_to_edge[road_id][section_id] = dict()
  *                 n1 = self._id_map[exit_xyz]
  *                 n2 = -1*count_loose_ends             # <<<<<<<<<<<<<<
  *                 self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)
  *                 next_wp = end_wp.next(hop_resolution)
  */
-      __pyx_t_1 = PyNumber_Multiply(__pyx_int_neg_1, __pyx_v_count_loose_ends); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_Multiply(__pyx_int_neg_1, __pyx_v_count_loose_ends); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_n2, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":235
+      /* "cythoncode/router_baseline.pyx":179
  *                 n1 = self._id_map[exit_xyz]
  *                 n2 = -1*count_loose_ends
  *                 self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)             # <<<<<<<<<<<<<<
  *                 next_wp = end_wp.next(hop_resolution)
  *                 path = []
  */
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_n1);
       __Pyx_GIVEREF(__pyx_v_n1);
@@ -5964,26 +5973,26 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
       __Pyx_INCREF(__pyx_v_n2);
       __Pyx_GIVEREF(__pyx_v_n2);
       PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_n2);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_road_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_v_road_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 179, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_section_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_v_section_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_lane_id, __pyx_t_1) < 0)) __PYX_ERR(0, 235, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_6, __pyx_v_lane_id, __pyx_t_1) < 0)) __PYX_ERR(0, 179, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":236
+      /* "cythoncode/router_baseline.pyx":180
  *                 n2 = -1*count_loose_ends
  *                 self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)
  *                 next_wp = end_wp.next(hop_resolution)             # <<<<<<<<<<<<<<
  *                 path = []
  *                 while next_wp is not None and next_wp \
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_next); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 236, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_next); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_5 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
@@ -5997,25 +6006,25 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
       }
       __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_5, __pyx_v_hop_resolution) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_hop_resolution);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_XDECREF_SET(__pyx_v_next_wp, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":237
+      /* "cythoncode/router_baseline.pyx":181
  *                 self._road_id_to_edge[road_id][section_id][lane_id] = (n1, n2)
  *                 next_wp = end_wp.next(hop_resolution)
  *                 path = []             # <<<<<<<<<<<<<<
  *                 while next_wp is not None and next_wp \
  *                         and next_wp[0].road_id == road_id \
  */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_path, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":238
+      /* "cythoncode/router_baseline.pyx":182
  *                 next_wp = end_wp.next(hop_resolution)
  *                 path = []
  *                 while next_wp is not None and next_wp \             # <<<<<<<<<<<<<<
@@ -6031,43 +6040,43 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
           goto __pyx_L13_bool_binop_done;
         }
 
-        /* "cythoncode/router_baseline.pyx":239
+        /* "cythoncode/router_baseline.pyx":183
  *                 path = []
  *                 while next_wp is not None and next_wp \
  *                         and next_wp[0].road_id == road_id \             # <<<<<<<<<<<<<<
  *                         and next_wp[0].section_id == section_id \
  *                         and next_wp[0].lane_id == lane_id:
  */
-        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_next_wp); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 238, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_next_wp); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 182, __pyx_L1_error)
         if (__pyx_t_8) {
         } else {
           __pyx_t_7 = __pyx_t_8;
           goto __pyx_L13_bool_binop_done;
         }
 
-        /* "cythoncode/router_baseline.pyx":240
+        /* "cythoncode/router_baseline.pyx":184
  *                 while next_wp is not None and next_wp \
  *                         and next_wp[0].road_id == road_id \
  *                         and next_wp[0].section_id == section_id \             # <<<<<<<<<<<<<<
  *                         and next_wp[0].lane_id == lane_id:
  *                     path.append(next_wp[0])
  */
-        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
 
-        /* "cythoncode/router_baseline.pyx":239
+        /* "cythoncode/router_baseline.pyx":183
  *                 path = []
  *                 while next_wp is not None and next_wp \
  *                         and next_wp[0].road_id == road_id \             # <<<<<<<<<<<<<<
  *                         and next_wp[0].section_id == section_id \
  *                         and next_wp[0].lane_id == lane_id:
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 239, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_road_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 183, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, __pyx_v_road_id, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
+        __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, __pyx_v_road_id, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 239, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 183, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         if (__pyx_t_8) {
         } else {
@@ -6075,21 +6084,21 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
           goto __pyx_L13_bool_binop_done;
         }
 
-        /* "cythoncode/router_baseline.pyx":240
+        /* "cythoncode/router_baseline.pyx":184
  *                 while next_wp is not None and next_wp \
  *                         and next_wp[0].road_id == road_id \
  *                         and next_wp[0].section_id == section_id \             # <<<<<<<<<<<<<<
  *                         and next_wp[0].lane_id == lane_id:
  *                     path.append(next_wp[0])
  */
-        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_section_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 240, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_section_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, __pyx_v_section_id, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L1_error)
+        __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, __pyx_v_section_id, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 240, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 184, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         if (__pyx_t_8) {
         } else {
@@ -6097,48 +6106,48 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
           goto __pyx_L13_bool_binop_done;
         }
 
-        /* "cythoncode/router_baseline.pyx":241
+        /* "cythoncode/router_baseline.pyx":185
  *                         and next_wp[0].road_id == road_id \
  *                         and next_wp[0].section_id == section_id \
  *                         and next_wp[0].lane_id == lane_id:             # <<<<<<<<<<<<<<
  *                     path.append(next_wp[0])
  *                     next_wp = next_wp[0].next(hop_resolution)
  */
-        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 241, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 185, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, __pyx_v_lane_id, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
+        __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, __pyx_v_lane_id, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 241, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 185, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_7 = __pyx_t_8;
         __pyx_L13_bool_binop_done:;
         if (!__pyx_t_7) break;
 
-        /* "cythoncode/router_baseline.pyx":242
+        /* "cythoncode/router_baseline.pyx":186
  *                         and next_wp[0].section_id == section_id \
  *                         and next_wp[0].lane_id == lane_id:
  *                     path.append(next_wp[0])             # <<<<<<<<<<<<<<
  *                     next_wp = next_wp[0].next(hop_resolution)
  *                 if path:
  */
-        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_path, __pyx_t_1); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 242, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyList_Append(__pyx_v_path, __pyx_t_1); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 186, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "cythoncode/router_baseline.pyx":243
+        /* "cythoncode/router_baseline.pyx":187
  *                         and next_wp[0].lane_id == lane_id:
  *                     path.append(next_wp[0])
  *                     next_wp = next_wp[0].next(hop_resolution)             # <<<<<<<<<<<<<<
  *                 if path:
  *                     n2_xyz = (path[-1].transform.location.x,
  */
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 243, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_next_wp, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 187, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_next); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 243, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_next); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 187, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __pyx_t_6 = NULL;
@@ -6153,14 +6162,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
         }
         __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_v_hop_resolution) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_hop_resolution);
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 243, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF_SET(__pyx_v_next_wp, __pyx_t_1);
         __pyx_t_1 = 0;
       }
 
-      /* "cythoncode/router_baseline.pyx":244
+      /* "cythoncode/router_baseline.pyx":188
  *                     path.append(next_wp[0])
  *                     next_wp = next_wp[0].next(hop_resolution)
  *                 if path:             # <<<<<<<<<<<<<<
@@ -6170,71 +6179,71 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
       __pyx_t_7 = (PyList_GET_SIZE(__pyx_v_path) != 0);
       if (__pyx_t_7) {
 
-        /* "cythoncode/router_baseline.pyx":245
+        /* "cythoncode/router_baseline.pyx":189
  *                     next_wp = next_wp[0].next(hop_resolution)
  *                 if path:
  *                     n2_xyz = (path[-1].transform.location.x,             # <<<<<<<<<<<<<<
  *                               path[-1].transform.location.y,
  *                               path[-1].transform.location.z)
  */
-        __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_transform); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 245, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_transform); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 189, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 245, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_x); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 189, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "cythoncode/router_baseline.pyx":246
+        /* "cythoncode/router_baseline.pyx":190
  *                 if path:
  *                     n2_xyz = (path[-1].transform.location.x,
  *                               path[-1].transform.location.y,             # <<<<<<<<<<<<<<
  *                               path[-1].transform.location.z)
  *                     self._graph.add_node(n2, vertex=n2_xyz)
  */
-        __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 246, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 246, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 190, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 246, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_y); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 246, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_y); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 190, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "cythoncode/router_baseline.pyx":247
+        /* "cythoncode/router_baseline.pyx":191
  *                     n2_xyz = (path[-1].transform.location.x,
  *                               path[-1].transform.location.y,
  *                               path[-1].transform.location.z)             # <<<<<<<<<<<<<<
  *                     self._graph.add_node(n2, vertex=n2_xyz)
  *                     self._graph.add_edge(
  */
-        __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_transform); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_transform); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 191, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_location); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_z); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_z); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 191, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "cythoncode/router_baseline.pyx":245
+        /* "cythoncode/router_baseline.pyx":189
  *                     next_wp = next_wp[0].next(hop_resolution)
  *                 if path:
  *                     n2_xyz = (path[-1].transform.location.x,             # <<<<<<<<<<<<<<
  *                               path[-1].transform.location.y,
  *                               path[-1].transform.location.z)
  */
-        __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_5);
@@ -6248,54 +6257,54 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
         __Pyx_XDECREF_SET(__pyx_v_n2_xyz, ((PyObject*)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "cythoncode/router_baseline.pyx":248
+        /* "cythoncode/router_baseline.pyx":192
  *                               path[-1].transform.location.y,
  *                               path[-1].transform.location.z)
  *                     self._graph.add_node(n2, vertex=n2_xyz)             # <<<<<<<<<<<<<<
  *                     self._graph.add_edge(
  *                         n1, n2,
  */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 248, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_add_node); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 248, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_add_node); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 192, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 248, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_INCREF(__pyx_v_n2);
         __Pyx_GIVEREF(__pyx_v_n2);
         PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_n2);
-        __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 248, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 192, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_vertex, __pyx_v_n2_xyz) < 0) __PYX_ERR(0, 248, __pyx_L1_error)
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 248, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_vertex, __pyx_v_n2_xyz) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 192, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "cythoncode/router_baseline.pyx":249
+        /* "cythoncode/router_baseline.pyx":193
  *                               path[-1].transform.location.z)
  *                     self._graph.add_node(n2, vertex=n2_xyz)
  *                     self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                         n1, n2,
  *                         length=len(path) + 1, path=path,
  */
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 249, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 193, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 249, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "cythoncode/router_baseline.pyx":250
+        /* "cythoncode/router_baseline.pyx":194
  *                     self._graph.add_node(n2, vertex=n2_xyz)
  *                     self._graph.add_edge(
  *                         n1, n2,             # <<<<<<<<<<<<<<
  *                         length=len(path) + 1, path=path,
  *                         entry_waypoint=end_wp, exit_waypoint=path[-1],
  */
-        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 249, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 193, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_INCREF(__pyx_v_n1);
         __Pyx_GIVEREF(__pyx_v_n1);
@@ -6304,80 +6313,80 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
         __Pyx_GIVEREF(__pyx_v_n2);
         PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_n2);
 
-        /* "cythoncode/router_baseline.pyx":251
+        /* "cythoncode/router_baseline.pyx":195
  *                     self._graph.add_edge(
  *                         n1, n2,
  *                         length=len(path) + 1, path=path,             # <<<<<<<<<<<<<<
  *                         entry_waypoint=end_wp, exit_waypoint=path[-1],
  *                         entry_vector=None, exit_vector=None, net_vector=None,
  */
-        __pyx_t_1 = __Pyx_PyDict_NewPresized(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyDict_NewPresized(9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_12 = PyList_GET_SIZE(__pyx_v_path); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 251, __pyx_L1_error)
-        __pyx_t_11 = PyInt_FromSsize_t((__pyx_t_12 + 1)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 251, __pyx_L1_error)
+        __pyx_t_12 = PyList_GET_SIZE(__pyx_v_path); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 195, __pyx_L1_error)
+        __pyx_t_11 = PyInt_FromSsize_t((__pyx_t_12 + 1)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_length, __pyx_t_11) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_length, __pyx_t_11) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_path, __pyx_v_path) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_path, __pyx_v_path) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
 
-        /* "cythoncode/router_baseline.pyx":252
+        /* "cythoncode/router_baseline.pyx":196
  *                         n1, n2,
  *                         length=len(path) + 1, path=path,
  *                         entry_waypoint=end_wp, exit_waypoint=path[-1],             # <<<<<<<<<<<<<<
  *                         entry_vector=None, exit_vector=None, net_vector=None,
  *                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)
  */
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_entry_waypoint, __pyx_v_end_wp) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
-        __pyx_t_11 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 252, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_entry_waypoint, __pyx_v_end_wp) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_GetItemInt_List(__pyx_v_path, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 196, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_exit_waypoint, __pyx_t_11) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_exit_waypoint, __pyx_t_11) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-        /* "cythoncode/router_baseline.pyx":253
+        /* "cythoncode/router_baseline.pyx":197
  *                         length=len(path) + 1, path=path,
  *                         entry_waypoint=end_wp, exit_waypoint=path[-1],
  *                         entry_vector=None, exit_vector=None, net_vector=None,             # <<<<<<<<<<<<<<
  *                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)
  * 
  */
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_entry_vector, Py_None) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_exit_vector, Py_None) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_net_vector, Py_None) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_entry_vector, Py_None) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_exit_vector, Py_None) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_net_vector, Py_None) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
 
-        /* "cythoncode/router_baseline.pyx":254
+        /* "cythoncode/router_baseline.pyx":198
  *                         entry_waypoint=end_wp, exit_waypoint=path[-1],
  *                         entry_vector=None, exit_vector=None, net_vector=None,
  *                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)             # <<<<<<<<<<<<<<
  * 
  *     def _lane_change_link(self):
  */
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_is_junction); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 254, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_end_wp, __pyx_n_s_is_junction); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 198, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_intersection, __pyx_t_11) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_intersection, __pyx_t_11) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 254, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 198, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 254, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 198, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_type, __pyx_t_13) < 0) __PYX_ERR(0, 251, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_type, __pyx_t_13) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-        /* "cythoncode/router_baseline.pyx":249
+        /* "cythoncode/router_baseline.pyx":193
  *                               path[-1].transform.location.z)
  *                     self._graph.add_node(n2, vertex=n2_xyz)
  *                     self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                         n1, n2,
  *                         length=len(path) + 1, path=path,
  */
-        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 249, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 193, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-        /* "cythoncode/router_baseline.pyx":244
+        /* "cythoncode/router_baseline.pyx":188
  *                     path.append(next_wp[0])
  *                     next_wp = next_wp[0].next(hop_resolution)
  *                 if path:             # <<<<<<<<<<<<<<
@@ -6388,7 +6397,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
     }
     __pyx_L5:;
 
-    /* "cythoncode/router_baseline.pyx":219
+    /* "cythoncode/router_baseline.pyx":163
  *         count_loose_ends = 0
  *         hop_resolution = self._sampling_resolution
  *         for segment in self._topology:             # <<<<<<<<<<<<<<
@@ -6398,12 +6407,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":212
+  /* "cythoncode/router_baseline.pyx":160
  *                 intersection=intersection, type=RoadOption.LANEFOLLOW)
  * 
  *     def _find_loose_ends(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method finds road segments that have an unconnected end, and
+ *         count_loose_ends = 0
+ *         hop_resolution = self._sampling_resolution
  */
 
   /* function exit code */
@@ -6437,18 +6446,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_8_
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":256
+/* "cythoncode/router_baseline.pyx":200
  *                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)
  * 
  *     def _lane_change_link(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method places zero cost links in the topology graph
+ *         for segment in self._topology:
+ *             left_found, right_found = False, False
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_10_lane_change_link[] = "\n        This method places zero cost links in the topology graph\n        representing availability of lane changes.\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link = {"_lane_change_link", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link, METH_O, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_10_lane_change_link};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link = {"_lane_change_link", (PyCFunction)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link, METH_O, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -6488,22 +6496,22 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_lane_change_link", 0);
 
-  /* "cythoncode/router_baseline.pyx":262
- *         """
+  /* "cythoncode/router_baseline.pyx":201
  * 
+ *     def _lane_change_link(self):
  *         for segment in self._topology:             # <<<<<<<<<<<<<<
  *             left_found, right_found = False, False
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_topology); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 201, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 201, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -6511,17 +6519,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 262, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 201, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 201, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_3 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 262, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 201, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 201, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -6531,7 +6539,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 262, __pyx_L1_error)
+          else __PYX_ERR(0, 201, __pyx_L1_error)
         }
         break;
       }
@@ -6540,8 +6548,8 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
     __Pyx_XDECREF_SET(__pyx_v_segment, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cythoncode/router_baseline.pyx":263
- * 
+    /* "cythoncode/router_baseline.pyx":202
+ *     def _lane_change_link(self):
  *         for segment in self._topology:
  *             left_found, right_found = False, False             # <<<<<<<<<<<<<<
  * 
@@ -6552,22 +6560,22 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
     __pyx_v_left_found = __pyx_t_5;
     __pyx_v_right_found = __pyx_t_6;
 
-    /* "cythoncode/router_baseline.pyx":265
+    /* "cythoncode/router_baseline.pyx":204
  *             left_found, right_found = False, False
  * 
  *             for waypoint in segment['path']:             # <<<<<<<<<<<<<<
  *                 if not segment['entry'].is_junction:
  *                     next_waypoint, next_road_option, next_segment = None, None, None
  */
-    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
       __pyx_t_7 = __pyx_t_1; __Pyx_INCREF(__pyx_t_7); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 265, __pyx_L1_error)
+      __pyx_t_8 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 204, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_9 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 265, __pyx_L1_error)
+      __pyx_t_9 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 204, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     for (;;) {
@@ -6575,17 +6583,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
         if (likely(PyList_CheckExact(__pyx_t_7))) {
           if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_7)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_8); __Pyx_INCREF(__pyx_t_1); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 265, __pyx_L1_error)
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_8); __Pyx_INCREF(__pyx_t_1); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 204, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 265, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         } else {
           if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_8); __Pyx_INCREF(__pyx_t_1); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 265, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_8); __Pyx_INCREF(__pyx_t_1); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 204, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 265, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         }
@@ -6595,7 +6603,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 265, __pyx_L1_error)
+            else __PYX_ERR(0, 204, __pyx_L1_error)
           }
           break;
         }
@@ -6604,24 +6612,24 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
       __Pyx_XDECREF_SET(__pyx_v_waypoint, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":266
+      /* "cythoncode/router_baseline.pyx":205
  * 
  *             for waypoint in segment['path']:
  *                 if not segment['entry'].is_junction:             # <<<<<<<<<<<<<<
  *                     next_waypoint, next_road_option, next_segment = None, None, None
  * 
  */
-      __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 266, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_is_junction); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 266, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_is_junction); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 205, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 266, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 205, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __pyx_t_5 = ((!__pyx_t_6) != 0);
       if (__pyx_t_5) {
 
-        /* "cythoncode/router_baseline.pyx":267
+        /* "cythoncode/router_baseline.pyx":206
  *             for waypoint in segment['path']:
  *                 if not segment['entry'].is_junction:
  *                     next_waypoint, next_road_option, next_segment = None, None, None             # <<<<<<<<<<<<<<
@@ -6641,40 +6649,40 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
         __Pyx_XDECREF_SET(__pyx_v_next_segment, __pyx_t_11);
         __pyx_t_11 = 0;
 
-        /* "cythoncode/router_baseline.pyx":269
+        /* "cythoncode/router_baseline.pyx":208
  *                     next_waypoint, next_road_option, next_segment = None, None, None
  * 
  *                     if waypoint.right_lane_marking and waypoint.right_lane_marking.lane_change & carla.LaneChange.Right and not right_found:             # <<<<<<<<<<<<<<
  *                         next_waypoint = waypoint.get_right_lane()
  *                         if next_waypoint is not None \
  */
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_right_lane_marking); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_right_lane_marking); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         if (__pyx_t_6) {
         } else {
           __pyx_t_5 = __pyx_t_6;
           goto __pyx_L9_bool_binop_done;
         }
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_right_lane_marking); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_right_lane_marking); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_lane_change); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_lane_change); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_carla); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_carla); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LaneChange); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LaneChange); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_Right); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_Right); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        __pyx_t_10 = PyNumber_And(__pyx_t_1, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_10 = PyNumber_And(__pyx_t_1, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 269, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         if (__pyx_t_6) {
         } else {
@@ -6686,14 +6694,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
         __pyx_L9_bool_binop_done:;
         if (__pyx_t_5) {
 
-          /* "cythoncode/router_baseline.pyx":270
+          /* "cythoncode/router_baseline.pyx":209
  * 
  *                     if waypoint.right_lane_marking and waypoint.right_lane_marking.lane_change & carla.LaneChange.Right and not right_found:
  *                         next_waypoint = waypoint.get_right_lane()             # <<<<<<<<<<<<<<
  *                         if next_waypoint is not None \
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \
  */
-          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_get_right_lane); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 270, __pyx_L1_error)
+          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_get_right_lane); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 209, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __pyx_t_1 = NULL;
           if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_11))) {
@@ -6707,13 +6715,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
           }
           __pyx_t_10 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_11, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_11);
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 270, __pyx_L1_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 209, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
           __Pyx_DECREF_SET(__pyx_v_next_waypoint, __pyx_t_10);
           __pyx_t_10 = 0;
 
-          /* "cythoncode/router_baseline.pyx":271
+          /* "cythoncode/router_baseline.pyx":210
  *                     if waypoint.right_lane_marking and waypoint.right_lane_marking.lane_change & carla.LaneChange.Right and not right_found:
  *                         next_waypoint = waypoint.get_right_lane()
  *                         if next_waypoint is not None \             # <<<<<<<<<<<<<<
@@ -6728,27 +6736,27 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             goto __pyx_L13_bool_binop_done;
           }
 
-          /* "cythoncode/router_baseline.pyx":272
+          /* "cythoncode/router_baseline.pyx":211
  *                         next_waypoint = waypoint.get_right_lane()
  *                         if next_waypoint is not None \
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \             # <<<<<<<<<<<<<<
  *                                 and waypoint.road_id == next_waypoint.road_id:
  *                             next_road_option = RoadOption.CHANGELANERIGHT
  */
-          __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_lane_type); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 272, __pyx_L1_error)
+          __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_lane_type); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 211, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_carla); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 272, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_carla); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 211, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LaneType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_LaneType); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Driving); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 272, __pyx_L1_error)
+          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Driving); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 211, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = PyObject_RichCompare(__pyx_t_10, __pyx_t_11, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
+          __pyx_t_1 = PyObject_RichCompare(__pyx_t_10, __pyx_t_11, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 272, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 211, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           if (__pyx_t_12) {
           } else {
@@ -6756,26 +6764,26 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             goto __pyx_L13_bool_binop_done;
           }
 
-          /* "cythoncode/router_baseline.pyx":273
+          /* "cythoncode/router_baseline.pyx":212
  *                         if next_waypoint is not None \
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \
  *                                 and waypoint.road_id == next_waypoint.road_id:             # <<<<<<<<<<<<<<
  *                             next_road_option = RoadOption.CHANGELANERIGHT
  *                             next_segment = self._localize(
  */
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 273, __pyx_L1_error)
+          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 212, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
-          __pyx_t_10 = PyObject_RichCompare(__pyx_t_1, __pyx_t_11, Py_EQ); __Pyx_XGOTREF(__pyx_t_10); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 273, __pyx_L1_error)
+          __pyx_t_10 = PyObject_RichCompare(__pyx_t_1, __pyx_t_11, Py_EQ); __Pyx_XGOTREF(__pyx_t_10); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 212, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 273, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 212, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           __pyx_t_5 = __pyx_t_12;
           __pyx_L13_bool_binop_done:;
 
-          /* "cythoncode/router_baseline.pyx":271
+          /* "cythoncode/router_baseline.pyx":210
  *                     if waypoint.right_lane_marking and waypoint.right_lane_marking.lane_change & carla.LaneChange.Right and not right_found:
  *                         next_waypoint = waypoint.get_right_lane()
  *                         if next_waypoint is not None \             # <<<<<<<<<<<<<<
@@ -6784,41 +6792,41 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
           if (__pyx_t_5) {
 
-            /* "cythoncode/router_baseline.pyx":274
+            /* "cythoncode/router_baseline.pyx":213
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \
  *                                 and waypoint.road_id == next_waypoint.road_id:
  *                             next_road_option = RoadOption.CHANGELANERIGHT             # <<<<<<<<<<<<<<
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 274, __pyx_L1_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_10);
-            __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_CHANGELANERIGHT); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 274, __pyx_L1_error)
+            __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_CHANGELANERIGHT); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 213, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_11);
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             __Pyx_DECREF_SET(__pyx_v_next_road_option, __pyx_t_11);
             __pyx_t_11 = 0;
 
-            /* "cythoncode/router_baseline.pyx":275
+            /* "cythoncode/router_baseline.pyx":214
  *                                 and waypoint.road_id == next_waypoint.road_id:
  *                             next_road_option = RoadOption.CHANGELANERIGHT
  *                             next_segment = self._localize(             # <<<<<<<<<<<<<<
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  */
-            __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 275, __pyx_L1_error)
+            __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 214, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_10);
 
-            /* "cythoncode/router_baseline.pyx":276
+            /* "cythoncode/router_baseline.pyx":215
  *                             next_road_option = RoadOption.CHANGELANERIGHT
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)             # <<<<<<<<<<<<<<
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(
  */
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_location); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 276, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_location); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 215, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __pyx_t_1 = NULL;
@@ -6834,13 +6842,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             __pyx_t_11 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_1, __pyx_t_13) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_13);
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 275, __pyx_L1_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 214, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_11);
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             __Pyx_DECREF_SET(__pyx_v_next_segment, __pyx_t_11);
             __pyx_t_11 = 0;
 
-            /* "cythoncode/router_baseline.pyx":277
+            /* "cythoncode/router_baseline.pyx":216
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:             # <<<<<<<<<<<<<<
@@ -6851,53 +6859,53 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             __pyx_t_12 = (__pyx_t_5 != 0);
             if (__pyx_t_12) {
 
-              /* "cythoncode/router_baseline.pyx":278
+              /* "cythoncode/router_baseline.pyx":217
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  */
-              __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 278, __pyx_L1_error)
+              __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 217, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_11);
-              __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 278, __pyx_L1_error)
+              __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 217, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_10);
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-              /* "cythoncode/router_baseline.pyx":279
+              /* "cythoncode/router_baseline.pyx":218
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(
  *                                     self._id_map[segment['entryxyz']             # <<<<<<<<<<<<<<
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  */
-              __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 279, __pyx_L1_error)
+              __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 218, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_11);
-              __pyx_t_13 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entryxyz); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 279, __pyx_L1_error)
+              __pyx_t_13 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entryxyz); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 218, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
-              __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_11, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
+              __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_11, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-              /* "cythoncode/router_baseline.pyx":280
+              /* "cythoncode/router_baseline.pyx":219
  *                                 self._graph.add_edge(
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,             # <<<<<<<<<<<<<<
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  */
-              __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_next_segment, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 280, __pyx_L1_error)
+              __pyx_t_13 = __Pyx_GetItemInt(__pyx_v_next_segment, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 219, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
 
-              /* "cythoncode/router_baseline.pyx":278
+              /* "cythoncode/router_baseline.pyx":217
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  */
-              __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 278, __pyx_L1_error)
+              __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 217, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_11);
               __Pyx_GIVEREF(__pyx_t_1);
               PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_1);
@@ -6906,58 +6914,58 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
               __pyx_t_1 = 0;
               __pyx_t_13 = 0;
 
-              /* "cythoncode/router_baseline.pyx":280
+              /* "cythoncode/router_baseline.pyx":219
  *                                 self._graph.add_edge(
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,             # <<<<<<<<<<<<<<
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  */
-              __pyx_t_13 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 280, __pyx_L1_error)
+              __pyx_t_13 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 219, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_entry_waypoint, __pyx_v_waypoint) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_entry_waypoint, __pyx_v_waypoint) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
 
-              /* "cythoncode/router_baseline.pyx":281
+              /* "cythoncode/router_baseline.pyx":220
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,             # <<<<<<<<<<<<<<
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 right_found = True
  */
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_exit_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_intersection, Py_False) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_exit_vector, Py_None) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_exit_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_intersection, Py_False) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_exit_vector, Py_None) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
 
-              /* "cythoncode/router_baseline.pyx":282
+              /* "cythoncode/router_baseline.pyx":221
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)             # <<<<<<<<<<<<<<
  *                                 right_found = True
  *                     if waypoint.left_lane_marking and waypoint.left_lane_marking.lane_change & carla.LaneChange.Left and not left_found:
  */
-              __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
+              __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_path, __pyx_t_1) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_path, __pyx_t_1) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_length, __pyx_int_0) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_type, __pyx_v_next_road_option) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_change_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_length, __pyx_int_0) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_type, __pyx_v_next_road_option) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_change_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
 
-              /* "cythoncode/router_baseline.pyx":278
+              /* "cythoncode/router_baseline.pyx":217
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  */
-              __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_11, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
+              __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_11, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "cythoncode/router_baseline.pyx":283
+              /* "cythoncode/router_baseline.pyx":222
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 right_found = True             # <<<<<<<<<<<<<<
@@ -6966,7 +6974,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
               __pyx_v_right_found = 1;
 
-              /* "cythoncode/router_baseline.pyx":277
+              /* "cythoncode/router_baseline.pyx":216
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:             # <<<<<<<<<<<<<<
@@ -6975,7 +6983,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
             }
 
-            /* "cythoncode/router_baseline.pyx":271
+            /* "cythoncode/router_baseline.pyx":210
  *                     if waypoint.right_lane_marking and waypoint.right_lane_marking.lane_change & carla.LaneChange.Right and not right_found:
  *                         next_waypoint = waypoint.get_right_lane()
  *                         if next_waypoint is not None \             # <<<<<<<<<<<<<<
@@ -6984,7 +6992,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
           }
 
-          /* "cythoncode/router_baseline.pyx":269
+          /* "cythoncode/router_baseline.pyx":208
  *                     next_waypoint, next_road_option, next_segment = None, None, None
  * 
  *                     if waypoint.right_lane_marking and waypoint.right_lane_marking.lane_change & carla.LaneChange.Right and not right_found:             # <<<<<<<<<<<<<<
@@ -6993,40 +7001,40 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":284
+        /* "cythoncode/router_baseline.pyx":223
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 right_found = True
  *                     if waypoint.left_lane_marking and waypoint.left_lane_marking.lane_change & carla.LaneChange.Left and not left_found:             # <<<<<<<<<<<<<<
  *                         next_waypoint = waypoint.get_left_lane()
  *                         if next_waypoint is not None \
  */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_left_lane_marking); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_left_lane_marking); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         if (__pyx_t_5) {
         } else {
           __pyx_t_12 = __pyx_t_5;
           goto __pyx_L18_bool_binop_done;
         }
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_left_lane_marking); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_left_lane_marking); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lane_change); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lane_change); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_carla); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_carla); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_LaneChange); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_LaneChange); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_Left); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_Left); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __pyx_t_11 = PyNumber_And(__pyx_t_13, __pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_11 = PyNumber_And(__pyx_t_13, __pyx_t_1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 284, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         if (__pyx_t_5) {
         } else {
@@ -7038,14 +7046,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
         __pyx_L18_bool_binop_done:;
         if (__pyx_t_12) {
 
-          /* "cythoncode/router_baseline.pyx":285
+          /* "cythoncode/router_baseline.pyx":224
  *                                 right_found = True
  *                     if waypoint.left_lane_marking and waypoint.left_lane_marking.lane_change & carla.LaneChange.Left and not left_found:
  *                         next_waypoint = waypoint.get_left_lane()             # <<<<<<<<<<<<<<
  *                         if next_waypoint is not None \
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \
  */
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_get_left_lane); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_get_left_lane); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __pyx_t_13 = NULL;
           if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -7059,13 +7067,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
           }
           __pyx_t_11 = (__pyx_t_13) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_13) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
           __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 285, __pyx_L1_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 224, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF_SET(__pyx_v_next_waypoint, __pyx_t_11);
           __pyx_t_11 = 0;
 
-          /* "cythoncode/router_baseline.pyx":286
+          /* "cythoncode/router_baseline.pyx":225
  *                     if waypoint.left_lane_marking and waypoint.left_lane_marking.lane_change & carla.LaneChange.Left and not left_found:
  *                         next_waypoint = waypoint.get_left_lane()
  *                         if next_waypoint is not None \             # <<<<<<<<<<<<<<
@@ -7080,27 +7088,27 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             goto __pyx_L22_bool_binop_done;
           }
 
-          /* "cythoncode/router_baseline.pyx":287
+          /* "cythoncode/router_baseline.pyx":226
  *                         next_waypoint = waypoint.get_left_lane()
  *                         if next_waypoint is not None \
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \             # <<<<<<<<<<<<<<
  *                                 and waypoint.road_id == next_waypoint.road_id:
  *                             next_road_option = RoadOption.CHANGELANELEFT
  */
-          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_lane_type); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 287, __pyx_L1_error)
+          __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_lane_type); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 226, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
-          __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_carla); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_carla); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_LaneType); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 287, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_LaneType); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 226, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_Driving); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_Driving); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-          __pyx_t_13 = PyObject_RichCompare(__pyx_t_11, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 287, __pyx_L1_error)
+          __pyx_t_13 = PyObject_RichCompare(__pyx_t_11, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_13); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 226, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 287, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_13); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 226, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           if (__pyx_t_6) {
           } else {
@@ -7108,26 +7116,26 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             goto __pyx_L22_bool_binop_done;
           }
 
-          /* "cythoncode/router_baseline.pyx":288
+          /* "cythoncode/router_baseline.pyx":227
  *                         if next_waypoint is not None \
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \
  *                                 and waypoint.road_id == next_waypoint.road_id:             # <<<<<<<<<<<<<<
  *                             next_road_option = RoadOption.CHANGELANELEFT
  *                             next_segment = self._localize(
  */
-          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 288, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 227, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_11 = PyObject_RichCompare(__pyx_t_13, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_11); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 288, __pyx_L1_error)
+          __pyx_t_11 = PyObject_RichCompare(__pyx_t_13, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_11); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 227, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 288, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 227, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
           __pyx_t_12 = __pyx_t_6;
           __pyx_L22_bool_binop_done:;
 
-          /* "cythoncode/router_baseline.pyx":286
+          /* "cythoncode/router_baseline.pyx":225
  *                     if waypoint.left_lane_marking and waypoint.left_lane_marking.lane_change & carla.LaneChange.Left and not left_found:
  *                         next_waypoint = waypoint.get_left_lane()
  *                         if next_waypoint is not None \             # <<<<<<<<<<<<<<
@@ -7136,41 +7144,41 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
           if (__pyx_t_12) {
 
-            /* "cythoncode/router_baseline.pyx":289
+            /* "cythoncode/router_baseline.pyx":228
  *                                 and next_waypoint.lane_type == carla.LaneType.Driving \
  *                                 and waypoint.road_id == next_waypoint.road_id:
  *                             next_road_option = RoadOption.CHANGELANELEFT             # <<<<<<<<<<<<<<
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 289, __pyx_L1_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 228, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_11);
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_CHANGELANELEFT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_CHANGELANELEFT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
             __Pyx_DECREF_SET(__pyx_v_next_road_option, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "cythoncode/router_baseline.pyx":290
+            /* "cythoncode/router_baseline.pyx":229
  *                                 and waypoint.road_id == next_waypoint.road_id:
  *                             next_road_option = RoadOption.CHANGELANELEFT
  *                             next_segment = self._localize(             # <<<<<<<<<<<<<<
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  */
-            __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 290, __pyx_L1_error)
+            __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 229, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_11);
 
-            /* "cythoncode/router_baseline.pyx":291
+            /* "cythoncode/router_baseline.pyx":230
  *                             next_road_option = RoadOption.CHANGELANELEFT
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)             # <<<<<<<<<<<<<<
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(
  */
-            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 291, __pyx_L1_error)
+            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_next_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 230, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_location); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 291, __pyx_L1_error)
+            __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_location); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 230, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
             __pyx_t_13 = NULL;
@@ -7186,13 +7194,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             __pyx_t_1 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_11, __pyx_t_13, __pyx_t_10) : __Pyx_PyObject_CallOneArg(__pyx_t_11, __pyx_t_10);
             __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-            if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
+            if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
             __Pyx_DECREF_SET(__pyx_v_next_segment, __pyx_t_1);
             __pyx_t_1 = 0;
 
-            /* "cythoncode/router_baseline.pyx":292
+            /* "cythoncode/router_baseline.pyx":231
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:             # <<<<<<<<<<<<<<
@@ -7203,53 +7211,53 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
             __pyx_t_6 = (__pyx_t_12 != 0);
             if (__pyx_t_6) {
 
-              /* "cythoncode/router_baseline.pyx":293
+              /* "cythoncode/router_baseline.pyx":232
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  */
-              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 293, __pyx_L1_error)
+              __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 232, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_11);
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "cythoncode/router_baseline.pyx":294
+              /* "cythoncode/router_baseline.pyx":233
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(
  *                                     self._id_map[segment['entryxyz']             # <<<<<<<<<<<<<<
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  */
-              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
+              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_id_map); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_10 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entryxyz); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 294, __pyx_L1_error)
+              __pyx_t_10 = __Pyx_PyObject_Dict_GetItem(__pyx_v_segment, __pyx_n_s_entryxyz); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 233, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_10);
-              __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 294, __pyx_L1_error)
+              __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 233, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-              /* "cythoncode/router_baseline.pyx":295
+              /* "cythoncode/router_baseline.pyx":234
  *                                 self._graph.add_edge(
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,             # <<<<<<<<<<<<<<
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  */
-              __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_next_segment, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 295, __pyx_L1_error)
+              __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_next_segment, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 234, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_10);
 
-              /* "cythoncode/router_baseline.pyx":293
+              /* "cythoncode/router_baseline.pyx":232
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  */
-              __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+              __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
               __Pyx_GIVEREF(__pyx_t_13);
               PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_13);
@@ -7258,58 +7266,58 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
               __pyx_t_13 = 0;
               __pyx_t_10 = 0;
 
-              /* "cythoncode/router_baseline.pyx":295
+              /* "cythoncode/router_baseline.pyx":234
  *                                 self._graph.add_edge(
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,             # <<<<<<<<<<<<<<
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  */
-              __pyx_t_10 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 295, __pyx_L1_error)
+              __pyx_t_10 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 234, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_10);
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_entry_waypoint, __pyx_v_waypoint) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_entry_waypoint, __pyx_v_waypoint) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
 
-              /* "cythoncode/router_baseline.pyx":296
+              /* "cythoncode/router_baseline.pyx":235
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,             # <<<<<<<<<<<<<<
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 left_found = True
  */
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_exit_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_intersection, Py_False) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_exit_vector, Py_None) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_exit_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_intersection, Py_False) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_exit_vector, Py_None) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
 
-              /* "cythoncode/router_baseline.pyx":297
+              /* "cythoncode/router_baseline.pyx":236
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)             # <<<<<<<<<<<<<<
  *                                 left_found = True
  *                 if left_found and right_found:
  */
-              __pyx_t_13 = PyList_New(0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 297, __pyx_L1_error)
+              __pyx_t_13 = PyList_New(0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 236, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_path, __pyx_t_13) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_path, __pyx_t_13) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_length, __pyx_int_0) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_type, __pyx_v_next_road_option) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
-              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_change_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_length, __pyx_int_0) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_type, __pyx_v_next_road_option) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+              if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_change_waypoint, __pyx_v_next_waypoint) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
 
-              /* "cythoncode/router_baseline.pyx":293
+              /* "cythoncode/router_baseline.pyx":232
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:
  *                                 self._graph.add_edge(             # <<<<<<<<<<<<<<
  *                                     self._id_map[segment['entryxyz']
  *                                                  ], next_segment[0], entry_waypoint=waypoint,
  */
-              __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_1, __pyx_t_10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 293, __pyx_L1_error)
+              __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_1, __pyx_t_10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 232, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_13);
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-              /* "cythoncode/router_baseline.pyx":298
+              /* "cythoncode/router_baseline.pyx":237
  *                                     exit_waypoint=next_waypoint, intersection=False, exit_vector=None,
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 left_found = True             # <<<<<<<<<<<<<<
@@ -7318,7 +7326,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
               __pyx_v_left_found = 1;
 
-              /* "cythoncode/router_baseline.pyx":292
+              /* "cythoncode/router_baseline.pyx":231
  *                             next_segment = self._localize(
  *                                 next_waypoint.transform.location)
  *                             if next_segment is not None:             # <<<<<<<<<<<<<<
@@ -7327,7 +7335,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
             }
 
-            /* "cythoncode/router_baseline.pyx":286
+            /* "cythoncode/router_baseline.pyx":225
  *                     if waypoint.left_lane_marking and waypoint.left_lane_marking.lane_change & carla.LaneChange.Left and not left_found:
  *                         next_waypoint = waypoint.get_left_lane()
  *                         if next_waypoint is not None \             # <<<<<<<<<<<<<<
@@ -7336,7 +7344,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
           }
 
-          /* "cythoncode/router_baseline.pyx":284
+          /* "cythoncode/router_baseline.pyx":223
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 right_found = True
  *                     if waypoint.left_lane_marking and waypoint.left_lane_marking.lane_change & carla.LaneChange.Left and not left_found:             # <<<<<<<<<<<<<<
@@ -7345,7 +7353,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":266
+        /* "cythoncode/router_baseline.pyx":205
  * 
  *             for waypoint in segment['path']:
  *                 if not segment['entry'].is_junction:             # <<<<<<<<<<<<<<
@@ -7354,7 +7362,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
       }
 
-      /* "cythoncode/router_baseline.pyx":299
+      /* "cythoncode/router_baseline.pyx":238
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 left_found = True
  *                 if left_found and right_found:             # <<<<<<<<<<<<<<
@@ -7372,16 +7380,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
       __pyx_L27_bool_binop_done:;
       if (__pyx_t_6) {
 
-        /* "cythoncode/router_baseline.pyx":300
+        /* "cythoncode/router_baseline.pyx":239
  *                                 left_found = True
  *                 if left_found and right_found:
  *                     break             # <<<<<<<<<<<<<<
  * 
- *     def _localize(self, location):
+ *     def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:
  */
         goto __pyx_L6_break;
 
-        /* "cythoncode/router_baseline.pyx":299
+        /* "cythoncode/router_baseline.pyx":238
  *                                     path=[], length=0, type=next_road_option, change_waypoint=next_waypoint)
  *                                 left_found = True
  *                 if left_found and right_found:             # <<<<<<<<<<<<<<
@@ -7390,7 +7398,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
  */
       }
 
-      /* "cythoncode/router_baseline.pyx":265
+      /* "cythoncode/router_baseline.pyx":204
  *             left_found, right_found = False, False
  * 
  *             for waypoint in segment['path']:             # <<<<<<<<<<<<<<
@@ -7401,9 +7409,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
     __pyx_L6_break:;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "cythoncode/router_baseline.pyx":262
- *         """
+    /* "cythoncode/router_baseline.pyx":201
  * 
+ *     def _lane_change_link(self):
  *         for segment in self._topology:             # <<<<<<<<<<<<<<
  *             left_found, right_found = False, False
  * 
@@ -7411,12 +7419,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":256
+  /* "cythoncode/router_baseline.pyx":200
  *                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)
  * 
  *     def _lane_change_link(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method places zero cost links in the topology graph
+ *         for segment in self._topology:
+ *             left_found, right_found = False, False
  */
 
   /* function exit code */
@@ -7442,18 +7450,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_10
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":302
+/* "cythoncode/router_baseline.pyx":241
  *                     break
  * 
- *     def _localize(self, location):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the road segment that a given location
+ *     def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:             # <<<<<<<<<<<<<<
+ *         waypoint = self._wmap.get_waypoint(location)
+ *         edge = None
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_12_localize[] = "\n        This function finds the road segment that a given location\n        is part of, returning the edge it belongs to\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize = {"_localize", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_12_localize};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize = {"_localize", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_location = 0;
@@ -7486,11 +7493,11 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_13
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_location)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_localize", 1, 2, 2, 1); __PYX_ERR(0, 302, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_localize", 1, 2, 2, 1); __PYX_ERR(0, 241, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_localize") < 0)) __PYX_ERR(0, 302, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_localize") < 0)) __PYX_ERR(0, 241, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7503,7 +7510,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_13
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_localize", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 302, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_localize", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 241, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner._localize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7533,16 +7540,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_localize", 0);
 
-  /* "cythoncode/router_baseline.pyx":307
- *         is part of, returning the edge it belongs to
- *         """
+  /* "cythoncode/router_baseline.pyx":242
+ * 
+ *     def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:
  *         waypoint = self._wmap.get_waypoint(location)             # <<<<<<<<<<<<<<
  *         edge = None
  *         try:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_wmap_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 242, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_waypoint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_waypoint); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 242, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -7557,14 +7564,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_location) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_location);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_waypoint = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":308
- *         """
+  /* "cythoncode/router_baseline.pyx":243
+ *     def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:
  *         waypoint = self._wmap.get_waypoint(location)
  *         edge = None             # <<<<<<<<<<<<<<
  *         try:
@@ -7573,7 +7580,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
   __Pyx_INCREF(Py_None);
   __pyx_v_edge = Py_None;
 
-  /* "cythoncode/router_baseline.pyx":309
+  /* "cythoncode/router_baseline.pyx":244
  *         waypoint = self._wmap.get_waypoint(location)
  *         edge = None
  *         try:             # <<<<<<<<<<<<<<
@@ -7589,37 +7596,37 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
     __Pyx_XGOTREF(__pyx_t_6);
     /*try:*/ {
 
-      /* "cythoncode/router_baseline.pyx":310
+      /* "cythoncode/router_baseline.pyx":245
  *         edge = None
  *         try:
  *             edge = self._road_id_to_edge[waypoint.road_id][waypoint.section_id][waypoint.lane_id]             # <<<<<<<<<<<<<<
  *         except KeyError:
  *             pass
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L3_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_road_id_to_edge); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L3_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_road_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 310, __pyx_L3_error)
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 245, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_section_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L3_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_section_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L3_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 245, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L3_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_lane_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 310, __pyx_L3_error)
+      __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 245, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF_SET(__pyx_v_edge, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "cythoncode/router_baseline.pyx":309
+      /* "cythoncode/router_baseline.pyx":244
  *         waypoint = self._wmap.get_waypoint(location)
  *         edge = None
  *         try:             # <<<<<<<<<<<<<<
@@ -7636,7 +7643,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "cythoncode/router_baseline.pyx":311
+    /* "cythoncode/router_baseline.pyx":246
  *         try:
  *             edge = self._road_id_to_edge[waypoint.road_id][waypoint.section_id][waypoint.lane_id]
  *         except KeyError:             # <<<<<<<<<<<<<<
@@ -7651,7 +7658,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "cythoncode/router_baseline.pyx":309
+    /* "cythoncode/router_baseline.pyx":244
  *         waypoint = self._wmap.get_waypoint(location)
  *         edge = None
  *         try:             # <<<<<<<<<<<<<<
@@ -7671,24 +7678,24 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
     __pyx_L8_try_end:;
   }
 
-  /* "cythoncode/router_baseline.pyx":313
+  /* "cythoncode/router_baseline.pyx":248
  *         except KeyError:
  *             pass
  *         return edge             # <<<<<<<<<<<<<<
  * 
- *     def _distance_heuristic(self, n1, n2):
+ *     def _distance_heuristic(self, n1: int, n2: int) -> float:
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_edge);
   __pyx_r = __pyx_v_edge;
   goto __pyx_L0;
 
-  /* "cythoncode/router_baseline.pyx":302
+  /* "cythoncode/router_baseline.pyx":241
  *                     break
  * 
- *     def _localize(self, location):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the road segment that a given location
+ *     def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:             # <<<<<<<<<<<<<<
+ *         waypoint = self._wmap.get_waypoint(location)
+ *         edge = None
  */
 
   /* function exit code */
@@ -7706,18 +7713,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_12
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":315
+/* "cythoncode/router_baseline.pyx":250
  *         return edge
  * 
- *     def _distance_heuristic(self, n1, n2):             # <<<<<<<<<<<<<<
- *         """
- *         Distance heuristic calculator for path searching
+ *     def _distance_heuristic(self, n1: int, n2: int) -> float:             # <<<<<<<<<<<<<<
+ *         l1 = np.array(self._graph.nodes[n1]['vertex'])
+ *         l2 = np.array(self._graph.nodes[n2]['vertex'])
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_14_distance_heuristic[] = "\n        Distance heuristic calculator for path searching\n        in self._graph\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic = {"_distance_heuristic", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_14_distance_heuristic};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic = {"_distance_heuristic", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_n1 = 0;
@@ -7753,17 +7759,17 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_15
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n1)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_distance_heuristic", 1, 3, 3, 1); __PYX_ERR(0, 315, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_distance_heuristic", 1, 3, 3, 1); __PYX_ERR(0, 250, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_distance_heuristic", 1, 3, 3, 2); __PYX_ERR(0, 315, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_distance_heuristic", 1, 3, 3, 2); __PYX_ERR(0, 250, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_distance_heuristic") < 0)) __PYX_ERR(0, 315, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_distance_heuristic") < 0)) __PYX_ERR(0, 250, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -7778,7 +7784,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_15
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_distance_heuristic", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 315, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_distance_heuristic", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 250, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner._distance_heuristic", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7805,27 +7811,27 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_14
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_distance_heuristic", 0);
 
-  /* "cythoncode/router_baseline.pyx":320
- *         in self._graph
- *         """
+  /* "cythoncode/router_baseline.pyx":251
+ * 
+ *     def _distance_heuristic(self, n1: int, n2: int) -> float:
  *         l1 = np.array(self._graph.nodes[n1]['vertex'])             # <<<<<<<<<<<<<<
  *         l2 = np.array(self._graph.nodes[n2]['vertex'])
  *         return np.linalg.norm(l1-l2)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_nodes); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_nodes); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_n1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_n1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Dict_GetItem(__pyx_t_2, __pyx_n_s_vertex); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Dict_GetItem(__pyx_t_2, __pyx_n_s_vertex); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -7841,33 +7847,33 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_14
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_l1 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":321
- *         """
+  /* "cythoncode/router_baseline.pyx":252
+ *     def _distance_heuristic(self, n1: int, n2: int) -> float:
  *         l1 = np.array(self._graph.nodes[n1]['vertex'])
  *         l2 = np.array(self._graph.nodes[n2]['vertex'])             # <<<<<<<<<<<<<<
  *         return np.linalg.norm(l1-l2)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_nodes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_nodes); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_n2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_n2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_vertex); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 321, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_vertex); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -7883,29 +7889,29 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_14
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_l2 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":322
+  /* "cythoncode/router_baseline.pyx":253
  *         l1 = np.array(self._graph.nodes[n1]['vertex'])
  *         l2 = np.array(self._graph.nodes[n2]['vertex'])
  *         return np.linalg.norm(l1-l2)             # <<<<<<<<<<<<<<
  * 
- *     def _path_search(self, origin, destination):
+ *     def _path_search(self, origin: carla.Location, destination: carla.Location) -> List[int]:
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_linalg); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_linalg); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_norm); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_norm); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Subtract(__pyx_v_l1, __pyx_v_l2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Subtract(__pyx_v_l1, __pyx_v_l2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -7920,19 +7926,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_14
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 322, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cythoncode/router_baseline.pyx":315
+  /* "cythoncode/router_baseline.pyx":250
  *         return edge
  * 
- *     def _distance_heuristic(self, n1, n2):             # <<<<<<<<<<<<<<
- *         """
- *         Distance heuristic calculator for path searching
+ *     def _distance_heuristic(self, n1: int, n2: int) -> float:             # <<<<<<<<<<<<<<
+ *         l1 = np.array(self._graph.nodes[n1]['vertex'])
+ *         l2 = np.array(self._graph.nodes[n2]['vertex'])
  */
 
   /* function exit code */
@@ -7951,18 +7957,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_14
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":324
+/* "cythoncode/router_baseline.pyx":255
  *         return np.linalg.norm(l1-l2)
  * 
- *     def _path_search(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the shortest path connecting origin and destination
+ *     def _path_search(self, origin: carla.Location, destination: carla.Location) -> List[int]:             # <<<<<<<<<<<<<<
+ *         start, end = self._localize(origin), self._localize(destination)
+ * 
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_16_path_search[] = "\n        This function finds the shortest path connecting origin and destination\n        using A* search with distance heuristic.\n        origin      :   carla.Location object of start position\n        destination :   carla.Location object of of end position\n        return      :   path as list of node ids (as int) of the graph self._graph\n        connecting origin and destination\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search = {"_path_search", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_16_path_search};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search = {"_path_search", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_origin = 0;
@@ -7998,17 +8003,17 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_17
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_origin)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_path_search", 1, 3, 3, 1); __PYX_ERR(0, 324, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_path_search", 1, 3, 3, 1); __PYX_ERR(0, 255, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_destination)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_path_search", 1, 3, 3, 2); __PYX_ERR(0, 324, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_path_search", 1, 3, 3, 2); __PYX_ERR(0, 255, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_path_search") < 0)) __PYX_ERR(0, 324, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_path_search") < 0)) __PYX_ERR(0, 255, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -8023,7 +8028,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_17
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_path_search", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 324, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_path_search", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 255, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner._path_search", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -8052,14 +8057,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_16
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_path_search", 0);
 
-  /* "cythoncode/router_baseline.pyx":333
- *         connecting origin and destination
- *         """
+  /* "cythoncode/router_baseline.pyx":256
+ * 
+ *     def _path_search(self, origin: carla.Location, destination: carla.Location) -> List[int]:
  *         start, end = self._localize(origin), self._localize(destination)             # <<<<<<<<<<<<<<
  * 
  *         route = nx.astar_path(
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -8073,10 +8078,10 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_16
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_origin) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_origin);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 333, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_localize); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -8090,7 +8095,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_16
   }
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_destination) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_destination);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_start = __pyx_t_1;
@@ -8098,81 +8103,81 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_16
   __pyx_v_end = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":335
+  /* "cythoncode/router_baseline.pyx":258
  *         start, end = self._localize(origin), self._localize(destination)
  * 
  *         route = nx.astar_path(             # <<<<<<<<<<<<<<
  *             self._graph, source=start[0], target=end[0],
  *             heuristic=self._distance_heuristic, weight='length')
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_nx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_nx); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_astar_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_astar_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":336
+  /* "cythoncode/router_baseline.pyx":259
  * 
  *         route = nx.astar_path(
  *             self._graph, source=start[0], target=end[0],             # <<<<<<<<<<<<<<
  *             heuristic=self._distance_heuristic, weight='length')
  *         route.append(end[1])
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "cythoncode/router_baseline.pyx":335
+  /* "cythoncode/router_baseline.pyx":258
  *         start, end = self._localize(origin), self._localize(destination)
  * 
  *         route = nx.astar_path(             # <<<<<<<<<<<<<<
  *             self._graph, source=start[0], target=end[0],
  *             heuristic=self._distance_heuristic, weight='length')
  */
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":336
+  /* "cythoncode/router_baseline.pyx":259
  * 
  *         route = nx.astar_path(
  *             self._graph, source=start[0], target=end[0],             # <<<<<<<<<<<<<<
  *             heuristic=self._distance_heuristic, weight='length')
  *         route.append(end[1])
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_start, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_start, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_source, __pyx_t_4) < 0) __PYX_ERR(0, 336, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_source, __pyx_t_4) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_end, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_end, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_target, __pyx_t_4) < 0) __PYX_ERR(0, 336, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_target, __pyx_t_4) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "cythoncode/router_baseline.pyx":337
+  /* "cythoncode/router_baseline.pyx":260
  *         route = nx.astar_path(
  *             self._graph, source=start[0], target=end[0],
  *             heuristic=self._distance_heuristic, weight='length')             # <<<<<<<<<<<<<<
  *         route.append(end[1])
  *         return route
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_distance_heuristic); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_distance_heuristic); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_heuristic, __pyx_t_4) < 0) __PYX_ERR(0, 336, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_heuristic, __pyx_t_4) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_weight, __pyx_n_s_length) < 0) __PYX_ERR(0, 336, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_weight, __pyx_n_s_length) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":335
+  /* "cythoncode/router_baseline.pyx":258
  *         start, end = self._localize(origin), self._localize(destination)
  * 
  *         route = nx.astar_path(             # <<<<<<<<<<<<<<
  *             self._graph, source=start[0], target=end[0],
  *             heuristic=self._distance_heuristic, weight='length')
  */
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -8180,36 +8185,36 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_16
   __pyx_v_route = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "cythoncode/router_baseline.pyx":338
+  /* "cythoncode/router_baseline.pyx":261
  *             self._graph, source=start[0], target=end[0],
  *             heuristic=self._distance_heuristic, weight='length')
  *         route.append(end[1])             # <<<<<<<<<<<<<<
  *         return route
  * 
  */
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_end, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 338, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_end, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 261, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_Append(__pyx_v_route, __pyx_t_4); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 338, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Append(__pyx_v_route, __pyx_t_4); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 261, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "cythoncode/router_baseline.pyx":339
+  /* "cythoncode/router_baseline.pyx":262
  *             heuristic=self._distance_heuristic, weight='length')
  *         route.append(end[1])
  *         return route             # <<<<<<<<<<<<<<
  * 
- *     def _successive_last_intersection_edge(self, index, route):
+ *     def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_route);
   __pyx_r = __pyx_v_route;
   goto __pyx_L0;
 
-  /* "cythoncode/router_baseline.pyx":324
+  /* "cythoncode/router_baseline.pyx":255
  *         return np.linalg.norm(l1-l2)
  * 
- *     def _path_search(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the shortest path connecting origin and destination
+ *     def _path_search(self, origin: carla.Location, destination: carla.Location) -> List[int]:             # <<<<<<<<<<<<<<
+ *         start, end = self._localize(origin), self._localize(destination)
+ * 
  */
 
   /* function exit code */
@@ -8229,18 +8234,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_16
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":341
+/* "cythoncode/router_baseline.pyx":264
  *         return route
  * 
- *     def _successive_last_intersection_edge(self, index, route):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the last successive intersection edge
+ *     def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:             # <<<<<<<<<<<<<<
+ *         last_intersection_edge = None
+ *         last_node = None
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_18_successive_last_intersection_edge[] = "\n        This method returns the last successive intersection edge\n        from a starting index on the route.\n        This helps moving past tiny intersection edges to calculate\n        proper turn decisions.\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge = {"_successive_last_intersection_edge", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_18_successive_last_intersection_edge};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge = {"_successive_last_intersection_edge", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_index = 0;
@@ -8276,17 +8280,17 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_19
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_index)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_successive_last_intersection_edge", 1, 3, 3, 1); __PYX_ERR(0, 341, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_successive_last_intersection_edge", 1, 3, 3, 1); __PYX_ERR(0, 264, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_route)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_successive_last_intersection_edge", 1, 3, 3, 2); __PYX_ERR(0, 341, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_successive_last_intersection_edge", 1, 3, 3, 2); __PYX_ERR(0, 264, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_successive_last_intersection_edge") < 0)) __PYX_ERR(0, 341, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_successive_last_intersection_edge") < 0)) __PYX_ERR(0, 264, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -8301,7 +8305,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_19
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_successive_last_intersection_edge", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 341, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_successive_last_intersection_edge", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 264, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner._successive_last_intersection_edge", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -8338,9 +8342,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_successive_last_intersection_edge", 0);
 
-  /* "cythoncode/router_baseline.pyx":349
- *         """
+  /* "cythoncode/router_baseline.pyx":265
  * 
+ *     def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:
  *         last_intersection_edge = None             # <<<<<<<<<<<<<<
  *         last_node = None
  *         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:
@@ -8348,8 +8352,8 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   __Pyx_INCREF(Py_None);
   __pyx_v_last_intersection_edge = Py_None;
 
-  /* "cythoncode/router_baseline.pyx":350
- * 
+  /* "cythoncode/router_baseline.pyx":266
+ *     def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:
  *         last_intersection_edge = None
  *         last_node = None             # <<<<<<<<<<<<<<
  *         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:
@@ -8358,19 +8362,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   __Pyx_INCREF(Py_None);
   __pyx_v_last_node = Py_None;
 
-  /* "cythoncode/router_baseline.pyx":351
+  /* "cythoncode/router_baseline.pyx":267
  *         last_intersection_edge = None
  *         last_node = None
  *         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:             # <<<<<<<<<<<<<<
  *             candidate_edge = self._graph.edges[node1, node2]
  *             if node1 == route[index]:
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 351, __pyx_L1_error)
-  __pyx_t_3 = PyInt_FromSsize_t((__pyx_t_2 - 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_2 = PyObject_Length(__pyx_v_route); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 267, __pyx_L1_error)
+  __pyx_t_3 = PyInt_FromSsize_t((__pyx_t_2 - 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_INCREF(__pyx_v_index);
   __Pyx_GIVEREF(__pyx_v_index);
@@ -8378,16 +8382,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
     __pyx_t_4 = __pyx_t_3; __Pyx_INCREF(__pyx_t_4); __pyx_t_2 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_2 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_5 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   for (;;) {
@@ -8395,17 +8399,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       if (likely(PyList_CheckExact(__pyx_t_4))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 351, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 267, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 351, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 267, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
@@ -8415,7 +8419,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 351, __pyx_L1_error)
+          else __PYX_ERR(0, 267, __pyx_L1_error)
         }
         break;
       }
@@ -8423,14 +8427,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
     }
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_3);
     __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __Pyx_PyInt_AddObjC(__pyx_v_i, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_AddObjC(__pyx_v_i, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_GIVEREF(__pyx_t_3);
     PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3);
@@ -8438,7 +8442,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
     PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_7);
     __pyx_t_3 = 0;
     __pyx_t_7 = 0;
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 351, __pyx_L1_error)
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -8447,9 +8451,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   for (;;) {
     if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_4)) break;
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_2); __Pyx_INCREF(__pyx_t_1); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_2); __Pyx_INCREF(__pyx_t_1); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 267, __pyx_L1_error)
     #else
-    __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     #endif
     if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -8458,7 +8462,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 351, __pyx_L1_error)
+        __PYX_ERR(0, 267, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -8471,15 +8475,15 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_t_7);
       #else
-      __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 351, __pyx_L1_error)
+      __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 267, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 351, __pyx_L1_error)
+      __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 267, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+      __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 267, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_8 = Py_TYPE(__pyx_t_3)->tp_iternext;
@@ -8487,7 +8491,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       __Pyx_GOTREF(__pyx_t_6);
       index = 1; __pyx_t_7 = __pyx_t_8(__pyx_t_3); if (unlikely(!__pyx_t_7)) goto __pyx_L7_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_7);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_3), 2) < 0) __PYX_ERR(0, 351, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_3), 2) < 0) __PYX_ERR(0, 267, __pyx_L1_error)
       __pyx_t_8 = NULL;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       goto __pyx_L8_unpacking_done;
@@ -8495,7 +8499,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_8 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 351, __pyx_L1_error)
+      __PYX_ERR(0, 267, __pyx_L1_error)
       __pyx_L8_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_node1, __pyx_t_6);
@@ -8503,19 +8507,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
     __Pyx_XDECREF_SET(__pyx_v_node2, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "cythoncode/router_baseline.pyx":352
+    /* "cythoncode/router_baseline.pyx":268
  *         last_node = None
  *         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:
  *             candidate_edge = self._graph.edges[node1, node2]             # <<<<<<<<<<<<<<
  *             if node1 == route[index]:
  *                 last_intersection_edge = candidate_edge
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 268, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_edges); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 352, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_edges); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 268, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 268, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_node1);
     __Pyx_GIVEREF(__pyx_v_node1);
@@ -8523,29 +8527,29 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
     __Pyx_INCREF(__pyx_v_node2);
     __Pyx_GIVEREF(__pyx_v_node2);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_node2);
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 352, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 268, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF_SET(__pyx_v_candidate_edge, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "cythoncode/router_baseline.pyx":353
+    /* "cythoncode/router_baseline.pyx":269
  *         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:
  *             candidate_edge = self._graph.edges[node1, node2]
  *             if node1 == route[index]:             # <<<<<<<<<<<<<<
  *                 last_intersection_edge = candidate_edge
  *             if candidate_edge['type'] == RoadOption.LANEFOLLOW and candidate_edge['intersection']:
  */
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_index); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 353, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_index); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_node1, __pyx_t_6, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 353, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_node1, __pyx_t_6, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 353, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_9) {
 
-      /* "cythoncode/router_baseline.pyx":354
+      /* "cythoncode/router_baseline.pyx":270
  *             candidate_edge = self._graph.edges[node1, node2]
  *             if node1 == route[index]:
  *                 last_intersection_edge = candidate_edge             # <<<<<<<<<<<<<<
@@ -8555,7 +8559,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       __Pyx_INCREF(__pyx_v_candidate_edge);
       __Pyx_DECREF_SET(__pyx_v_last_intersection_edge, __pyx_v_candidate_edge);
 
-      /* "cythoncode/router_baseline.pyx":353
+      /* "cythoncode/router_baseline.pyx":269
  *         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:
  *             candidate_edge = self._graph.edges[node1, node2]
  *             if node1 == route[index]:             # <<<<<<<<<<<<<<
@@ -8564,39 +8568,39 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
  */
     }
 
-    /* "cythoncode/router_baseline.pyx":355
+    /* "cythoncode/router_baseline.pyx":271
  *             if node1 == route[index]:
  *                 last_intersection_edge = candidate_edge
  *             if candidate_edge['type'] == RoadOption.LANEFOLLOW and candidate_edge['intersection']:             # <<<<<<<<<<<<<<
  *                 last_intersection_edge = candidate_edge
  *                 last_node = node2
  */
-    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_candidate_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 355, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_candidate_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 355, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 355, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 355, __pyx_L1_error)
+    __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 355, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_10) {
     } else {
       __pyx_t_9 = __pyx_t_10;
       goto __pyx_L11_bool_binop_done;
     }
-    __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_candidate_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 355, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_candidate_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 355, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_9 = __pyx_t_10;
     __pyx_L11_bool_binop_done:;
     if (__pyx_t_9) {
 
-      /* "cythoncode/router_baseline.pyx":356
+      /* "cythoncode/router_baseline.pyx":272
  *                 last_intersection_edge = candidate_edge
  *             if candidate_edge['type'] == RoadOption.LANEFOLLOW and candidate_edge['intersection']:
  *                 last_intersection_edge = candidate_edge             # <<<<<<<<<<<<<<
@@ -8606,7 +8610,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       __Pyx_INCREF(__pyx_v_candidate_edge);
       __Pyx_DECREF_SET(__pyx_v_last_intersection_edge, __pyx_v_candidate_edge);
 
-      /* "cythoncode/router_baseline.pyx":357
+      /* "cythoncode/router_baseline.pyx":273
  *             if candidate_edge['type'] == RoadOption.LANEFOLLOW and candidate_edge['intersection']:
  *                 last_intersection_edge = candidate_edge
  *                 last_node = node2             # <<<<<<<<<<<<<<
@@ -8616,7 +8620,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       __Pyx_INCREF(__pyx_v_node2);
       __Pyx_DECREF_SET(__pyx_v_last_node, __pyx_v_node2);
 
-      /* "cythoncode/router_baseline.pyx":355
+      /* "cythoncode/router_baseline.pyx":271
  *             if node1 == route[index]:
  *                 last_intersection_edge = candidate_edge
  *             if candidate_edge['type'] == RoadOption.LANEFOLLOW and candidate_edge['intersection']:             # <<<<<<<<<<<<<<
@@ -8626,7 +8630,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
       goto __pyx_L10;
     }
 
-    /* "cythoncode/router_baseline.pyx":359
+    /* "cythoncode/router_baseline.pyx":275
  *                 last_node = node2
  *             else:
  *                 break             # <<<<<<<<<<<<<<
@@ -8638,7 +8642,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
     }
     __pyx_L10:;
 
-    /* "cythoncode/router_baseline.pyx":351
+    /* "cythoncode/router_baseline.pyx":267
  *         last_intersection_edge = None
  *         last_node = None
  *         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:             # <<<<<<<<<<<<<<
@@ -8649,15 +8653,15 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   __pyx_L4_break:;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "cythoncode/router_baseline.pyx":361
+  /* "cythoncode/router_baseline.pyx":277
  *                 break
  * 
  *         return last_node, last_intersection_edge             # <<<<<<<<<<<<<<
  * 
- *     def _turn_decision(self, index, route, threshold=math.radians(35)):
+ *     def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 361, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 277, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_INCREF(__pyx_v_last_node);
   __Pyx_GIVEREF(__pyx_v_last_node);
@@ -8669,12 +8673,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "cythoncode/router_baseline.pyx":341
+  /* "cythoncode/router_baseline.pyx":264
  *         return route
  * 
- *     def _successive_last_intersection_edge(self, index, route):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the last successive intersection edge
+ *     def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:             # <<<<<<<<<<<<<<
+ *         last_intersection_edge = None
+ *         last_node = None
  */
 
   /* function exit code */
@@ -8698,12 +8702,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_18
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":363
+/* "cythoncode/router_baseline.pyx":279
  *         return last_node, last_intersection_edge
  * 
- *     def _turn_decision(self, index, route, threshold=math.radians(35)):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the turn decision (RoadOption) for pair of edges
+ *     def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:             # <<<<<<<<<<<<<<
+ *         decision = None
+ *         previous_node = route[index-1]
  */
 
 static PyObject *__pyx_pf_10cythoncode_15router_baseline___defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
@@ -8716,12 +8720,12 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline___defaults__(CYTHON_UNU
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__defaults__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 363, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_threshold);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_threshold);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_threshold);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 363, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
@@ -8747,8 +8751,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline___defaults__(CYTHON_UNU
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_20_turn_decision[] = "\n        This method returns the turn decision (RoadOption) for pair of edges\n        around current index of route list\n        ";
-static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision = {"_turn_decision", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10cythoncode_15router_baseline_18GlobalRoutePlanner_20_turn_decision};
+static PyMethodDef __pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision = {"_turn_decision", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_index = 0;
@@ -8789,13 +8792,13 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_21
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_index)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_turn_decision", 0, 3, 4, 1); __PYX_ERR(0, 363, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_turn_decision", 0, 3, 4, 1); __PYX_ERR(0, 279, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_route)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_turn_decision", 0, 3, 4, 2); __PYX_ERR(0, 363, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_turn_decision", 0, 3, 4, 2); __PYX_ERR(0, 279, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -8805,7 +8808,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_21
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_turn_decision") < 0)) __PYX_ERR(0, 363, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_turn_decision") < 0)) __PYX_ERR(0, 279, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -8825,7 +8828,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_21
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_turn_decision", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 363, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_turn_decision", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 279, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner._turn_decision", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -8880,9 +8883,9 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_turn_decision", 0);
 
-  /* "cythoncode/router_baseline.pyx":369
- *         """
+  /* "cythoncode/router_baseline.pyx":280
  * 
+ *     def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:
  *         decision = None             # <<<<<<<<<<<<<<
  *         previous_node = route[index-1]
  *         current_node = route[index]
@@ -8890,61 +8893,61 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
   __Pyx_INCREF(Py_None);
   __pyx_v_decision = Py_None;
 
-  /* "cythoncode/router_baseline.pyx":370
- * 
+  /* "cythoncode/router_baseline.pyx":281
+ *     def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:
  *         decision = None
  *         previous_node = route[index-1]             # <<<<<<<<<<<<<<
  *         current_node = route[index]
  *         next_node = route[index+1]
  */
-  __pyx_t_1 = __Pyx_PyInt_SubtractObjC(__pyx_v_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_SubtractObjC(__pyx_v_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_previous_node = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":371
+  /* "cythoncode/router_baseline.pyx":282
  *         decision = None
  *         previous_node = route[index-1]
  *         current_node = route[index]             # <<<<<<<<<<<<<<
  *         next_node = route[index+1]
  *         next_edge = self._graph.edges[current_node, next_node]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_index); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_v_index); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_current_node = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":372
+  /* "cythoncode/router_baseline.pyx":283
  *         previous_node = route[index-1]
  *         current_node = route[index]
  *         next_node = route[index+1]             # <<<<<<<<<<<<<<
  *         next_edge = self._graph.edges[current_node, next_node]
  *         if index > 0:
  */
-  __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_v_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_next_node = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":373
+  /* "cythoncode/router_baseline.pyx":284
  *         current_node = route[index]
  *         next_node = route[index+1]
  *         next_edge = self._graph.edges[current_node, next_node]             # <<<<<<<<<<<<<<
  *         if index > 0:
  *             if self._previous_decision != RoadOption.VOID \
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_edges); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_edges); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_current_node);
   __Pyx_GIVEREF(__pyx_v_current_node);
@@ -8952,43 +8955,43 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
   __Pyx_INCREF(__pyx_v_next_node);
   __Pyx_GIVEREF(__pyx_v_next_node);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_next_node);
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_next_edge = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "cythoncode/router_baseline.pyx":374
+  /* "cythoncode/router_baseline.pyx":285
  *         next_node = route[index+1]
  *         next_edge = self._graph.edges[current_node, next_node]
  *         if index > 0:             # <<<<<<<<<<<<<<
  *             if self._previous_decision != RoadOption.VOID \
  *                     and self._intersection_end_node > 0 \
  */
-  __pyx_t_3 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 374, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 374, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_index, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_4) {
 
-    /* "cythoncode/router_baseline.pyx":375
+    /* "cythoncode/router_baseline.pyx":286
  *         next_edge = self._graph.edges[current_node, next_node]
  *         if index > 0:
  *             if self._previous_decision != RoadOption.VOID \             # <<<<<<<<<<<<<<
  *                     and self._intersection_end_node > 0 \
  *                     and self._intersection_end_node != previous_node \
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_VOID); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 375, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_VOID); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 375, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_5) {
     } else {
@@ -8996,18 +8999,18 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
       goto __pyx_L5_bool_binop_done;
     }
 
-    /* "cythoncode/router_baseline.pyx":376
+    /* "cythoncode/router_baseline.pyx":287
  *         if index > 0:
  *             if self._previous_decision != RoadOption.VOID \
  *                     and self._intersection_end_node > 0 \             # <<<<<<<<<<<<<<
  *                     and self._intersection_end_node != previous_node \
  *                     and next_edge['type'] == RoadOption.LANEFOLLOW \
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 287, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_5) {
     } else {
@@ -9015,18 +9018,18 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
       goto __pyx_L5_bool_binop_done;
     }
 
-    /* "cythoncode/router_baseline.pyx":377
+    /* "cythoncode/router_baseline.pyx":288
  *             if self._previous_decision != RoadOption.VOID \
  *                     and self._intersection_end_node > 0 \
  *                     and self._intersection_end_node != previous_node \             # <<<<<<<<<<<<<<
  *                     and next_edge['type'] == RoadOption.LANEFOLLOW \
  *                     and next_edge['intersection']:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 288, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_v_previous_node, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_v_previous_node, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 288, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_5) {
     } else {
@@ -9034,24 +9037,24 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
       goto __pyx_L5_bool_binop_done;
     }
 
-    /* "cythoncode/router_baseline.pyx":378
+    /* "cythoncode/router_baseline.pyx":289
  *                     and self._intersection_end_node > 0 \
  *                     and self._intersection_end_node != previous_node \
  *                     and next_edge['type'] == RoadOption.LANEFOLLOW \             # <<<<<<<<<<<<<<
  *                     and next_edge['intersection']:
  *                 decision = self._previous_decision
  */
-    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 378, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 289, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 378, __pyx_L1_error)
+    __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 378, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 289, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_5) {
     } else {
@@ -9059,21 +9062,21 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
       goto __pyx_L5_bool_binop_done;
     }
 
-    /* "cythoncode/router_baseline.pyx":379
+    /* "cythoncode/router_baseline.pyx":290
  *                     and self._intersection_end_node != previous_node \
  *                     and next_edge['type'] == RoadOption.LANEFOLLOW \
  *                     and next_edge['intersection']:             # <<<<<<<<<<<<<<
  *                 decision = self._previous_decision
  *             else:
  */
-    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 379, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 290, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 379, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 290, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_4 = __pyx_t_5;
     __pyx_L5_bool_binop_done:;
 
-    /* "cythoncode/router_baseline.pyx":375
+    /* "cythoncode/router_baseline.pyx":286
  *         next_edge = self._graph.edges[current_node, next_node]
  *         if index > 0:
  *             if self._previous_decision != RoadOption.VOID \             # <<<<<<<<<<<<<<
@@ -9082,19 +9085,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  */
     if (__pyx_t_4) {
 
-      /* "cythoncode/router_baseline.pyx":380
+      /* "cythoncode/router_baseline.pyx":291
  *                     and next_edge['type'] == RoadOption.LANEFOLLOW \
  *                     and next_edge['intersection']:
  *                 decision = self._previous_decision             # <<<<<<<<<<<<<<
  *             else:
  *                 self._intersection_end_node = -1
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "cythoncode/router_baseline.pyx":375
+      /* "cythoncode/router_baseline.pyx":286
  *         next_edge = self._graph.edges[current_node, next_node]
  *         if index > 0:
  *             if self._previous_decision != RoadOption.VOID \             # <<<<<<<<<<<<<<
@@ -9104,7 +9107,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
       goto __pyx_L4;
     }
 
-    /* "cythoncode/router_baseline.pyx":382
+    /* "cythoncode/router_baseline.pyx":293
  *                 decision = self._previous_decision
  *             else:
  *                 self._intersection_end_node = -1             # <<<<<<<<<<<<<<
@@ -9112,21 +9115,21 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[
  */
     /*else*/ {
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node, __pyx_int_neg_1) < 0) __PYX_ERR(0, 382, __pyx_L1_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node, __pyx_int_neg_1) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
 
-      /* "cythoncode/router_baseline.pyx":383
+      /* "cythoncode/router_baseline.pyx":294
  *             else:
  *                 self._intersection_end_node = -1
  *                 current_edge = self._graph.edges[previous_node, current_node]             # <<<<<<<<<<<<<<
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 294, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_edges); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_edges); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 294, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_v_previous_node);
       __Pyx_GIVEREF(__pyx_v_previous_node);
@@ -9134,31 +9137,31 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
       __Pyx_INCREF(__pyx_v_current_node);
       __Pyx_GIVEREF(__pyx_v_current_node);
       PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_current_node);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 383, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_v_current_edge = __pyx_t_1;
       __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":384
+      /* "cythoncode/router_baseline.pyx":295
  *                 self._intersection_end_node = -1
  *                 current_edge = self._graph.edges[previous_node, current_node]
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[             # <<<<<<<<<<<<<<
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']
  *                 if calculate_turn:
  */
-      __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_current_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_current_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 295, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 384, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 295, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_t_6, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_t_6, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 384, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 295, __pyx_L1_error)
       if (__pyx_t_4) {
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       } else {
@@ -9168,53 +9171,53 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         goto __pyx_L10_bool_binop_done;
       }
 
-      /* "cythoncode/router_baseline.pyx":385
+      /* "cythoncode/router_baseline.pyx":296
  *                 current_edge = self._graph.edges[previous_node, current_node]
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']             # <<<<<<<<<<<<<<
  *                 if calculate_turn:
  *                     last_node, tail_edge = self._successive_last_intersection_edge(
  */
-      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_current_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_current_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
 
-      /* "cythoncode/router_baseline.pyx":384
+      /* "cythoncode/router_baseline.pyx":295
  *                 self._intersection_end_node = -1
  *                 current_edge = self._graph.edges[previous_node, current_node]
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[             # <<<<<<<<<<<<<<
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']
  *                 if calculate_turn:
  */
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 384, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 295, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_5 = (!__pyx_t_4);
       if (__pyx_t_5) {
       } else {
-        __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_1 = __pyx_t_3;
         __pyx_t_3 = 0;
         goto __pyx_L10_bool_binop_done;
       }
 
-      /* "cythoncode/router_baseline.pyx":385
+      /* "cythoncode/router_baseline.pyx":296
  *                 current_edge = self._graph.edges[previous_node, current_node]
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']             # <<<<<<<<<<<<<<
  *                 if calculate_turn:
  *                     last_node, tail_edge = self._successive_last_intersection_edge(
  */
-      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 385, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 296, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 385, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 296, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 296, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 385, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 296, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 385, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 296, __pyx_L1_error)
       if (__pyx_t_5) {
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       } else {
@@ -9223,7 +9226,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         goto __pyx_L10_bool_binop_done;
       }
-      __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 385, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_intersection); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 296, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_t_6);
       __pyx_t_1 = __pyx_t_6;
@@ -9232,27 +9235,27 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
       __pyx_v_calculate_turn = __pyx_t_1;
       __pyx_t_1 = 0;
 
-      /* "cythoncode/router_baseline.pyx":386
+      /* "cythoncode/router_baseline.pyx":297
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']
  *                 if calculate_turn:             # <<<<<<<<<<<<<<
  *                     last_node, tail_edge = self._successive_last_intersection_edge(
  *                         index, route)
  */
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_calculate_turn); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 386, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_calculate_turn); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 297, __pyx_L1_error)
       if (__pyx_t_5) {
 
-        /* "cythoncode/router_baseline.pyx":387
+        /* "cythoncode/router_baseline.pyx":298
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']
  *                 if calculate_turn:
  *                     last_node, tail_edge = self._successive_last_intersection_edge(             # <<<<<<<<<<<<<<
  *                         index, route)
  *                     self._intersection_end_node = last_node
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_successive_last_intersection_ed); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 387, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_successive_last_intersection_ed); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 298, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
 
-        /* "cythoncode/router_baseline.pyx":388
+        /* "cythoncode/router_baseline.pyx":299
  *                 if calculate_turn:
  *                     last_node, tail_edge = self._successive_last_intersection_edge(
  *                         index, route)             # <<<<<<<<<<<<<<
@@ -9274,7 +9277,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_6)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_index, __pyx_v_route};
-          __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_1);
         } else
@@ -9282,13 +9285,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_index, __pyx_v_route};
-          __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_1);
         } else
         #endif
         {
-          __pyx_t_3 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
+          __pyx_t_3 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           if (__pyx_t_2) {
             __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -9299,7 +9302,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_INCREF(__pyx_v_route);
           __Pyx_GIVEREF(__pyx_v_route);
           PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_7, __pyx_v_route);
-          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
@@ -9310,7 +9313,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 387, __pyx_L1_error)
+            __PYX_ERR(0, 298, __pyx_L1_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -9323,15 +9326,15 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(__pyx_t_3);
           #else
-          __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 387, __pyx_L1_error)
+          __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
+          __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           #endif
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+          __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __pyx_t_8 = Py_TYPE(__pyx_t_2)->tp_iternext;
@@ -9339,7 +9342,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_GOTREF(__pyx_t_6);
           index = 1; __pyx_t_3 = __pyx_t_8(__pyx_t_2); if (unlikely(!__pyx_t_3)) goto __pyx_L15_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_3);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_2), 2) < 0) __PYX_ERR(0, 387, __pyx_L1_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_2), 2) < 0) __PYX_ERR(0, 298, __pyx_L1_error)
           __pyx_t_8 = NULL;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           goto __pyx_L16_unpacking_done;
@@ -9347,11 +9350,11 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           __pyx_t_8 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 387, __pyx_L1_error)
+          __PYX_ERR(0, 298, __pyx_L1_error)
           __pyx_L16_unpacking_done:;
         }
 
-        /* "cythoncode/router_baseline.pyx":387
+        /* "cythoncode/router_baseline.pyx":298
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']
  *                 if calculate_turn:
  *                     last_node, tail_edge = self._successive_last_intersection_edge(             # <<<<<<<<<<<<<<
@@ -9363,16 +9366,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         __pyx_v_tail_edge = __pyx_t_3;
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":389
+        /* "cythoncode/router_baseline.pyx":300
  *                     last_node, tail_edge = self._successive_last_intersection_edge(
  *                         index, route)
  *                     self._intersection_end_node = last_node             # <<<<<<<<<<<<<<
  *                     if tail_edge is not None:
  *                         next_edge = tail_edge
  */
-        if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node, __pyx_v_last_node) < 0) __PYX_ERR(0, 389, __pyx_L1_error)
+        if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_intersection_end_node, __pyx_v_last_node) < 0) __PYX_ERR(0, 300, __pyx_L1_error)
 
-        /* "cythoncode/router_baseline.pyx":390
+        /* "cythoncode/router_baseline.pyx":301
  *                         index, route)
  *                     self._intersection_end_node = last_node
  *                     if tail_edge is not None:             # <<<<<<<<<<<<<<
@@ -9383,7 +9386,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         __pyx_t_4 = (__pyx_t_5 != 0);
         if (__pyx_t_4) {
 
-          /* "cythoncode/router_baseline.pyx":391
+          /* "cythoncode/router_baseline.pyx":302
  *                     self._intersection_end_node = last_node
  *                     if tail_edge is not None:
  *                         next_edge = tail_edge             # <<<<<<<<<<<<<<
@@ -9393,7 +9396,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_INCREF(__pyx_v_tail_edge);
           __Pyx_DECREF_SET(__pyx_v_next_edge, __pyx_v_tail_edge);
 
-          /* "cythoncode/router_baseline.pyx":390
+          /* "cythoncode/router_baseline.pyx":301
  *                         index, route)
  *                     self._intersection_end_node = last_node
  *                     if tail_edge is not None:             # <<<<<<<<<<<<<<
@@ -9402,23 +9405,23 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":392
+        /* "cythoncode/router_baseline.pyx":303
  *                     if tail_edge is not None:
  *                         next_edge = tail_edge
  *                     cv, nv = current_edge['exit_vector'], next_edge['exit_vector']             # <<<<<<<<<<<<<<
  *                     if cv is None or nv is None:
  *                         return next_edge['type']
  */
-        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_current_edge, __pyx_n_s_exit_vector); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_current_edge, __pyx_n_s_exit_vector); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_exit_vector); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 392, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_exit_vector); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 303, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_v_cv = __pyx_t_1;
         __pyx_t_1 = 0;
         __pyx_v_nv = __pyx_t_3;
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":393
+        /* "cythoncode/router_baseline.pyx":304
  *                         next_edge = tail_edge
  *                     cv, nv = current_edge['exit_vector'], next_edge['exit_vector']
  *                     if cv is None or nv is None:             # <<<<<<<<<<<<<<
@@ -9438,7 +9441,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         __pyx_L19_bool_binop_done:;
         if (__pyx_t_4) {
 
-          /* "cythoncode/router_baseline.pyx":394
+          /* "cythoncode/router_baseline.pyx":305
  *                     cv, nv = current_edge['exit_vector'], next_edge['exit_vector']
  *                     if cv is None or nv is None:
  *                         return next_edge['type']             # <<<<<<<<<<<<<<
@@ -9446,13 +9449,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  *                     for neighbor in self._graph.successors(current_node):
  */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 394, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_r = __pyx_t_3;
           __pyx_t_3 = 0;
           goto __pyx_L0;
 
-          /* "cythoncode/router_baseline.pyx":393
+          /* "cythoncode/router_baseline.pyx":304
  *                         next_edge = tail_edge
  *                     cv, nv = current_edge['exit_vector'], next_edge['exit_vector']
  *                     if cv is None or nv is None:             # <<<<<<<<<<<<<<
@@ -9461,28 +9464,28 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":395
+        /* "cythoncode/router_baseline.pyx":306
  *                     if cv is None or nv is None:
  *                         return next_edge['type']
  *                     cross_list = []             # <<<<<<<<<<<<<<
  *                     for neighbor in self._graph.successors(current_node):
  *                         select_edge = self._graph.edges[current_node, neighbor]
  */
-        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 395, __pyx_L1_error)
+        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_v_cross_list = ((PyObject*)__pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":396
+        /* "cythoncode/router_baseline.pyx":307
  *                         return next_edge['type']
  *                     cross_list = []
  *                     for neighbor in self._graph.successors(current_node):             # <<<<<<<<<<<<<<
  *                         select_edge = self._graph.edges[current_node, neighbor]
  *                         if select_edge['type'] == RoadOption.LANEFOLLOW:
  */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 396, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_successors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 396, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_successors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 307, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_1 = NULL;
@@ -9497,16 +9500,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         }
         __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_1, __pyx_v_current_node) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_current_node);
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 396, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
           __pyx_t_6 = __pyx_t_3; __Pyx_INCREF(__pyx_t_6); __pyx_t_10 = 0;
           __pyx_t_11 = NULL;
         } else {
-          __pyx_t_10 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 396, __pyx_L1_error)
+          __pyx_t_10 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 307, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_11 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 396, __pyx_L1_error)
+          __pyx_t_11 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 307, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         for (;;) {
@@ -9514,17 +9517,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
             if (likely(PyList_CheckExact(__pyx_t_6))) {
               if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_6)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_3 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 396, __pyx_L1_error)
+              __pyx_t_3 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 307, __pyx_L1_error)
               #else
-              __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 396, __pyx_L1_error)
+              __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_3);
               #endif
             } else {
               if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 396, __pyx_L1_error)
+              __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_10); __Pyx_INCREF(__pyx_t_3); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 307, __pyx_L1_error)
               #else
-              __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 396, __pyx_L1_error)
+              __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_3);
               #endif
             }
@@ -9534,7 +9537,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 396, __pyx_L1_error)
+                else __PYX_ERR(0, 307, __pyx_L1_error)
               }
               break;
             }
@@ -9543,19 +9546,19 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_XDECREF_SET(__pyx_v_neighbor, __pyx_t_3);
           __pyx_t_3 = 0;
 
-          /* "cythoncode/router_baseline.pyx":397
+          /* "cythoncode/router_baseline.pyx":308
  *                     cross_list = []
  *                     for neighbor in self._graph.successors(current_node):
  *                         select_edge = self._graph.edges[current_node, neighbor]             # <<<<<<<<<<<<<<
  *                         if select_edge['type'] == RoadOption.LANEFOLLOW:
  *                             if neighbor != route[index+1]:
  */
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_graph); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 308, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_edges); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 397, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_edges); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
+          __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 308, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_INCREF(__pyx_v_current_node);
           __Pyx_GIVEREF(__pyx_v_current_node);
@@ -9563,74 +9566,74 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_INCREF(__pyx_v_neighbor);
           __Pyx_GIVEREF(__pyx_v_neighbor);
           PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_neighbor);
-          __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 308, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF_SET(__pyx_v_select_edge, __pyx_t_2);
           __pyx_t_2 = 0;
 
-          /* "cythoncode/router_baseline.pyx":398
+          /* "cythoncode/router_baseline.pyx":309
  *                     for neighbor in self._graph.successors(current_node):
  *                         select_edge = self._graph.edges[current_node, neighbor]
  *                         if select_edge['type'] == RoadOption.LANEFOLLOW:             # <<<<<<<<<<<<<<
  *                             if neighbor != route[index+1]:
  *                                 sv = select_edge['net_vector']
  */
-          __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_select_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_select_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LANEFOLLOW); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
+          __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 398, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 309, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           if (__pyx_t_4) {
 
-            /* "cythoncode/router_baseline.pyx":399
+            /* "cythoncode/router_baseline.pyx":310
  *                         select_edge = self._graph.edges[current_node, neighbor]
  *                         if select_edge['type'] == RoadOption.LANEFOLLOW:
  *                             if neighbor != route[index+1]:             # <<<<<<<<<<<<<<
  *                                 sv = select_edge['net_vector']
  *                                 cross_list.append(np.cross(cv, sv)[2])
  */
-            __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
+            __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
-            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
+            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_route, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __pyx_t_3 = PyObject_RichCompare(__pyx_v_neighbor, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
+            __pyx_t_3 = PyObject_RichCompare(__pyx_v_neighbor, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
+            __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 310, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             if (__pyx_t_4) {
 
-              /* "cythoncode/router_baseline.pyx":400
+              /* "cythoncode/router_baseline.pyx":311
  *                         if select_edge['type'] == RoadOption.LANEFOLLOW:
  *                             if neighbor != route[index+1]:
  *                                 sv = select_edge['net_vector']             # <<<<<<<<<<<<<<
  *                                 cross_list.append(np.cross(cv, sv)[2])
  *                     next_cross = np.cross(cv, nv)[2]
  */
-              __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_select_edge, __pyx_n_s_net_vector); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L1_error)
+              __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_select_edge, __pyx_n_s_net_vector); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 311, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_3);
               __Pyx_XDECREF_SET(__pyx_v_sv, __pyx_t_3);
               __pyx_t_3 = 0;
 
-              /* "cythoncode/router_baseline.pyx":401
+              /* "cythoncode/router_baseline.pyx":312
  *                             if neighbor != route[index+1]:
  *                                 sv = select_edge['net_vector']
  *                                 cross_list.append(np.cross(cv, sv)[2])             # <<<<<<<<<<<<<<
  *                     next_cross = np.cross(cv, nv)[2]
  *                     deviation = math.acos(np.clip(
  */
-              __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 401, __pyx_L1_error)
+              __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 312, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_cross); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_cross); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 312, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __pyx_t_1 = NULL;
@@ -9648,7 +9651,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
               #if CYTHON_FAST_PYCALL
               if (PyFunction_Check(__pyx_t_2)) {
                 PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_v_cv, __pyx_v_sv};
-                __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
+                __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
                 __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
                 __Pyx_GOTREF(__pyx_t_3);
               } else
@@ -9656,13 +9659,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
               #if CYTHON_FAST_PYCCALL
               if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
                 PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_v_cv, __pyx_v_sv};
-                __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
+                __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
                 __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
                 __Pyx_GOTREF(__pyx_t_3);
               } else
               #endif
               {
-                __pyx_t_12 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 401, __pyx_L1_error)
+                __pyx_t_12 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 312, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_12);
                 if (__pyx_t_1) {
                   __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_1); __pyx_t_1 = NULL;
@@ -9673,18 +9676,18 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
                 __Pyx_INCREF(__pyx_v_sv);
                 __Pyx_GIVEREF(__pyx_v_sv);
                 PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_7, __pyx_v_sv);
-                __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
+                __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L1_error)
+              __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 312, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-              __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_cross_list, __pyx_t_2); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 401, __pyx_L1_error)
+              __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_cross_list, __pyx_t_2); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 312, __pyx_L1_error)
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "cythoncode/router_baseline.pyx":399
+              /* "cythoncode/router_baseline.pyx":310
  *                         select_edge = self._graph.edges[current_node, neighbor]
  *                         if select_edge['type'] == RoadOption.LANEFOLLOW:
  *                             if neighbor != route[index+1]:             # <<<<<<<<<<<<<<
@@ -9693,7 +9696,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  */
             }
 
-            /* "cythoncode/router_baseline.pyx":398
+            /* "cythoncode/router_baseline.pyx":309
  *                     for neighbor in self._graph.successors(current_node):
  *                         select_edge = self._graph.edges[current_node, neighbor]
  *                         if select_edge['type'] == RoadOption.LANEFOLLOW:             # <<<<<<<<<<<<<<
@@ -9702,7 +9705,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  */
           }
 
-          /* "cythoncode/router_baseline.pyx":396
+          /* "cythoncode/router_baseline.pyx":307
  *                         return next_edge['type']
  *                     cross_list = []
  *                     for neighbor in self._graph.successors(current_node):             # <<<<<<<<<<<<<<
@@ -9712,16 +9715,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "cythoncode/router_baseline.pyx":402
+        /* "cythoncode/router_baseline.pyx":313
  *                                 sv = select_edge['net_vector']
  *                                 cross_list.append(np.cross(cv, sv)[2])
  *                     next_cross = np.cross(cv, nv)[2]             # <<<<<<<<<<<<<<
  *                     deviation = math.acos(np.clip(
  *                         np.dot(cv, nv)/(np.linalg.norm(cv)*np.linalg.norm(nv)), -1.0, 1.0))
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 313, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_cross); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_cross); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_t_2 = NULL;
@@ -9739,7 +9742,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_3)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_cv, __pyx_v_nv};
-          __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 402, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 313, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_6);
         } else
@@ -9747,13 +9750,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_cv, __pyx_v_nv};
-          __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 402, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 313, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_6);
         } else
         #endif
         {
-          __pyx_t_12 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 402, __pyx_L1_error)
+          __pyx_t_12 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 313, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
           if (__pyx_t_2) {
             __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -9764,45 +9767,45 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_INCREF(__pyx_v_nv);
           __Pyx_GIVEREF(__pyx_v_nv);
           PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_7, __pyx_v_nv);
-          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 402, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 313, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         }
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_6, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_6, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __pyx_v_next_cross = __pyx_t_3;
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":403
+        /* "cythoncode/router_baseline.pyx":314
  *                                 cross_list.append(np.cross(cv, sv)[2])
  *                     next_cross = np.cross(cv, nv)[2]
  *                     deviation = math.acos(np.clip(             # <<<<<<<<<<<<<<
  *                         np.dot(cv, nv)/(np.linalg.norm(cv)*np.linalg.norm(nv)), -1.0, 1.0))
  *                     if not cross_list:
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_math); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 403, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_math); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 314, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_acos); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 403, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_acos); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 314, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 403, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 314, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_clip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_clip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "cythoncode/router_baseline.pyx":404
+        /* "cythoncode/router_baseline.pyx":315
  *                     next_cross = np.cross(cv, nv)[2]
  *                     deviation = math.acos(np.clip(
  *                         np.dot(cv, nv)/(np.linalg.norm(cv)*np.linalg.norm(nv)), -1.0, 1.0))             # <<<<<<<<<<<<<<
  *                     if not cross_list:
  *                         cross_list.append(0)
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_np); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_np); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_dot); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_dot); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_15);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __pyx_t_14 = NULL;
@@ -9820,7 +9823,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_15)) {
           PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_v_cv, __pyx_v_nv};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_15, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_15, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 315, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_GOTREF(__pyx_t_2);
         } else
@@ -9828,13 +9831,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_15)) {
           PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_v_cv, __pyx_v_nv};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_15, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_15, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 315, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_GOTREF(__pyx_t_2);
         } else
         #endif
         {
-          __pyx_t_16 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 404, __pyx_L1_error)
+          __pyx_t_16 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 315, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_16);
           if (__pyx_t_14) {
             __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_14); __pyx_t_14 = NULL;
@@ -9845,17 +9848,17 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_INCREF(__pyx_v_nv);
           __Pyx_GIVEREF(__pyx_v_nv);
           PyTuple_SET_ITEM(__pyx_t_16, 1+__pyx_t_7, __pyx_v_nv);
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_15, __pyx_t_16, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_15, __pyx_t_16, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 315, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         }
         __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-        __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_16);
-        __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_linalg); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_linalg); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_norm); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_norm); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_16);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __pyx_t_14 = NULL;
@@ -9870,15 +9873,15 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         }
         __pyx_t_15 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_16, __pyx_t_14, __pyx_v_cv) : __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_v_cv);
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-        if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 404, __pyx_L1_error)
+        if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_15);
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_np); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_np); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_linalg); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_linalg); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_17);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_norm); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_norm); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
         __pyx_t_17 = NULL;
@@ -9893,14 +9896,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         }
         __pyx_t_16 = (__pyx_t_17) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_17, __pyx_v_nv) : __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_v_nv);
         __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-        if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 404, __pyx_L1_error)
+        if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_16);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __pyx_t_14 = PyNumber_Multiply(__pyx_t_15, __pyx_t_16); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_14 = PyNumber_Multiply(__pyx_t_15, __pyx_t_16); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __pyx_t_16 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 315, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_16);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -9919,7 +9922,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_1)) {
           PyObject *__pyx_temp[4] = {__pyx_t_14, __pyx_t_16, __pyx_float_neg_1_0, __pyx_float_1_0};
-          __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 403, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 314, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -9928,14 +9931,14 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
           PyObject *__pyx_temp[4] = {__pyx_t_14, __pyx_t_16, __pyx_float_neg_1_0, __pyx_float_1_0};
-          __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 403, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 314, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         } else
         #endif
         {
-          __pyx_t_2 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 403, __pyx_L1_error)
+          __pyx_t_2 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 314, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           if (__pyx_t_14) {
             __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_14); __pyx_t_14 = NULL;
@@ -9949,7 +9952,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __Pyx_GIVEREF(__pyx_float_1_0);
           PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_7, __pyx_float_1_0);
           __pyx_t_16 = 0;
-          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 403, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 314, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         }
@@ -9967,13 +9970,13 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_12, __pyx_t_1, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_6);
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 403, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 314, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __pyx_v_deviation = __pyx_t_3;
         __pyx_t_3 = 0;
 
-        /* "cythoncode/router_baseline.pyx":405
+        /* "cythoncode/router_baseline.pyx":316
  *                     deviation = math.acos(np.clip(
  *                         np.dot(cv, nv)/(np.linalg.norm(cv)*np.linalg.norm(nv)), -1.0, 1.0))
  *                     if not cross_list:             # <<<<<<<<<<<<<<
@@ -9984,16 +9987,16 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         __pyx_t_5 = ((!__pyx_t_4) != 0);
         if (__pyx_t_5) {
 
-          /* "cythoncode/router_baseline.pyx":406
+          /* "cythoncode/router_baseline.pyx":317
  *                         np.dot(cv, nv)/(np.linalg.norm(cv)*np.linalg.norm(nv)), -1.0, 1.0))
  *                     if not cross_list:
  *                         cross_list.append(0)             # <<<<<<<<<<<<<<
  *                     if deviation < threshold:
  *                         decision = RoadOption.STRAIGHT
  */
-          __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_cross_list, __pyx_int_0); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 406, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_cross_list, __pyx_int_0); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 317, __pyx_L1_error)
 
-          /* "cythoncode/router_baseline.pyx":405
+          /* "cythoncode/router_baseline.pyx":316
  *                     deviation = math.acos(np.clip(
  *                         np.dot(cv, nv)/(np.linalg.norm(cv)*np.linalg.norm(nv)), -1.0, 1.0))
  *                     if not cross_list:             # <<<<<<<<<<<<<<
@@ -10002,34 +10005,34 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  */
         }
 
-        /* "cythoncode/router_baseline.pyx":407
+        /* "cythoncode/router_baseline.pyx":318
  *                     if not cross_list:
  *                         cross_list.append(0)
  *                     if deviation < threshold:             # <<<<<<<<<<<<<<
  *                         decision = RoadOption.STRAIGHT
  *                     elif cross_list and next_cross < min(cross_list):
  */
-        __pyx_t_3 = PyObject_RichCompare(__pyx_v_deviation, __pyx_v_threshold, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 407, __pyx_L1_error)
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 407, __pyx_L1_error)
+        __pyx_t_3 = PyObject_RichCompare(__pyx_v_deviation, __pyx_v_threshold, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 318, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 318, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_5) {
 
-          /* "cythoncode/router_baseline.pyx":408
+          /* "cythoncode/router_baseline.pyx":319
  *                         cross_list.append(0)
  *                     if deviation < threshold:
  *                         decision = RoadOption.STRAIGHT             # <<<<<<<<<<<<<<
  *                     elif cross_list and next_cross < min(cross_list):
  *                         decision = RoadOption.LEFT
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 408, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 319, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_STRAIGHT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 408, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_STRAIGHT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 319, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_12);
           __pyx_t_12 = 0;
 
-          /* "cythoncode/router_baseline.pyx":407
+          /* "cythoncode/router_baseline.pyx":318
  *                     if not cross_list:
  *                         cross_list.append(0)
  *                     if deviation < threshold:             # <<<<<<<<<<<<<<
@@ -10039,7 +10042,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           goto __pyx_L26;
         }
 
-        /* "cythoncode/router_baseline.pyx":409
+        /* "cythoncode/router_baseline.pyx":320
  *                     if deviation < threshold:
  *                         decision = RoadOption.STRAIGHT
  *                     elif cross_list and next_cross < min(cross_list):             # <<<<<<<<<<<<<<
@@ -10052,32 +10055,32 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __pyx_t_5 = __pyx_t_4;
           goto __pyx_L27_bool_binop_done;
         }
-        __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_cross_list); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 409, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_cross_list); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 320, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_3 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_t_12, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 409, __pyx_L1_error)
+        __pyx_t_3 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_t_12, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 320, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 409, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 320, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_t_5 = __pyx_t_4;
         __pyx_L27_bool_binop_done:;
         if (__pyx_t_5) {
 
-          /* "cythoncode/router_baseline.pyx":410
+          /* "cythoncode/router_baseline.pyx":321
  *                         decision = RoadOption.STRAIGHT
  *                     elif cross_list and next_cross < min(cross_list):
  *                         decision = RoadOption.LEFT             # <<<<<<<<<<<<<<
  *                     elif cross_list and next_cross > max(cross_list):
  *                         decision = RoadOption.RIGHT
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 410, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 321, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LEFT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 410, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_LEFT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 321, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_12);
           __pyx_t_12 = 0;
 
-          /* "cythoncode/router_baseline.pyx":409
+          /* "cythoncode/router_baseline.pyx":320
  *                     if deviation < threshold:
  *                         decision = RoadOption.STRAIGHT
  *                     elif cross_list and next_cross < min(cross_list):             # <<<<<<<<<<<<<<
@@ -10087,7 +10090,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           goto __pyx_L26;
         }
 
-        /* "cythoncode/router_baseline.pyx":411
+        /* "cythoncode/router_baseline.pyx":322
  *                     elif cross_list and next_cross < min(cross_list):
  *                         decision = RoadOption.LEFT
  *                     elif cross_list and next_cross > max(cross_list):             # <<<<<<<<<<<<<<
@@ -10100,32 +10103,32 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           __pyx_t_5 = __pyx_t_4;
           goto __pyx_L29_bool_binop_done;
         }
-        __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_v_cross_list); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 411, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_v_cross_list); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 322, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_3 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_t_12, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 411, __pyx_L1_error)
+        __pyx_t_3 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_t_12, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 322, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 411, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 322, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_t_5 = __pyx_t_4;
         __pyx_L29_bool_binop_done:;
         if (__pyx_t_5) {
 
-          /* "cythoncode/router_baseline.pyx":412
+          /* "cythoncode/router_baseline.pyx":323
  *                         decision = RoadOption.LEFT
  *                     elif cross_list and next_cross > max(cross_list):
  *                         decision = RoadOption.RIGHT             # <<<<<<<<<<<<<<
  *                     elif next_cross < 0:
  *                         decision = RoadOption.LEFT
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 323, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_RIGHT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 412, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_RIGHT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 323, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_12);
           __pyx_t_12 = 0;
 
-          /* "cythoncode/router_baseline.pyx":411
+          /* "cythoncode/router_baseline.pyx":322
  *                     elif cross_list and next_cross < min(cross_list):
  *                         decision = RoadOption.LEFT
  *                     elif cross_list and next_cross > max(cross_list):             # <<<<<<<<<<<<<<
@@ -10135,34 +10138,34 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           goto __pyx_L26;
         }
 
-        /* "cythoncode/router_baseline.pyx":413
+        /* "cythoncode/router_baseline.pyx":324
  *                     elif cross_list and next_cross > max(cross_list):
  *                         decision = RoadOption.RIGHT
  *                     elif next_cross < 0:             # <<<<<<<<<<<<<<
  *                         decision = RoadOption.LEFT
  *                     elif next_cross > 0:
  */
-        __pyx_t_12 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 413, __pyx_L1_error)
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 413, __pyx_L1_error)
+        __pyx_t_12 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 324, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 324, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         if (__pyx_t_5) {
 
-          /* "cythoncode/router_baseline.pyx":414
+          /* "cythoncode/router_baseline.pyx":325
  *                         decision = RoadOption.RIGHT
  *                     elif next_cross < 0:
  *                         decision = RoadOption.LEFT             # <<<<<<<<<<<<<<
  *                     elif next_cross > 0:
  *                         decision = RoadOption.RIGHT
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 414, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 325, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_LEFT); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 414, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_LEFT); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 325, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
           __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_3);
           __pyx_t_3 = 0;
 
-          /* "cythoncode/router_baseline.pyx":413
+          /* "cythoncode/router_baseline.pyx":324
  *                     elif cross_list and next_cross > max(cross_list):
  *                         decision = RoadOption.RIGHT
  *                     elif next_cross < 0:             # <<<<<<<<<<<<<<
@@ -10172,34 +10175,34 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
           goto __pyx_L26;
         }
 
-        /* "cythoncode/router_baseline.pyx":415
+        /* "cythoncode/router_baseline.pyx":326
  *                     elif next_cross < 0:
  *                         decision = RoadOption.LEFT
  *                     elif next_cross > 0:             # <<<<<<<<<<<<<<
  *                         decision = RoadOption.RIGHT
  *                 else:
  */
-        __pyx_t_3 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 415, __pyx_L1_error)
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 415, __pyx_L1_error)
+        __pyx_t_3 = PyObject_RichCompare(__pyx_v_next_cross, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 326, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 326, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_5) {
 
-          /* "cythoncode/router_baseline.pyx":416
+          /* "cythoncode/router_baseline.pyx":327
  *                         decision = RoadOption.LEFT
  *                     elif next_cross > 0:
  *                         decision = RoadOption.RIGHT             # <<<<<<<<<<<<<<
  *                 else:
  *                     decision = next_edge['type']
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 416, __pyx_L1_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 327, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_RIGHT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 416, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_RIGHT); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 327, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_12);
           __pyx_t_12 = 0;
 
-          /* "cythoncode/router_baseline.pyx":415
+          /* "cythoncode/router_baseline.pyx":326
  *                     elif next_cross < 0:
  *                         decision = RoadOption.LEFT
  *                     elif next_cross > 0:             # <<<<<<<<<<<<<<
@@ -10209,7 +10212,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         }
         __pyx_L26:;
 
-        /* "cythoncode/router_baseline.pyx":386
+        /* "cythoncode/router_baseline.pyx":297
  *                 calculate_turn = current_edge['type'] == RoadOption.LANEFOLLOW and not current_edge[
  *                     'intersection'] and next_edge['type'] == RoadOption.LANEFOLLOW and next_edge['intersection']
  *                 if calculate_turn:             # <<<<<<<<<<<<<<
@@ -10219,7 +10222,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
         goto __pyx_L14;
       }
 
-      /* "cythoncode/router_baseline.pyx":418
+      /* "cythoncode/router_baseline.pyx":329
  *                         decision = RoadOption.RIGHT
  *                 else:
  *                     decision = next_edge['type']             # <<<<<<<<<<<<<<
@@ -10227,7 +10230,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  *         else:
  */
       /*else*/ {
-        __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 418, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 329, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_12);
         __pyx_t_12 = 0;
@@ -10236,7 +10239,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
     }
     __pyx_L4:;
 
-    /* "cythoncode/router_baseline.pyx":374
+    /* "cythoncode/router_baseline.pyx":285
  *         next_node = route[index+1]
  *         next_edge = self._graph.edges[current_node, next_node]
  *         if index > 0:             # <<<<<<<<<<<<<<
@@ -10246,7 +10249,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
     goto __pyx_L3;
   }
 
-  /* "cythoncode/router_baseline.pyx":421
+  /* "cythoncode/router_baseline.pyx":332
  * 
  *         else:
  *             decision = next_edge['type']             # <<<<<<<<<<<<<<
@@ -10254,40 +10257,40 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
  *         self._previous_decision = decision
  */
   /*else*/ {
-    __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 421, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_v_next_edge, __pyx_n_s_type); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 332, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF_SET(__pyx_v_decision, __pyx_t_12);
     __pyx_t_12 = 0;
   }
   __pyx_L3:;
 
-  /* "cythoncode/router_baseline.pyx":423
+  /* "cythoncode/router_baseline.pyx":334
  *             decision = next_edge['type']
  * 
  *         self._previous_decision = decision             # <<<<<<<<<<<<<<
  *         return decision
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision, __pyx_v_decision) < 0) __PYX_ERR(0, 423, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_previous_decision, __pyx_v_decision) < 0) __PYX_ERR(0, 334, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":424
+  /* "cythoncode/router_baseline.pyx":335
  * 
  *         self._previous_decision = decision
  *         return decision             # <<<<<<<<<<<<<<
  * 
- *     def _find_closest_in_list(self, current_waypoint, waypoint_list):
+ *     def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_decision);
   __pyx_r = __pyx_v_decision;
   goto __pyx_L0;
 
-  /* "cythoncode/router_baseline.pyx":363
+  /* "cythoncode/router_baseline.pyx":279
  *         return last_node, last_intersection_edge
  * 
- *     def _turn_decision(self, index, route, threshold=math.radians(35)):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the turn decision (RoadOption) for pair of edges
+ *     def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:             # <<<<<<<<<<<<<<
+ *         decision = None
+ *         previous_node = route[index-1]
  */
 
   /* function exit code */
@@ -10326,10 +10329,10 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_20
   return __pyx_r;
 }
 
-/* "cythoncode/router_baseline.pyx":426
+/* "cythoncode/router_baseline.pyx":337
  *         return decision
  * 
- *     def _find_closest_in_list(self, current_waypoint, waypoint_list):             # <<<<<<<<<<<<<<
+ *     def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:             # <<<<<<<<<<<<<<
  *         min_distance = float('inf')
  *         closest_index = -1
  */
@@ -10372,17 +10375,17 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_23
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_current_waypoint)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_find_closest_in_list", 1, 3, 3, 1); __PYX_ERR(0, 426, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_find_closest_in_list", 1, 3, 3, 1); __PYX_ERR(0, 337, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_waypoint_list)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_find_closest_in_list", 1, 3, 3, 2); __PYX_ERR(0, 426, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_find_closest_in_list", 1, 3, 3, 2); __PYX_ERR(0, 337, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_find_closest_in_list") < 0)) __PYX_ERR(0, 426, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_find_closest_in_list") < 0)) __PYX_ERR(0, 337, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -10397,7 +10400,7 @@ static PyObject *__pyx_pw_10cythoncode_15router_baseline_18GlobalRoutePlanner_23
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_find_closest_in_list", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 426, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_find_closest_in_list", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 337, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cythoncode.router_baseline.GlobalRoutePlanner._find_closest_in_list", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -10432,20 +10435,20 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_find_closest_in_list", 0);
 
-  /* "cythoncode/router_baseline.pyx":427
+  /* "cythoncode/router_baseline.pyx":338
  * 
- *     def _find_closest_in_list(self, current_waypoint, waypoint_list):
+ *     def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:
  *         min_distance = float('inf')             # <<<<<<<<<<<<<<
  *         closest_index = -1
  *         for i, waypoint in enumerate(waypoint_list):
  */
-  __pyx_t_1 = __Pyx_PyNumber_Float(__pyx_n_s_inf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 427, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Float(__pyx_n_s_inf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_min_distance = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":428
- *     def _find_closest_in_list(self, current_waypoint, waypoint_list):
+  /* "cythoncode/router_baseline.pyx":339
+ *     def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:
  *         min_distance = float('inf')
  *         closest_index = -1             # <<<<<<<<<<<<<<
  *         for i, waypoint in enumerate(waypoint_list):
@@ -10454,7 +10457,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
   __Pyx_INCREF(__pyx_int_neg_1);
   __pyx_v_closest_index = __pyx_int_neg_1;
 
-  /* "cythoncode/router_baseline.pyx":429
+  /* "cythoncode/router_baseline.pyx":340
  *         min_distance = float('inf')
  *         closest_index = -1
  *         for i, waypoint in enumerate(waypoint_list):             # <<<<<<<<<<<<<<
@@ -10467,26 +10470,26 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
     __pyx_t_2 = __pyx_v_waypoint_list; __Pyx_INCREF(__pyx_t_2); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_waypoint_list); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_waypoint_list); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 340, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 340, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_4)) {
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_5); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 429, __pyx_L1_error)
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_5); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 340, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 429, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 340, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       } else {
         if (__pyx_t_3 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_5); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 429, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_5); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 340, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 429, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 340, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       }
@@ -10496,7 +10499,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 429, __pyx_L1_error)
+          else __PYX_ERR(0, 340, __pyx_L1_error)
         }
         break;
       }
@@ -10506,38 +10509,38 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
     __pyx_t_5 = 0;
     __Pyx_INCREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
-    __pyx_t_5 = __Pyx_PyInt_AddObjC(__pyx_t_1, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 429, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_AddObjC(__pyx_t_1, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 340, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1);
     __pyx_t_1 = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "cythoncode/router_baseline.pyx":430
+    /* "cythoncode/router_baseline.pyx":341
  *         closest_index = -1
  *         for i, waypoint in enumerate(waypoint_list):
  *             distance = waypoint.transform.location.distance(             # <<<<<<<<<<<<<<
  *                 current_waypoint.transform.location)
  *             if distance < min_distance:
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 430, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_location); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 430, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_location); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_distance); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 430, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_distance); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "cythoncode/router_baseline.pyx":431
+    /* "cythoncode/router_baseline.pyx":342
  *         for i, waypoint in enumerate(waypoint_list):
  *             distance = waypoint.transform.location.distance(
  *                 current_waypoint.transform.location)             # <<<<<<<<<<<<<<
  *             if distance < min_distance:
  *                 min_distance = distance
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 431, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_waypoint, __pyx_n_s_transform); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 342, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_location); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 431, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_location); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 342, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -10553,25 +10556,25 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
     __pyx_t_5 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_8);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 430, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF_SET(__pyx_v_distance, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "cythoncode/router_baseline.pyx":432
+    /* "cythoncode/router_baseline.pyx":343
  *             distance = waypoint.transform.location.distance(
  *                 current_waypoint.transform.location)
  *             if distance < min_distance:             # <<<<<<<<<<<<<<
  *                 min_distance = distance
  *                 closest_index = i
  */
-    __pyx_t_5 = PyObject_RichCompare(__pyx_v_distance, __pyx_v_min_distance, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 432, __pyx_L1_error)
-    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 432, __pyx_L1_error)
+    __pyx_t_5 = PyObject_RichCompare(__pyx_v_distance, __pyx_v_min_distance, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 343, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 343, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (__pyx_t_9) {
 
-      /* "cythoncode/router_baseline.pyx":433
+      /* "cythoncode/router_baseline.pyx":344
  *                 current_waypoint.transform.location)
  *             if distance < min_distance:
  *                 min_distance = distance             # <<<<<<<<<<<<<<
@@ -10581,7 +10584,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
       __Pyx_INCREF(__pyx_v_distance);
       __Pyx_DECREF_SET(__pyx_v_min_distance, __pyx_v_distance);
 
-      /* "cythoncode/router_baseline.pyx":434
+      /* "cythoncode/router_baseline.pyx":345
  *             if distance < min_distance:
  *                 min_distance = distance
  *                 closest_index = i             # <<<<<<<<<<<<<<
@@ -10591,7 +10594,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
       __Pyx_INCREF(__pyx_v_i);
       __Pyx_DECREF_SET(__pyx_v_closest_index, __pyx_v_i);
 
-      /* "cythoncode/router_baseline.pyx":432
+      /* "cythoncode/router_baseline.pyx":343
  *             distance = waypoint.transform.location.distance(
  *                 current_waypoint.transform.location)
  *             if distance < min_distance:             # <<<<<<<<<<<<<<
@@ -10600,7 +10603,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
  */
     }
 
-    /* "cythoncode/router_baseline.pyx":429
+    /* "cythoncode/router_baseline.pyx":340
  *         min_distance = float('inf')
  *         closest_index = -1
  *         for i, waypoint in enumerate(waypoint_list):             # <<<<<<<<<<<<<<
@@ -10611,7 +10614,7 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":436
+  /* "cythoncode/router_baseline.pyx":347
  *                 closest_index = i
  * 
  *         return closest_index             # <<<<<<<<<<<<<<
@@ -10621,10 +10624,10 @@ static PyObject *__pyx_pf_10cythoncode_15router_baseline_18GlobalRoutePlanner_22
   __pyx_r = __pyx_v_closest_index;
   goto __pyx_L0;
 
-  /* "cythoncode/router_baseline.pyx":426
+  /* "cythoncode/router_baseline.pyx":337
  *         return decision
  * 
- *     def _find_closest_in_list(self, current_waypoint, waypoint_list):             # <<<<<<<<<<<<<<
+ *     def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:             # <<<<<<<<<<<<<<
  *         min_distance = float('inf')
  *         closest_index = -1
  */
@@ -10668,7 +10671,7 @@ static PyModuleDef_Slot __pyx_moduledef_slots[] = {
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
     "router_baseline",
-    __pyx_k_This_module_provides_GlobalRout, /* m_doc */
+    0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
   #else
@@ -10699,6 +10702,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_CHANGELANELEFT, __pyx_k_CHANGELANELEFT, sizeof(__pyx_k_CHANGELANELEFT), 0, 0, 1, 1},
   {&__pyx_n_s_CHANGELANERIGHT, __pyx_k_CHANGELANERIGHT, sizeof(__pyx_k_CHANGELANERIGHT), 0, 0, 1, 1},
   {&__pyx_n_s_DiGraph, __pyx_k_DiGraph, sizeof(__pyx_k_DiGraph), 0, 0, 1, 1},
+  {&__pyx_n_s_Dict, __pyx_k_Dict, sizeof(__pyx_k_Dict), 0, 0, 1, 1},
   {&__pyx_n_s_Driving, __pyx_k_Driving, sizeof(__pyx_k_Driving), 0, 0, 1, 1},
   {&__pyx_n_s_GlobalRoutePlanner, __pyx_k_GlobalRoutePlanner, sizeof(__pyx_k_GlobalRoutePlanner), 0, 0, 1, 1},
   {&__pyx_n_s_GlobalRoutePlanner___init, __pyx_k_GlobalRoutePlanner___init, sizeof(__pyx_k_GlobalRoutePlanner___init), 0, 0, 1, 1},
@@ -10720,13 +10724,17 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_LaneChange, __pyx_k_LaneChange, sizeof(__pyx_k_LaneChange), 0, 0, 1, 1},
   {&__pyx_n_s_LaneType, __pyx_k_LaneType, sizeof(__pyx_k_LaneType), 0, 0, 1, 1},
   {&__pyx_n_s_Left, __pyx_k_Left, sizeof(__pyx_k_Left), 0, 0, 1, 1},
+  {&__pyx_n_s_List, __pyx_k_List, sizeof(__pyx_k_List), 0, 0, 1, 1},
+  {&__pyx_n_s_Location, __pyx_k_Location, sizeof(__pyx_k_Location), 0, 0, 1, 1},
+  {&__pyx_n_s_Map, __pyx_k_Map, sizeof(__pyx_k_Map), 0, 0, 1, 1},
   {&__pyx_n_s_RIGHT, __pyx_k_RIGHT, sizeof(__pyx_k_RIGHT), 0, 0, 1, 1},
   {&__pyx_n_s_Right, __pyx_k_Right, sizeof(__pyx_k_Right), 0, 0, 1, 1},
   {&__pyx_n_s_RoadOption, __pyx_k_RoadOption, sizeof(__pyx_k_RoadOption), 0, 0, 1, 1},
-  {&__pyx_kp_s_RoadOption_represents_the_possi, __pyx_k_RoadOption_represents_the_possi, sizeof(__pyx_k_RoadOption_represents_the_possi), 0, 0, 1, 0},
   {&__pyx_n_s_STRAIGHT, __pyx_k_STRAIGHT, sizeof(__pyx_k_STRAIGHT), 0, 0, 1, 1},
-  {&__pyx_kp_s_This_class_provides_a_very_high, __pyx_k_This_class_provides_a_very_high, sizeof(__pyx_k_This_class_provides_a_very_high), 0, 0, 1, 0},
+  {&__pyx_n_s_Tuple, __pyx_k_Tuple, sizeof(__pyx_k_Tuple), 0, 0, 1, 1},
+  {&__pyx_n_s_Union, __pyx_k_Union, sizeof(__pyx_k_Union), 0, 0, 1, 1},
   {&__pyx_n_s_VOID, __pyx_k_VOID, sizeof(__pyx_k_VOID), 0, 0, 1, 1},
+  {&__pyx_n_s_Waypoint, __pyx_k_Waypoint, sizeof(__pyx_k_Waypoint), 0, 0, 1, 1},
   {&__pyx_n_s_acos, __pyx_k_acos, sizeof(__pyx_k_acos), 0, 0, 1, 1},
   {&__pyx_n_s_add_edge, __pyx_k_add_edge, sizeof(__pyx_k_add_edge), 0, 0, 1, 1},
   {&__pyx_n_s_add_node, __pyx_k_add_node, sizeof(__pyx_k_add_node), 0, 0, 1, 1},
@@ -10784,6 +10792,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_exitxyz, __pyx_k_exitxyz, sizeof(__pyx_k_exitxyz), 0, 0, 1, 1},
   {&__pyx_n_s_find_closest_in_list, __pyx_k_find_closest_in_list, sizeof(__pyx_k_find_closest_in_list), 0, 0, 1, 1},
   {&__pyx_n_s_find_loose_ends, __pyx_k_find_loose_ends, sizeof(__pyx_k_find_loose_ends), 0, 0, 1, 1},
+  {&__pyx_n_u_float, __pyx_k_float, sizeof(__pyx_k_float), 0, 1, 0, 1},
   {&__pyx_n_s_get_forward_vector, __pyx_k_get_forward_vector, sizeof(__pyx_k_get_forward_vector), 0, 0, 1, 1},
   {&__pyx_n_s_get_left_lane, __pyx_k_get_left_lane, sizeof(__pyx_k_get_left_lane), 0, 0, 1, 1},
   {&__pyx_n_s_get_right_lane, __pyx_k_get_right_lane, sizeof(__pyx_k_get_right_lane), 0, 0, 1, 1},
@@ -10798,7 +10807,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_index, __pyx_k_index, sizeof(__pyx_k_index), 0, 0, 1, 1},
   {&__pyx_n_s_inf, __pyx_k_inf, sizeof(__pyx_k_inf), 0, 0, 1, 1},
   {&__pyx_n_s_init, __pyx_k_init, sizeof(__pyx_k_init), 0, 0, 1, 1},
-  {&__pyx_n_s_init_map, __pyx_k_init_map, sizeof(__pyx_k_init_map), 0, 0, 1, 1},
+  {&__pyx_n_u_int, __pyx_k_int, sizeof(__pyx_k_int), 0, 1, 0, 1},
   {&__pyx_n_s_intersection, __pyx_k_intersection, sizeof(__pyx_k_intersection), 0, 0, 1, 1},
   {&__pyx_n_s_intersection_end_node, __pyx_k_intersection_end_node, sizeof(__pyx_k_intersection_end_node), 0, 0, 1, 1},
   {&__pyx_n_s_is_junction, __pyx_k_is_junction, sizeof(__pyx_k_is_junction), 0, 0, 1, 1},
@@ -10829,7 +10838,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_n2, __pyx_k_n2, sizeof(__pyx_k_n2), 0, 0, 1, 1},
   {&__pyx_n_s_n2_xyz, __pyx_k_n2_xyz, sizeof(__pyx_k_n2_xyz), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
-  {&__pyx_n_s_name_2, __pyx_k_name_2, sizeof(__pyx_k_name_2), 0, 0, 1, 1},
   {&__pyx_n_s_neighbor, __pyx_k_neighbor, sizeof(__pyx_k_neighbor), 0, 0, 1, 1},
   {&__pyx_n_s_net_vector, __pyx_k_net_vector, sizeof(__pyx_k_net_vector), 0, 0, 1, 1},
   {&__pyx_n_s_networkx, __pyx_k_networkx, sizeof(__pyx_k_networkx), 0, 0, 1, 1},
@@ -10852,7 +10860,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_n_s_nv, __pyx_k_nv, sizeof(__pyx_k_nv), 0, 0, 1, 1},
   {&__pyx_n_s_nx, __pyx_k_nx, sizeof(__pyx_k_nx), 0, 0, 1, 1},
-  {&__pyx_n_s_object, __pyx_k_object, sizeof(__pyx_k_object), 0, 0, 1, 1},
   {&__pyx_n_s_origin, __pyx_k_origin, sizeof(__pyx_k_origin), 0, 0, 1, 1},
   {&__pyx_n_s_path, __pyx_k_path, sizeof(__pyx_k_path), 0, 0, 1, 1},
   {&__pyx_n_s_path_search, __pyx_k_path_search, sizeof(__pyx_k_path_search), 0, 0, 1, 1},
@@ -10862,6 +10869,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
   {&__pyx_n_s_radians, __pyx_k_radians, sizeof(__pyx_k_radians), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
+  {&__pyx_n_s_return, __pyx_k_return, sizeof(__pyx_k_return), 0, 0, 1, 1},
   {&__pyx_n_s_right_found, __pyx_k_right_found, sizeof(__pyx_k_right_found), 0, 0, 1, 1},
   {&__pyx_n_s_right_lane_marking, __pyx_k_right_lane_marking, sizeof(__pyx_k_right_lane_marking), 0, 0, 1, 1},
   {&__pyx_n_s_road_id, __pyx_k_road_id, sizeof(__pyx_k_road_id), 0, 0, 1, 1},
@@ -10889,11 +10897,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_threshold, __pyx_k_threshold, sizeof(__pyx_k_threshold), 0, 0, 1, 1},
   {&__pyx_n_s_topology, __pyx_k_topology, sizeof(__pyx_k_topology), 0, 0, 1, 1},
-  {&__pyx_n_s_trace, __pyx_k_trace, sizeof(__pyx_k_trace), 0, 0, 1, 1},
   {&__pyx_n_s_trace_route, __pyx_k_trace_route, sizeof(__pyx_k_trace_route), 0, 0, 1, 1},
   {&__pyx_n_s_transform, __pyx_k_transform, sizeof(__pyx_k_transform), 0, 0, 1, 1},
   {&__pyx_n_s_turn_decision, __pyx_k_turn_decision, sizeof(__pyx_k_turn_decision), 0, 0, 1, 1},
   {&__pyx_n_s_type, __pyx_k_type, sizeof(__pyx_k_type), 0, 0, 1, 1},
+  {&__pyx_n_s_typing, __pyx_k_typing, sizeof(__pyx_k_typing), 0, 0, 1, 1},
   {&__pyx_n_s_util, __pyx_k_util, sizeof(__pyx_k_util), 0, 0, 1, 1},
   {&__pyx_n_s_vector, __pyx_k_vector, sizeof(__pyx_k_vector), 0, 0, 1, 1},
   {&__pyx_n_s_vertex, __pyx_k_vertex, sizeof(__pyx_k_vertex), 0, 0, 1, 1},
@@ -10917,12 +10925,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_object = __Pyx_GetBuiltinName(__pyx_n_s_object); if (!__pyx_builtin_object) __PYX_ERR(0, 31, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 65, __pyx_L1_error)
-  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 311, __pyx_L1_error)
-  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 409, __pyx_L1_error)
-  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 411, __pyx_L1_error)
-  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 246, __pyx_L1_error)
+  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 340, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -10932,163 +10939,152 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "cythoncode/router_baseline.pyx":31
- * 
- * 
- * class GlobalRoutePlanner(object):             # <<<<<<<<<<<<<<
- *     """
- *     This class provides a very high level route plan.
+  /* "cythoncode/router_baseline.pyx":22
+ * class GlobalRoutePlanner:
+ *     @log_time_cost
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):             # <<<<<<<<<<<<<<
+ *         self._sampling_resolution: float = sampling_resolution
+ *         self._wmap: carla.Map = wmap
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_wmap, __pyx_n_s_sampling_resolution); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_init, 22, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 22, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":37
+  /* "cythoncode/router_baseline.pyx":39
  * 
- *     @log_time_cost(name="init_map")
- *     def __init__(self, wmap, sampling_resolution):             # <<<<<<<<<<<<<<
- *         self._sampling_resolution = sampling_resolution
- *         self._wmap = wmap
+ *     @log_time_cost
+ *     def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:             # <<<<<<<<<<<<<<
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         route: List[int] = self._path_search(origin, destination)
  */
-  __pyx_tuple__2 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_wmap, __pyx_n_s_sampling_resolution); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 37, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
-  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_init, 37, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(21, __pyx_n_s_self, __pyx_n_s_origin, __pyx_n_s_destination, __pyx_n_s_route_trace, __pyx_n_s_route, __pyx_n_s_current_waypoint, __pyx_n_s_destination_waypoint, __pyx_n_s_i, __pyx_n_s_road_option, __pyx_n_s_edge, __pyx_n_s_path, __pyx_n_s_exit_wp, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_next_edge, __pyx_n_s_closest_index, __pyx_n_s_waypoint, __pyx_n_s_destination_index, __pyx_n_s_cleaned_route_trace, __pyx_n_s_seen, __pyx_n_s_loc); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(3, 0, 21, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_trace_route, 39, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 39, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":55
- * 
- *     @log_time_cost(name="trace")
- *     def trace_route(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns list of (carla.Waypoint, RoadOption)
- */
-  __pyx_tuple__4 = PyTuple_Pack(21, __pyx_n_s_self, __pyx_n_s_origin, __pyx_n_s_destination, __pyx_n_s_route_trace, __pyx_n_s_route, __pyx_n_s_current_waypoint, __pyx_n_s_destination_waypoint, __pyx_n_s_i, __pyx_n_s_road_option, __pyx_n_s_edge, __pyx_n_s_path, __pyx_n_s_exit_wp, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_next_edge, __pyx_n_s_closest_index, __pyx_n_s_waypoint, __pyx_n_s_destination_index, __pyx_n_s_cleaned_route_trace, __pyx_n_s_seen, __pyx_n_s_loc); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 55, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(3, 0, 21, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_trace_route, 55, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 55, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":113
- *         # return route_trace
+  /* "cythoncode/router_baseline.pyx":91
+ *         return cleaned_route_trace
  * 
  *     def _build_topology(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function retrieves topology from the server as a list of
+ *         self._topology = []
+ *         for segment in self._wmap.get_topology():
  */
-  __pyx_tuple__6 = PyTuple_Pack(17, __pyx_n_s_self, __pyx_n_s_segment, __pyx_n_s_wp1, __pyx_n_s_wp2, __pyx_n_s_l1, __pyx_n_s_l2, __pyx_n_s_x1, __pyx_n_s_y1, __pyx_n_s_z1, __pyx_n_s_x2, __pyx_n_s_y2, __pyx_n_s_z2, __pyx_n_s_seg_dict, __pyx_n_s_endloc, __pyx_n_s_w, __pyx_n_s_next_ws, __pyx_n_s_next_wps); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 113, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(1, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_build_topology, 113, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(17, __pyx_n_s_self, __pyx_n_s_segment, __pyx_n_s_wp1, __pyx_n_s_wp2, __pyx_n_s_l1, __pyx_n_s_l2, __pyx_n_s_x1, __pyx_n_s_y1, __pyx_n_s_z1, __pyx_n_s_x2, __pyx_n_s_y2, __pyx_n_s_z2, __pyx_n_s_seg_dict, __pyx_n_s_endloc, __pyx_n_s_w, __pyx_n_s_next_ws, __pyx_n_s_next_wps); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_build_topology, 91, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 91, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":155
+  /* "cythoncode/router_baseline.pyx":120
  *             self._topology.append(seg_dict)
  * 
  *     def _build_graph(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function builds a networkx graph representation of topology, creating several class attributes:
+ *         self._graph = nx.DiGraph()
+ *         self._id_map = dict()
  */
-  __pyx_tuple__8 = PyTuple_Pack(17, __pyx_n_s_self, __pyx_n_s_segment, __pyx_n_s_entry_xyz, __pyx_n_s_exit_xyz, __pyx_n_s_path, __pyx_n_s_entry_wp, __pyx_n_s_exit_wp, __pyx_n_s_intersection, __pyx_n_s_road_id, __pyx_n_s_section_id, __pyx_n_s_lane_id, __pyx_n_s_vertex, __pyx_n_s_new_id, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_entry_carla_vector, __pyx_n_s_exit_carla_vector); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 155, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_build_graph, 155, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(17, __pyx_n_s_self, __pyx_n_s_segment, __pyx_n_s_entry_xyz, __pyx_n_s_exit_xyz, __pyx_n_s_path, __pyx_n_s_entry_wp, __pyx_n_s_exit_wp, __pyx_n_s_intersection, __pyx_n_s_road_id, __pyx_n_s_section_id, __pyx_n_s_lane_id, __pyx_n_s_vertex, __pyx_n_s_new_id, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_entry_carla_vector, __pyx_n_s_exit_carla_vector); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_build_graph, 120, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 120, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":212
+  /* "cythoncode/router_baseline.pyx":160
  *                 intersection=intersection, type=RoadOption.LANEFOLLOW)
  * 
  *     def _find_loose_ends(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method finds road segments that have an unconnected end, and
+ *         count_loose_ends = 0
+ *         hop_resolution = self._sampling_resolution
  */
-  __pyx_tuple__10 = PyTuple_Pack(14, __pyx_n_s_self, __pyx_n_s_count_loose_ends, __pyx_n_s_hop_resolution, __pyx_n_s_segment, __pyx_n_s_end_wp, __pyx_n_s_exit_xyz, __pyx_n_s_road_id, __pyx_n_s_section_id, __pyx_n_s_lane_id, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_next_wp, __pyx_n_s_path, __pyx_n_s_n2_xyz); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 212, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_find_loose_ends, 212, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(14, __pyx_n_s_self, __pyx_n_s_count_loose_ends, __pyx_n_s_hop_resolution, __pyx_n_s_segment, __pyx_n_s_end_wp, __pyx_n_s_exit_xyz, __pyx_n_s_road_id, __pyx_n_s_section_id, __pyx_n_s_lane_id, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_next_wp, __pyx_n_s_path, __pyx_n_s_n2_xyz); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_find_loose_ends, 160, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 160, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":256
+  /* "cythoncode/router_baseline.pyx":200
  *                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)
  * 
  *     def _lane_change_link(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method places zero cost links in the topology graph
+ *         for segment in self._topology:
+ *             left_found, right_found = False, False
  */
-  __pyx_tuple__12 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_segment, __pyx_n_s_left_found, __pyx_n_s_right_found, __pyx_n_s_waypoint, __pyx_n_s_next_waypoint, __pyx_n_s_next_road_option, __pyx_n_s_next_segment); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 256, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_lane_change_link, 256, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 256, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_segment, __pyx_n_s_left_found, __pyx_n_s_right_found, __pyx_n_s_waypoint, __pyx_n_s_next_waypoint, __pyx_n_s_next_road_option, __pyx_n_s_next_segment); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_lane_change_link, 200, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 200, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":302
+  /* "cythoncode/router_baseline.pyx":241
  *                     break
  * 
- *     def _localize(self, location):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the road segment that a given location
+ *     def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:             # <<<<<<<<<<<<<<
+ *         waypoint = self._wmap.get_waypoint(location)
+ *         edge = None
  */
-  __pyx_tuple__14 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_location, __pyx_n_s_waypoint, __pyx_n_s_edge); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 302, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_localize, 302, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_location, __pyx_n_s_waypoint, __pyx_n_s_edge); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_localize, 241, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 241, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":315
+  /* "cythoncode/router_baseline.pyx":250
  *         return edge
  * 
- *     def _distance_heuristic(self, n1, n2):             # <<<<<<<<<<<<<<
- *         """
- *         Distance heuristic calculator for path searching
+ *     def _distance_heuristic(self, n1: int, n2: int) -> float:             # <<<<<<<<<<<<<<
+ *         l1 = np.array(self._graph.nodes[n1]['vertex'])
+ *         l2 = np.array(self._graph.nodes[n2]['vertex'])
  */
-  __pyx_tuple__16 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_l1, __pyx_n_s_l2); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 315, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_distance_heuristic, 315, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 315, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_n1, __pyx_n_s_n2, __pyx_n_s_l1, __pyx_n_s_l2); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_distance_heuristic, 250, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 250, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":324
+  /* "cythoncode/router_baseline.pyx":255
  *         return np.linalg.norm(l1-l2)
  * 
- *     def _path_search(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the shortest path connecting origin and destination
+ *     def _path_search(self, origin: carla.Location, destination: carla.Location) -> List[int]:             # <<<<<<<<<<<<<<
+ *         start, end = self._localize(origin), self._localize(destination)
+ * 
  */
-  __pyx_tuple__18 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_origin, __pyx_n_s_destination, __pyx_n_s_start, __pyx_n_s_end, __pyx_n_s_route); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 324, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_path_search, 324, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_tuple__17 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_origin, __pyx_n_s_destination, __pyx_n_s_start, __pyx_n_s_end, __pyx_n_s_route); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_path_search, 255, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 255, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":341
+  /* "cythoncode/router_baseline.pyx":264
  *         return route
  * 
- *     def _successive_last_intersection_edge(self, index, route):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the last successive intersection edge
+ *     def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:             # <<<<<<<<<<<<<<
+ *         last_intersection_edge = None
+ *         last_node = None
  */
-  __pyx_tuple__20 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_route, __pyx_n_s_last_intersection_edge, __pyx_n_s_last_node, __pyx_n_s_node1, __pyx_n_s_node2, __pyx_n_s_candidate_edge, __pyx_n_s_i); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 341, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_successive_last_intersection_ed, 341, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 341, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_route, __pyx_n_s_last_intersection_edge, __pyx_n_s_last_node, __pyx_n_s_node1, __pyx_n_s_node2, __pyx_n_s_candidate_edge, __pyx_n_s_i); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_successive_last_intersection_ed, 264, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 264, __pyx_L1_error)
 
-  /* "cythoncode/router_baseline.pyx":363
+  /* "cythoncode/router_baseline.pyx":279
  *         return last_node, last_intersection_edge
  * 
- *     def _turn_decision(self, index, route, threshold=math.radians(35)):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the turn decision (RoadOption) for pair of edges
+ *     def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:             # <<<<<<<<<<<<<<
+ *         decision = None
+ *         previous_node = route[index-1]
  */
-  __pyx_tuple__22 = PyTuple_Pack(21, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_route, __pyx_n_s_threshold, __pyx_n_s_decision, __pyx_n_s_previous_node, __pyx_n_s_current_node, __pyx_n_s_next_node, __pyx_n_s_next_edge, __pyx_n_s_current_edge, __pyx_n_s_calculate_turn, __pyx_n_s_last_node, __pyx_n_s_tail_edge, __pyx_n_s_cv, __pyx_n_s_nv, __pyx_n_s_cross_list, __pyx_n_s_neighbor, __pyx_n_s_select_edge, __pyx_n_s_sv, __pyx_n_s_next_cross, __pyx_n_s_deviation); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(4, 0, 21, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_turn_decision, 363, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_int_35); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__21 = PyTuple_Pack(21, __pyx_n_s_self, __pyx_n_s_index, __pyx_n_s_route, __pyx_n_s_threshold, __pyx_n_s_decision, __pyx_n_s_previous_node, __pyx_n_s_current_node, __pyx_n_s_next_node, __pyx_n_s_next_edge, __pyx_n_s_current_edge, __pyx_n_s_calculate_turn, __pyx_n_s_last_node, __pyx_n_s_tail_edge, __pyx_n_s_cv, __pyx_n_s_nv, __pyx_n_s_cross_list, __pyx_n_s_neighbor, __pyx_n_s_select_edge, __pyx_n_s_sv, __pyx_n_s_next_cross, __pyx_n_s_deviation); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(4, 0, 21, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_turn_decision, 279, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_int_35); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
 
-  /* "cythoncode/router_baseline.pyx":426
+  /* "cythoncode/router_baseline.pyx":337
  *         return decision
  * 
- *     def _find_closest_in_list(self, current_waypoint, waypoint_list):             # <<<<<<<<<<<<<<
+ *     def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:             # <<<<<<<<<<<<<<
  *         min_distance = float('inf')
  *         closest_index = -1
  */
-  __pyx_tuple__25 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_current_waypoint, __pyx_n_s_waypoint_list, __pyx_n_s_min_distance, __pyx_n_s_closest_index, __pyx_n_s_i, __pyx_n_s_waypoint, __pyx_n_s_distance); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 426, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_find_closest_in_list, 426, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 426, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_current_waypoint, __pyx_n_s_waypoint_list, __pyx_n_s_min_distance, __pyx_n_s_closest_index, __pyx_n_s_i, __pyx_n_s_waypoint, __pyx_n_s_distance); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_router_baseline_pyx, __pyx_n_s_find_closest_in_list, 337, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -11278,6 +11274,9 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_router_baseline(PyObject *__pyx_py
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -11337,7 +11336,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("router_baseline", __pyx_methods, __pyx_k_This_module_provides_GlobalRout, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("router_baseline", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -11383,472 +11382,736 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "cythoncode/router_baseline.pyx":10
- * This module provides GlobalRoutePlanner implementation.
- * """
+  /* "cythoncode/router_baseline.pyx":1
+ * from typing import List, Tuple, Dict, Union             # <<<<<<<<<<<<<<
+ * from util import log_time_cost
+ * import math
+ */
+  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__pyx_n_s_List);
+  __Pyx_GIVEREF(__pyx_n_s_List);
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_List);
+  __Pyx_INCREF(__pyx_n_s_Tuple);
+  __Pyx_GIVEREF(__pyx_n_s_Tuple);
+  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_Tuple);
+  __Pyx_INCREF(__pyx_n_s_Dict);
+  __Pyx_GIVEREF(__pyx_n_s_Dict);
+  PyList_SET_ITEM(__pyx_t_1, 2, __pyx_n_s_Dict);
+  __Pyx_INCREF(__pyx_n_s_Union);
+  __Pyx_GIVEREF(__pyx_n_s_Union);
+  PyList_SET_ITEM(__pyx_t_1, 3, __pyx_n_s_Union);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_typing, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_List); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_List, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Tuple, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Dict, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Union); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Union, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "cythoncode/router_baseline.pyx":2
+ * from typing import List, Tuple, Dict, Union
  * from util import log_time_cost             # <<<<<<<<<<<<<<
  * import math
  * import numpy as np
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_log_time_cost);
   __Pyx_GIVEREF(__pyx_n_s_log_time_cost);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_log_time_cost);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_util, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_log_time_cost); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_log_time_cost);
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_util, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_log_time_cost, __pyx_t_1) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_log_time_cost); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_log_time_cost, __pyx_t_2) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":11
- * """
+  /* "cythoncode/router_baseline.pyx":3
+ * from typing import List, Tuple, Dict, Union
  * from util import log_time_cost
  * import math             # <<<<<<<<<<<<<<
  * import numpy as np
  * import networkx as nx
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_math, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_math, __pyx_t_2) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_math, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_math, __pyx_t_1) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":12
+  /* "cythoncode/router_baseline.pyx":4
  * from util import log_time_cost
  * import math
  * import numpy as np             # <<<<<<<<<<<<<<
  * import networkx as nx
  * import carla
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":13
+  /* "cythoncode/router_baseline.pyx":5
  * import math
  * import numpy as np
  * import networkx as nx             # <<<<<<<<<<<<<<
  * import carla
- * from util import vector
+ * from util import vector, log_time_cost
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_networkx, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_nx, __pyx_t_2) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_networkx, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_nx, __pyx_t_1) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":14
+  /* "cythoncode/router_baseline.pyx":6
  * import numpy as np
  * import networkx as nx
  * import carla             # <<<<<<<<<<<<<<
- * from util import vector
+ * from util import vector, log_time_cost
  * from enum import IntEnum
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_carla, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_carla, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_carla, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_carla, __pyx_t_1) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":15
+  /* "cythoncode/router_baseline.pyx":7
  * import networkx as nx
  * import carla
- * from util import vector             # <<<<<<<<<<<<<<
+ * from util import vector, log_time_cost             # <<<<<<<<<<<<<<
  * from enum import IntEnum
- * class RoadOption(IntEnum):
+ * 
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_vector);
   __Pyx_GIVEREF(__pyx_n_s_vector);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_vector);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_util, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_vector); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_vector);
+  __Pyx_INCREF(__pyx_n_s_log_time_cost);
+  __Pyx_GIVEREF(__pyx_n_s_log_time_cost);
+  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_log_time_cost);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_util, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_vector, __pyx_t_2) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "cythoncode/router_baseline.pyx":16
- * import carla
- * from util import vector
- * from enum import IntEnum             # <<<<<<<<<<<<<<
- * class RoadOption(IntEnum):
- *       """
- */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_vector); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_vector, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_log_time_cost); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_log_time_cost, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "cythoncode/router_baseline.pyx":8
+ * import carla
+ * from util import vector, log_time_cost
+ * from enum import IntEnum             # <<<<<<<<<<<<<<
+ * 
+ * class RoadOption(IntEnum):
+ */
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_IntEnum);
   __Pyx_GIVEREF(__pyx_n_s_IntEnum);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_IntEnum);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_enum, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_IntEnum); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_IntEnum);
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_enum, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_IntEnum, __pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_IntEnum); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_IntEnum, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cythoncode/router_baseline.pyx":10
+ * from enum import IntEnum
+ * 
+ * class RoadOption(IntEnum):             # <<<<<<<<<<<<<<
+ *     VOID = -1
+ *     LEFT = 1
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_IntEnum); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
+  __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_RoadOption, __pyx_n_s_RoadOption, (PyObject *) NULL, __pyx_n_s_cythoncode_router_baseline, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+
+  /* "cythoncode/router_baseline.pyx":11
+ * 
+ * class RoadOption(IntEnum):
+ *     VOID = -1             # <<<<<<<<<<<<<<
+ *     LEFT = 1
+ *     RIGHT = 2
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_VOID, __pyx_int_neg_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":12
+ * class RoadOption(IntEnum):
+ *     VOID = -1
+ *     LEFT = 1             # <<<<<<<<<<<<<<
+ *     RIGHT = 2
+ *     STRAIGHT = 3
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_LEFT, __pyx_int_1) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":13
+ *     VOID = -1
+ *     LEFT = 1
+ *     RIGHT = 2             # <<<<<<<<<<<<<<
+ *     STRAIGHT = 3
+ *     LANEFOLLOW = 4
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_RIGHT, __pyx_int_2) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":14
+ *     LEFT = 1
+ *     RIGHT = 2
+ *     STRAIGHT = 3             # <<<<<<<<<<<<<<
+ *     LANEFOLLOW = 4
+ *     CHANGELANELEFT = 5
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_STRAIGHT, __pyx_int_3) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":15
+ *     RIGHT = 2
+ *     STRAIGHT = 3
+ *     LANEFOLLOW = 4             # <<<<<<<<<<<<<<
+ *     CHANGELANELEFT = 5
+ *     CHANGELANERIGHT = 6
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_LANEFOLLOW, __pyx_int_4) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":16
+ *     STRAIGHT = 3
+ *     LANEFOLLOW = 4
+ *     CHANGELANELEFT = 5             # <<<<<<<<<<<<<<
+ *     CHANGELANERIGHT = 6
+ * 
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_CHANGELANELEFT, __pyx_int_5) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":17
+ *     LANEFOLLOW = 4
+ *     CHANGELANELEFT = 5
+ *     CHANGELANERIGHT = 6             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_CHANGELANERIGHT, __pyx_int_6) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":10
+ * from enum import IntEnum
+ * 
+ * class RoadOption(IntEnum):             # <<<<<<<<<<<<<<
+ *     VOID = -1
+ *     LEFT = 1
+ */
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_RoadOption, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_RoadOption, __pyx_t_4) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cythoncode/router_baseline.pyx":17
- * from util import vector
- * from enum import IntEnum
- * class RoadOption(IntEnum):             # <<<<<<<<<<<<<<
- *       """
- *       RoadOption represents the possible topological configurations when moving from a seg      ment of lane to other.
+  /* "cythoncode/router_baseline.pyx":20
+ * 
+ * 
+ * class GlobalRoutePlanner:             # <<<<<<<<<<<<<<
+ *     @log_time_cost
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_IntEnum); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_GlobalRoutePlanner, __pyx_n_s_GlobalRoutePlanner, (PyObject *) NULL, __pyx_n_s_cythoncode_router_baseline, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
-  __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_1, __pyx_n_s_RoadOption, __pyx_n_s_RoadOption, (PyObject *) NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_kp_s_RoadOption_represents_the_possi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+
+  /* "cythoncode/router_baseline.pyx":21
+ * 
+ * class GlobalRoutePlanner:
+ *     @log_time_cost             # <<<<<<<<<<<<<<
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):
+ *         self._sampling_resolution: float = sampling_resolution
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_log_time_cost); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
   /* "cythoncode/router_baseline.pyx":22
- * 
- *       """
- *       VOID = -1             # <<<<<<<<<<<<<<
- *       LEFT = 1
- *       RIGHT = 2
+ * class GlobalRoutePlanner:
+ *     @log_time_cost
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):             # <<<<<<<<<<<<<<
+ *         self._sampling_resolution: float = sampling_resolution
+ *         self._wmap: carla.Map = wmap
  */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_VOID, __pyx_int_neg_1) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":23
- *       """
- *       VOID = -1
- *       LEFT = 1             # <<<<<<<<<<<<<<
- *       RIGHT = 2
- *       STRAIGHT = 3
- */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_LEFT, __pyx_int_1) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":24
- *       VOID = -1
- *       LEFT = 1
- *       RIGHT = 2             # <<<<<<<<<<<<<<
- *       STRAIGHT = 3
- *       LANEFOLLOW = 4
- */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_RIGHT, __pyx_int_2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":25
- *       LEFT = 1
- *       RIGHT = 2
- *       STRAIGHT = 3             # <<<<<<<<<<<<<<
- *       LANEFOLLOW = 4
- *       CHANGELANELEFT = 5
- */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_STRAIGHT, __pyx_int_3) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":26
- *       RIGHT = 2
- *       STRAIGHT = 3
- *       LANEFOLLOW = 4             # <<<<<<<<<<<<<<
- *       CHANGELANELEFT = 5
- *       CHANGELANERIGHT = 6
- */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_LANEFOLLOW, __pyx_int_4) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":27
- *       STRAIGHT = 3
- *       LANEFOLLOW = 4
- *       CHANGELANELEFT = 5             # <<<<<<<<<<<<<<
- *       CHANGELANERIGHT = 6
- * 
- */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_CHANGELANELEFT, __pyx_int_5) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":28
- *       LANEFOLLOW = 4
- *       CHANGELANELEFT = 5
- *       CHANGELANERIGHT = 6             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_CHANGELANERIGHT, __pyx_int_6) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
-
-  /* "cythoncode/router_baseline.pyx":17
- * from util import vector
- * from enum import IntEnum
- * class RoadOption(IntEnum):             # <<<<<<<<<<<<<<
- *       """
- *       RoadOption represents the possible topological configurations when moving from a seg      ment of lane to other.
- */
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_RoadOption, __pyx_t_1, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_RoadOption, __pyx_t_4) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "cythoncode/router_baseline.pyx":31
- * 
- * 
- * class GlobalRoutePlanner(object):             # <<<<<<<<<<<<<<
- *     """
- *     This class provides a very high level route plan.
- */
-  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_tuple_); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_tuple_, __pyx_n_s_GlobalRoutePlanner, __pyx_n_s_GlobalRoutePlanner, (PyObject *) NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_kp_s_This_class_provides_a_very_high); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-
-  /* "cythoncode/router_baseline.pyx":36
- *     """
- * 
- *     @log_time_cost(name="init_map")             # <<<<<<<<<<<<<<
- *     def __init__(self, wmap, sampling_resolution):
- *         self._sampling_resolution = sampling_resolution
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_log_time_cost); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_carla); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_name_2, __pyx_n_s_init_map) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_Map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-
-  /* "cythoncode/router_baseline.pyx":37
- * 
- *     @log_time_cost(name="init_map")
- *     def __init__(self, wmap, sampling_resolution):             # <<<<<<<<<<<<<<
- *         self._sampling_resolution = sampling_resolution
- *         self._wmap = wmap
- */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_1__init__, 0, __pyx_n_s_GlobalRoutePlanner___init, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 37, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_wmap, __pyx_t_6) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_sampling_resolution, __pyx_n_u_float) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_1__init__, 0, __pyx_n_s_GlobalRoutePlanner___init, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__2)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_4);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_6);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
     if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_6, function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_5);
+  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_init, __pyx_t_3) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_init, __pyx_t_1) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":54
+  /* "cythoncode/router_baseline.pyx":38
  *         self._lane_change_link()
  * 
- *     @log_time_cost(name="trace")             # <<<<<<<<<<<<<<
- *     def trace_route(self, origin, destination):
- *         """
+ *     @log_time_cost             # <<<<<<<<<<<<<<
+ *     def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_log_time_cost); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 54, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 54, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_name_2, __pyx_n_s_trace) < 0) __PYX_ERR(0, 54, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_empty_tuple, __pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_log_time_cost); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
 
-  /* "cythoncode/router_baseline.pyx":55
+  /* "cythoncode/router_baseline.pyx":39
  * 
- *     @log_time_cost(name="trace")
- *     def trace_route(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns list of (carla.Waypoint, RoadOption)
+ *     @log_time_cost
+ *     def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:             # <<<<<<<<<<<<<<
+ *         route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+ *         route: List[int] = self._path_search(origin, destination)
  */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route, 0, __pyx_n_s_GlobalRoutePlanner_trace_route, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_carla); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Location); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_origin, __pyx_t_5) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_carla); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_Location); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_destination, __pyx_t_4) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_List); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Tuple); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_carla); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_Waypoint); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_GIVEREF(__pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_7);
+  PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7);
+  __pyx_t_8 = 0;
+  __pyx_t_7 = 0;
+  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_t_9) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_t_9 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_3trace_route, 0, __pyx_n_s_GlobalRoutePlanner_trace_route, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_9, __pyx_t_6);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_4);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
     if (likely(__pyx_t_6)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_4, function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5);
+  __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_6, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_9);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_trace_route, __pyx_t_3) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_trace_route, __pyx_t_1) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":113
- *         # return route_trace
+  /* "cythoncode/router_baseline.pyx":91
+ *         return cleaned_route_trace
  * 
  *     def _build_topology(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function retrieves topology from the server as a list of
+ *         self._topology = []
+ *         for segment in self._wmap.get_topology():
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology, 0, __pyx_n_s_GlobalRoutePlanner__build_topolo, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_build_topology, __pyx_t_3) < 0) __PYX_ERR(0, 113, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_5_build_topology, 0, __pyx_n_s_GlobalRoutePlanner__build_topolo, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_build_topology, __pyx_t_1) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":155
+  /* "cythoncode/router_baseline.pyx":120
  *             self._topology.append(seg_dict)
  * 
  *     def _build_graph(self):             # <<<<<<<<<<<<<<
- *         """
- *         This function builds a networkx graph representation of topology, creating several class attributes:
+ *         self._graph = nx.DiGraph()
+ *         self._id_map = dict()
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph, 0, __pyx_n_s_GlobalRoutePlanner__build_graph, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_build_graph, __pyx_t_3) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_7_build_graph, 0, __pyx_n_s_GlobalRoutePlanner__build_graph, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_build_graph, __pyx_t_1) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":212
+  /* "cythoncode/router_baseline.pyx":160
  *                 intersection=intersection, type=RoadOption.LANEFOLLOW)
  * 
  *     def _find_loose_ends(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method finds road segments that have an unconnected end, and
+ *         count_loose_ends = 0
+ *         hop_resolution = self._sampling_resolution
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends, 0, __pyx_n_s_GlobalRoutePlanner__find_loose_e, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_find_loose_ends, __pyx_t_3) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_9_find_loose_ends, 0, __pyx_n_s_GlobalRoutePlanner__find_loose_e, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_find_loose_ends, __pyx_t_1) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":256
+  /* "cythoncode/router_baseline.pyx":200
  *                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)
  * 
  *     def _lane_change_link(self):             # <<<<<<<<<<<<<<
- *         """
- *         This method places zero cost links in the topology graph
+ *         for segment in self._topology:
+ *             left_found, right_found = False, False
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link, 0, __pyx_n_s_GlobalRoutePlanner__lane_change, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 256, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_lane_change_link, __pyx_t_3) < 0) __PYX_ERR(0, 256, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_11_lane_change_link, 0, __pyx_n_s_GlobalRoutePlanner__lane_change, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_lane_change_link, __pyx_t_1) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":302
+  /* "cythoncode/router_baseline.pyx":241
  *                     break
  * 
- *     def _localize(self, location):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the road segment that a given location
+ *     def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:             # <<<<<<<<<<<<<<
+ *         waypoint = self._wmap.get_waypoint(location)
+ *         edge = None
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize, 0, __pyx_n_s_GlobalRoutePlanner__localize, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_carla); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_localize, __pyx_t_3) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Location); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_location, __pyx_t_9) < 0) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_Union); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Tuple); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_INCREF(((PyObject *)(&PyInt_Type)));
+  __Pyx_GIVEREF(((PyObject *)(&PyInt_Type)));
+  PyTuple_SET_ITEM(__pyx_t_6, 0, ((PyObject *)(&PyInt_Type)));
+  __Pyx_INCREF(((PyObject *)(&PyInt_Type)));
+  __Pyx_GIVEREF(((PyObject *)(&PyInt_Type)));
+  PyTuple_SET_ITEM(__pyx_t_6, 1, ((PyObject *)(&PyInt_Type)));
+  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_GIVEREF(__pyx_t_7);
+  PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_7);
+  __Pyx_INCREF(Py_None);
+  __Pyx_GIVEREF(Py_None);
+  PyTuple_SET_ITEM(__pyx_t_6, 1, Py_None);
+  __pyx_t_7 = 0;
+  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_9, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_return, __pyx_t_7) < 0) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_13_localize, 0, __pyx_n_s_GlobalRoutePlanner__localize, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_7, __pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_localize, __pyx_t_7) < 0) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "cythoncode/router_baseline.pyx":315
+  /* "cythoncode/router_baseline.pyx":250
  *         return edge
  * 
- *     def _distance_heuristic(self, n1, n2):             # <<<<<<<<<<<<<<
- *         """
- *         Distance heuristic calculator for path searching
+ *     def _distance_heuristic(self, n1: int, n2: int) -> float:             # <<<<<<<<<<<<<<
+ *         l1 = np.array(self._graph.nodes[n1]['vertex'])
+ *         l2 = np.array(self._graph.nodes[n2]['vertex'])
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic, 0, __pyx_n_s_GlobalRoutePlanner__distance_heu, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 315, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_distance_heuristic, __pyx_t_3) < 0) __PYX_ERR(0, 315, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_7 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_n1, __pyx_n_u_int) < 0) __PYX_ERR(0, 250, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_n2, __pyx_n_u_int) < 0) __PYX_ERR(0, 250, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_return, __pyx_n_u_float) < 0) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_15_distance_heuristic, 0, __pyx_n_s_GlobalRoutePlanner__distance_heu, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_1, __pyx_t_7);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_distance_heuristic, __pyx_t_1) < 0) __PYX_ERR(0, 250, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cythoncode/router_baseline.pyx":324
+  /* "cythoncode/router_baseline.pyx":255
  *         return np.linalg.norm(l1-l2)
  * 
- *     def _path_search(self, origin, destination):             # <<<<<<<<<<<<<<
- *         """
- *         This function finds the shortest path connecting origin and destination
+ *     def _path_search(self, origin: carla.Location, destination: carla.Location) -> List[int]:             # <<<<<<<<<<<<<<
+ *         start, end = self._localize(origin), self._localize(destination)
+ * 
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search, 0, __pyx_n_s_GlobalRoutePlanner__path_search, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 324, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_path_search, __pyx_t_3) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_carla); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_Location); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_origin, __pyx_t_6) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_carla); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Location); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_destination, __pyx_t_7) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_List); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_7, ((PyObject *)(&PyInt_Type))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_return, __pyx_t_6) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_17_path_search, 0, __pyx_n_s_GlobalRoutePlanner__path_search, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_path_search, __pyx_t_6) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "cythoncode/router_baseline.pyx":341
+  /* "cythoncode/router_baseline.pyx":264
  *         return route
  * 
- *     def _successive_last_intersection_edge(self, index, route):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the last successive intersection edge
+ *     def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:             # <<<<<<<<<<<<<<
+ *         last_intersection_edge = None
+ *         last_node = None
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge, 0, __pyx_n_s_GlobalRoutePlanner__successive_l, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 341, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_index, __pyx_n_u_int) < 0) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_List); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, ((PyObject *)(&PyInt_Type))); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_route, __pyx_t_7) < 0) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_Tuple); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_Union); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_carla); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_successive_last_intersection_ed, __pyx_t_3) < 0) __PYX_ERR(0, 341, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Waypoint); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4);
+  __Pyx_INCREF(Py_None);
+  __Pyx_GIVEREF(Py_None);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, Py_None);
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_9, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_INCREF(((PyObject *)(&PyString_Type)));
+  __Pyx_GIVEREF(((PyObject *)(&PyString_Type)));
+  PyTuple_SET_ITEM(__pyx_t_3, 0, ((PyObject *)(&PyString_Type)));
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_INCREF(((PyObject *)(&PyInt_Type)));
+  __Pyx_GIVEREF(((PyObject *)(&PyInt_Type)));
+  PyTuple_SET_ITEM(__pyx_t_3, 0, ((PyObject *)(&PyInt_Type)));
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_t_4) < 0) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_19_successive_last_intersection_edge, 0, __pyx_n_s_GlobalRoutePlanner__successive_l, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_6);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_successive_last_intersection_ed, __pyx_t_4) < 0) __PYX_ERR(0, 264, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "cythoncode/router_baseline.pyx":363
+  /* "cythoncode/router_baseline.pyx":279
  *         return last_node, last_intersection_edge
  * 
- *     def _turn_decision(self, index, route, threshold=math.radians(35)):             # <<<<<<<<<<<<<<
- *         """
- *         This method returns the turn decision (RoadOption) for pair of edges
+ *     def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:             # <<<<<<<<<<<<<<
+ *         decision = None
+ *         previous_node = route[index-1]
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision, 0, __pyx_n_s_GlobalRoutePlanner__turn_decisio, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 363, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_index, __pyx_n_u_int) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_List); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_6, ((PyObject *)(&PyInt_Type))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_3, sizeof(__pyx_defaults), 1)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_math); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_radians); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_3)->__pyx_arg_threshold = __pyx_t_4;
-  __Pyx_GIVEREF(__pyx_t_4);
-  __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_route, __pyx_t_3) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_threshold, __pyx_n_u_float) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_RoadOption); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_return, __pyx_t_3) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_21_turn_decision, 0, __pyx_n_s_GlobalRoutePlanner__turn_decisio, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_3, sizeof(__pyx_defaults), 1)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_math); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_radians); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_3)->__pyx_arg_threshold = __pyx_t_6;
+  __Pyx_GIVEREF(__pyx_t_6);
+  __pyx_t_6 = 0;
   __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_3, __pyx_pf_10cythoncode_15router_baseline___defaults__);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_turn_decision, __pyx_t_3) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_4);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_turn_decision, __pyx_t_3) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "cythoncode/router_baseline.pyx":426
+  /* "cythoncode/router_baseline.pyx":337
  *         return decision
  * 
- *     def _find_closest_in_list(self, current_waypoint, waypoint_list):             # <<<<<<<<<<<<<<
+ *     def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:             # <<<<<<<<<<<<<<
  *         min_distance = float('inf')
  *         closest_index = -1
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_23_find_closest_in_list, 0, __pyx_n_s_GlobalRoutePlanner__find_closest, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 426, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_find_closest_in_list, __pyx_t_3) < 0) __PYX_ERR(0, 426, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_carla); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Waypoint); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_current_waypoint, __pyx_t_6) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_List); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_carla); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Waypoint); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_waypoint_list, __pyx_t_4) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_u_int) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_15router_baseline_18GlobalRoutePlanner_23_find_closest_in_list, 0, __pyx_n_s_GlobalRoutePlanner__find_closest, NULL, __pyx_n_s_cythoncode_router_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_find_closest_in_list, __pyx_t_4) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "cythoncode/router_baseline.pyx":31
+  /* "cythoncode/router_baseline.pyx":20
  * 
  * 
- * class GlobalRoutePlanner(object):             # <<<<<<<<<<<<<<
- *     """
- *     This class provides a very high level route plan.
+ * class GlobalRoutePlanner:             # <<<<<<<<<<<<<<
+ *     @log_time_cost
+ *     def __init__(self, wmap: carla.Map, sampling_resolution: float):
  */
-  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_GlobalRoutePlanner, __pyx_tuple_, __pyx_t_2, NULL, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GlobalRoutePlanner, __pyx_t_3) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_4 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_GlobalRoutePlanner, __pyx_empty_tuple, __pyx_t_2, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_GlobalRoutePlanner, __pyx_t_4) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "cythoncode/router_baseline.pyx":1
- * # Copyright (c) # Copyright (c) 2018-2020 CVC.             # <<<<<<<<<<<<<<
- * #
- * # This work is licensed under the terms of the MIT license.
+ * from typing import List, Tuple, Dict, Union             # <<<<<<<<<<<<<<
+ * from util import log_time_cost
+ * import math
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /*--- Wrapped vars code ---*/
 
@@ -11860,6 +12123,9 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
   if (__pyx_m) {
     if (__pyx_d) {
       __Pyx_AddTraceback("init cythoncode.router_baseline", __pyx_clineno, __pyx_lineno, __pyx_filename);

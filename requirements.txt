@@ -1,0 +1,10 @@
+PyYAML
+pyzmq
+colorlog
+pygame
+numpy
+networkx
+shapely
+scipy
+cython
+

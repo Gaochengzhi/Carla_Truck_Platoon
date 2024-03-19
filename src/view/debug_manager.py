@@ -9,7 +9,7 @@ class DebugManager:
         self.debug = world.debug
 
 
-def update_view(world, x, y, z, rotation=carla.Rotation(-90, 90, 0)):
+def update_view(world, x, y, z, rotation):
     spectator = world.get_spectator()
     spectator.set_transform(
         carla.Transform(
@@ -19,12 +19,12 @@ def update_view(world, x, y, z, rotation=carla.Rotation(-90, 90, 0)):
     )
 
 
-def set_bird_view(world, location, high):
+def set_bird_view(world, location,z=100,x=0,y=0,rotation=carla.Rotation(-90,90 , 0)):
     update_view(
         world,
-        location.x-100,
-        location.y,
-        location.z + high
+        location.x+x,
+        location.y+y,
+        location.z +z, rotation
     )
 
 

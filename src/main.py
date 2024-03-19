@@ -5,10 +5,10 @@ from agent.traffic_agent import TrafficFlowManager
 from data.commuicate_manager import CommuniAgent
 from data.recorder_manager import DataRecorder
 from platoon.platoon_manager import Platoon
-from util import destroy_all_actors, time_const, log_time_cost
+from util import destroy_all_actors, time_const, log_time_cost, clean_up, handle_exception
 import time
 import logging
-from tools.loader import load_agents, load_platoon_agents, load_conventional_agents
+from tools.loader import load_agents, load_conventional_agents
 
 
 def main():
@@ -16,12 +16,12 @@ def main():
     config = cfg.merge(args)
     world_manager = WorldManager(config)
     world = world_manager.get_world()
-    TM = world_manager.get_traffic_manager()
+    traffic_manager = world_manager.get_traffic_manager()
     destroy_all_actors(world)
     main_com = MainCommuicator(config)
-    main_com.send_obj("start")
-    # load_platoon_agents(config)
-    # load_conventional_agents(world, TM, config)
+    # load_agents(config)
+    # # load_platoon_agents(config)
+    # load_conventional_agents(world, traffic_manager, config)
     plt = Platoon(config)
 
     TrafficFlowManager().start()
@@ -35,14 +35,13 @@ def main():
         while True:
             run_step(world)
     except Exception as e:
-        logging.error(f"main error:{e}")
+        handle_exception(e)
+
     finally:
         main_com.send_obj("end")
-        settings = world.get_settings()
-        settings.synchronous_mode = False
-        world.apply_settings(settings)
-        TM.set_synchronous_mode(False)
+        clean_up(world)
         destroy_all_actors(world)
+        traffic_manager.set_synchronous_mode(False)
         time.sleep(1)
         main_com.close()
         logging.info("Simulation ended\n")
