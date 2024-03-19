@@ -1,27 +1,13 @@
-# Copyright (c) # Copyright (c) 2018-2020 CVC.
-#
-# This work is licensed under the terms of the MIT license.
-# For a copy, see <https://opensource.org/licenses/MIT>.
-
-
-"""
-This module provides GlobalRoutePlanner implementation.
-"""
+from typing import List, Tuple, Dict, Union
 from util import log_time_cost
 import math
 import numpy as np
 import networkx as nx
 import carla
-from util import vector
-
+from util import vector, log_time_cost
 from enum import IntEnum
 
-
 class RoadOption(IntEnum):
-    """
-    RoadOption represents the possible topological configurations when moving from a seg      ment of lane to other.
-
-    """
     VOID = -1
     LEFT = 1
     RIGHT = 2
@@ -31,48 +17,39 @@ class RoadOption(IntEnum):
     CHANGELANERIGHT = 6
 
 
-class GlobalRoutePlanner(object):
-    """
-    This class provides a very high level route plan.
-    """
+class GlobalRoutePlanner:
+    @log_time_cost
+    def __init__(self, wmap: carla.Map, sampling_resolution: float):
+        self._sampling_resolution: float = sampling_resolution
+        self._wmap: carla.Map = wmap
+        self._topology: List[Dict[str, Union[carla.Waypoint, Tuple[float, float, float], List[carla.Waypoint]]]] = []
+        self._graph: nx.DiGraph = None
+        self._id_map: Dict[Tuple[float, float, float], int] = None
+        self._road_id_to_edge: Dict[int, Dict[int, Dict[int, Tuple[int, int]]]] = None
 
-    @log_time_cost(name="init_map")
-    def __init__(self, wmap, sampling_resolution):
-        self._sampling_resolution = sampling_resolution
-        self._wmap = wmap
-        self._topology = None
-        self._graph = None
-        self._id_map = None
-        self._road_id_to_edge = None
+        self._intersection_end_node: int = -1
+        self._previous_decision: RoadOption = RoadOption.VOID
 
-        self._intersection_end_node = -1
-        self._previous_decision = RoadOption.VOID
-
-        # Build the graph
         self._build_topology()
         self._build_graph()
         self._find_loose_ends()
         self._lane_change_link()
 
-    @log_time_cost(name="trace")
-    def trace_route(self, origin, destination):
-        """
-        This method returns list of (carla.Waypoint, RoadOption)
-        from origin to destination
-        """
-        route_trace = []
-        route = self._path_search(origin, destination)
-        current_waypoint = self._wmap.get_waypoint(origin)
-        destination_waypoint = self._wmap.get_waypoint(destination)
+    @log_time_cost
+    def trace_route(self, origin: carla.Location, destination: carla.Location) -> List[Tuple[carla.Waypoint, RoadOption]]:
+        route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+        route: List[int] = self._path_search(origin, destination)
+        current_waypoint: carla.Waypoint = self._wmap.get_waypoint(origin)
+        destination_waypoint: carla.Waypoint = self._wmap.get_waypoint(destination)
 
         for i in range(len(route) - 1):
-            road_option = self._turn_decision(i, route)
+            road_option: RoadOption = self._turn_decision(i, route)
             edge = self._graph.edges[route[i], route[i+1]]
-            path = []
+            path: List[carla.Waypoint] = []
 
             if edge['type'] != RoadOption.LANEFOLLOW and edge['type'] != RoadOption.VOID:
                 route_trace.append((current_waypoint, road_option))
-                exit_wp = edge['exit_waypoint']
+                exit_wp: carla.Waypoint = edge['exit_waypoint']
                 n1, n2 = self._road_id_to_edge[exit_wp.road_id][exit_wp.section_id][exit_wp.lane_id]
                 next_edge = self._graph.edges[n1, n2]
                 if next_edge['path']:
@@ -100,8 +77,8 @@ class GlobalRoutePlanner(object):
                             destination_waypoint, path)
                         if closest_index > destination_index:
                             break
-        cleaned_route_trace = []
-        seen = set()
+        cleaned_route_trace: List[Tuple[carla.Waypoint, RoadOption]] = []
+        seen: set = set()
         for waypoint, road_option in route_trace:
             loc = (waypoint.transform.location.x,
                    waypoint.transform.location.y)
@@ -111,26 +88,11 @@ class GlobalRoutePlanner(object):
 
         return cleaned_route_trace
 
-        # return route_trace
-
     def _build_topology(self):
-        """
-        This function retrieves topology from the server as a list of
-        road segments as pairs of waypoint objects, and processes the
-        topology into a list of dictionary objects with the following attributes
-
-        - entry (carla.Waypoint): waypoint of entry point of road segment
-        - entryxyz (tuple): (x,y,z) of entry point of road segment
-        - exit (carla.Waypoint): waypoint of exit point of road segment
-        - exitxyz (tuple): (x,y,z) of exit point of road segment
-        - path (list of carla.Waypoint):  list of waypoints between entry to exit, separated by the resolution
-        """
         self._topology = []
-        # Retrieving waypoints to construct a detailed topology
         for segment in self._wmap.get_topology():
             wp1, wp2 = segment[0], segment[1]
             l1, l2 = wp1.transform.location, wp2.transform.location
-            # Rounding off to avoid floating point imprecision
             x1, y1, z1, x2, y2, z2 = np.round(
                 [l1.x, l1.y, l1.z, l2.x, l2.y, l2.z], 0)
             wp1.transform.location, wp2.transform.location = l1, l2
@@ -156,23 +118,8 @@ class GlobalRoutePlanner(object):
             self._topology.append(seg_dict)
 
     def _build_graph(self):
-        """
-        This function builds a networkx graph representation of topology, creating several class attributes:
-        - graph (networkx.DiGraph): networkx graph representing the world map, with:
-            Node properties:
-                vertex: (x,y,z) position in world map
-            Edge properties:
-                entry_vector: unit vector along tangent at entry point
-                exit_vector: unit vector along tangent at exit point
-                net_vector: unit vector of the chord from entry to exit
-                intersection: boolean indicating if the edge belongs to an  intersection
-        - id_map (dictionary): mapping from (x,y,z) to node id
-        - road_id_to_edge (dictionary): map from road id to edge in the graph
-        """
-
         self._graph = nx.DiGraph()
-        self._id_map = dict()  # Map with structure {(x,y,z): id, ... }
-        # Map with structure {road_id: {lane_id: edge, ... }, ... }
+        self._id_map = dict()
         self._road_id_to_edge = dict()
 
         for segment in self._topology:
@@ -183,7 +130,6 @@ class GlobalRoutePlanner(object):
             road_id, section_id, lane_id = entry_wp.road_id, entry_wp.section_id, entry_wp.lane_id
 
             for vertex in entry_xyz, exit_xyz:
-                # Adding unique nodes and populating id_map
                 if vertex not in self._id_map:
                     new_id = len(self._id_map)
                     self._id_map[vertex] = new_id
@@ -199,7 +145,6 @@ class GlobalRoutePlanner(object):
             entry_carla_vector = entry_wp.transform.rotation.get_forward_vector()
             exit_carla_vector = exit_wp.transform.rotation.get_forward_vector()
 
-            # Adding edge with attributes
             self._graph.add_edge(
                 n1, n2,
                 length=len(path) + 1, path=path,
@@ -213,10 +158,6 @@ class GlobalRoutePlanner(object):
                 intersection=intersection, type=RoadOption.LANEFOLLOW)
 
     def _find_loose_ends(self):
-        """
-        This method finds road segments that have an unconnected end, and
-        adds them to the internal graph representation
-        """
         count_loose_ends = 0
         hop_resolution = self._sampling_resolution
         for segment in self._topology:
@@ -257,11 +198,6 @@ class GlobalRoutePlanner(object):
                         intersection=end_wp.is_junction, type=RoadOption.LANEFOLLOW)
 
     def _lane_change_link(self):
-        """
-        This method places zero cost links in the topology graph
-        representing availability of lane changes.
-        """
-
         for segment in self._topology:
             left_found, right_found = False, False
 
@@ -302,11 +238,7 @@ class GlobalRoutePlanner(object):
                 if left_found and right_found:
                     break
 
-    def _localize(self, location):
-        """
-        This function finds the road segment that a given location
-        is part of, returning the edge it belongs to
-        """
+    def _localize(self, location: carla.Location) -> Union[Tuple[int, int], None]:
         waypoint = self._wmap.get_waypoint(location)
         edge = None
         try:
@@ -315,24 +247,12 @@ class GlobalRoutePlanner(object):
             pass
         return edge
 
-    def _distance_heuristic(self, n1, n2):
-        """
-        Distance heuristic calculator for path searching
-        in self._graph
-        """
+    def _distance_heuristic(self, n1: int, n2: int) -> float:
         l1 = np.array(self._graph.nodes[n1]['vertex'])
         l2 = np.array(self._graph.nodes[n2]['vertex'])
         return np.linalg.norm(l1-l2)
 
-    def _path_search(self, origin, destination):
-        """
-        This function finds the shortest path connecting origin and destination
-        using A* search with distance heuristic.
-        origin      :   carla.Location object of start position
-        destination :   carla.Location object of of end position
-        return      :   path as list of node ids (as int) of the graph self._graph
-        connecting origin and destination
-        """
+    def _path_search(self, origin: carla.Location, destination: carla.Location) -> List[int]:
         start, end = self._localize(origin), self._localize(destination)
 
         route = nx.astar_path(
@@ -341,14 +261,7 @@ class GlobalRoutePlanner(object):
         route.append(end[1])
         return route
 
-    def _successive_last_intersection_edge(self, index, route):
-        """
-        This method returns the last successive intersection edge
-        from a starting index on the route.
-        This helps moving past tiny intersection edges to calculate
-        proper turn decisions.
-        """
-
+    def _successive_last_intersection_edge(self, index: int, route: List[int]) -> Tuple[int, Dict[str, Union[carla.Waypoint, None]]]:
         last_intersection_edge = None
         last_node = None
         for node1, node2 in [(route[i], route[i+1]) for i in range(index, len(route)-1)]:
@@ -363,12 +276,7 @@ class GlobalRoutePlanner(object):
 
         return last_node, last_intersection_edge
 
-    def _turn_decision(self, index, route, threshold=math.radians(35)):
-        """
-        This method returns the turn decision (RoadOption) for pair of edges
-        around current index of route list
-        """
-
+    def _turn_decision(self, index: int, route: List[int], threshold: float = math.radians(35)) -> RoadOption:
         decision = None
         previous_node = route[index-1]
         current_node = route[index]
@@ -426,7 +334,7 @@ class GlobalRoutePlanner(object):
         self._previous_decision = decision
         return decision
 
-    def _find_closest_in_list(self, current_waypoint, waypoint_list):
+    def _find_closest_in_list(self, current_waypoint: carla.Waypoint, waypoint_list: List[carla.Waypoint]) -> int:
         min_distance = float('inf')
         closest_index = -1
         for i, waypoint in enumerate(waypoint_list):

@@ -5,7 +5,8 @@ ego_port: 6001
 pygame_port: 6002
 traffic_agent_port: 9981
 data_port: 9658
-tm_port: 8000
+base_port: 9985
+
 
 # PygameParameters:
 screen_width: 1920
@@ -25,14 +26,23 @@ hybrid_physics_radius: 50
 tile_stream_distance: 200
 synchronous_mode: True
 no_rendering_mode: False
-fps: 10
+fps: 25
 fixed_delta_seconds: 0.05
 
 
 # WeatherParameters:
-cloudiness: 0.0
-precipitation: 0.0
-sun_altitude_angle: 30.0
-sun_azimuth_angle: 0
+cloudiness: 0.9
+precipitation: 0.9
+sun_altitude_angle: 20.0
+sun_azimuth_angle: 20.0
 
+# VehicelParameters:
+ignore_traffic_light: False
+
+# DebugParameters:
+camera_height: 60
+draw_global_waypoint: False
+draw_trajectory: False
+draw_spawn_points: False
+data_folder_path: ../data
 

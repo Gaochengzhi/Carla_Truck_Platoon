@@ -11,7 +11,7 @@ class BaseAgent(multiprocessing.Process):
         self.name = agent_name
         self.agent_port = agent_port
 
-    def start_agent(self):
+    def init_base_agent(self):
         self.communi_agent = self.init_communi_agent(
             self.name, self.agent_port)
         self.start_listener_thread()
@@ -23,8 +23,7 @@ class BaseAgent(multiprocessing.Process):
         self.listener_thread.start()
 
     def listen_for_main_message(self):
-        # self.main_message_operation()
-        pass
+        self.main_message_operation()
 
     @time_const(fps=1)
     def main_message_operation(self):

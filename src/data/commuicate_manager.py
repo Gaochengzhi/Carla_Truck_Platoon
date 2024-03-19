@@ -20,10 +20,15 @@ class CommuniAgent:
         self.pub_socket.bind(f"tcp://*:{pub_port}")
 
     def init_subscriber(self, name: str, sub_port, pub_ip="localhost"):
+        for existing_name, existing_socket in self.sub_sockets.items():
+            if existing_socket.getsockopt(zmq.LAST_ENDPOINT) == f"tcp://{pub_ip}:{sub_port}":
+                self.sub_sockets[name] = existing_socket
+                return
+
         sub_socket = self.context.socket(zmq.SUB)
         sub_socket.connect(f"tcp://{pub_ip}:{sub_port}")
         sub_socket.setsockopt_string(zmq.SUBSCRIBE, "")
-        sub_socket.setsockopt(zmq.RCVTIMEO, 30)
+        sub_socket.setsockopt(zmq.RCVTIMEO,100)
         self.sub_sockets[name] = sub_socket
 
     def send_obj(self, data):
@@ -36,8 +41,8 @@ class CommuniAgent:
     def rec_obj(self, sub_name: str):
         try:
             if sub_name in self.sub_sockets:
-                msg = self.sub_sockets[sub_name].recv_pyobj(flags=zmq.NOBLOCK)
-                # msg = self.sub_sockets[sub_name].recv_pyobj()
+                # msg = self.sub_sockets[sub_name].recv_pyobj(flags=zmq.NOBLOCK)
+                msg = self.sub_sockets[sub_name].recv_pyobj()
                 return msg
             else:
                 raise ValueError(

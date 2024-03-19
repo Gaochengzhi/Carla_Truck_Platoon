@@ -14,19 +14,13 @@ class WorldManager:
         self.traffic_agent = self.set_traffic_agent()
         self.set_weather()
         self.set_world_parameter()
-        self._gen_filtered_points()
-
-    def choose_a_point(self, waypoint_list):
-        choosen_waypoint = random.choice(waypoint_list)
-        waypoint_list.remove(choosen_waypoint)
-        return choosen_waypoint
+        self.cache_spawn_points()
 
     def set_traffic_agent(self):
         traffic_agent = self.client.get_trafficmanager()
         traffic_agent.set_synchronous_mode(False)
         traffic_agent.set_hybrid_physics_radius(
             self.config["hybrid_physics_radius"])
-        # for larger map
         traffic_agent.set_respawn_dormant_vehicles(True)
         traffic_agent.set_boundaries_respawn_dormant_vehicles(50, 800)
         return traffic_agent
@@ -40,40 +34,33 @@ class WorldManager:
         return str(world.get_map().name)[-2:] != map_name[-2:]
 
     def create_world(self):
-        map_name = self.config["map_name"] if not self.config.get(
-            "is_custum_map") else self.config["map_path"]
+        map_name = self.config.get("map_path") if self.config.get("is_custum_map") else self.config["map_name"]
         current_world = self.client.get_world()
-        if (
-            self.need_change_map(map_name, current_world)
-        ):
+        if self.need_change_map(map_name, current_world):
             if self.config["is_custum_map"]:
-                data = None
+                # return current_world
                 with open(self.config["map_path"], encoding='utf-8') as od_file:
                     try:
-                        data = od_file.read()
+                        xodr_data = od_file.read()
                     except OSError:
-                        print('file could not be readed.')
+                        print('file could not be read.')
                         sys.exit()
                 logging.info('Converting OSM data to opendrive')
-                xodr_data = data
                 logging.info('load opendrive map.')
-                vertex_distance = 2.0  # in meters
-                max_road_length = 9500.0  # in meters
-                wall_height = 1.0      # in meters
-                extra_width = 1.6      # in meters
-                world = self.client.generate_opendrive_world(
-                    xodr_data, carla.OpendriveGenerationParameters(
-                        vertex_distance=vertex_distance,
-                        max_road_length=max_road_length,
-                        wall_height=wall_height,
-                        additional_width=extra_width,
+                return self.client.generate_opendrive_world(
+                    xodr_data, 
+                    carla.OpendriveGenerationParameters(
+                        vertex_distance=2.0,
+                        max_road_length=9500.0,
+                        wall_height=1.0,
+                        additional_width=3.6,
                         smooth_junctions=True,
-                        enable_mesh_visibility=True))
-                return world
+                        enable_mesh_visibility=True
+                    )
+                )
             else:
                 return self.client.load_world(map_name)
         else:
-            print("here")
             return current_world
 
     def set_weather(self):
@@ -87,38 +74,23 @@ class WorldManager:
 
     def set_world_parameter(self):
         settings = self.world.get_settings()
-        settings.actor_active_distance = self.config["actor_active_distance"]
         settings.synchronous_mode = False
+        settings.actor_active_distance = self.config["actor_active_distance"]
         settings.no_rendering_mode = self.config["no_rendering_mode"]
         settings.tile_stream_distance = self.config["tile_stream_distance"]
         settings.fixed_delta_seconds = self.config["fixed_delta_seconds"]
         self.world.apply_settings(settings)
 
-    def _gen_filtered_points(self):
-        map_name = self.map.name.split("/")[-1]
-        cache_dir = "cache/sp_points"
-        filename = f"{map_name}.csv"
-        filepath = os.path.join(cache_dir, filename)
-        distance_sps = self.map.generate_waypoints(5.0)
-        filtered_points = []
-        for p in distance_sps:
-            filtered_points.append(p.transform)
-
-        os.makedirs(cache_dir, exist_ok=True)
+    def cache_spawn_points(self):
+        filepath = os.path.join("cache/sp_points", f"{self.map.name.split('/')[-1]}.csv")
+        waypoints = [p.transform for p in self.map.generate_waypoints(5.0)]
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, "w") as file:
-            for sp in filtered_points:
-                file.write(
-                    f"{sp.location.x},{sp.location.y},{sp.location.z},{sp.rotation.yaw},{sp.rotation.pitch},{sp.rotation.roll}\n")
-        return filtered_points
-
-    def get_map(self):
-        return self.map
+            file.writelines(map(lambda wp: f"{wp.location.x},{wp.location.y},{wp.location.z},{wp.rotation.yaw},{wp.rotation.pitch},{wp.rotation.roll}\n", waypoints))
+        return waypoints
 
     def get_world(self):
         return self.world
-
-    def get_client(self):
-        return self.client
 
     def get_traffic_manager(self):
         return self.traffic_agent

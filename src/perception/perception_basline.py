@@ -3,7 +3,7 @@ import logging
 from util import compute_3D21d, log_time_cost
 
 
-class FakePerception:
+class Perception:
     def __init__(self, vehicle, config):
         self._fake_perception = True
         self.vehicle = vehicle
