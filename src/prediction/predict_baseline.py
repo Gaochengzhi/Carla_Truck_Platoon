@@ -56,7 +56,5 @@ def predict(world, vehicle, fps):
 
 
 class ObstacleVehicle:
-
     def __init__(self, vehicle, info):
-
         pass

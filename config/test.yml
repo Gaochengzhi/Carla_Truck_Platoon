@@ -4,7 +4,7 @@ map_name: Town05
 actor_active_distance: 100
 hybrid_physics_radius: 30
 tile_stream_distance: 100
-fps: 24
+fps: 30
 fixed_delta_seconds: 0.01
 # TrafficParameters:
 num_vehicles: 0

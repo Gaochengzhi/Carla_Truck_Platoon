@@ -3,12 +3,11 @@ import math
 import os
 import logging
 import carla
-from agent.baseline_vehicle_agent import BaselineVehicleAgent
 from prediction.predict_baseline import predict
 from view.debug_manager import draw_future_locations
-from util import connect_to_server, time_const, log_time_cost, thread_process_vehicles, get_speed
+from util import connect_to_server, time_const, log_time_cost, batch_process_vehicles, get_speed, handle_exception
 from cythoncode.cutil import is_within_distance_obs
-from agent.baseAgent import BaseAgent
+from agent.base_agent import BaseAgent
 import time
 from tools.config_manager import config as cfg
 from pyinstrument import Profiler
@@ -30,7 +29,6 @@ class TrafficFlowManager(BaseAgent):
         self,
     ) -> None:
         self.config = cfg.config
-        self.fps = 24
         BaseAgent.__init__(self, "TrafficFlow",
                            self.config["traffic_agent_port"])
         # self.profiler = Profiler(interval=0.001)
@@ -41,22 +39,18 @@ class TrafficFlowManager(BaseAgent):
         def run_step(world):
             # self.profiler.start()
             try:
-                perception_res = thread_process_vehicles(
-                    world, predict, self.fps)
-                #     pass
-
+                perception_res = batch_process_vehicles(
+                    world, predict, self.config["fps"])
                 self.communi_agent.send_obj(perception_res)
             except Exception as e:
-                logging.error(e)
-                logging.error(e.__traceback__.tb_lineno)
-            # draw_future_locations(world, perception_res, life_time=0.2)
+                handle_exception(e)
+
             # self.profiler.stop()
             # self.profiler.print(show_all=True)
         client, world = connect_to_server(
             self.config["carla_timeout"], self.config["carla_port"])
-        self.map = world.get_map()
-        self.start_agent()
-        time.sleep(1)
+        self.init_base_agent()
+        # time.sleep(1)
         while True:
             run_step(world)
 

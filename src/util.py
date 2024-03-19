@@ -8,12 +8,11 @@ from colorlog import ColoredFormatter
 import numpy as np
 import os
 import random
-# from tools.config_manager import config
 import carla
 import math
 import csv
 from concurrent.futures import ThreadPoolExecutor
-
+import traceback
 
 class Singleton(type):
     _instances = {}
@@ -23,6 +22,10 @@ class Singleton(type):
             cls._instances[cls] = super(
                 Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
+
+def handle_exception(e):
+    logging.error(e)
+    logging.error(traceback.format_exc())
 
 
 def list_to_points(line):
@@ -47,25 +50,6 @@ def txt_to_points(input_string):
     numbers_list = [float(item) for item in input_string.split(',')]
     return list_to_points(numbers_list)
 
-
-def get_cache_file(map_name, sp_distance=20):
-    map_name = map_name.split("/")[-1]
-    cache_dir = "cache/sp_points"
-    filename = f"{map_name}.csv"
-    filepath = os.path.join(cache_dir, filename)
-
-    return filepath
-
-
-def load_points_from_csv(filepath):
-    wp_list = []
-    with open(filepath, "r") as file:
-        reader = csv.reader(file)
-        for line in reader:
-            wp_list.append(list_to_points(line))
-    return wp_list
-
-
 def connect_to_server(timeout, port, host="localhost"):
     carla_timeout = timeout
     carla_port = port
@@ -80,7 +64,6 @@ def destroy_all_actors(world):
         if actor.type_id.startswith("vehicle") or actor.type_id.startswith("sensor"):
             actor.destroy()
     logging.debug("All actors destroyed")
-    # world.tick()
 
 
 def spawn_vehicle(world, vehicle_type, spawn_point, hero=False, name="hero"):
@@ -98,13 +81,9 @@ def spawn_vehicle(world, vehicle_type, spawn_point, hero=False, name="hero"):
 
 
 def waypoints_center(waypoint_list):
-    x = []
-    y = []
-    z = []
-    for waypoint in waypoint_list:
-        x.append(waypoint.transform.location.x)
-        y.append(waypoint.transform.location.y)
-        z.append(waypoint.transform.location.z)
+    x = [waypoint.transform.location.x for waypoint in waypoint_list]
+    y = [waypoint.transform.location.y for waypoint in waypoint_list]
+    z = [waypoint.transform.location.z for waypoint in waypoint_list]
     return carla.Location(
         np.mean(x), np.mean(y), np.mean(z)
     )
@@ -124,22 +103,17 @@ def get_ego_vehicle(world):
 def log_time_cost(func=None, *, name=""):
     """
     Decorator to log the execution time of a function.
-
-
     """
     if func is None:
         return lambda func: log_time_cost(func, name=name)
-
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start_time = time.time()  # Start time of function execution
         result = func(*args, **kwargs)  # Execute the function
         elapsed_time = time.time() - start_time  # Calculate elapsed time
-
         # Log the time cost with debug level
         logging.debug(
             f"Function {name} {func.__name__} executed in {elapsed_time:.5f} seconds.")
-
         return result
     return wrapper
 
@@ -153,7 +127,6 @@ def time_const(fps):
             result = func(*args, **kwargs)
             elapsed_time = time.time() - start_time
             sleep_time = target_time_per_frame - elapsed_time
-
             if sleep_time > 0:
                 time.sleep(sleep_time)
             return result
@@ -163,7 +136,7 @@ def time_const(fps):
 # turn carla way point into NetworkX graph point
 
 
-def waypoint_to_graph_point(waypoint):
+def waypoint_to_xyz(waypoint):
     return (waypoint.transform.location.x, waypoint.transform.location.y, waypoint.transform.location.z)
 
 
@@ -186,27 +159,25 @@ def get_vehicle_info(vehicle):
     return vehicle_info
 
 
-def thread_process_vehicles(world, func, *args, **kwargs):
-    vehicles = []
-    vehicle_actors = world.get_actors(
-    ).filter("vehicle.*")
-    with ThreadPoolExecutor() as executor:
-        futures = [executor.submit(func, world, vehicle, *args, **kwargs)
-                   for vehicle in vehicle_actors]
-        for future in futures:
-            vehicles.append(future.result())
-    return vehicles
 
 
-def batch_process_surround_vehicles(world, ego,  max_distance, angle, func, *args, **kwargs):
-    vehicles = []
-    for actor in world.get_actors():
-        if actor.type_id.startswith("vehicle") and actor.attributes["role_name"] != "hero":
-            if is_within_distance(actor.get_transform(), ego.get_transform(), max_distance, angle_interval=angle):
-                processed_vehicle = func(
-                    world, actor, ego, *args, **kwargs)
-                vehicles.append(processed_vehicle)
-    return vehicles
+def batch_process_vehicles(world, func, *args, **kwargs):
+    vehicle_actors = world.get_actors().filter("vehicle.*")
+    results = list(map(lambda vehicle: func(world, vehicle, *args, **kwargs), vehicle_actors))
+    return results
+
+def batch_process_surround_vehicles(world, ego, max_distance, angle, func, *args, **kwargs):
+    actors = world.get_actors().filter("vehicle.*")
+    results = [func(world, actor, ego, *args, **kwargs) for actor in actors 
+                if actor.type_id.startswith("vehicle") 
+                and actor.attributes["role_name"] != "hero" 
+                and is_within_distance(actor.get_transform(), ego.get_transform(), max_distance, angle_interval=angle)]
+    return results
+
+def clean_up(world):
+    settings = world.get_settings()
+    settings.synchronous_mode = False
+    world.apply_settings(settings)
 
 
 def get_speed(vehicle):
@@ -217,7 +188,6 @@ def get_speed(vehicle):
         :return: speed as a float in Km/h
     """
     vel = vehicle.get_velocity()
-
     return 3.6 * math.sqrt(vel.x ** 2 + vel.y ** 2 + vel.z ** 2)
 
 
