@@ -77,7 +77,7 @@ class PLF_Controller:
 
 
 class BDL_Controller:
-    def __init__(self, k_s=0.45, k_v=0.2, L=20.54, h=0.5, s_0=5):
+    def __init__(self, k_s=0.45, k_v=0.2, L=20.54, h=0.5, d_0=5):
         """
         Initialize the BDL controller.
         :param k_s: spacing error gain
@@ -91,7 +91,7 @@ class BDL_Controller:
         self.k_v = k_v
         self.L = L
         self.h = h
-        self.d_0 = s_0
+        self.d_0 = d_0
 
     def calc_speed(self, front_dis, back_dis, ego_v, leader_v):
         """
@@ -132,7 +132,7 @@ class Path_ACC:
         """
         e = back_dis - self.s_0 * ego_v 
         ai = self.k1 * e + self.k2 * (target_v - ego_v)
-        return min(ai, 33)
+        return min(ai, 13)
 class Path_CACC:
     def __init__(self, k0=1.1, k1=0.23, k2=0.07, k3=0.45, T=0.5):
         """

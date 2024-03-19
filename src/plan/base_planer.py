@@ -97,9 +97,6 @@ class BasePlanner():
             self.use_car_following = True
             self.target_offset = self.current_offset
             self.update_trajectories(self.target_offset)
-        else:
-            self.target_speed = min(
-                    self.max_speed, self.target_speed*1.5)
 
     def car_following(self):
         if self.use_car_following:

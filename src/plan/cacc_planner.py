@@ -25,7 +25,7 @@ class CACCPlanner(BasePlanner):
                 return
             self.check_traffic_light()
             self.side_safety_check()
-            self.debug()
+            # self.debug()
             self.step += 1
             self.change_back_step += 1
             if self.state != "CACC":
@@ -98,10 +98,10 @@ class CACCPlanner(BasePlanner):
         
         if self.state == "ACC":
             self.target_speed =  self.cacc_model.calc_acc(
-                    33, self.speed, back_dis)
+                    13, self.speed, back_dis)
             self.target_waypoint = carla.Transform(
                 carla.Location(x=self.trajectories[0][0], y=self.trajectories[0][1]))
-
+            return 1
         if self.state == "CACC":
             if front_dis and leading_v and front_v and front_a and leading_a:
                     self.target_speed = self.cacc_model.calc_speed(front_dis, front_v, front_a, leading_v, leading_a, self.speed, self.acc)

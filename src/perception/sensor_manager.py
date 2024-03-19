@@ -83,11 +83,11 @@ class BaseSensorManager:
         obs_speed = compute_3D21d(data.other_actor.get_velocity())
         self.obstacle = Obstacle(obs_loc,
                                  data.distance, obs_speed)
-        if data.other_actor.is_alive:
-            data_transform = data.other_actor.get_transform()
-            data_transform.location.z = 9
-            draw_transforms(
-                self.world, [data_transform], size=0.1, life_time=0.1 , color=carla.Color(155, 120, 100))
+        # if data.other_actor.is_alive:
+        #     data_transform = data.other_actor.get_transform()
+        #     data_transform.location.z = 9
+        #     draw_transforms(
+                # self.world, [data_transform], size=0.1, life_time=0.1 , color=carla.Color(155, 120, 100))
 
     @staticmethod
     def radar_callback(weak_self, radar_id, radar_data):
