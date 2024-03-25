@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-03-23 12:44:04 by Eclipse SUMO netedit Version 1.14.1
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="truck" accel="2.5" decel="8" sigma="0.5" length="4"
+		   minGap="0" maxSpeed="1000" color="1,0,0" probability="1"
+		   carFollowModel="CC" tauEngine="0.5" omegaN="0.2" xi="1" c1="0.5"
+		   lanesCount="4" ccAccel="1.5" ploegKp="0.2" ploegKd="0.7"
+		   ploegH="0.5" speedFactor="2"
+		   lcStrategic="10" lcCooperative="10" lcSpeedGain="10" lcKeepRight="10"/>
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <route id="t_0"  edges="E0"/>
+</routes>

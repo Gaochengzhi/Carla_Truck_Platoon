@@ -8,6 +8,7 @@ from platoon.platoon_manager import Platoon
 from util import destroy_all_actors, time_const, log_time_cost, clean_up, handle_exception
 import time
 import logging
+import os
 from tools.loader import load_agents, load_conventional_agents
 
 
@@ -25,11 +26,13 @@ def main():
     plt = Platoon(config)
 
     TrafficFlowManager().start()
-    DataRecorder(config).start()
+    # DataRecorder(config).start()
+    data_recorder = DataRecorder(config)
 
-    # @log_time_cost
     @time_const(fps=config["fps"])
+    # @log_time_cost
     def run_step(world):
+        data_recorder.run_step(world)
         world.tick()
     try:
         while True:

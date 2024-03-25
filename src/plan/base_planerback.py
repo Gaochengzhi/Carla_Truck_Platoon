@@ -9,7 +9,7 @@ from util import compute_distance, log_time_cost, compute_3D21d, compute_distanc
 from cythoncode.cutil import is_within_distance_obs, compute_magnitude_angle
 from view.debug_manager import draw_waypoints, draw_list
 from scipy.interpolate import splprep, splev
-from plan.carFollowingModel import IDM, PLF_Controller, Path_ACC, BDL_Controller, Path_CACC
+from plan.carFollowingModel import IDM, Path_CACC, Path_ACC, BDL_Controller, Path_CACC
 from perception.perception_basline import FakePerception
 import logging
 from pyinstrument import Profiler
@@ -45,7 +45,7 @@ class BasePlanner():
         self.perception = FakePerception(vehicle, config)
         self.car_following_model = IDM()
         self.cacc_model = Path_ACC(
-        ) if self.config["topology"]["LV"] == -1 else PLF_Controller()
+        ) if self.config["topology"]["LV"] == -1 else Path_CACC()
         self.use_car_following = False
         self.max_speed = self.config.get("max_speed", 30)
         self.target_speed = self.max_speed*0.8
@@ -180,7 +180,7 @@ class BasePlanner():
                 carla.Location(x=self.trajectories[0][0], y=self.trajectories[0][1]))
             
             if self.state == "ACC":
-                a = self.cacc_model.calc_acc(
+                a = self.cacc_model.calc_speed(
                     33, self.speed, back_dis)
                 self.target_speed = a
                 # print(back_dis)

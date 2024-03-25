@@ -444,7 +444,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">017</span>: </pre>
-<pre class="cython line score-134" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">018</span>:     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vehicle</span><span class="p">,</span> <span class="n">args_lateral</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;K_P&#39;</span><span class="p">:</span> <span class="mf">1.45</span><span class="p">,</span></pre>
+<pre class="cython line score-134" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">018</span>:     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vehicle</span><span class="p">,</span> <span class="n">args_lateral</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;K_P&#39;</span><span class="p">:</span> <span class="mf">1.95</span><span class="p">,</span></pre>
 <pre class='cython code score-134 '>static PyObject *__pyx_pf_10cythoncode_19controller_baseline___defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
@@ -461,12 +461,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_int_0));
   <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject *)__pyx_int_0));
   <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 2, ((PyObject *)__pyx_int_0));
-  <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject*)__pyx_float_0_95));
-  <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject*)__pyx_float_0_95));
-  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 3, ((PyObject*)__pyx_float_0_95));
-  <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject*)__pyx_float_0_9));
-  <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject*)__pyx_float_0_9));
-  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 4, ((PyObject*)__pyx_float_0_9));
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject*)__pyx_float_0_65));
+  <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject*)__pyx_float_0_65));
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 3, ((PyObject*)__pyx_float_0_65));
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject*)__pyx_float_0_5));
+  <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject*)__pyx_float_0_5));
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 4, ((PyObject*)__pyx_float_0_5));
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject*)__pyx_float_0_5));
   <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject*)__pyx_float_0_5));
   <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_1, 5, ((PyObject*)__pyx_float_0_5));
@@ -516,8 +516,8 @@ static PyObject *__pyx_pw_10cythoncode_19controller_baseline_20VehiclePIDControl
     values[2] = __pyx_dynamic_args-&gt;__pyx_arg_args_lateral;
     values[3] = __pyx_dynamic_args-&gt;__pyx_arg_args_longitudinal;
     values[4] = ((PyObject *)((PyObject *)__pyx_int_0));
-    values[5] = ((PyObject *)((PyObject*)__pyx_float_0_95));
-    values[6] = ((PyObject *)((PyObject*)__pyx_float_0_9));
+    values[5] = ((PyObject *)((PyObject*)__pyx_float_0_65));
+    values[6] = ((PyObject *)((PyObject*)__pyx_float_0_5));
     values[7] = ((PyObject *)((PyObject*)__pyx_float_0_5));
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -670,22 +670,22 @@ static PyObject *__pyx_pf_10cythoncode_19controller_baseline_20VehiclePIDControl
   if (!<span class='pyx_c_api'>__Pyx_CyFunction_InitDefaults</span>(__pyx_t_2, sizeof(__pyx_defaults), 2)) <span class='error_goto'>__PYX_ERR(0, 18, __pyx_L1_error)</span>
   __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(4);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
-  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_K_P, __pyx_float_1_45) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 18, __pyx_L1_error)</span>
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_K_P, __pyx_float_1_95) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 18, __pyx_L1_error)</span>
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_K_I, __pyx_float_0_05) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 18, __pyx_L1_error)</span>
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_K_D, __pyx_float_0_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 18, __pyx_L1_error)</span>
-  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 18, __pyx_L1_error)</span>
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_01) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 18, __pyx_L1_error)</span>
   <span class='pyx_c_api'>__Pyx_CyFunction_Defaults</span>(__pyx_defaults, __pyx_t_2)-&gt;__pyx_arg_args_lateral = __pyx_t_3;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_3);
   __pyx_t_3 = 0;
   __pyx_codeobj__2 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(8, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cythoncode_controller_baseline_p, __pyx_n_s_init, 18, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 18, __pyx_L1_error)</span>
-</pre><pre class="cython line score-0">&#xA0;<span class="">019</span>:                                               <span class="s">&#39;K_I&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s">&#39;K_D&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s">&#39;dt&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span> <span class="n">args_longitudinal</span><span class="o">=</span><span class="p">{</span></pre>
-<pre class="cython line score-29" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">020</span>:         <span class="s">&#39;K_P&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s">&#39;K_I&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s">&#39;K_D&#39;</span><span class="p">:</span> <span class="mf">0</span><span class="p">,</span> <span class="s">&#39;dt&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="n">max_throttle</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">max_brake</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">019</span>:                                               <span class="s">&#39;K_I&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s">&#39;K_D&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s">&#39;dt&#39;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">},</span> <span class="n">args_longitudinal</span><span class="o">=</span><span class="p">{</span></pre>
+<pre class="cython line score-29" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">020</span>:         <span class="s">&#39;K_P&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s">&#39;K_I&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s">&#39;K_D&#39;</span><span class="p">:</span> <span class="mf">0</span><span class="p">,</span> <span class="s">&#39;dt&#39;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">},</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="n">max_throttle</span><span class="o">=</span><span class="mf">0.65</span><span class="p">,</span> <span class="n">max_brake</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span></pre>
 <pre class='cython code score-29 '>  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(4);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_K_P, __pyx_float_1_0) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 20, __pyx_L1_error)</span>
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_K_I, __pyx_float_0_05) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 20, __pyx_L1_error)</span>
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_K_D, __pyx_int_0) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 20, __pyx_L1_error)</span>
-  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 20, __pyx_L1_error)</span>
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_01) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 20, __pyx_L1_error)</span>
   <span class='pyx_c_api'>__Pyx_CyFunction_Defaults</span>(__pyx_defaults, __pyx_t_2)-&gt;__pyx_arg_args_longitudinal = __pyx_t_3;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_3);
   __pyx_t_3 = 0;

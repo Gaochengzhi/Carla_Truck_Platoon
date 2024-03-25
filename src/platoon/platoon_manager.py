@@ -13,10 +13,9 @@ class Platoon():
             plt_member_config["topology"] = {
                 "index": i,
                 "len": len(config["spawn_list"]),
-                "LV": 0 if i != 0 else -1,
+                "LV": 0 if i > 0 else -1,
                 "FV": i-1 if i-1 >= 0 else -1,
                 "RV": i+1 if i+1 < len(config["spawn_list"]) else -1
-
             }
             plt_member_config["port"] = int(config["base_port"]+i)
             plt_member_config["start_point"] = start_end[0]

@@ -10,7 +10,7 @@
             "justMyCode": true,
             "args": [
                 "--debug",
-                "test",
+                "platoon",
             ]
         }
     ]

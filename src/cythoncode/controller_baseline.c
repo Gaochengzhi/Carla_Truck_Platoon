@@ -1767,13 +1767,13 @@ static PyObject *__pyx_float_0_0;
 static PyObject *__pyx_float_0_1;
 static PyObject *__pyx_float_0_2;
 static PyObject *__pyx_float_0_5;
-static PyObject *__pyx_float_0_9;
 static PyObject *__pyx_float_1_0;
 static PyObject *__pyx_float_3_6;
+static PyObject *__pyx_float_0_01;
 static PyObject *__pyx_float_0_03;
 static PyObject *__pyx_float_0_05;
-static PyObject *__pyx_float_0_95;
-static PyObject *__pyx_float_1_45;
+static PyObject *__pyx_float_0_65;
+static PyObject *__pyx_float_1_95;
 static PyObject *__pyx_float_neg_1_0;
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
@@ -1818,9 +1818,9 @@ static PyObject *__pyx_codeobj__35;
 /* "cythoncode/controller_baseline.pyx":18
  * class VehiclePIDController():
  * 
- *     def __init__(self, vehicle, args_lateral={'K_P': 1.45,             # <<<<<<<<<<<<<<
- *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.1}, args_longitudinal={
- *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.1}, offset=0, max_throttle=0.95, max_brake=0.9,
+ *     def __init__(self, vehicle, args_lateral={'K_P': 1.95,             # <<<<<<<<<<<<<<
+ *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.01}, args_longitudinal={
+ *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.01}, offset=0, max_throttle=0.65, max_brake=0.5,
  */
 
 static PyObject *__pyx_pf_10cythoncode_19controller_baseline___defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
@@ -1844,12 +1844,12 @@ static PyObject *__pyx_pf_10cythoncode_19controller_baseline___defaults__(CYTHON
   __Pyx_INCREF(((PyObject *)__pyx_int_0));
   __Pyx_GIVEREF(((PyObject *)__pyx_int_0));
   PyTuple_SET_ITEM(__pyx_t_1, 2, ((PyObject *)__pyx_int_0));
-  __Pyx_INCREF(((PyObject*)__pyx_float_0_95));
-  __Pyx_GIVEREF(((PyObject*)__pyx_float_0_95));
-  PyTuple_SET_ITEM(__pyx_t_1, 3, ((PyObject*)__pyx_float_0_95));
-  __Pyx_INCREF(((PyObject*)__pyx_float_0_9));
-  __Pyx_GIVEREF(((PyObject*)__pyx_float_0_9));
-  PyTuple_SET_ITEM(__pyx_t_1, 4, ((PyObject*)__pyx_float_0_9));
+  __Pyx_INCREF(((PyObject*)__pyx_float_0_65));
+  __Pyx_GIVEREF(((PyObject*)__pyx_float_0_65));
+  PyTuple_SET_ITEM(__pyx_t_1, 3, ((PyObject*)__pyx_float_0_65));
+  __Pyx_INCREF(((PyObject*)__pyx_float_0_5));
+  __Pyx_GIVEREF(((PyObject*)__pyx_float_0_5));
+  PyTuple_SET_ITEM(__pyx_t_1, 4, ((PyObject*)__pyx_float_0_5));
   __Pyx_INCREF(((PyObject*)__pyx_float_0_5));
   __Pyx_GIVEREF(((PyObject*)__pyx_float_0_5));
   PyTuple_SET_ITEM(__pyx_t_1, 5, ((PyObject*)__pyx_float_0_5));
@@ -1902,8 +1902,8 @@ static PyObject *__pyx_pw_10cythoncode_19controller_baseline_20VehiclePIDControl
     values[2] = __pyx_dynamic_args->__pyx_arg_args_lateral;
     values[3] = __pyx_dynamic_args->__pyx_arg_args_longitudinal;
     values[4] = ((PyObject *)((PyObject *)__pyx_int_0));
-    values[5] = ((PyObject *)((PyObject*)__pyx_float_0_95));
-    values[6] = ((PyObject *)((PyObject*)__pyx_float_0_9));
+    values[5] = ((PyObject *)((PyObject*)__pyx_float_0_65));
+    values[6] = ((PyObject *)((PyObject*)__pyx_float_0_5));
     values[7] = ((PyObject *)((PyObject*)__pyx_float_0_5));
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -2036,7 +2036,7 @@ static PyObject *__pyx_pf_10cythoncode_19controller_baseline_20VehiclePIDControl
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "cythoncode/controller_baseline.pyx":22
- *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.1}, offset=0, max_throttle=0.95, max_brake=0.9,
+ *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.01}, offset=0, max_throttle=0.65, max_brake=0.5,
  *             max_steering=0.5):
  *         self.max_brake = max_brake             # <<<<<<<<<<<<<<
  *         self.max_throt = max_throttle
@@ -2244,9 +2244,9 @@ static PyObject *__pyx_pf_10cythoncode_19controller_baseline_20VehiclePIDControl
   /* "cythoncode/controller_baseline.pyx":18
  * class VehiclePIDController():
  * 
- *     def __init__(self, vehicle, args_lateral={'K_P': 1.45,             # <<<<<<<<<<<<<<
- *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.1}, args_longitudinal={
- *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.1}, offset=0, max_throttle=0.95, max_brake=0.9,
+ *     def __init__(self, vehicle, args_lateral={'K_P': 1.95,             # <<<<<<<<<<<<<<
+ *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.01}, args_longitudinal={
+ *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.01}, offset=0, max_throttle=0.65, max_brake=0.5,
  */
 
   /* function exit code */
@@ -6800,9 +6800,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "cythoncode/controller_baseline.pyx":18
  * class VehiclePIDController():
  * 
- *     def __init__(self, vehicle, args_lateral={'K_P': 1.45,             # <<<<<<<<<<<<<<
- *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.1}, args_longitudinal={
- *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.1}, offset=0, max_throttle=0.95, max_brake=0.9,
+ *     def __init__(self, vehicle, args_lateral={'K_P': 1.95,             # <<<<<<<<<<<<<<
+ *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.01}, args_longitudinal={
+ *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.01}, offset=0, max_throttle=0.65, max_brake=0.5,
  */
   __pyx_tuple_ = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_vehicle, __pyx_n_s_args_lateral, __pyx_n_s_args_longitudinal, __pyx_n_s_offset, __pyx_n_s_max_throttle, __pyx_n_s_max_brake, __pyx_n_s_max_steering); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
@@ -7010,13 +7010,13 @@ static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   __pyx_float_0_1 = PyFloat_FromDouble(0.1); if (unlikely(!__pyx_float_0_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_0_2 = PyFloat_FromDouble(0.2); if (unlikely(!__pyx_float_0_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_0_5 = PyFloat_FromDouble(0.5); if (unlikely(!__pyx_float_0_5)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_0_9 = PyFloat_FromDouble(0.9); if (unlikely(!__pyx_float_0_9)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_1_0 = PyFloat_FromDouble(1.0); if (unlikely(!__pyx_float_1_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_3_6 = PyFloat_FromDouble(3.6); if (unlikely(!__pyx_float_3_6)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_float_0_01 = PyFloat_FromDouble(0.01); if (unlikely(!__pyx_float_0_01)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_0_03 = PyFloat_FromDouble(0.03); if (unlikely(!__pyx_float_0_03)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_0_05 = PyFloat_FromDouble(0.05); if (unlikely(!__pyx_float_0_05)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_0_95 = PyFloat_FromDouble(0.95); if (unlikely(!__pyx_float_0_95)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_1_45 = PyFloat_FromDouble(1.45); if (unlikely(!__pyx_float_1_45)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_float_0_65 = PyFloat_FromDouble(0.65); if (unlikely(!__pyx_float_0_65)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_float_1_95 = PyFloat_FromDouble(1.95); if (unlikely(!__pyx_float_1_95)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_neg_1_0 = PyFloat_FromDouble(-1.0); if (unlikely(!__pyx_float_neg_1_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -7394,7 +7394,7 @@ if (!__Pyx_RefNanny) {
  * 
  * class VehiclePIDController():             # <<<<<<<<<<<<<<
  * 
- *     def __init__(self, vehicle, args_lateral={'K_P': 1.45,
+ *     def __init__(self, vehicle, args_lateral={'K_P': 1.95,
  */
   __pyx_t_1 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_VehiclePIDController, __pyx_n_s_VehiclePIDController, (PyObject *) NULL, __pyx_n_s_cythoncode_controller_baseline, (PyObject *) NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7402,27 +7402,27 @@ if (!__Pyx_RefNanny) {
   /* "cythoncode/controller_baseline.pyx":18
  * class VehiclePIDController():
  * 
- *     def __init__(self, vehicle, args_lateral={'K_P': 1.45,             # <<<<<<<<<<<<<<
- *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.1}, args_longitudinal={
- *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.1}, offset=0, max_throttle=0.95, max_brake=0.9,
+ *     def __init__(self, vehicle, args_lateral={'K_P': 1.95,             # <<<<<<<<<<<<<<
+ *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.01}, args_longitudinal={
+ *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.01}, offset=0, max_throttle=0.65, max_brake=0.5,
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10cythoncode_19controller_baseline_20VehiclePIDController_1__init__, 0, __pyx_n_s_VehiclePIDController___init, NULL, __pyx_n_s_cythoncode_controller_baseline, __pyx_d, ((PyObject *)__pyx_codeobj__2)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (!__Pyx_CyFunction_InitDefaults(__pyx_t_2, sizeof(__pyx_defaults), 2)) __PYX_ERR(0, 18, __pyx_L1_error)
   __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_K_P, __pyx_float_1_45) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_K_P, __pyx_float_1_95) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_K_I, __pyx_float_0_05) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_K_D, __pyx_float_0_2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_1) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_01) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_2)->__pyx_arg_args_lateral = __pyx_t_3;
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_t_3 = 0;
 
   /* "cythoncode/controller_baseline.pyx":20
- *     def __init__(self, vehicle, args_lateral={'K_P': 1.45,
- *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.1}, args_longitudinal={
- *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.1}, offset=0, max_throttle=0.95, max_brake=0.9,             # <<<<<<<<<<<<<<
+ *     def __init__(self, vehicle, args_lateral={'K_P': 1.95,
+ *                                               'K_I': 0.05, 'K_D': 0.2, 'dt': 0.01}, args_longitudinal={
+ *         'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.01}, offset=0, max_throttle=0.65, max_brake=0.5,             # <<<<<<<<<<<<<<
  *             max_steering=0.5):
  *         self.max_brake = max_brake
  */
@@ -7431,7 +7431,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_K_P, __pyx_float_1_0) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_K_I, __pyx_float_0_05) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_K_D, __pyx_int_0) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_1) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dt, __pyx_float_0_01) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_2)->__pyx_arg_args_longitudinal = __pyx_t_3;
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_t_3 = 0;
@@ -7492,7 +7492,7 @@ if (!__Pyx_RefNanny) {
  * 
  * class VehiclePIDController():             # <<<<<<<<<<<<<<
  * 
- *     def __init__(self, vehicle, args_lateral={'K_P': 1.45,
+ *     def __init__(self, vehicle, args_lateral={'K_P': 1.95,
  */
   __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_VehiclePIDController, __pyx_empty_tuple, __pyx_t_1, NULL, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);

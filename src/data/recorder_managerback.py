@@ -4,33 +4,40 @@ import os
 import logging
 import carla
 from view.debug_manager import DebugManager as debug
-from util import spawn_vehicle, connect_to_server, time_const, batch_process_vehicles, get_ego_vehicle, get_speed, log_time_cost, get_vehicle_info, init_data_file
+from util import spawn_vehicle, connect_to_server, time_const, batch_process_vehicles, get_ego_vehicle, get_speed, log_time_cost, get_vehicle_info
+from agent.base_agent import BaseAgent
 import time
 import csv
 
 
-class DataRecorder():
+class DataRecorder(BaseAgent):
     def __init__(
         self,
         config,
     ) -> None:
         self.config = config
         self.step = 0
-        self.writer = self.run()
+        BaseAgent.__init__(self, "DataRecorder",
+                           config["data_port"])
 
-    def run_step(self, world):
-        current_time = self.step
-        try:
-            batch_process_vehicles(
-                world, self.write_vehicle_info, self.writer, time_step=current_time)
-            self.step += 1
-        except Exception as e:
-            logging.error(e)
     def run(self):
+        @time_const(fps=self.config["fps"]-20)
+        # @log_time_cost
+        def run_step(world, writer):
+            current_time = self.step
+            try:
+                batch_process_vehicles(
+                    world, self.write_vehicle_info, writer, time_step=current_time)
+                self.step += 1
+            except Exception as e:
+                logging.error(e)
         if not self.config["record"]:
             return
-        self.fp, writer = init_data_file(
-            self.config["data_folder_path"], "data.csv")
+        client, world = connect_to_server(
+            self.config["carla_timeout"], self.config["carla_port"])
+        self.init_base_agent()
+        writer = self.init_data_file(
+            self.config["data_folder_path"])
         writer.writerow([
             'time',
             'vehicle_id',
@@ -55,7 +62,12 @@ class DataRecorder():
             # 'torque_curveX',
             # 'torque_curveY',
         ])
-        return writer
+        try:
+            while True:
+                run_step(world, writer)
+        finally:
+            self.close()
+            os.system(f"python3.8 ../tool/process_trajectories.py")
 
     def write_vehicle_info(self, world, vehicle, writer, time_step):
         # Basic info
@@ -84,6 +96,11 @@ class DataRecorder():
             control.brake, control.throttle, control.steer,
         ])
 
+    def init_data_file(self, folder_path):
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+        self.fp = open(os.path.join(folder_path, "data.csv"), "w")
+        return csv.writer(self.fp)
 
     def close(self) -> None:
         self.fp.fflush()

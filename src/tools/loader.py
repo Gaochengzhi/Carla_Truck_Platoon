@@ -19,12 +19,12 @@ def load_agents(config):
 def load_conventional_agents(world, tm, config):
     try:
         spawn_point = world.get_map().get_spawn_points()
-        config["spwan_list"] = random.sample(range(0, 90), 90)
+        config["spwan_list"] = random.sample(range(600, 700), 100)
         # config["spwan_list"] = [66] + \
         #     random.sample(range(68, 120), 47)
         # config["spwan_list"] = [750]
         # config["spwan_list"] = [136, 135, 173, 176, 295, 294, 153, 154]
-        config["target_list"] = random.sample(range(100, 300), 70)
+        config["target_list"] = random.sample(range(100, 300), 100)
         # config["target_list"] = [1000]
         for i, spwan_target in enumerate(zip(config["spwan_list"], config["target_list"])):
             vehicle_bp = world.get_blueprint_library().filter(
@@ -37,7 +37,7 @@ def load_conventional_agents(world, tm, config):
             # vehicle.set_target_velocity(carla.Vector3D(0, 0, 105))
             vehicle.set_autopilot(True, tm.get_port())
             # tm.vehicle_percentage_speed_difference(vehicle, -50)
-            tm.vehicle_percentage_speed_difference(vehicle, 10)
+            # tm.vehicle_percentage_speed_difference(vehicle, 10)
     except Exception as e:
         print(f"load_conventional_agents error:{e}")
         pass

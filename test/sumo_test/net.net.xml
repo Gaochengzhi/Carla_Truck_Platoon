@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-03-23 12:32:24 by Eclipse SUMO netedit Version 1.14.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <output>
+        <output-file value="/home/ujs/mycode/Carla_Truck_Platoon/test/sumo_test/net.net.xml"/>
+    </output>
+
+    <processing>
+        <offset.disable-normalization value="true"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+    </junctions>
+
+</configuration>
+-->
+
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,60.00,3000.00,60.00" origBoundary="10000000000.00,10000000000.00,-10000000000.00,-10000000000.00" projParameter="!"/>
+
+    <edge id="E0" from="J0" to="J1" priority="-1" length="3000.00">
+        <lane id="E0_0" index="0" speed="33.89" length="3000.00" shape="0.00,55.20 3000.00,55.20"/>
+    </edge>
+
+    <junction id="J0" type="dead_end" x="0.00" y="60.00" incLanes="" intLanes="" shape="0.00,60.00 0.00,53.60"/>
+
+    <junction id="J1" type="dead_end" x="3000.00" y="60.00" incLanes="" intLanes="" shape="0.00,60.00 0.00,53.60"/>
+</net>

@@ -20,6 +20,7 @@ class BaseSensorManager:
         self.add_obstacle_sensor()
         self.radar_queue = []
         self.obstacle = None
+        self.add_camera()
     def setup_radars(self):
         front_radar_transform = carla.Transform(carla.Location(
             x=self.vehicle_info["length"], z=self.vehicle_info["height"]), carla.Rotation(pitch=7))
@@ -50,8 +51,8 @@ class BaseSensorManager:
 
     def add_camera(self):
         camera_bp = self.world.get_blueprint_library().find('sensor.camera.rgb')
-        camera_bp.set_attribute('image_size_x', '192')
-        camera_bp.set_attribute('image_size_y', '108')
+        camera_bp.set_attribute('image_size_x', '880')
+        camera_bp.set_attribute('image_size_y', '620')
         camera_bp.set_attribute('fov', '110')
         camera_transform = carla.Transform(carla.Location(x=1.5, z=2.4))
         self.camera = self.world.spawn_actor(
@@ -96,6 +97,7 @@ class BaseSensorManager:
             self.radar_res[radar_id] = None
             return
         self.radar_res[radar_id] = [(detect.depth, detect.velocity) for detect in radar_data][0]
+        
 
 
 class Obstacle:

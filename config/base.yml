@@ -21,12 +21,12 @@ carla_timeout: 26.0
 is_custum_map: False
 map_name: Town13
 actor_active_distance: 500
-hybrid_physics_radius: 50
+hybrid_physics_radius: 500
 tile_stream_distance: 200
 synchronous_mode: True
 no_rendering_mode: False
 fps: 25
-fixed_delta_seconds: 0.05
+fixed_delta_seconds: 0.03
 
 
 # WeatherParameters:

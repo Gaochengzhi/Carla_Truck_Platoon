@@ -14,9 +14,9 @@ class BaseAgent(multiprocessing.Process):
     def init_base_agent(self):
         self.communi_agent = self.init_communi_agent(
             self.name, self.agent_port)
-        self.start_listener_thread()
+        # self.start_main_listener_thread()
 
-    def start_listener_thread(self):
+    def start_main_listener_thread(self):
         self.stop_listener = threading.Event()
         self.listener_thread = threading.Thread(
             target=self.listen_for_main_message)
@@ -45,6 +45,6 @@ class BaseAgent(multiprocessing.Process):
         communi_agent.init_publisher(
             agent_port)
         communi_agent.send_obj(f"{agent_name} started")
-        communi_agent.init_subscriber("main",
-                                      self.config["main_port"])
+        # communi_agent.init_subscriber("main",
+        #                               self.config["main_port"])
         return communi_agent

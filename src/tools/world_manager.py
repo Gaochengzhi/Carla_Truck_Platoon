@@ -2,7 +2,9 @@ import carla
 import sys
 import logging
 import os
+import carla
 import random
+from view.debug_manager import set_bird_view
 
 
 class WorldManager:
@@ -38,10 +40,11 @@ class WorldManager:
         current_world = self.client.get_world()
         if self.need_change_map(map_name, current_world):
             if self.config["is_custum_map"]:
-                # return current_world
+                return current_world
                 with open(self.config["map_path"], encoding='utf-8') as od_file:
                     try:
                         xodr_data = od_file.read()
+                        # xodr_data = carla.Osm2Odr.convert(od_file.read())
                     except OSError:
                         print('file could not be read.')
                         sys.exit()
@@ -51,8 +54,8 @@ class WorldManager:
                     xodr_data, 
                     carla.OpendriveGenerationParameters(
                         vertex_distance=2.0,
-                        max_road_length=9500.0,
-                        wall_height=1.0,
+                        max_road_length=19500.0,
+                        wall_height=0.0,
                         additional_width=3.6,
                         smooth_junctions=True,
                         enable_mesh_visibility=True
@@ -84,6 +87,7 @@ class WorldManager:
     def cache_spawn_points(self):
         filepath = os.path.join("cache/sp_points", f"{self.map.name.split('/')[-1]}.csv")
         waypoints = [p.transform for p in self.map.generate_waypoints(5.0)]
+        set_bird_view(self.world, waypoints[0].location)
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, "w") as file:
             file.writelines(map(lambda wp: f"{wp.location.x},{wp.location.y},{wp.location.z},{wp.rotation.yaw},{wp.rotation.pitch},{wp.rotation.roll}\n", waypoints))

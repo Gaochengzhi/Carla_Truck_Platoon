@@ -135,6 +135,13 @@ def time_const(fps):
 
 # turn carla way point into NetworkX graph point
 
+import csv
+def init_data_file(folder, file):
+    if not os.path.exists(folder):
+            os.makedirs(folder)
+    fp = open(os.path.join(folder,file),"w")
+    return  fp,csv.writer(fp)
+
 
 def waypoint_to_xyz(waypoint):
     return (waypoint.transform.location.x, waypoint.transform.location.y, waypoint.transform.location.z)

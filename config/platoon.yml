@@ -7,7 +7,7 @@ tile_stream_distance: 100
 is_custum_map: True
 map_path: "../assets/highways.xodr"
 fps: 30
-fixed_delta_seconds: 0.01
+fixed_delta_seconds: 0.034
 # TrafficParameters:
 num_vehicles: 0
 spwan_points_distance: 20
@@ -15,11 +15,13 @@ spwan_points_distance: 20
 camera_height: 60
 record: True
 
-max_speed: 30
+max_speed: 20
 ## commuicate port
-base_port: 9561
+base_port: 9569
 # spawn_list: [813,803,793, 783, 773]
-spawn_list: [71, 61, 51,41,31]
-target_list: [1080, 1080,1080,1080,1080]
+spawn_list: [91, 81, 71, 61, 51]
+# spawn_list: [200]
+target_list: [1236,1236,1236,1236,1236]
+# target_list: [7156,7156,7156,7156,7156]
 
 

@@ -21,8 +21,8 @@ class VehiclePIDController():
     """
 
     def __init__(self, vehicle, args_lateral={'K_P': 1.45,
-                                              'K_I': 0.05, 'K_D': 0.2, 'dt': 0.1}, args_longitudinal={
-        'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.03}, offset=0, max_throttle=0.55, max_brake=0.9,
+                                              'K_I': 0.05, 'K_D': 0.2, 'dt': 0.3}, args_longitudinal={
+        'K_P': 1.0, 'K_I': 0.05, 'K_D': 0, 'dt': 0.3}, offset=0, max_throttle=0.95, max_brake=0.5,
             max_steering=0.5):
         """
         Constructor method.
@@ -48,13 +48,11 @@ class VehiclePIDController():
         self.max_steer = max_steering
 
         self._vehicle = vehicle
-        # self._world = self._vehicle.get_world()
         self.past_steering = self._vehicle.get_control().steer
         self._lon_controller = PIDLongitudinalController(
             self._vehicle, **args_longitudinal)
-        # self._lat_controller = PIDLateralController(
-        #     self._vehicle, offset, **args_lateral)
-        self._lat_controller = MPCLateralController(self._vehicle)
+        self._lat_controller = PIDLateralController(
+            self._vehicle, offset, **args_lateral)
 
     def run_step(self, target_speed, transform):
         acceleration = self._lon_controller.run_step(target_speed*3.6)

@@ -4,14 +4,15 @@ from util import connect_to_server, spawn_vehicle, time_const, is_within_distanc
 from view.debug_manager import draw_waypoints_arraw, draw_transforms, set_bird_view
 
 from perception.sensor_manager import BaseSensorManager
-# from navigation.router_baseline import GlobalRoutePlanner
-from cythoncode.router_baseline import GlobalRoutePlanner
-# from navigation.controller_baseline import VehiclePIDController
-from cythoncode.controller_baseline import VehiclePIDController
+from navigation.router_baseline import GlobalRoutePlanner
+# from cythoncode.router_baseline import GlobalRoutePlanner
+from navigation.controller_baseline import VehiclePIDController
+# from cythoncode.controller_baseline import VehiclePIDController
 from plan.base_planer import BasePlanner
 import logging
 import random
 import carla
+import time
 
 class BaseVehicle(BaseAgent):
     def __init__(self, config):

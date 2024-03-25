@@ -12,6 +12,7 @@ class CommuniAgent:
         self.push_socket = None
         self.pull_socket = None
         self.type = name
+        self.i = 0
         self.id = uuid1()
 
     def init_publisher(self, pub_port):
@@ -19,16 +20,17 @@ class CommuniAgent:
         # self.pub_socket.setsockopt(zmq.SNDBUF,10)
         self.pub_socket.bind(f"tcp://*:{pub_port}")
 
-    def init_subscriber(self, name: str, sub_port, pub_ip="localhost"):
+    def init_subscriber(self, name: str, sub_port, pub_ip="192.168.31.50"):
+    # def init_subscriber(self, name: str, sub_port, pub_ip="localhost"):
         for existing_name, existing_socket in self.sub_sockets.items():
-            if existing_socket.getsockopt(zmq.LAST_ENDPOINT) == f"tcp://{pub_ip}:{sub_port}":
+            if existing_socket.getsockopt(zmq.LAST_ENDPOINT) == f"tcp://{pub_ip}:{sub_port}".encode():
                 self.sub_sockets[name] = existing_socket
                 return
 
         sub_socket = self.context.socket(zmq.SUB)
         sub_socket.connect(f"tcp://{pub_ip}:{sub_port}")
         sub_socket.setsockopt_string(zmq.SUBSCRIBE, "")
-        sub_socket.setsockopt(zmq.RCVTIMEO,100)
+        sub_socket.setsockopt(zmq.RCVTIMEO,30)
         self.sub_sockets[name] = sub_socket
 
     def send_obj(self, data):
@@ -48,7 +50,8 @@ class CommuniAgent:
                 raise ValueError(
                     f"No subscriber with name '{sub_name}' initialized.")
         except zmq.Again:
-            # print(f"Subscriber {sub_name} timeout")
+            print(f"Subscriber {sub_name} timeout", self.i)
+            self.i+=1
             return None
 
     def rec_obj_block(self, sub_name: str):

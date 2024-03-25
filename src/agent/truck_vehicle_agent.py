@@ -6,6 +6,7 @@ from perception.sensor_manager import TruckSensorManager
 from plan.cacc_planner import CACCPlanner
 import carla
 import logging
+import time
 
 
 class TruckVehicleAgent(BaseVehicle):
@@ -14,16 +15,21 @@ class TruckVehicleAgent(BaseVehicle):
         BaseVehicle.__init__(
             self, self.config)
 
+
     def run(self):
         @time_const(fps=self.config["fps"])
         def run_step():
             obs = self.communi_agent.rec_obj("router")
             self.local_planner.run_step(obs)
         self.init_vehicle()
+        # self.vehicle.set_target_velocity(carla.Vector3D(20, 0, 0))
+        # self.trailer.set_target_velocity(carla.Vector3D(20, 0, 0))
+
         try:
             while True:
                 if self.vehicle.attributes["role_name"] == "p_0":
-                    set_bird_view(self.world, self.vehicle.get_location(),80,-100,-100,carla.Rotation(-25,90 , 0))
+                    set_bird_view(self.world, self.vehicle.get_location(),80,-100,-150,carla.Rotation(-25,90 , 0))
+                    # set_bird_view(self.world, self.vehicle.get_location())
                 run_step()
         except Exception as e:
             handle_exception(e)
