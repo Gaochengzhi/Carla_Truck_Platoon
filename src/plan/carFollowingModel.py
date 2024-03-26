@@ -260,3 +260,56 @@ class Adaptive_CACCController:
         else:
             return ego_v + self.speed_control_gain * leading_v_err + self.gap_control_gain_gap_dot *spacing_err
     
+
+class CACCController:
+    def __init__(self, tau_0, h_i, r_i, Q_i, k_i_init):
+        self.tau_0 = tau_0  # estimate of uncertain dynamics parameter
+        self.h_i = h_i      # headway time
+        self.r_i = r_i      # standstill distance 
+        self.Q_i = Q_i      # error cost matrix
+        self.k_i = k_i_init # initial stabilizing error feedback gain
+        self.P_i = None     # Riccati matrix
+        self.data_x = []    # stored state data 
+        self.data_w = []    # stored disturbance data
+        
+    def collect_data(self, x, w):
+        self.data_x.append(x)
+        self.data_w.append(w)
+    
+    def learn_optimal_gain(self):
+        # Check rank condition 
+        if len(self.data_x) > 9: # dimension of Ixx and Iwx
+            Ixx = np.sum(np.array([np.outer(x,x) for x in self.data_x]), axis=0)  
+            Iwx = np.sum(np.array([np.outer(w,x) for w,x in zip(self.data_w, self.data_x)]), axis=0)
+            if np.linalg.matrix_rank(np.hstack((Ixx, Iwx))) == 9:
+                # Solve for P_i and k_i 
+                Theta = np.hstack((Ixx, 2*Iwx)) 
+                Xi = np.sum(np.array([np.outer(x,x) for x in self.data_x]), axis=0) 
+                vecQ = Xi @ np.reshape(self.Q_i + self.k_i.T @ self.k_i, (-1,1))
+                sol = -np.linalg.pinv(Theta.T @ Theta) @ Theta.T @ vecQ
+                self.P_i = np.reshape(sol[:6], (3,3)) 
+                self.P_i = (self.P_i + self.P_i.T)/2  # ensure symmetry
+                self.k_i = sol[-3:].flatten()
+                # Clear data
+                self.data_x = []  
+                self.data_w = []
+        
+    def calc_speed(self, leader_v, leader_a, front_dis, front_v, front_a, ego_v, ego_a):
+        # Calc error state x_i
+        e_i = front_dis - self.r_i - self.h_i*ego_v
+        de_i = front_v - ego_v - self.h_i*ego_a  
+        dde_i = front_a - ego_a - self.h_i*(-ego_a/self.tau_0 + self.tau_0*leader_a/self.h_i 
+                                             + 1/self.h_i*leader_a - self.k_i @ np.array([e_i,de_i,dde_i]))
+        x_i = np.array([e_i, de_i, dde_i])
+        
+        # Collect data 
+        self.collect_data(x_i, front_a)
+        
+        # Learn optimal gain
+        self.learn_optimal_gain()
+        
+        # Calc desired accel 
+        u_ai = -self.k_i @ x_i
+        u_i = -1/self.h_i*ego_a + self.tau_0/self.h_i*front_a + 1/self.h_i*leader_a + self.tau_0/self.h_i*u_ai
+
+        return u_i

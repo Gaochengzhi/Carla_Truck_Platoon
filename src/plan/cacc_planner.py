@@ -25,9 +25,9 @@ class CACCPlanner(BasePlanner):
         )
         self.cacc_model = Path_ACC(
         # ) if self.config["topology"]["LV"] == -1 else Path_CACC()
-        ) if self.config["topology"]["LV"] == -1 else SUMO_CACC_Controller()
+        # ) if self.config["topology"]["LV"] == -1 else SUMO_CACC_Controller()
         # ) if self.config["topology"]["LV"] == -1 else CACC_Sample_Model()
-        # ) if self.config["topology"]["LV"] == -1 else Adaptive_CACCController()
+        ) if self.config["topology"]["LV"] == -1 else Adaptive_CACCController()
 
 
     @time_const(fps=30) 

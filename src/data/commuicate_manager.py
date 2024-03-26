@@ -50,7 +50,7 @@ class CommuniAgent:
                 raise ValueError(
                     f"No subscriber with name '{sub_name}' initialized.")
         except zmq.Again:
-            print(f"Subscriber {sub_name} timeout", self.i)
+            # print(f"Subscriber {sub_name} timeout", self.i)
             self.i+=1
             return None
 
