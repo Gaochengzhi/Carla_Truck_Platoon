@@ -1,6 +1,6 @@
 from plan.base_planer import BasePlanner
 from util import time_const, handle_exception,compute_distance2D, init_data_file
-from plan.carFollowingModel import Path_CACC, Path_ACC, SUMO_CACC_Controller, Plexe_CACC_Controller,Adaptive_CACCController
+from plan.carFollowingModel import Path_CACC, Path_ACC, SUMO_CACC_Controller, Plexe_CACC_Controller,HInfinityController, Adaptive_CACCController, PFL_CACC, IDM, SUMO_CACC_Model, PloegModel
 import carla
 import time
 
@@ -25,9 +25,13 @@ class CACCPlanner(BasePlanner):
         )
         self.cacc_model = Path_ACC(
         # ) if self.config["topology"]["LV"] == -1 else Path_CACC()
-        # ) if self.config["topology"]["LV"] == -1 else SUMO_CACC_Controller()
+        ) if self.config["topology"]["LV"] == -1 else SUMO_CACC_Controller()
+        # ) if self.config["topology"]["LV"] == -1 else SUMO_CACC_Model()
+        # ) if self.config["topology"]["LV"] == -1 else PloegModel()
+        # ) if self.config["topology"]["LV"] == -1 else IDM()
         # ) if self.config["topology"]["LV"] == -1 else CACC_Sample_Model()
-        ) if self.config["topology"]["LV"] == -1 else Adaptive_CACCController()
+        # ) if self.config["topology"]["LV"] == -1 else Adaptive_CACCController()
+        # ) if self.config["topology"]["LV"] == -1 else PFL_CACC()
 
 
     @time_const(fps=30) 
@@ -56,12 +60,12 @@ class CACCPlanner(BasePlanner):
         except Exception as e:
             handle_exception(e)
             
-    def change_speed_profile(self, time_interval=300, low_speed=20, high_speed=25, end_time=8000):
+    def change_speed_profile(self, time_interval=250, low_speed=15, high_speed=20):
         # Calculate the current interval index based on the step
         current_interval = (self.step // time_interval) % 2  # This will alternate between 0 and 1
 
         # Determine the max speed based on the current interval
-        if 0 < self.step < end_time:
+        if 0 < self.step:
             self.max_speed = low_speed if current_interval == 0 else high_speed
 
     def get_plt_info(self):
@@ -100,13 +104,13 @@ class CACCPlanner(BasePlanner):
                 if leading_vehicle:
                     front_v = leading_vehicle[1] + self.speed
                     distance_s = leading_vehicle[0]
-                    v = self.car_following_model.calc_acc(
+                    v = self.car_following_model.calc_speed(
                         front_v, distance_s, self.speed)
                     self.target_speed = max(0, self.speed + v)
                 elif leading_obs:
                     distance_s = leading_obs.distance
                     front_v = leading_obs.velocity
-                    v = self.car_following_model.calc_acc(
+                    v = self.car_following_model.calc_speed(
                         front_v, distance_s, self.speed)
                     self.target_speed = max(0, self.speed + v)
                 else:
@@ -137,7 +141,7 @@ class CACCPlanner(BasePlanner):
             front_dis = compute_distance2D(ego_xy, self.front_xy)-self.vehicle_info["length"] - self.vehicle_info["trailer_length"]*2
         if self.leader_xy:
             self.leader_dis = compute_distance2D(ego_xy, self.leader_xy)-self.vehicle_info["length"] - self.vehicle_info["trailer_length"]*2
-        elif self.sensor_manager.radar_res["front"]:
+        if self.sensor_manager.radar_res["front"]:
             front_dis = self.sensor_manager.radar_res["front"][0]
             front_v = self.sensor_manager.radar_res["front"][1]+ self.speed
             # print(front_dis, self.id)

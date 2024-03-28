@@ -10,6 +10,6 @@ https://drive.google.com/file/d/1TNenSlMxyTfZH50XkhW2_fQShRyXXgSt/view?usp=shari
 ```
 pip install -r requirements.txt
 cd src
-python3 setup.py build_ext --inplac
+python3 setup.py build_ext --inplace
 python3 main.py --log console --debug platoon   
 ```

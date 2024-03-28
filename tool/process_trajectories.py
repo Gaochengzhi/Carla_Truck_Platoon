@@ -30,7 +30,7 @@ def calc_distance(x1, y1, x2, y2):
     return np.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 # Initialize plots
-fig, axs = plt.subplots(3, 1, figsize=(12, 12))
+fig, axs = plt.subplots(4, 1, figsize=(12, 12))
 
 # Step-Gap Plot
 for i in range(platoon_length - 1):
@@ -50,26 +50,41 @@ axs[0].set_title('Step-Gap Plot')
 axs[0].set_xlabel('Step')
 axs[0].set_ylabel('Gap error (m)')
 
+for i in range(platoon_length - 1):
+    gap_errors = []
+    for _, grp in df_filtered.groupby('time'):
+        if f'p_{i}' in grp['vehicle_id'].values and f'p_{i+1}' in grp['vehicle_id'].values:
+            p1 = grp[grp['vehicle_id'] == f'p_{i}']
+            p2 = grp[grp['vehicle_id'] == f'p_{i+1}']
+            gap = calc_distance(p1['location_x'].values[0], p1['location_y'].values[0],
+                                p2['location_x'].values[0], p2['location_y'].values[0])-vehicle_lenghth
+            gap_errors.append(gap)
+    axs[1].plot(gap_errors, label=f'p_{i} to p_{i+1}')
+# set_limit y -8, 8
+axs[1].set_ylim(-8, 30)
+axs[1].set_title('Step-Gap Plot')
+axs[1].set_xlabel('Step')
+axs[1].set_ylabel('Gap  (m)')
 # Speed-Step Plot
 for i in range(platoon_length):
     speeds = df_filtered[df_filtered['vehicle_id'] == f'p_{i}']['velocity_x'].values
-    axs[1].plot(speeds, label=f'p_{i}')
-axs[1].set_ylim(0, 32)
-axs[1].set_title('Speed-Step Plot')
-axs[1].set_xlabel('Step')
-axs[1].set_ylabel('Speed (m/s)')
+    axs[2].plot(speeds, label=f'p_{i}')
+axs[2].set_ylim(0, 32)
+axs[2].set_title('Speed-Step Plot')
+axs[2].set_xlabel('Step')
+axs[2].set_ylabel('Speed (m/s)')
 
 # Acc-Step Plot
 for i in range(platoon_length):
     accs = df_filtered[df_filtered['vehicle_id'] == f'p_{i}']['acceleration_x'].values
-    axs[2].plot(accs, label=f'p_{i}')
-axs[2].set_ylim(-4, 2)
-axs[2].set_title('Acceleration-Step Plot')
-axs[2].set_xlabel('Step')
-axs[2].set_ylabel('Acceleration (m/s^2)')
+    axs[3].plot(accs, label=f'p_{i}')
+axs[3].set_ylim(-4, 4)
+axs[3].set_title('Acceleration-Step Plot')
+axs[3].set_xlabel('Step')
+axs[3].set_ylabel('Acceleration (m/s^2)')
 
 # show grids
-for i in range(3):
+for i in range(4):
     axs[i].grid()
     axs[i].legend()
 
@@ -99,5 +114,5 @@ fig.savefig(f"{res_dir}plot_{1}.png")
 
 # Copy data.csv to a timestamped file in res directory
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-shutil.copy2(data_path, f"{res_dir}{timestamp}caccsamtrajectoriesloss.csv")
+# shutil.copy2(data_path, f"{res_dir}{timestamp}caccsamtrajectoriesloss.csv")
 print("Analysis completed and files saved.")

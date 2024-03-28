@@ -1,6 +1,7 @@
 from agent.base_vehicle import BaseVehicle
 from util import  time_const,  clean_up, handle_exception
 from view.debug_manager import draw_waypoints_arraw, draw_transforms, set_bird_view
+from navigation.controller_baseline import VehiclePIDController
 
 from perception.sensor_manager import TruckSensorManager
 from plan.cacc_planner import CACCPlanner
@@ -85,5 +86,13 @@ class TruckVehicleAgent(BaseVehicle):
             self.world, self.vehicle, self.trailer, self.vehicle_info, self.config)
     def create_local_planner_impl(self):
         self.local_planner = CACCPlanner(self.world, self.map,self.start_point,self.end_point, self.vehicle, self.vehicle_info,self.config, self.global_route_planner, self.controller, self.sensor_manager, self.communi_agent)
+    def create_controller_impl(self):
+        if self.config["topology"]["LV"] == -1:
+            max_throttole = 0.9
+            max_brake = 0.5
+        else:
+            max_throttole = 1.0
+            max_brake = 1.0
+        self.controller = VehiclePIDController(self.vehicle, max_throttle=max_throttole, max_brake=max_brake)
 
 

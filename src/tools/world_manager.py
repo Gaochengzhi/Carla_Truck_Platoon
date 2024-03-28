@@ -40,7 +40,7 @@ class WorldManager:
         current_world = self.client.get_world()
         if self.need_change_map(map_name, current_world):
             if self.config["is_custum_map"]:
-                # return current_world
+                return current_world
                 with open(self.config["map_path"], encoding='utf-8') as od_file:
                     try:
                         xodr_data = od_file.read()

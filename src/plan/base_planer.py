@@ -105,13 +105,13 @@ class BasePlanner():
             if leading_vehicle:
                 front_v = leading_vehicle[1] + self.speed
                 distance_s = leading_vehicle[0]
-                a = self.car_following_model.calc_acc(
+                a = self.car_following_model.calc_speed(
                         front_v, distance_s, self.speed)
                 self.target_speed = max(0, self.speed + a)
             elif leading_obs:
                 distance_s = leading_obs.distance
                 front_v = leading_obs.velocity
-                a = self.car_following_model.calc_acc(
+                a = self.car_following_model.calc_speed(
                         front_v, distance_s, self.speed)
                 self.target_speed = max(0, self.speed + a)
             else:
