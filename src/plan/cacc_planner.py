@@ -1,6 +1,6 @@
 from plan.base_planer import BasePlanner
 from util import time_const, handle_exception,compute_distance2D, init_data_file
-from plan.carFollowingModel import Path_CACC, Path_ACC, SUMO_CACC_Controller, Plexe_CACC_Controller,HInfinityController, Adaptive_CACCController, PFL_CACC, IDM, SUMO_CACC_Model, PloegModel
+from plan.carFollowingModel import Path_CACC, Path_ACC,  Adaptive_CACCController
 import carla
 import time
 
@@ -8,6 +8,9 @@ class CACCPlanner(BasePlanner):
     def __init__(self, world, map,start_point,end_point, vehicle,vehicle_info, config, global_route_planner,controller, sensor_manager, commuic_agent):
         super().__init__(world, map,start_point,end_point, vehicle,vehicle_info, config, global_route_planner,controller, sensor_manager, commuic_agent)
         self.state = "ACC" if self.config["topology"]["LV"] == -1 else "CACC"
+        if self.state == "ACC":
+            pass
+            # self.vehicle.show_debug_telemetry(True)
         self.plt_info = {}
         self.fp , self.writer = init_data_file("../data/ind", self.id+".csv")
         self.writer.writerow(
@@ -24,14 +27,9 @@ class CACCPlanner(BasePlanner):
             ]
         )
         self.cacc_model = Path_ACC(
-        # ) if self.config["topology"]["LV"] == -1 else Path_CACC()
-        ) if self.config["topology"]["LV"] == -1 else SUMO_CACC_Controller()
-        # ) if self.config["topology"]["LV"] == -1 else SUMO_CACC_Model()
-        # ) if self.config["topology"]["LV"] == -1 else PloegModel()
+        ) if self.config["topology"]["LV"] == -1 else Path_CACC()
         # ) if self.config["topology"]["LV"] == -1 else IDM()
-        # ) if self.config["topology"]["LV"] == -1 else CACC_Sample_Model()
         # ) if self.config["topology"]["LV"] == -1 else Adaptive_CACCController()
-        # ) if self.config["topology"]["LV"] == -1 else PFL_CACC()
 
 
     @time_const(fps=30) 
@@ -47,20 +45,20 @@ class CACCPlanner(BasePlanner):
                 return
             self.check_traffic_light()
             self.side_safety_check()
-            self.debug()
+            # self.debug()
             self.step += 1
             self.change_back_step += 1
             self.send_self_info()
             self.get_plt_info()
             if self.state != "CACC":
                 self.check_collison_and_change_lanes()
-            self.change_speed_profile()
+                self.change_speed_profile()
             self.car_following()
             self.run_control()
         except Exception as e:
             handle_exception(e)
             
-    def change_speed_profile(self, time_interval=250, low_speed=15, high_speed=20):
+    def change_speed_profile(self, time_interval=350, low_speed=15, high_speed=20):
         # Calculate the current interval index based on the step
         current_interval = (self.step // time_interval) % 2  # This will alternate between 0 and 1
 

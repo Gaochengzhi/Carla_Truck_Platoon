@@ -45,7 +45,7 @@ class BasePlanner():
         self.step = 0
         self.change_back_step = 0
         self.wait_step = 4
-        self.vehicle.show_debug_telemetry(True)
+        # self.vehicle.show_debug_telemetry(True)
         self.check_update_waypoints()
         self.left_side, self.right_side = self.perception.get_road_edge(
             self.waypoint_buffer[0])

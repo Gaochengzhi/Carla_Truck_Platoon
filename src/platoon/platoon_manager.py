@@ -1,5 +1,5 @@
 from agent.truck_vehicle_agent import TruckVehicleAgent
-
+import copy
 
 class Platoon():
     def __init__(self, config):
@@ -7,8 +7,8 @@ class Platoon():
         self.spawn_platoon_agents(config)
 
     def spawn_platoon_agents(self, config):
-        plt_member_config = config
         for i, start_end in enumerate(zip(config["spawn_list"], config["target_list"])):
+            plt_member_config = copy.deepcopy(config)
             plt_member_config["name"] = f"p_{i}"
             plt_member_config["topology"] = {
                 "index": i,

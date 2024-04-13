@@ -51,7 +51,7 @@ class BaseSensorManager:
 
     def add_camera(self):
         camera_bp = self.world.get_blueprint_library().find('sensor.camera.rgb')
-        camera_bp.set_attribute('image_size_x', '780')
+        camera_bp.set_attribute('image_size_x', '680')
         camera_bp.set_attribute('image_size_y', '520')
         camera_bp.set_attribute('fov', '110')
         camera_transform = carla.Transform(carla.Location(x=1.5, z=2.4))

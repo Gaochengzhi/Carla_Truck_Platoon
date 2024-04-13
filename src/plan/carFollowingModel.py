@@ -1,8 +1,8 @@
 import numpy as np
 import math
 
-class SUMO_CACC_Model:
-    def __init__(self, L=19.56, t_0=0.5,s_0 = 5):
+class CACC_Model:
+    def __init__(self, t_0=0.5,s_0 = 2):
         pass
     def calc_speed(self,leader_v,
                 leader_a,
@@ -17,7 +17,7 @@ class SUMO_CACC_Model:
 
 
 class IDM():
-    def __init__(self, speed_limit=30, max_acc=5, normal_decel=5, delta=4, safe_distance=5.5, human_reaction_time=0.1, max_brake_decel=6.0):
+    def __init__(self, speed_limit=30, max_acc=5, normal_decel=5, delta=4, safe_distance=5.5, human_reaction_time=0.0, max_brake_decel=6.0):
         self.v0 = speed_limit
         self.delta = delta
         self.a = max_acc
@@ -127,7 +127,7 @@ class PFL_CACC:
         return u
 
 class Path_CACC:
-    def __init__(self, kp=0.45, kd=0.25, s0=2, tc=0.6):
+    def __init__(self, kp=0.45, kd=0.25, s0=2, tc=0.5):
         """
         Initialize the PATH CACC controller.
 
@@ -141,39 +141,34 @@ class Path_CACC:
         self.s0 = s0
         self.headway = tc
 
-    def calc_speed(self,leader_v,
-                leader_a,
-                front_dis,
-                front_v,
-                front_a,
-                ego_v,
-                ego_a, leader_delay=0, front_delay=0, leader_tv = 0):
-        """
-        Calculate the acceleration for the ego vehicle based on the CACC model.
+    def calc_speed(self, leader_v, leader_a, front_dis, front_v, front_a, ego_v, ego_a, leader_delay=0, front_delay=0, leader_tv=0):
+            """
+            Calculate the speed using the CACC controller.
 
-        :param ego_pos: The position of the ego vehicle.
-        :param ego_vel: The velocity of the ego vehicle.
-        :param ego_acc: The acceleration of the ego vehicle.
-        :param leader_pos: The position of the leading vehicle.
-        :param leader_vel: The velocity of the leading vehicle.
-        :param leader_acc: The acceleration of the leading vehicle.
-        :return: The acceleration command for the ego vehicle.
-        """
-        # Calculate the actual headway and relative velocity
-        headway = front_dis - self.s0 - ego_v * self.headway
-        relative_velocity = front_v - ego_v
+            :param leader_v: Speed of the leading vehicle.
+            :param leader_a: Acceleration of the leading vehicle.
+            :param front_dis: Front vehicle distance.
+            :param front_v: Speed of the front vehicle.
+            :param front_a: Acceleration of the front vehicle.
+            :param ego_v: Ego vehicle speed.
+            :param ego_a: Ego vehicle acceleration.
+            :param leader_delay: Delay of the leader vehicle (default is 0).
+            :param front_delay: Delay of the front vehicle (default is 0).
+            :param leader_tv: Leader vehicle time gap (default is 0).
+            """
+            # Calculate the desired spacing
+            des_spacing = self.s0 + self.headway * ego_v 
+            
+            # Calculate the spacing error
+            spacing_error = front_dis - des_spacing
 
-        # Calculate the spacing error and its derivative
-        spacing_error = headway - self.s0
-        delta_spacing = (front_dis - self.s0 - ego_v * self.headway) - ego_v * self.headway
+            # Calculate the control input
+            control_input = self.kp * spacing_error + self.kd * (front_v - ego_v)
 
-        # Calculate the control signal
-        control_signal = self.kp * spacing_error + self.kd * delta_spacing
+            # Update the ego vehicle speed
+            new_speed = ego_v + control_input
 
-        # Calculate the desired acceleration for the ego vehicle
-        desired_accel = control_signal + front_a
-
-        return desired_accel + ego_v
+            return new_speed
 
 
 class Path_ACC:
@@ -208,14 +203,13 @@ class Path_ACC:
         # return 20
 
 
-class SUMO_CACC_Controller:
-    def __init__(self, headway_time=0.5, speed_control_gain=0.4, gap_closing_control_gain_gap=0.005, gap_closing_control_gain_gap_dot=0.05,
-                 gap_control_gain_gap=0.45, gap_control_gain_gap_dot=0.0125, collision_avoidance_gain_gap=0.45, 
-                 collision_avoidance_gain_gap_dot=0.05, emergency_threshold=2.0, headway_time_acc=1.0, speed_control_min_gap=1.66):
+class SUMO_CACC_Controllerback:
+    def __init__(self, headway_time=0.5, speed_control_gain=-0.4, gap_control_gain_gap=0.45,
+                 gap_control_gain_gap_dot=0.0125, collision_avoidance_gain_gap=0.45,
+                 collision_avoidance_gain_gap_dot=0.05, emergency_threshold=2.0, headway_time_acc=1.0,
+                 speed_control_min_gap=1.66):
         self.headway_time = headway_time
         self.speed_control_gain = speed_control_gain
-        self.gap_closing_control_gain_gap = gap_closing_control_gain_gap  
-        self.gap_closing_control_gain_gap_dot = gap_closing_control_gain_gap_dot
         self.gap_control_gain_gap = gap_control_gain_gap
         self.gap_control_gain_gap_dot = gap_control_gain_gap_dot
         self.collision_avoidance_gain_gap = collision_avoidance_gain_gap
@@ -223,61 +217,64 @@ class SUMO_CACC_Controller:
         self.emergency_threshold = emergency_threshold
         self.headway_time_acc = headway_time_acc
         self.speed_control_min_gap = speed_control_min_gap
-        self.control_mode  = "speed"
 
-    def calc_speed(self, leader_v, leader_a, front_dis, front_v, front_a, ego_v, ego_a, 
-                   leader_delay=0, front_delay=0, leader_tv=0):
-        
-        # Velocity error
-        v_leader_err = ego_v - leader_v
-
-        # Time gap
-        time_gap = front_dis / max(0.0001, ego_v)
-        spacing_err = front_dis - self.headway_time * ego_v-2
-        
-        if time_gap > 2 and abs(spacing_err) > self.speed_control_min_gap:
-            # Speed control mode
-            new_speed = self.speed_speed_control(ego_v, v_leader_err)
-        elif time_gap < 1.5:
-            # Gap control mode
-            new_speed = self.speed_gap_control(front_dis, ego_v, front_v, leader_tv, v_leader_err, ego_a)
-        else:
-            # Keep previous control mode
-            if self.control_mode == 'speed':
-                new_speed = self.speed_speed_control(ego_v, v_leader_err)
-            else:
-                new_speed = self.speed_gap_control(front_dis, ego_v, front_v, leader_tv, v_leader_err, ego_a)
-
-        new_speed = ego_v + new_speed
-        return new_speed
-
-    def speed_speed_control(self, ego_v, v_err):
-        # Speed control law
-        self.control_mode = 'speed'
-        accel = self.speed_control_gain * v_err
-        new_speed = ego_v + accel
-        return new_speed
-
-    def speed_gap_control(self, front_dis, ego_v, front_v, leader_tv, v_err, ego_a):
-        # Gap control law  
-        des_spacing = self.headway_time * ego_v
-        spacing_err = front_dis - des_spacing
+    def calc_speed(self,leader_v,
+                leader_a,
+                front_dis,
+                front_v,
+                front_a,
+                ego_v,
+                ego_a, leader_delay=0, front_delay=0, leader_tv = 0):
+        leading_v_err = ego_v - leader_v
+        time_gap = front_dis / max(ego_v, 0.1)
+        spacing_err = front_dis - self.headway_time * ego_v - self.emergency_threshold
         speed_err = front_v - ego_v + self.headway_time * ego_a
-
-        if 0 < spacing_err < 0.2 and v_err < 0.1:
-            # Gap control mode
-            self.control_mode = 'gap'
-            new_speed = ego_v + self.gap_control_gain_gap * spacing_err + self.gap_control_gain_gap_dot * speed_err
-        elif spacing_err < 0:
-            # Collision avoidance mode 
-            self.control_mode = 'collision_avoidance'
-            new_speed = ego_v + self.collision_avoidance_gain_gap * spacing_err + self.collision_avoidance_gain_gap_dot * speed_err
+        if abs(time_gap) > self.headway_time+0.2 or abs(spacing_err) > self.speed_control_min_gap:
+            return ego_v + self.gap_control_gain_gap * spacing_err + self.gap_control_gain_gap_dot * speed_err
+        elif spacing_err < -self.speed_control_min_gap:
+            return ego_v + self.collision_avoidance_gain_gap * spacing_err + self.collision_avoidance_gain_gap_dot * speed_err
         else:
-            # Gap closing mode
-            self.control_mode = 'gap_closing'  
-            new_speed = ego_v + self.gap_closing_control_gain_gap * spacing_err + self.gap_closing_control_gain_gap_dot * speed_err
+            return ego_v + self.speed_control_gain * leading_v_err 
 
-        return new_speed
+
+
+class SUMO_CACC_Controller:
+    def __init__(self, headway_time=0.5, speed_control_gain=-0.4, gap_control_gain_gap=0.45,
+                 gap_control_gain_gap_dot=0.0125, collision_avoidance_gain_gap=0.45,
+                 collision_avoidance_gain_gap_dot=0.05, emergency_threshold=2.0, headway_time_acc=1.0,
+                 speed_control_min_gap=1.66):
+        self.headway_time = headway_time
+        self.speed_control_gain = speed_control_gain
+        self.gap_control_gain_gap = gap_control_gain_gap
+        self.gap_control_gain_gap_dot = gap_control_gain_gap_dot
+        self.collision_avoidance_gain_gap = collision_avoidance_gain_gap
+        self.collision_avoidance_gain_gap_dot = collision_avoidance_gain_gap_dot
+        self.emergency_threshold = emergency_threshold
+        self.headway_time_acc = headway_time_acc
+        self.speed_control_min_gap = speed_control_min_gap
+
+    def calc_speed(self, leader_v, leader_a, front_dis, front_v, front_a, ego_v, ego_a, leader_delay=0, front_delay=0, leader_tv=0):
+        # Calculate the desired spacing
+        des_spacing = self.headway_time * ego_v + self.emergency_threshold
+        spacing_err = front_dis - des_spacing
+        speed_err = front_v - ego_v
+        v_err = ego_v - leader_v
+        
+        if abs(spacing_err) < 0.5:
+            # speed mode
+            return ego_v + self.speed_control_gain * v_err + self.gap_control_gain_gap_dot*spacing_err
+            
+
+        elif spacing_err <= -15:
+            # Collision avoidance mode
+            new_speed = ego_v + self.collision_avoidance_gain_gap * spacing_err + \
+                        self.collision_avoidance_gain_gap_dot * v_err
+            return max(0, new_speed)
+        else:
+            # CACC closing mode 
+            return ego_v + self.gap_control_gain_gap * spacing_err + 0.2* speed_err
+
+
 
 class Plexe_CACC_Controller:
     def __init__(self, kp=1.0, lambda_=0.1, spacing=5.0, xi=1.0, omega_n=0.2, c1=0.5):
@@ -467,81 +464,55 @@ class CACCController:
         u_i = -1/self.h_i*ego_a + self.tau_0/self.h_i*front_a + 1/self.h_i*leader_a + self.tau_0/self.h_i*u_ai
 
         return u_i
-class HInfinityControllers:
-    def __init__(self, k11=2.5, k22=1.26, k33=0.23, q=0.8, l=0.1, Tstep=0.03, D0=[6, 0, 0], h= 0.5, fdd1=0.3, fdd2=2, tdd1=2, tdd2=2):
-        self.K = np.array([[k11], [k22], [k33]])
-        self.C = np.eye(3)
-        self.q = q
-        self.l = l
-        self.Tstep = Tstep
-        self.D0 = np.array(D0)
+
+class CACC_Sample_Model:
+    def __init__(self, h=0.5, epsilon=1, delta=0.5, q=0.8, ppp=0.3, k1=0.15):
         self.h = h
-        self.fdd1 = fdd1
-        self.fdd2 = fdd2
-        self.tdd1 = tdd1
-        self.tdd2 = tdd2
-        self.Xi_error_sum = np.zeros((3, 1))
-        self.z = 0
-        self.z_dot = 0
-        self.dd2_hat = 0
+        self.epsilon = epsilon
+        self.delta = delta
+        self.q = q
+        self.ppp = ppp
+        self.k1 = k1
         self.intOfUr = 0
-        self.prev_ur = 0
-        self.dd1 = 0
-        self.dd2 = 0
 
-    def calc_speed(
-        self,
-        leader_v,
-        leader_a,
-        front_dis,
-        front_v,
-        front_a,
-        ego_v,
-        ego_a,
-        leader_delay=0,
-        front_delay=0,
-        leader_tv=0,
-    ):
-        n = 1
-        # Update disturbances
-        self.dd1 = self.dd1 + self.fdd1 * np.sin(1 * n * self.Tstep) * np.exp(
-            -((n * self.Tstep - self.tdd1) ** 2)
-        )
-        self.dd2 = self.dd2 + self.fdd2 * np.sin(3 * n * self.Tstep) * np.exp(
-            -((n * self.Tstep - self.tdd2) ** 2)
-        )
+    def calc_speed(self, leader_v, leader_a, front_dis, front_v, front_a, ego_v, ego_a, leader_delay=0, front_delay=0, leader_tv=0):
+        # Feedforward control
+        Vi_sum = leader_v + front_v
+        DP = 2  # Number of preceding vehicles (leader and front vehicle)
 
-        # Update Xi_error_sum based on the input parameters
-        Xi = np.array([[ego_v], [ego_a], [0]])
-        Xi_neighbor = np.array(
-            [[front_dis - self.h * (ego_v + self.dd1)], [front_v], [0]]
-        )
-        self.Xi_error_sum = Xi - Xi_neighbor + self.D0
+        # Sliding mode control
+        e1 = front_dis - self.h * (ego_v + 0)  # Assume dd1_hat is 0 for simplicity
+        ur = self.k1 * e1
+        self.intOfUr += ur * 0.01  # Assume a fixed time step of 0.01 seconds
+        s = e1 + self.epsilon * self.intOfUr
 
-        # Update the disturbance observer
-        e1 = self.Xi_error_sum[0, 0]
-        e2 = self.Xi_error_sum[1, 0]
-        self.dd2_hat = self.z - self.l * e1
-        self.z = self.z + self.z_dot * self.Tstep
-        self.z_dot = self.l * (e2 + self.q * (self.prev_ur + self.dd2_hat))
-
-        # Calculate the control input
-        ur = -np.dot(self.K.T, np.dot(self.C, self.Xi_error_sum))[0, 0]
-        if self.intOfUr == 0:
-            self.intOfUr = ego_v
+        if front_delay == 0:
+            S = self.q * s
         else:
-            self.intOfUr = self.intOfUr + ur * self.Tstep
-        # Store the current ur for the next iteration
-        self.prev_ur = ur
-        # Return the desired speed
-        return self.intOfUr
+            S = self.q * s - front_delay
+
+        # Disturbance observer (simplified)
+        dd1_hat = 0
+        dd2_hat = 0
+        dd11_hat = 0
+
+        # Control law
+        Ui = (Vi_sum - DP * (ego_v + dd1_hat) - self.epsilon * ur - self.delta / self.q * np.sign(S) * abs(S) ** self.ppp) / (DP * self.h) - dd2_hat - dd11_hat
+
+        # Saturation limits (assuming a range of [-3, 3])
+        Ui = max(min(Ui, 3), -3)
+
+        return Ui+ ego_v
 
 
+
+from collections import deque
 class Adaptive_CACCController:
-    def __init__(self, headway_time=0.5, speed_control_gain=-0.4, gap_control_gain_gap=0.45,
-                 gap_control_gain_gap_dot=0.0125, collision_avoidance_gain_gap=0.45,
+    def __init__(self, headway_time=0.5, speed_control_gain=-0.4, gap_control_gain_gap=-0.45,
+                 gap_control_gain_gap_dot=0.125, collision_avoidance_gain_gap=0.45,
                  collision_avoidance_gain_gap_dot=0.05, emergency_threshold=2.0, headway_time_acc=1.0,
-                 speed_control_min_gap=2.66):
+                 speed_control_min_gap=0.06, feedforward_gain=1.0, observer_gain=0.1, sliding_mode_gain=0.1,
+                 spacing_err_queue_size=5, speed_err_queue_size=5):
         self.headway_time = headway_time
         self.speed_control_gain = speed_control_gain
         self.gap_control_gain_gap = gap_control_gain_gap
@@ -551,20 +522,53 @@ class Adaptive_CACCController:
         self.emergency_threshold = emergency_threshold
         self.headway_time_acc = headway_time_acc
         self.speed_control_min_gap = speed_control_min_gap
+        self.feedforward_gain = feedforward_gain
+        self.observer_gain = observer_gain
+        self.sliding_mode_gain = sliding_mode_gain
+        self.spacing_err_queue = deque(maxlen=spacing_err_queue_size)
+        self.speed_err_queue = deque(maxlen=speed_err_queue_size)
 
-    def calc_speed(self,leader_v,
-                leader_a,
-                front_dis,
-                front_v,
-                front_a,
-                ego_v,
-                ego_a, leader_delay=0, front_delay=0, leader_tv = 0):
-        leading_v_err = ego_v - leader_v - leader_delay*leader_a
-        time_gap = front_dis / max(ego_v, 0.1)
+    def calc_speed(self, leader_v, leader_a, front_dis, front_v, front_a, ego_v, ego_a,
+                   leader_delay=0, front_delay=0, leader_tv=0, is_radar = False):
+        # Feedforward control with nonlinear acceleration profile
+        feedforward_acc = self.feedforward_gain * (leader_tv - leader_v)
+        feedforward_acc *= math.tanh(leader_a * leader_delay) * (leader_tv - leader_v)
+        feedforward_acc *= math.tanh(front_a * front_delay) * (front_v - leader_v)
+        # print(feedforward_acc)
+        # feedforward_acc = 0
+
+        leading_v_err = ego_v - leader_v - leader_delay * leader_a
         spacing_err = front_dis - self.headway_time * ego_v - self.emergency_threshold
         speed_err = front_v - ego_v + self.headway_time * ego_a
+
+        # Error observer with queue for spacing and speed errors
+        self.spacing_err_queue.append(spacing_err)
+        self.speed_err_queue.append(speed_err)
+        observed_spacing_err = sum(self.spacing_err_queue) / len(self.spacing_err_queue)
+        observed_speed_err = sum(self.speed_err_queue) / len(self.speed_err_queue)
+
+        # Sliding mode control with adaptive gain adjustment
+        sliding_mode_gain = math.tanh(abs(observed_spacing_err) / self.speed_control_min_gap) * self.sliding_mode_gain
+        # sliding_mode_gain += math.tanh(abs(observed_speed_err) / self.speed_control_min_gap) * self.sliding_mode_gain
+
+        # Dynamic gain adjustment
+        gap_control_gain_gap = self.gap_control_gain_gap * (1 + sliding_mode_gain)
+        gap_control_gain_gap_dot = self.gap_control_gain_gap_dot * (1 + sliding_mode_gain)
+        speed_control_gain = self.speed_control_gain
+
         if abs(spacing_err) > self.speed_control_min_gap:
-            return ego_v + self.speed_control_gain * leading_v_err + self.gap_control_gain_gap_dot *spacing_err
+            gap_control_gain_gap *= (1 + sliding_mode_gain)
+            gap_control_gain_gap_dot *= (1 + sliding_mode_gain)
         else:
-            self.gap_control_gain_gap = math.tanh(abs(spacing_err)/8)
-            return ego_v + self.gap_control_gain_gap * spacing_err + self.gap_control_gain_gap_dot * speed_err
+            speed_control_gain *= (1 + sliding_mode_gain)
+
+        # Safety constraints (remains the same as before)
+        if front_dis < self.emergency_threshold:
+            feedforward_acc = -5.0
+            speed_control_gain = 0.0
+            gap_control_gain_gap_dot = 0.0
+
+        return (ego_v + feedforward_acc +
+                speed_control_gain * leading_v_err -
+                gap_control_gain_gap * observed_spacing_err +
+                gap_control_gain_gap_dot * observed_speed_err)
