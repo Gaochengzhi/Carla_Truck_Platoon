@@ -1,6 +1,6 @@
 from plan.base_planer import BasePlanner
 from util import time_const, handle_exception,compute_distance2D, init_data_file
-from plan.carFollowingModel import Path_CACC, Path_ACC,  Adaptive_CACCController
+from plan.carFollowingModel import PATH_CACC, Path_ACC,  Advanced_CACCController, IDM
 import carla
 import time
 
@@ -17,6 +17,7 @@ class CACCPlanner(BasePlanner):
             [
                 "time_step",
                 "time",
+                "ego_v",
                 "leader_v",
                 "leader_a",
                 "distance_front",
@@ -27,9 +28,9 @@ class CACCPlanner(BasePlanner):
             ]
         )
         self.cacc_model = Path_ACC(
-        ) if self.config["topology"]["LV"] == -1 else Path_CACC()
+        # ) if self.config["topology"]["LV"] == -1 else PATH_CACC()
         # ) if self.config["topology"]["LV"] == -1 else IDM()
-        # ) if self.config["topology"]["LV"] == -1 else Adaptive_CACCController()
+        ) if self.config["topology"]["LV"] == -1 else Advanced_CACCController()
 
 
     @time_const(fps=30) 
@@ -163,6 +164,7 @@ class CACCPlanner(BasePlanner):
             self.writer.writerow([
                 self.step,
                 ego_t,
+                self.speed,
                 leader_v,
                 leader_a,
                 front_dis,

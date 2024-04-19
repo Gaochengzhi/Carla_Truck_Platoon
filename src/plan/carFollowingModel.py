@@ -126,7 +126,7 @@ class PFL_CACC:
             + self.k_v * velocity_error_leader + self.k_a * acceleration_error_leader
         return u
 
-class Path_CACC:
+class PATH_CACC:
     def __init__(self, kp=0.45, kd=0.25, s0=2, tc=0.5):
         """
         Initialize the PATH CACC controller.
@@ -154,7 +154,7 @@ class Path_CACC:
             :param ego_a: Ego vehicle acceleration.
             :param leader_delay: Delay of the leader vehicle (default is 0).
             :param front_delay: Delay of the front vehicle (default is 0).
-            :param leader_tv: Leader vehicle time gap (default is 0).
+            :param leader_tv: Leader vehicle target speed
             """
             # Calculate the desired spacing
             des_spacing = self.s0 + self.headway * ego_v 
@@ -203,7 +203,7 @@ class Path_ACC:
         # return 20
 
 
-class SUMO_CACC_Controllerback:
+class SUMO_CACC_Controller:
     def __init__(self, headway_time=0.5, speed_control_gain=-0.4, gap_control_gain_gap=0.45,
                  gap_control_gain_gap_dot=0.0125, collision_avoidance_gain_gap=0.45,
                  collision_avoidance_gain_gap_dot=0.05, emergency_threshold=2.0, headway_time_acc=1.0,
@@ -238,7 +238,7 @@ class SUMO_CACC_Controllerback:
 
 
 
-class SUMO_CACC_Controller:
+class SUMO_CACC_Controllera:
     def __init__(self, headway_time=0.5, speed_control_gain=-0.4, gap_control_gain_gap=0.45,
                  gap_control_gain_gap_dot=0.0125, collision_avoidance_gain_gap=0.45,
                  collision_avoidance_gain_gap_dot=0.05, emergency_threshold=2.0, headway_time_acc=1.0,
@@ -506,13 +506,16 @@ class CACC_Sample_Model:
 
 
 
+
 from collections import deque
-class Adaptive_CACCController:
-    def __init__(self, headway_time=0.5, speed_control_gain=-0.4, gap_control_gain_gap=-0.45,
+import math
+
+class Advanced_CACCController:
+    def __init__(self, headway_time=0.5, speed_control_gain=0.25, gap_control_gain_gap=0.45,
                  gap_control_gain_gap_dot=0.125, collision_avoidance_gain_gap=0.45,
                  collision_avoidance_gain_gap_dot=0.05, emergency_threshold=2.0, headway_time_acc=1.0,
                  speed_control_min_gap=0.06, feedforward_gain=1.0, observer_gain=0.1, sliding_mode_gain=0.1,
-                 spacing_err_queue_size=5, speed_err_queue_size=5):
+                 spacing_err_queue_size=4, speed_err_queue_size=4):
         self.headway_time = headway_time
         self.speed_control_gain = speed_control_gain
         self.gap_control_gain_gap = gap_control_gain_gap
@@ -521,46 +524,60 @@ class Adaptive_CACCController:
         self.collision_avoidance_gain_gap_dot = collision_avoidance_gain_gap_dot
         self.emergency_threshold = emergency_threshold
         self.headway_time_acc = headway_time_acc
-        self.speed_control_min_gap = speed_control_min_gap
+        self.control_min_gap = speed_control_min_gap
         self.feedforward_gain = feedforward_gain
         self.observer_gain = observer_gain
         self.sliding_mode_gain = sliding_mode_gain
         self.spacing_err_queue = deque(maxlen=spacing_err_queue_size)
         self.speed_err_queue = deque(maxlen=speed_err_queue_size)
+        self.ti = 0
+
+        # Kalman filter parameters
+        self.process_noise = 0.1
+        self.measurement_noise = 0.5
+        self.estimated_spacing_err = 0
+        self.estimated_speed_err = 0
+        self.spacing_err_cov = 1
+        self.speed_err_cov = 1
 
     def calc_speed(self, leader_v, leader_a, front_dis, front_v, front_a, ego_v, ego_a,
-                   leader_delay=0, front_delay=0, leader_tv=0, is_radar = False):
+                   leader_delay=0, front_delay=0, leader_tv=0, is_radar=False):
         # Feedforward control with nonlinear acceleration profile
-        feedforward_acc = self.feedforward_gain * (leader_tv - leader_v)
+        feedforward_acc = self.feedforward_gain * (leader_tv - ego_v) 
         feedforward_acc *= math.tanh(leader_a * leader_delay) * (leader_tv - leader_v)
-        feedforward_acc *= math.tanh(front_a * front_delay) * (front_v - leader_v)
-        # print(feedforward_acc)
-        # feedforward_acc = 0
 
-        leading_v_err = ego_v - leader_v - leader_delay * leader_a
-        spacing_err = front_dis - self.headway_time * ego_v - self.emergency_threshold
-        speed_err = front_v - ego_v + self.headway_time * ego_a
+        leading_v_err = leader_tv - ego_v
+        spacing_err = front_dis - self.headway_time * ego_v - self.emergency_threshold - self.estimated_spacing_err
+        speed_err = front_v - ego_v
 
-        # Error observer with queue for spacing and speed errors
-        self.spacing_err_queue.append(spacing_err)
-        self.speed_err_queue.append(speed_err)
-        observed_spacing_err = sum(self.spacing_err_queue) / len(self.spacing_err_queue)
-        observed_speed_err = sum(self.speed_err_queue) / len(self.speed_err_queue)
+        # Kalman filter update step for spacing error
+        kalman_gain_spacing = self.spacing_err_cov / (self.spacing_err_cov + self.measurement_noise)
+        self.estimated_spacing_err = self.estimated_spacing_err + kalman_gain_spacing * (spacing_err - self.estimated_spacing_err)
+        self.spacing_err_cov = (1 - kalman_gain_spacing) * self.spacing_err_cov + self.process_noise
+
+        # Kalman filter update step for speed error
+        kalman_gain_speed = self.speed_err_cov / (self.speed_err_cov + self.measurement_noise)
+        self.estimated_speed_err = self.estimated_speed_err + kalman_gain_speed * (speed_err - self.estimated_speed_err)
+        self.speed_err_cov = (1 - kalman_gain_speed) * self.speed_err_cov + self.process_noise
+
+        self.spacing_err_queue.append(self.estimated_spacing_err)
+        self.speed_err_queue.append(self.estimated_speed_err)
+
 
         # Sliding mode control with adaptive gain adjustment
-        sliding_mode_gain = math.tanh(abs(observed_spacing_err) / self.speed_control_min_gap) * self.sliding_mode_gain
-        # sliding_mode_gain += math.tanh(abs(observed_speed_err) / self.speed_control_min_gap) * self.sliding_mode_gain
+        sliding_mode_gain_v = math.tanh(abs(self.estimated_speed_err) / self.control_min_gap) * self.sliding_mode_gain
+        sliding_mode_gain_gap = math.tanh(abs(self.estimated_spacing_err) / self.control_min_gap) * self.sliding_mode_gain
 
         # Dynamic gain adjustment
-        gap_control_gain_gap = self.gap_control_gain_gap * (1 + sliding_mode_gain)
-        gap_control_gain_gap_dot = self.gap_control_gain_gap_dot * (1 + sliding_mode_gain)
+        gap_control_gain_gap = self.gap_control_gain_gap * sliding_mode_gain_gap*10
+        gap_control_gain_gap_dot = self.gap_control_gain_gap_dot * sliding_mode_gain_gap*10
         speed_control_gain = self.speed_control_gain
 
-        if abs(spacing_err) > self.speed_control_min_gap:
-            gap_control_gain_gap *= (1 + sliding_mode_gain)
-            gap_control_gain_gap_dot *= (1 + sliding_mode_gain)
+        if abs(self.estimated_spacing_err) > self.control_min_gap:
+            gap_control_gain_gap *= (1 + sliding_mode_gain_v)
+            gap_control_gain_gap_dot *= (1 + sliding_mode_gain_gap)
         else:
-            speed_control_gain *= (1 + sliding_mode_gain)
+            speed_control_gain *= sliding_mode_gain_gap
 
         # Safety constraints (remains the same as before)
         if front_dis < self.emergency_threshold:
@@ -568,7 +585,19 @@ class Adaptive_CACCController:
             speed_control_gain = 0.0
             gap_control_gain_gap_dot = 0.0
 
-        return (ego_v + feedforward_acc +
-                speed_control_gain * leading_v_err -
-                gap_control_gain_gap * observed_spacing_err +
-                gap_control_gain_gap_dot * observed_speed_err)
+        output = (feedforward_acc +
+                  speed_control_gain * leading_v_err +
+                  gap_control_gain_gap * spacing_err +
+                  gap_control_gain_gap_dot * front_v)
+
+
+        return output+ego_v
+        # if abs(ego_v - 15) < 0.2 and abs(leader_v - 15) < 0.1 and abs(spacing_err) < 0.3:
+        #     # print(output, feedforward_acc, speed_control_gain, gap_control_gain_gap, gap_control_gain_gap_dot)
+        #     return ego_v + output
+        # else:
+        #     output = 0.45 * spacing_err + 0.25 * (front_v - ego_v)
+        #     return ego_v + output
+
+
+

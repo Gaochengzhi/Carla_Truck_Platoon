@@ -26,6 +26,7 @@ class DataRecorder():
             self.step += 1
         except Exception as e:
             logging.error(e)
+
     def run(self):
         if not self.config["record"]:
             return
@@ -33,6 +34,7 @@ class DataRecorder():
             self.config["data_folder_path"], "data.csv")
         writer.writerow([
             'time',
+            'real_time',
             'vehicle_id',
             'location_x',
             'location_y',
@@ -75,6 +77,7 @@ class DataRecorder():
         # Writing data to CSV within the locked context to ensure thread safety
         writer.writerow([
             time_step,
+            time.time(),
             vehicle.attributes["role_name"],
             location.x, location.y, location.z,
             velocity.x, velocity.y, velocity.z,

@@ -88,11 +88,11 @@ class TruckVehicleAgent(BaseVehicle):
         self.local_planner = CACCPlanner(self.world, self.map,self.start_point,self.end_point, self.vehicle, self.vehicle_info,self.config, self.global_route_planner, self.controller, self.sensor_manager, self.communi_agent)
     def create_controller_impl(self):
         if self.config["topology"]["LV"] == -1:
-            max_throttole = 0.7
-            max_brake = 0.2
+            max_throttole = 0.8
+            max_brake = 0.1
         else:
             max_throttole = 1.0
-            max_brake = 0.3
+            max_brake = 0.2
         self.controller = VehiclePIDController(self.vehicle, max_throttle=max_throttole, max_brake=max_brake)
 
 
